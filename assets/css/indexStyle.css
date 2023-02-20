@@ -87,8 +87,8 @@ section.main-section article{margin-bottom: 3em}
 .card-cont:nth-child(odd){background-color: #2959d7;}
 .card-cont:nth-child(even){background-color: rgb(255, 134, 53);}
 
-div#db{background-image: url(../img/DB-card-bg.svg); background-size: cover; background-position: 0%;}
-div#domingoSavio{background-image: url(../img/domingoSavio-card-bg.svg); background-size: cover; background-position: 0%;}
+div#db{background-image: url(../img/DB-card-bg.png); background-size: cover; background-position: 0%;}
+div#domingoSavio{background-image: url(../img/domingoSavio-card-bg.png); background-size: cover; background-position: 0%;}
 
 article.suggestions span{color: var(--Dlish-Orange);}
 
