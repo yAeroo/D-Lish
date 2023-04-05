@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('dish', function (Blueprint $table) {
             $table->id(); // Columna 'Id' - Llave primaria, único, autoincrement
+            $table->foreignId('cafeteria_id')->constrained()->onDelete('cascade'); // Columna 'Owner_id' - Llave foranea para referenciar al id de la cafeteria que pertenece
             $table->string('name', 20);
             $table->string('description', 200);
             $table->enum('menu_type', ['meal', 'lunch', 'snacks', 'drinks']); // Columna 'menu_type' - Desayuno, almuerzo, antojitos y bebidas
