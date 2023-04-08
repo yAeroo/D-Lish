@@ -1,14 +1,14 @@
 export default function Index() {
     return (
         <>
-            <div className="text-gray-600 ">
+            <div className="text-gray-600 font-plane">
                 {/* content wrapper */}
 
                 <div>
                     <nav>
                         <div>
-                            <h1 className="font-bold  p-4 border-b border-gray-100 font-title">
-                                <a href="/">Dlish</a>
+                            <h1 className="font-bold  p-4 border-b border-gray-100 font-title ">
+                                <a href="/">Test</a>
                             </h1>
                         </div>
                         <ul>
@@ -33,14 +33,18 @@ export default function Index() {
                 {/* End nav */}
 
                 <main className="px-16 py-16">
-                    <div>
-                        <a href="#">Log in</a>
-                        <a href="#">Sign up</a>
+                    <div className="flex">
+                        <a href="#" className="text-secu">
+                            Log in
+                        </a>
+                        <a href="#" className="text-secu">
+                            Sign up
+                        </a>
                     </div>
 
                     <header>
-                        <h2 className="text-gray-700 text-6xl font-semibold">
-                            Recetas
+                        <h2 className="text-gray-700 text-6xl font-semibold font-title">
+                            Dlish
                         </h2>
                         <h3 className="text-2xl font-semibold">For momazos</h3>
                     </header>

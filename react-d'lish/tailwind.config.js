@@ -14,7 +14,8 @@ export default {
         terc: '#ec6718',
       },
       fontFamily: {
-        title: ['Trebuchet MS']
+        title: ['Trebuchet MS'],
+        plane: ['Nunito']
       }
     },
   },
