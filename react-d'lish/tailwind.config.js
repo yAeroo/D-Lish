@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,jsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // Colores propios D'lish
+        base: 'fcf8f8',
+        prim: '#ec6718',
+        secu: '#242f5b',
+        terc: '#ec6718',
+      },
+      fontFamily: {
+        title: ['Trebuchet MS']
+      }
+    },
   },
   plugins: [],
 }
