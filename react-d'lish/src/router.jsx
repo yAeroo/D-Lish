@@ -1,40 +1,40 @@
 // Librería para autentificación y rutas
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 // Layouts
-import AuthLayout from "./layouts/AuthLayout";
+import Layout from './layouts/Layout';
+import AuthLayout from './layouts/AuthLayout';
 // Componentes importados
-import Inicio from "./views/Inicio";
-import Login from "./views/Login.jsx";
-import Registro from "./views/Registro";
+import Index from './views/Index';
+import Login from './views/Login.jsx';
+import Register from './views/Register';
 
 const router = createBrowserRouter([
     {
         // IGNOREN ESTO
-        path: "/",
+        path: '/',
         element: <Layout />,
         children: [
             {
                 index: true,
-                // Coponente llamado
-                element: <Inicio />,
+                element: <Index />
             },
         ],
     },
     {
         // Plantilla Padre
-        path: "/auth",
+        path: '/auth',
         element: <AuthLayout />,
         children: [
             // Definición de sus hijos
             {
-                path: "/auth/login",
+                path: '/auth/login',
                 // Coponente llamado
-                element: <Login />,
+                element: <Login />
             },
             {
-                path: "/auth/registro",
+                path: '/auth/register',
                 // Coponente llamado
-                element: <Registro />,
+                element: <Register />
             },
         ],
     },
