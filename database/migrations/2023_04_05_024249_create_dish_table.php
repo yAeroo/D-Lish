@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dish', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id(); // Columna 'Id' - Llave primaria, único, autoincrement
             $table->foreignId('cafeteria_id')->constrained()->onDelete('cascade'); // Columna 'Owner_id' - Llave foranea para referenciar al id de la cafeteria que pertenece
             $table->string('name', 20);
