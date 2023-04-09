@@ -1,9 +1,6 @@
-import { Outlet } from "react-router-dom";
-
-export default function AuthLayout() {
+export default function Profile() {
     return (
-        <div className="text-slate-800">
-            <Outlet />
-        </div>
-    );
+        <div>Profile</div>
+    )
 }
+
