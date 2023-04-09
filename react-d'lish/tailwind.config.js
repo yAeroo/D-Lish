@@ -11,7 +11,7 @@ export default {
         base: '#fcf8f8',
         prim: '#ec6718',
         secu: '#242f5b',
-        terc: '#ec6718',
+        terc: '#4eb168',
       },
       fontFamily: {
         // Fuente propia Dlish
