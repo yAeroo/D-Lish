@@ -6,9 +6,9 @@ export default function Registro() {
         <>
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="block bg-white shadow-2xl p-6 rounded-xl shodow-md shadow-slate-300 w-90">
-
+            <span className="font-light text-gray-400 ">Registro</span>
                 <form>
-                <div className="relative hover:absolute">
+                <div className="flex items-center justify-center">
             <img
                 src="/img/logo.jpg"
                 alt="img"
