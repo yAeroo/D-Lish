@@ -1,10 +1,20 @@
+// Habilitando archivo para router link
+import { Link } from "react-router-dom";
+
 export default function Registro() {
     return (
         <>
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="block bg-white shadow-2xl p-6 rounded-xl shodow-md shadow-slate-300 w-90">
+
                 <form>
-                    <h2 className="mb-3 text-4xl font-bold">Registro DLish</h2>
+                <div className="relative hover:absolute">
+            <img
+                src="/img/logo.jpg"
+                alt="img"
+                className="w-[185px]"
+            />
+            </div>
                     {/* Nombre de Usuario */}
                     <div id="fullName" class="flex flex-row">
                         <div id="firstName" class="w-1/2 mr-1">
@@ -19,17 +29,17 @@ export default function Registro() {
                     </div>
 <br></br>
                     {/* Email de Usuario */}
-                    <label htmlFor="email" class="mb-2 text-md">Email</label>
+                    <label htmlFor="email" class="mb-2 text-md">Correo</label>
                     <input type="email" name="" id="email"  class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"></input>
-<br></br>
+<br></br><br></br>
                     {/* Password */}
                     <label htmlFor="password" class="mb-2 text-md">Contraseña</label>
                     <input type="password" name="" id="password" class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"></input>
-<br></br>
+<br></br><br></br>
                     {/* Confirm Password */}
                     <label htmlFor="confirmPassword" class="mb-2 text-md">Confirmar Contraseña</label>
                 <input type="password" name="" id="confirmPassword" class="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"></input>
-<br></br>
+<br></br><br></br>
                     {/* Gender */}
                     <div id="gender" class="mb-2 text-md">
                     <p class="mb-3 text-md">Género</p>
