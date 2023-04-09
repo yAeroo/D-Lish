@@ -19,6 +19,14 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Index />
+            },
+            {
+                path: '/profile',
+                element: <Profile />
+            },
+            {
+                path: '/profile/settings',
+                element: <Settings />
             }
         ]
     },
@@ -37,17 +45,6 @@ const router = createBrowserRouter([
                 path: '/auth/register',
                 // Coponente llamado
                 element: <Register />,
-            }
-        ]
-    },
-    {
-        // Base perfil usuario
-        path: '/profile',
-        element: <Profile />,
-        children: [
-            {
-                path: '/profile/settings',
-                element: <Settings />
             }
         ]
     }
