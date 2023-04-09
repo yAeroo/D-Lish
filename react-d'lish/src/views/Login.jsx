@@ -33,9 +33,10 @@ export default function Login() {
                             Sign in
                         </button>
                         <div className="text-center text-gray-400">
+                            
                             No tienes cuenta?
                             <span className="font-bold text-black">
-                                {/* <a href="register.html">Registrate</a> */}
+                                {/* link="register.html">Registrate</a> */}
                             </span>
                         </div>
                     </div>
