@@ -52,7 +52,7 @@ export default function Index() {
 
               <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                 {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
-                <Link to="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</Link>
+                <Link to="react-d'lish\src\layouts\Profile.jsx" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Mi perfil</Link>
 
                 <Link to="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Opciones</Link>
 
@@ -172,8 +172,8 @@ export default function Index() {
       
       {/* De momento si se quiere agregar mas productos es de copiar el mismo codigo  */}
       <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-blue-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="\public\img\dbosco.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 lg:h-80">
+          <img src="\public\img\dbosco.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center  lg:h-full lg:w-full"/>
         </div>
         
         <div className="mt-4 flex justify-between">
@@ -191,7 +191,7 @@ export default function Index() {
        {/* Lo mismo se repite para cada producto */}
 
        <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-gray-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\dbosco.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -208,7 +208,7 @@ export default function Index() {
       </div>
 
       <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-orange-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-orange-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\dbosco.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -225,7 +225,7 @@ export default function Index() {
       </div>
 
       <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\dbosco.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -255,8 +255,8 @@ export default function Index() {
 
 <h1 className="text-2xl font-bold tracking-tight text-gray-900 text-center py-14"> ¿Se te antoja algo?</h1>
 
-
-<div className="bg-orange-400">
+{/* bg-[url('../img/banner_orange.jpg')] fue tambien otra opcion*/}
+<div className="bg-orange-400 bg-cover bg-center">
   <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
     <h2 className="text-2xl font-bold tracking-tight text-gray-900 text-center">Para tu <label className="text-yellow-300">mañana</label></h2>
 
@@ -264,7 +264,7 @@ export default function Index() {
       
 
       <div className="group relative " >
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-blue-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\coffee.jpg" alt="Cafe" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -285,7 +285,7 @@ export default function Index() {
 
 
        <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-500 shadow-xl  lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\food.jpeg" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -303,7 +303,7 @@ export default function Index() {
       </div>
 
       <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-orange-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-orange-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\pan-dulce.png" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
@@ -322,7 +322,7 @@ export default function Index() {
       </div>
 
       <div className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
           <img src="\public\img\comoejemplo.jpg" alt="Cafetin Don Bosco" class="h-full w-full object-cover object-center lg:h-full lg:w-full"/>
         </div>
         
