@@ -1,14 +1,9 @@
 {
 	"folders": [
 		{
+			"name": "D-Lish",
 			"path": "."
-		},
-		{
-			"path": "react-d'lish"
 		}
 	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "react-d'lish"
-	}
+	"settings": {}
 }
-  
