@@ -8,8 +8,8 @@ export default function Login() {
                 <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                     <div className="flex flex-col justify-center p-8 md:p-14">
                         <span className="mb-3 text-4xl font-bold">Dlish</span>
-                        <span className="font-light text-gray-400 ">¿Quieres saltarte la fila y tener más</span>
-                        <span className="font-light text-gray-400 "> tiempo para disfrutar con tus amigos?</span>
+                        <span className=" font-tittle hover:font-tittleserif flex items-center  font-tittlelight text-black ">Saltate esas filas aburridas</span>
+                        <span className=" font-tittle hover:font-tittleserif flex items-center  font-tittlelight  text-black ">con Dlish no las harás más.</span>
                         <div className="py-4">
                             <span className="mb-2 text-md">Correo</span>
                             <input
