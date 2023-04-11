@@ -1,27 +1,27 @@
-# D'Lish
 
-## ¿Qué es D'Lish? 💬
-D'Lish es un proyecto escolar el cual consiste en un sitio web a nivel institucional en el que a través del mismo puedas acceder a los cafetines disponibles en la institución esto con el objetivo de agilizar las colas que se forman en los recesos al comprar desayunos, almuerzo.
+<p align="center">
+    <img src='./public/readme-src/logo.png'>
+</p>
+
+## ¿Qué es Dlish? 💬
+Dlish es un proyecto escolar el cual consiste en un sitio web a nivel institucional en el que a través del mismo puedas acceder a los cafetines disponibles en la institución esto con el objetivo de agilizar las colas que se forman en los recesos al comprar desayunos, almuerzo.
 
 ## Guía de instalación 📦
-Por el momento, el proyecto trabaja de manera local, sin embargo, se necesitan de algunas herramientas para poder ejecutar o modificar el proyecto:
+Por el momento, el proyecto trabaja de manera local, sin embargo, se necesitan de algunas tecnologías y herramientas para poder lograr la ejecución y proyección del proyecto de manera correcta:
 
+| <img src="./public/readme-src/xampp-ico.svg" align='center' height='30' width='30'>  | <img src="./public/readme-src/composer-ico.svg" align='center' height='60' width='60'>   |  <img src="./public/readme-src/nodejs-ico.svg" align='center' height='40' width='40'>   | <img src="./public/readme-src/vsc-ico.svg" align='center' height='40' width='40'>| <img src="./public/readme-src/git-ico.svg" align='center' height='40' width='40'>|
+|:---:   | :---: | :---: | :---: | :---: |
+| [Xampp](https://www.apachefriends.org/es/index.html) | [Composer](https://getcomposer.org/download/)   | [NodeJs](https://nodejs.org/en)  | [Studio Code](https://code.visualstudio.com/) | [Git](https://git-scm.com/downloads) |
 
-- <p style='display:flex; align-items:center;'><img src="https://www.svgrepo.com/show/303535/visual-studio-code-logo.svg" height="20" style='margin-right: 5px'> Visual Studio Code</p>
-
-> Con el fin de editar y adaptar el código a su gusto
-
-
-- <p style='display:flex; align-items:center;'><img src="https://www.svgrepo.com/show/303208/php-1-logo.svg" height="20" style='margin-right: 5px'> Hypertext Pre-Processor</p>
-> Lenguaje utilizado principalmente para aplicar funcionalidad de la página facilitando la conexión entre los servidores y la interfaz de usuario
-
-- <p style='display:flex; align-items:center;'><img src="https://www.svgrepo.com/show/475654/github-color.svg" height="20" style='margin-right: 5px'>GitHub</p>
-> Utilizado para el manejo del repositorio la clonación del mismo
-
-Una vez teniendo las herramientas principales, se tienen que seguir los siguientes pasos para la instalación del proyecto:
+Una vez teniendo instaladas las tecnologías y herramientas necesarias para le ejecución del proyecto, ya podemos empezar a instalarlo en nuestro equipo:
 
 1. En la carpeta donde se desea instalar, abrir `GitBash` o `GitHub Desktop` y clonar el repositorio
-2. Crear una rama de colaboración para poder agregar los cambios realizados a Github
+2. Nos dirijimos a la carpeta abrimos **Simbolo del sistema** en esa misma carpeta y ejecutamos el comando `Composer install` para instalar las dependencias necesarias para ejecutar **Laravel**
+3. Crear una copia del archivo `.env.example` y renombrar la copia a `.env`
+4. Ejecutar el comando `php artisan key:generate`
+5. Dirigirse a la carpeta **react-d'lish** y abrir nuevamente la consola
+6. Ejecutar el comando `npm install` y `npm install react-icons --save` y esto comenzara a instalar las dependencias necesarias para ejecutar **ReactJs**
+7. Ejecutar el comando `npm run dev` para abrir el servidor de Vite y poder visualizar el sitio web
 
 Con estos sencillos pasos se puede ejecutar el proyecto de manera local y funcional
 
@@ -46,7 +46,7 @@ Usted es libre de:
 
 ## Otros recursos 📂
 - Enlace a Notion - Organización y seguimiento de tareas 📋
->[https://waos.notion.site/ca27dd6642f444be87203e3f353bc32b?v=dfd38e8fefe441d6ad5b61b82c976f20]
+>[https://goo.su/Fkza]
 
 - Enlace a recursos variados sobre nuestro sitio web 🎁
->[https://drive.google.com/drive/folders/18d9i2AgwUdZfs7xTXPtTgDSZez_nRO2o?usp=sharing]
+>[https://goo.su/l9sD]
