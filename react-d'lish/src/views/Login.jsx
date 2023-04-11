@@ -35,7 +35,7 @@ export default function Login() {
                             
                             ¿No tienes cuenta?
                             <span className="font-bold text-black">
-                        {/* <link to="/auth/Registro"> Registráte</link>*/}
+                            <Link to="/auth/register"> Registráte</Link>
                             </span>
                         </div>
                     </div>

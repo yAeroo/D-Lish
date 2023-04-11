@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 export default function Index() {
+
+  const [expanded, setExpanded] = useState(false);
+
     return (
         <div className="bg-white">
             <header className="relative inset-x-0 top-0 z-50">
@@ -23,6 +27,9 @@ export default function Index() {
                         <button
                             type="button"
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+
+                            aria-expanded={expanded}
+                            onClick={() => setExpanded(!expanded)}
                         >
                             <span className="sr-only">
                                 Abrir menu principal
@@ -47,43 +54,48 @@ export default function Index() {
                     <div className="hidden lg:flex lg:gap-x-12">
                         <Link
                             to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400"
+                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
                         >
                             Inicio
                         </Link>
 
                         <Link
                             to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400"
+                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
                         >
                             Cafeterias
                         </Link>
 
                         <Link
                             to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400"
+                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
                         >
                             Direccion 3
                         </Link>
 
                         <Link
                             to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400"
+                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
                         >
                             Direccion 4
                         </Link>
                     </div>
 
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+
                         {/* <!-- Profile dropdown --> */}
+
                         <div class="relative ml-3">
                             <div>
                                 <button
                                     type="button"
                                     className="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     id="user-menu-button"
-                                    aria-expanded="false"
-                                    aria-haspopup="true"
+                                    // aria-haspopup="true"
+                                    // aria-expanded="false"
+                                    aria-expanded={expanded}
+                                    onClick={() => setExpanded(!expanded)}
+
                                 >
                                     <span className="sr-only">
                                         Abrir menu usuario
@@ -96,6 +108,7 @@ export default function Index() {
                                 </button>
                             </div>
 
+                            {expanded && (
                             <div
                                 class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 role="menu"
@@ -106,7 +119,7 @@ export default function Index() {
                                 {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
                                 <Link
                                     to="/profile"
-                                    className="block px-4 py-2 text-sm text-gray-700"
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-400 transition-width duration-200 ease-in-out"
                                     role="menuitem"
                                     tabindex="-1"
                                     id="user-menu-item-0"
@@ -116,7 +129,7 @@ export default function Index() {
 
                                 <Link
                                     to="#"
-                                    className="block px-4 py-2 text-sm text-gray-700"
+                                    className="block px-4 py-2 text-sm text-gray-700  hover:text-blue-400 transition-width duration-200 ease-in-out"
                                     role="menuitem"
                                     tabindex="-1"
                                     id="user-menu-item-1"
@@ -125,8 +138,8 @@ export default function Index() {
                                 </Link>
 
                                 <Link
-                                    to="#"
-                                    className="block px-4 py-2 text-sm text-gray-700"
+                                    to="/auth/register"
+                                    className="block px-4 py-2 text-sm text-gray-700  hover:text-blue-400 transition-width duration-200 ease-in-out"
                                     role="menuitem"
                                     tabindex="-1"
                                     id="user-menu-item-2"
@@ -156,7 +169,10 @@ export default function Index() {
                                     $20.00
                                 </p>
                             </div>
+                             )}
+                                                         
                         </div>
+                           
 
                         {/* <Link to="#" className="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></Link>
           <Link to="#" className="mx-5 text-sm font-semibold leading-6 text-gray-900">Register <span aria-hidden="true">&rarr;</span></Link> */}
@@ -164,6 +180,8 @@ export default function Index() {
                 </nav>
 
                 {/* ------Mobile menu ----------*/}
+                
+                {expanded && (
 
                 <div className="lg:hidden" role="dialog" aria-modal="true">
                     {/* ----Background backdrop ------*/}
@@ -183,6 +201,9 @@ export default function Index() {
                             <button
                                 type="button"
                                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
+
+                                aria-expanded={expanded}
+                                onClick={() => setExpanded(!expanded)}
                             >
                                 <span className="sr-only">Close menu</span>
                                 <svg
@@ -201,6 +222,8 @@ export default function Index() {
                                 </svg>
                             </button>
                         </div>
+
+                        
 
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
@@ -296,8 +319,11 @@ export default function Index() {
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
+                     
                 </div>
+                )}
             </header>
 
             <div className="bg-[url('../img/Dlish_design.png')] bg-cover bg-center  h-auto text-white py-24 px-10 object-fill">
@@ -327,7 +353,7 @@ export default function Index() {
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {/* De momento si se quiere agregar mas productos es de copiar el mismo codigo  */}
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-mdshadow-xl lg:aspect-none  group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80  bg-blue-500 ">
                                 <img
                                     src="\public\img\dbosco.png"
                                     alt="Cafetin Don Bosco"
@@ -355,9 +381,35 @@ export default function Index() {
                         {/* Lo mismo se repite para cada producto */}
 
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-gray-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-gray-500 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
-                                    src="\public\img\dbosco.png"
+                                    src="\public\img\dom-sab.png"
+                                    alt="Cafetin Don Bosco"
+                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                />
+                            </div>
+
+                            <div className="mt-4 flex justify-between">
+                                <div>
+                                    <h3 className="text-sm text-gray-700">
+                                        <Link to="#">
+                                            <span
+                                                aria-hidden="true"
+                                                className="absolute inset-0 "
+                                            ></span>
+                                            <p className="text-lg font-semibold">
+                                                Cafetin domingo savio
+                                            </p>
+                                        </Link>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="group relative">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-prim lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
+                                <img
+                                    src="\public\img\lucia.png"
                                     alt="Cafetin Don Bosco"
                                     class="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                 />
@@ -381,33 +433,7 @@ export default function Index() {
                         </div>
 
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-prim lg:aspect-none group-hover:opacity-75 lg:h-80">
-                                <img
-                                    src="\public\img\dbosco.png"
-                                    alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                            </div>
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="text-lg font-semibold">
-                                                Cafetin Don Bosco
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-lime-300 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
                                     src="\public\img\dbosco.png"
                                     alt="Cafetin Don Bosco"
@@ -449,7 +475,7 @@ export default function Index() {
 
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         <div className="group relative ">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
                                     src="\public\img\coffee.jpg"
                                     alt="Cafe"
@@ -481,7 +507,7 @@ export default function Index() {
                         </div>
 
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-500 shadow-xl  lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-500 shadow-xl  lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
                                     src="\public\img\food.jpeg"
                                     alt="Cafetin Don Bosco"
@@ -510,7 +536,7 @@ export default function Index() {
                         </div>
 
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-orange-500 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-orange-500 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
                                     src="\public\img\pan-dulce.png"
                                     alt="Cafetin Don Bosco"
@@ -543,7 +569,7 @@ export default function Index() {
                         </div>
 
                         <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-lime-300 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-lime-300 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
                                     src="\public\img\comoejemplo.jpg"
                                     alt="Cafetin Don Bosco"
@@ -608,7 +634,7 @@ export default function Index() {
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <Link
                                     to="#"
-                                    className="rounded-2xl bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className="rounded-2xl bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-400 transition-width duration-300 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Ir a mi perfil
                                 </Link>
@@ -797,3 +823,5 @@ export default function Index() {
         </div>
     );
 }
+
+
