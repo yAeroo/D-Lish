@@ -6,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Clases personalizadas */
+/* Ejemplo de clases personalizadas */
 .card {
     @apply bg-base rounded overflow-hidden shadow-md relative;
 }
@@ -16,5 +16,10 @@
 }
 
 .btn {
-    @apply rounded-full py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
+    @apply rounded-2xl py-2 px-3 uppercase  font-bold cursor-pointer tracking-wider;
+}
+
+/* Estilos propios */
+.li-elem {
+    @apply mt-5 pb-2 border-b border-gray-200 flex;
 }
