@@ -8,7 +8,7 @@ export default function Profile() {
             <section id="profile" className="min-h-screen bg-[url('img/banner.jpg')] bg-cover flex items-end justify-center pt-40">
                 <article id="profile-info" className="bg-white h-[80vh] sm:w-10/12 w-full sm:rounded-t-3xl p-5 shadow-black shadow-lg transition-all">
                     <div id="profile-pic" className="w-full flex justify-center">
-                        <img src="img/example-pfp.jpg" className="-mt-28 w-52 h-52 lg:w-60 lg:h-60 rounded-full border-8 border-solid border-white transition-all"/>
+                        <img src="/img/example-pfp.jpg" className="-mt-28 w-52 h-52 lg:w-60 lg:h-60 rounded-full border-8 border-solid border-white transition-all" alt='profile-pic'/>
                     </div>
 
                     <div id="edit-bttn" className="relative">
