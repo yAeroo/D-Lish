@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src='./public/readme-src/logo.png'>
+    <img src='./public/readme-src/logo.png' height='200'>
 </p>
 
 ## ¿Qué es Dlish? 💬
