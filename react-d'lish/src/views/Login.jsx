@@ -19,16 +19,13 @@ export default function Login() {
                                 id="email"
                             />
                         </div>
+
                         <div className="py-4">
                             <span className="mb-2 text-md">Contraseña</span>
-                            <input
-                                type="password"
-                                name="pass"
-                                id="pass"
-                                className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
-                            />
+                            <input type="password" name="pass" id="pass" className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"/>
                         </div>
-                        <button className="w-full bg-blue-800 text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
+
+                        <button className="w-full bg-blue-800 text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black  hover:border-gray-300">
                             Ingresa
                         </button>
                         <div className="text-center text-gray-400">
