@@ -9,8 +9,14 @@ import Index from './views/Index';
 import Login from './views/Login.jsx';
 import Register from './views/Register';
 import Settings from './views/Settings';
+import Homepage from './views/Homepage';
 
 const router = createBrowserRouter([
+    {
+        // Base homepage
+        path: '/homepage',
+        element: <Homepage />
+    },
     {
         // IGNOREN ESTO
         path: '/',

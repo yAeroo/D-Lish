@@ -4,11 +4,11 @@ const NavLinks = () => {
     const Links = [
         {
             name:"Iniciar Sesion",
-            link:"/",
+            link:"/auth/login",
         },
         {
             name:"Registrarse",
-            link:"/",
+            link:"/auth/register",
         },
     ];
     

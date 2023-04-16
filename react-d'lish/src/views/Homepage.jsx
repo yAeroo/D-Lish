@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar';
-import NavLinks from './components/NavLinks';
-import Headers from './components/Header';
-import Hero from './components/Hero';
+import '../index.css';
+import Header from '../components/Header'
 
 function App() {
   return (
 
     <div>
-      <Headers />
+      <Header />
     </div>
 
   );
