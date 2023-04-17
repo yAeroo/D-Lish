@@ -9,7 +9,7 @@ Dlish es un proyecto escolar el cual consiste en un sitio web a nivel institucio
 ## Guía de instalación 📦
 Por el momento, el proyecto trabaja de manera local, sin embargo, se necesitan de algunas tecnologías y herramientas para poder lograr la ejecución y proyección del proyecto de manera correcta:
 
-    | <img src="./public/readme-src/xampp-ico.svg" align='center' height='30' width='30'>  | <img src="./public/readme-src/composer-ico.svg" align='center' height='60' width='60'>   |  <img src="./public/readme-src/nodejs-ico.svg" align='center' height='40' width='40'>   | <img src="./public/readme-src/vsc-ico.svg" align='center' height='40' width='40'>| <img src="./public/readme-src/git-ico.svg" align='center' height='40' width='40'>|
+| <img src="./public/readme-src/xampp-ico.svg" align='center' height='30' width='30'>  | <img src="./public/readme-src/composer-ico.svg" align='center' height='60' width='60'>   |  <img src="./public/readme-src/nodejs-ico.svg" align='center' height='40' width='40'>   | <img src="./public/readme-src/vsc-ico.svg" align='center' height='40' width='40'>| <img src="./public/readme-src/git-ico.svg" align='center' height='40' width='40'>|
 |:---:   | :---: | :---: | :---: | :---: |
 | [Xampp](https://www.apachefriends.org/es/index.html) | [Composer](https://getcomposer.org/download/)   | [NodeJs](https://nodejs.org/en)  | [Studio Code](https://code.visualstudio.com/) | [Git](https://git-scm.com/downloads) |
 
