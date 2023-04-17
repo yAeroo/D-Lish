@@ -8,7 +8,7 @@ export default function Registro() {
                 <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                     <div className="flex flex-col justify-center p-8 md:p-14">
                         <span className="mb-3 text-4xl font-bold">Dlish</span>
-                        <span className=" font-tittle hover:font-tittleserif flex items-center  font-tittlelight text-black ">¡Saltate esas filas aburridas con Dlish no las harás más.!</span>
+                        <span className=" font-tittle hover:font-tittleserif flex items-center  font-tittlelight text-black ">¡Saltate esas filas aburridas con Dlish no las harás más!</span>
                         
                         <div id="fullname" className="flex flex-row py-4">
                             <div id="firstname" className="w-1/2 mr-1">
@@ -49,7 +49,7 @@ export default function Registro() {
                         <div className="text-center text-gray-400">
                             ¿Ya tienes cuenta?
                             <span className="font-bold text-black">
-                            <Link to="/auth/login"> Inicia Seción</Link>
+                            <Link to="/auth/login"> Inicia sesión</Link>
                             </span>
                         </div>
                     </div>

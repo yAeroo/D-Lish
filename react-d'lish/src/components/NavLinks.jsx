@@ -3,7 +3,7 @@ import React from 'react';
 const NavLinks = () => {
     const Links = [
         {
-            name:"Iniciar Sesion",
+            name:"Iniciar sesión",
             link:"/auth/login",
         },
         {
