@@ -7,7 +7,11 @@ export default function Registro() {
     return (
         <>
 
-    
+    {/* Navbar sujeto a cambios (sections obligatorios si se desea el navbar redondo) */}
+
+    <section className='bg-gradient-to-r bg-gray-100 py-4 md:px-24 px-4'>
+        <Navbar />
+    </section>
     
 
         <div className="flex items-center justify-center min-h-screen bg-gray-100">

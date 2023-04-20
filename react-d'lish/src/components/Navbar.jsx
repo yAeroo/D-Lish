@@ -13,6 +13,7 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Eliminar "rounded-2xl" para lograr el Navbar cuadrado (y hacer los respectivos cambios en el componente que se requiera)  */}
       <nav className='flex justify-between rounded-2xl bg-black drop-shadow-md px-9 py-6 list-none '>
         <img src={Logo} alt="Logo" className='h-9 cursor-pointer'/>
         <div className="md:flex hidden items-center gap-10 text-white md:my-0 my-7">
