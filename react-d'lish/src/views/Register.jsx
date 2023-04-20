@@ -58,7 +58,7 @@ export default function Registro() {
                         <img
                             src="/img/logo.jpg"
                             alt="img"
-                            className="w-[450px] h-full hidden rounded-r-2xl md:block object-cover"
+                            className="w-[450px] h-full hidden rounded-r-2xl md:block object-cover mx-10"
                         />
                     </div>
                 </div>
