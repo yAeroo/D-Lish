@@ -1,9 +1,15 @@
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
 
 export default function Registro() {
     return (
         <>
+
+    
+    
+
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
                 <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
                     <div className="flex flex-col justify-center p-8 md:p-14">
