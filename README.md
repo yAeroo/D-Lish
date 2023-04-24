@@ -48,5 +48,8 @@ Usted es libre de:
 - Enlace a Notion - Organización y seguimiento de tareas 📋
 >[https://goo.su/Fkza]
 
+- Pizarra scrum - Tareas pendientes y terminadas 📒
+>[https://goo.su/6E7mkA]
+
 - Enlace a recursos variados sobre nuestro sitio web - Incluyendo manual de usuario y técnico 🎁
 >[https://goo.su/l9sD]
