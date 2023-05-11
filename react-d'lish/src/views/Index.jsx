@@ -52,36 +52,29 @@ export default function Index() {
                     </div>
 
                     <div className="hidden lg:flex lg:gap-x-12">
-                        <Link
-                            to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
-                        >
-                            Inicio
-                        </Link>
+                       
+                    <form class="flex items-center">   
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-500 focus:border-orange-500 block w-full pl-10 p-2.5 " placeholder="Search" required></input>
+                        </div>
+                        <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-gray-900 bg-orange-700 rounded-lg border border-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 ">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </form>
 
-                        <Link
-                            to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
-                        >
-                            Cafeterias
-                        </Link>
-
-                        <Link
-                            to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
-                        >
-                            Direccion 3
-                        </Link>
-
-                        <Link
-                            to="#"
-                            className="text-sm font-semibold leading-6 text-gray-900 hover:text-lime-400 transition-width duration-200 ease-in-out"
-                        >
-                            Direccion 4
-                        </Link>
                     </div>
 
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+
 
                         {/* <!-- Profile dropdown --> */}
 
@@ -347,15 +340,16 @@ export default function Index() {
             <div className="bg-white">
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                     <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                        Algunos de los cafetines disponibles son...
+                        Disfruta de...
                     </h2>
-
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    
+                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                         {/* De momento si se quiere agregar mas productos es de copiar el mismo codigo  */}
                         <div className="group relative">
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-mdshadow-xl lg:aspect-none  group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80  bg-blue-500 ">
                                 <img
-                                    src="\public\img\dbosco.png"
+                                    
+                                    src="\public\img\desayuno.jpg"
                                     alt="Cafetin Don Bosco"
                                     class="h-full w-full object-cover object-center  lg:h-full lg:w-full"
                                 />
@@ -370,7 +364,7 @@ export default function Index() {
                                                 className="absolute inset-0 "
                                             ></span>
                                             <p className="text-lg font-semibold">
-                                                Cafetin Don Bosco
+                                                Desayunos
                                             </p>
                                         </Link>
                                     </h3>
@@ -383,7 +377,7 @@ export default function Index() {
                         <div className="group relative">
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-gray-500 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
-                                    src="\public\img\dom-sab.png"
+                                    src="\public\img\almuerzos.jpg"
                                     alt="Cafetin Don Bosco"
                                     class="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                 />
@@ -398,7 +392,7 @@ export default function Index() {
                                                 className="absolute inset-0 "
                                             ></span>
                                             <p className="text-lg font-semibold">
-                                                Cafetin domingo savio
+                                                Almuerzos
                                             </p>
                                         </Link>
                                     </h3>
@@ -409,7 +403,7 @@ export default function Index() {
                         <div className="group relative">
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-prim lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
                                 <img
-                                    src="\public\img\lucia.png"
+                                    src="\public\img\otros.jpg"
                                     alt="Cafetin Don Bosco"
                                     class="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                 />
@@ -424,7 +418,7 @@ export default function Index() {
                                                 className="absolute inset-0 "
                                             ></span>
                                             <p className="text-lg font-semibold">
-                                                Cafetin Don Bosco
+                                                Otros
                                             </p>
                                         </Link>
                                     </h3>
@@ -432,31 +426,6 @@ export default function Index() {
                             </div>
                         </div>
 
-                        <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-lime-300 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
-                                <img
-                                    src="\public\img\dbosco.png"
-                                    alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                            </div>
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="text-lg font-semibold">
-                                                Cafetin Don Bosco
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -680,63 +649,8 @@ export default function Index() {
                                 </span>
                             </Link>
                         </div>
-                        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                            <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                    Recursos
-                                </h2>
-                                <ul class="text-gray-600 dark:text-gray-400 font-medium">
-                                    <li class="mb-4">
-                                        <Link
-                                            to="https://es.reactjs.org"
-                                            class="hover:underline"
-                                        >
-                                            React
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            to="https://tailwindcss.com/"
-                                            class="hover:underline"
-                                        >
-                                            Tailwind CSS
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                    Siguenos
-                                </h2>
-                                <ul class="text-gray-600 dark:text-gray-400 font-medium">
-                                    <li class="mb-4">
-                                        <Link
-                                            to="https://github.com/yAerosmith/D-Lish"
-                                            class="hover:underline "
-                                        >
-                                            Github
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                                    Legal
-                                </h2>
-                                <ul class="text-gray-600 dark:text-gray-400 font-medium">
-                                    <li class="mb-4">
-                                        <Link to="#" class="hover:underline">
-                                            Politica de privacidad
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" class="hover:underline">
-                                            Terminos y condiciones
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+                       
                     </div>
                     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                     <div class="sm:flex sm:items-center sm:justify-between">
