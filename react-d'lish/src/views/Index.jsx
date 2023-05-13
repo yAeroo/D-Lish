@@ -343,7 +343,39 @@ export default function Index() {
                         Disfruta de...
                     </h2>
                     
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 bg-blue-500 rounded-md p-5 ">
+
+                    <div className="group relative">
+                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-prim lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
+                                <img
+                                    src="\public\img\otros.jpg"
+                                    alt="Cafetin Don Bosco"
+                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                />
+                            </div>
+
+                            {/* color degradado en las categorias */}
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900"></div>
+                            <div class="absolute inset-0 flex items-center justify-center"></div>
+
+                            <div className="mt-4 flex justify-between">
+                                <div>
+                                    <h3 className="text-sm text-gray-700">
+                                        <Link to="#">
+                                            <span
+                                                aria-hidden="true"
+                                                className="absolute inset-0 "
+                                            ></span>
+                                            <p className="text-white font-semibold text-5xl   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                                Otros
+                                            </p>
+                                        </Link>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        
                         {/* De momento si se quiere agregar mas productos es de copiar el mismo codigo  */}
                         <div className="group relative">
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-mdshadow-xl lg:aspect-none  group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80  bg-blue-500 ">
@@ -355,6 +387,11 @@ export default function Index() {
                                 />
                             </div>
 
+                              {/* color degradado en las categorias */}
+                              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900"></div>
+                            <div class="absolute inset-0 flex items-center justify-center"></div>
+
+
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-sm text-gray-700">
@@ -363,13 +400,14 @@ export default function Index() {
                                                 aria-hidden="true"
                                                 className="absolute inset-0 "
                                             ></span>
-                                            <p className="text-lg font-semibold">
+                                            <p className="text-white font-semibold text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
                                                 Desayunos
                                             </p>
                                         </Link>
                                     </h3>
                                 </div>
                             </div>
+                            
                         </div>
 
                         {/* Lo mismo se repite para cada producto */}
@@ -383,6 +421,10 @@ export default function Index() {
                                 />
                             </div>
 
+                              {/* color degradado en las categorias */}
+                              <div class="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900"></div>
+                            <div class="absolute inset-0 flex items-center justify-center"></div>
+
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-sm text-gray-700">
@@ -391,7 +433,7 @@ export default function Index() {
                                                 aria-hidden="true"
                                                 className="absolute inset-0 "
                                             ></span>
-                                            <p className="text-lg font-semibold">
+                                            <p className="text-white font-semibold text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                                 Almuerzos
                                             </p>
                                         </Link>
@@ -400,31 +442,7 @@ export default function Index() {
                             </div>
                         </div>
 
-                        <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-prim lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
-                                <img
-                                    src="\public\img\otros.jpg"
-                                    alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                            </div>
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="text-lg font-semibold">
-                                                Otros
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
