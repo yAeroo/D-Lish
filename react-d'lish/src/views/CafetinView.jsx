@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Pollo from "../../public/img/pollo.jpg";
 import Carne from "../../public/img/carne.jpg";
 import { IoChevronBack } from "react-icons/io5";
@@ -32,29 +33,43 @@ export default function CafetinView() {
             <FaRegHeart className="w-8 h-8 mr-8 mt-7 " />
           </div>
         
-          <section className="flex items-center justify-between text-white my-8 px-6">
-              <button className='bg-prim rounded-md'>
-                <h2 className="text-xl font-normal px-2 py-2">Desayunos</h2>
+          <section className="flex items-center justify-between text-white my-8 px-6 md:mx-32  ">
+
+          
+
+              <button className='bg-prim rounded-xl'>
+                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Desayunos</h2>
               </button>
         
-              <button className='bg-prim rounded-md'>
-                <h2 className="text-xl font-normal px-2 py-2">Almuerzos</h2>
+              <button className='bg-prim rounded-xl'>
+                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Almuerzos</h2>
               </button>
         
-              <button className='bg-prim rounded-md'>
-                <h2 className="text-xl font-normal px-2 py-2">Bebidas</h2>
+              <button className='bg-prim rounded-xl'>
+                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Bebidas</h2>
               </button>
           </section>
         
-          <section className="grid grid-cols-1 gap-8 md:grid-cols-4 md:mt-32 my-8 px-1 mt-10">
+          <div id="text-cont" className='inline-block mt-5'>
+                    <p className='font-title font-bold 
+                        text-3xl md:text-3xl 
+                        pt-5 text-white ml-10'> 
+                        Almuerzos del dia de hoy  <hr className='h-[3px] mt-1 border-prim rounded-full border-[2px]'/>
+                    </p>
+                    
+          </div>
+          
+
+          <section className="grid grid-cols-1 gap-8 md:grid-cols-4 md:mt-32 my-8 px-1 mt-5">
         
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+
+            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl text-3xl">
               <div className="md:flex">
                 <div className="md:shrink-0">
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -65,7 +80,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -76,7 +91,7 @@ export default function CafetinView() {
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -87,7 +102,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -98,7 +113,7 @@ export default function CafetinView() {
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -109,7 +124,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -120,7 +135,7 @@ export default function CafetinView() {
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -131,7 +146,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -142,7 +157,7 @@ export default function CafetinView() {
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -153,7 +168,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -164,7 +179,7 @@ export default function CafetinView() {
                   <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Pollo</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
                 </div>
               </div>
             </div>
@@ -175,7 +190,7 @@ export default function CafetinView() {
                   <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
                 </div>
                 <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
                 </div>
               </div>
             </div>
@@ -183,7 +198,7 @@ export default function CafetinView() {
         
           </section>
         
-        
+          <Footer />
         
         </section>
         
