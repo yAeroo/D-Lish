@@ -1,11 +1,11 @@
 import React from 'react';
-import Pollo from "./img/pollo.jpg";
-import Carne from "./img/carne.jpg";
+import Pollo from "../../public/img/pollo.jpg";
+import Carne from "../../public/img/carne.jpg";
 import { IoChevronBack } from "react-icons/io";
 import { FaUserCircle } from "react-icons/io";
 import { FaRegHeart } from "react-icons/io";
 
-export default function ViewCafetin() {
+export default function CafetinView() {
   return (
 
         <>
@@ -193,5 +193,5 @@ export default function ViewCafetin() {
         
             
         </>
-  )
+  );
 }
