@@ -10,12 +10,18 @@ import Login from './views/Login.jsx';
 import Register from './views/Register';
 import Settings from './views/Settings';
 import Homepage from './views/Homepage';
+import ViewCafetin from './views/ViewCafetin';
 
 const router = createBrowserRouter([
     {
         // Base homepage
         path: '/homepage',
         element: <Homepage />
+    },
+    {
+        // Base Vista Cafetin
+        path: '/ViewCafetin',
+        element: <ViewCafetin />
     },
     {
         // IGNOREN ESTO
