@@ -2,13 +2,33 @@ import React from "react";
 
 function Modal({ setOpenModal }) {
   return (
-<div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-      <div className="md:flex">
-        <div className="md:shrink-0">
-          <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="titleCloseBtn">
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+          >
+            X
+          </button>
         </div>
-        <div className="p-8 bg-prim">
-          <div className="tracking-wide text-sm text-white font-semibold">Carne</div>
+        <div className="title">
+          <h1>Are You Sure You Want to Continue?</h1>
+        </div>
+        <div className="body">
+          <p>The next page looks amazing. Hope you want to go there!</p>
+        </div>
+        <div className="footer">
+          <button
+            onClick={() => {
+              setOpenModal(false);
+            }}
+            id="cancelBtn"
+          >
+            Cancel
+          </button>
+          <button>Continue</button>
         </div>
       </div>
     </div>

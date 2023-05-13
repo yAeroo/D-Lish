@@ -12,6 +12,7 @@ import Settings from './views/Settings';
 import Homepage from './views/Homepage';
 import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
+import testModel from './views/testModel';
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
                 path: '/cafetinView',
                 element: <CafetinView />
             },
+            {
+                path: '/testModel',
+                element: <testModel />
+            }
         ]
     },
     {
