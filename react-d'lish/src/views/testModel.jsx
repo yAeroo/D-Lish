@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Modal from "./Modal/Modal";
 
-function App() {
+function testmodel() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="App">
-      <h1>Hey, click on the button to open the modal.</h1>
+    <div className="testmodel">
+      <h1>Prueba el boton para abrir el modal.</h1>
       <button
         className="openModalBtn"
         onClick={() => {
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default testmodel;

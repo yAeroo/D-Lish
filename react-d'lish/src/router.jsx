@@ -22,6 +22,10 @@ const router = createBrowserRouter([
         path: '/homepage',
         element: <Homepage />
     },
+    {
+        path:'/testModel',
+        element:<testModel />
+    },
     
     {
         // IGNOREN ESTO
@@ -47,10 +51,6 @@ const router = createBrowserRouter([
             {
                 path: '/cafetinView',
                 element: <CafetinView />
-            },
-            {
-                path: '/testModel',
-                element: <testModel />
             }
         ]
     },
