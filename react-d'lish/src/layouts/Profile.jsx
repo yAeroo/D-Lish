@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { AiFillEdit } from "react-icons/ai";
+import { FaMoneyBillWave } from "react-icons/fa";
 // Componentes
 import Preferences from "../components/Preferences";
+import PostAuthNavbar from "../components/Post-AuthNavbar";
 
 export default function Profile() {
     return (
         <>
+            <PostAuthNavbar />
+        
             <section
                 id="profile"
                 className="min-h-screen bg-[url('img/banner.jpg')] bg-cover flex items-end justify-center pt-40 "
@@ -23,6 +27,20 @@ export default function Profile() {
                             className="-mt-28 w-52 h-52 lg:w-60 lg:h-60 rounded-full border-8 border-solid border-white transition-all"
                             alt="profile-pic"
                         />
+                    </div>
+
+                    <div id="funds-show" className="relative">
+                        <Link
+                            to=""
+                            className="absolute -top-20 lg:-top-28 right-[85%] md:right-[70%] xl:right-[82%] flex md:w-48 items-center justify-center bg-prim p-2 rounded-full"
+                        >
+                            <span className="sm:mx-2">
+                                <FaMoneyBillWave size={"30"} color={"white"} />
+                            </span>
+                            <span className="hidden md:block text-lg font-bold font-plane text-white transition-all">
+                                Fondos: $3.50 
+                            </span>
+                        </Link>
                     </div>
 
                     <div id="edit-bttn" className="relative">

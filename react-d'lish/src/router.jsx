@@ -10,7 +10,10 @@ import Login from './views/Login.jsx';
 import Register from './views/Register';
 import Settings from './views/Settings';
 import Homepage from './views/Homepage';
+import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
+
+
 
 const router = createBrowserRouter([
     {
@@ -18,11 +21,7 @@ const router = createBrowserRouter([
         path: '/homepage',
         element: <Homepage />
     },
-    {
-        // Base Vista Cafetin
-        path: '/cafetinView',
-        element: <CafetinView />
-    },
+    
     {
         // IGNOREN ESTO
         path: '/',
@@ -39,7 +38,15 @@ const router = createBrowserRouter([
             {
                 path: '/profile/settings',
                 element: <Settings />
-            }
+            },
+            {
+                path: '/logs',
+                element: <Logs />
+            },
+            {
+                path: '/cafetinView',
+                element: <CafetinView />
+            },
         ]
     },
     {

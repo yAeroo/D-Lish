@@ -1,9 +1,9 @@
 import React from 'react';
 import Pollo from "../../public/img/pollo.jpg";
 import Carne from "../../public/img/carne.jpg";
-import { IoChevronBack } from "react-icons/io";
-import { FaUserCircle } from "react-icons/io";
-import { FaRegHeart } from "react-icons/io";
+import { IoChevronBack } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 export default function CafetinView() {
   return (

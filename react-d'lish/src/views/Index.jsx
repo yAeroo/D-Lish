@@ -125,6 +125,16 @@ export default function Index() {
                                 </Link>
 
                                 <Link
+                                    to="/logs"
+                                    className="block px-4 py-2 text-sm text-gray-700  hover:text-blue-400 transition-width duration-200 ease-in-out"
+                                    role="menuitem"
+                                    tabindex="-1"
+                                    id="user-menu-item-1"
+                                >
+                                    Registro de pedidos
+                                </Link>
+
+                                <Link
                                     to="#"
                                     className="block px-4 py-2 text-sm text-gray-700  hover:text-blue-400 transition-width duration-200 ease-in-out"
                                     role="menuitem"
@@ -266,6 +276,13 @@ export default function Index() {
                                             className="block rounded-md  py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white"
                                         >
                                             Mi perfil
+                                        </Link>
+
+                                        <Link
+                                            to="/logs"
+                                            className="block rounded-md py-2 text-base font-medium text-gray-900 hover:bg-gray-700 hover:text-white"
+                                        >
+                                            Registro de pedidos
                                         </Link>
 
                                         <Link
