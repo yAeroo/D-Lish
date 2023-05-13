@@ -12,7 +12,7 @@ import Settings from './views/Settings';
 import Homepage from './views/Homepage';
 import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
-import testModel from './views/testModel';
+import TestModel from './views/TestModel';
 
 
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     },
     {
         path:'/testModel',
-        element:<testModel />
+        element: <TestModel />
     },
     
     {
