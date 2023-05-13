@@ -31,7 +31,7 @@ export default function LogCard() {
 
             <section id="log-card" className='p-2 my-2 flex shadow-lg shadow-slate-500 bg-[#ecf0f1] rounded-md w-96'>
                 <div id="img-cont w-full">
-                    <img src="img/desayuno.jpg" alt="Img" className='h-[100px] w-[125px] rounded-lg'/>
+                    <img src="img/desayuno.png" alt="Img" className='h-[100px] w-[125px] rounded-lg'/>
                 </div>
 
                 <div id="info-cont" className='p-2 w-full'>

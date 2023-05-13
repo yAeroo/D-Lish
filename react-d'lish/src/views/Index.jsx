@@ -348,7 +348,8 @@ const [expanded, setExpanded] = useState(false);
 
             <div className="bg-white">
 
-                <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+            {/* max-w-2xl  */}
+                <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                     <h2 className="text-2xl font-bold tracking-tight text-gray-900">
                         Disfruta de...
                     </h2>
@@ -405,7 +406,7 @@ const [expanded, setExpanded] = useState(false);
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
+                                        <Link to="/cafetinView">
                                             <span
                                                 aria-hidden="true"
                                                 className="absolute inset-0 "
