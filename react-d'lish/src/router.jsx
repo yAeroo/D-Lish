@@ -1,4 +1,4 @@
-// Librería para autentificación y rutas
+// Librería para el manejo de rutas y autentificación
 import { createBrowserRouter } from 'react-router-dom';
 // Layouts
 import Layout from './layouts/Layout';
@@ -15,49 +15,24 @@ import CafetinView from './views/CafetinView';
 import TestModel from './views/TestModel';
 
 
-
+// Las rutas se manejan mediante un arreglo de objetos
 const router = createBrowserRouter([
     {
-        // Base homepage
-        path: '/homepage',
-        element: <Homepage />
-    },
-    {
-        path:'/testModel',
-        element: <TestModel />
-    },
-    
-    {
-        // IGNOREN ESTO
+        // Ruta
         path: '/',
+        // Componente a mostrar ó Layout
         element: <Layout />,
+        // Subcomponentes ó "hijos"
         children: [
             {
                 index: true,
                 element: <Index />
-            },
-            {
-                path: '/profile',
-                element: <Profile />
-            },
-            {
-                path: '/profile/settings',
-                element: <Settings />
-            },
-            {
-                path: '/logs',
-                element: <Logs />
-            },
-            {
-                path: '/cafetinView',
-                element: <CafetinView />
             }
         ]
     },
     {
-        // Base Padre
         path: '/auth',
-        element: <AuthLayout />,
+        element: < AuthLayout />,
         children: [
             // Definición de sus hijos
             {
@@ -72,6 +47,61 @@ const router = createBrowserRouter([
             }
         ]
     }
+
+    // {
+    //     // Base homepage
+    //     path: '/homepage',
+    //     element: <Homepage />
+    // },
+    // {
+    //     path: '/testModel',
+    //     element: <TestModel />
+    // },
+
+    // {
+    //     path: '/',
+    //     element: <Layout />,
+    //     children: [
+    //         {
+    //             index: true,
+    //             element: <Index />
+    //         },
+    //         {
+    //             path: '/profile',
+    //             element: <Profile />
+    //         },
+    //         {
+    //             path: '/profile/settings',
+    //             element: <Settings />
+    //         },
+    //         {
+    //             path: '/logs',
+    //             element: <Logs />
+    //         },
+    //         {
+    //             path: '/cafetinView',
+    //             element: <CafetinView />
+    //         }
+    //     ]
+    // },
+    // {
+    //     // Base Padre
+    //     path: '/auth',
+    //     element: <AuthLayout />,
+    //     children: [
+    //         // Definición de sus hijos
+    //         {
+    //             path: '/auth/login',
+    //             // Coponente llamado
+    //             element: <Login />,
+    //         },
+    //         {
+    //             path: '/auth/register',
+    //             // Coponente llamado
+    //             element: <Register />,
+    //         }
+    //     ]
+    // }
 ]);
 
 export default router;
