@@ -13,6 +13,8 @@ import Homepage from './views/Homepage';
 import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
 import TestModel from './views/TestModel';
+import Order from './views/Order';
+import Dish from './views/Dish';
 
 
 // Las rutas se manejan mediante un arreglo de objetos
@@ -52,6 +54,16 @@ const router = createBrowserRouter([
         path: '/homepage',
         element: <Homepage />
     },
+    {
+        //Pagina de Ordenar
+        path: '/order',
+        element: <Order/>
+    },
+    {
+        //Pagina del Platillo
+        path: '/dish',
+        element: <Dish />
+    }
     // {
     //     path: '/testModel',
     //     element: <TestModel />
