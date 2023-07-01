@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src='./public/readme-src/logo.png' height='200'>
+    <img src="./laravel-d'lish/public/readme-src/logo.png" height='200'>
 </p>
 
 ## ¿Qué es Dlish? 💬
