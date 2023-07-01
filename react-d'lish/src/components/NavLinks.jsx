@@ -1,22 +1,23 @@
-import React from 'react';
+// Para una mejor velocidad entre link
+import { Link } from 'react-router-dom';
 
 const NavLinks = () => {
-    const Links = [
+    const Enlaces = [
         {
-            name:"Iniciar sesión",
-            link:"/auth/login",
+            name: "Iniciar sesión",
+            link: "/auth/login",
         },
         {
-            name:"Registrarse",
-            link:"/auth/register",
+            name: "Registrarse",
+            link: "/auth/register",
         },
     ];
-    
-        return (
+
+    return (
         <>
-            {Links.map((Link, i) => (
-                <li key={i} className="font-semibold hover:text-terc">
-                    <a href={Link.link}>{Link.name}</a>
+            {Enlaces.map((Enlace, i) => (
+                <li key={i} className="font-semibold hover:text-terc hover:bg-accent">
+                    <Link to={Enlace.link}>{Enlace.name}</Link>
                 </li>
             ))}
         </>

@@ -8,18 +8,60 @@
 
 /* Ejemplo de clases personalizadas */
 .card {
-    @apply bg-base rounded overflow-hidden shadow-md relative;
+  @apply bg-base rounded overflow-hidden shadow-md relative;
 }
 
 .badge {
-    @apply bg-prim text-white text-sm uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2;
+  @apply bg-prim text-white text-sm uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2;
 }
 
 .btn {
-    @apply rounded-2xl py-2 px-3 uppercase  font-bold cursor-pointer tracking-wider;
+  @apply rounded-2xl py-2 px-3 uppercase  font-bold cursor-pointer tracking-wider;
 }
 
 /* Estilos propios */
 .li-elem {
-    @apply mt-5 pb-2 border-b border-gray-200 flex;
+  @apply mt-5 pb-2 border-b border-gray-200 flex;
+}
+
+.title-form {
+  @apply text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center uppercase font-title;
+}
+
+.content-form-center {
+  @apply flex flex-col items-center justify-center px-6 pb-8 mx-auto animate-fade animate-ease-in-out;
+}
+
+/* Cambiando color de boton de visualizar password */
+input {
+  color: white;
+}
+::-ms-reveal {
+  filter: invert(100%);
+}
+
+/* ===== Scroll bar ====== */
+
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la scrollbar */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo del riel de la scrollbar (el fondo) */
+::-webkit-scrollbar-track {
+  background-color: #000000;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo del pulgar de la scrollbar (la parte móvil) */
+::-webkit-scrollbar-thumb {
+  background-color: #363636;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo del pulgar de la scrollbar al pasar el cursor sobre él */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  border-radius: 5px; /* Bordes redondeados */
 }
