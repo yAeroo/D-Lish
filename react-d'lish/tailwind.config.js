@@ -7,7 +7,15 @@ export default {
   theme: {
     extend: {
       height: {
-        '22': '77px'
+        '22': '77px',
+        '450': '450px',
+        '280': '280px',
+      },
+      width: {
+        '380': '380px',
+      },
+      dropShadow: {
+        '4xll': '4px 4px 17px rgba(0,0,0,0.76)',
       },
       colors: {
         // Colores propios Dlish
