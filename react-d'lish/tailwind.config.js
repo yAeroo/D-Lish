@@ -13,6 +13,15 @@ export default {
       },
       width: {
         '380': '380px',
+        '50' : '50%',
+        
+      },
+      maxWidth: {
+        '8xl': '86rem',
+      },
+      
+      fontSize: {
+        '50' : '50%',
       },
       dropShadow: {
         '4xll': '4px 4px 17px rgba(0,0,0,0.76)',

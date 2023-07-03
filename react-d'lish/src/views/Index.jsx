@@ -6,14 +6,13 @@ import Modal from "./Modal/Modal";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Importacion de estilos de swiper
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import "./styles.css";
 
-// import required modules
+// importacion de modulos requeridos
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Index() {
@@ -349,10 +348,11 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
+        loop={true}
+        // autoplay={{
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // }}
         pagination={{
           clickable: true,
         }}
@@ -373,39 +373,38 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
             </div>
             </div>
         </SwiperSlide>
-        <SwiperSlide className="text-center text-xl bg-white flex justify-center items-center">Slide 3</SwiperSlide>
+        <SwiperSlide className="text-center text-xl  flex justify-center items-center">
+       
+        <div className="flex w-full">
+        <div className="text-center flex items-center w-full justify-center bg-base-100">
+        <div className="max-w-md text-50 sm:text-xl">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
+                </div>
+        </div>
+                                 <img 
+                                    src="\public\img\food.jpeg"
+                                    alt="Cafetin Don Bosco"
+                                    class="h-auto w-50 object-cover object-center"
+                                />
+        </div>
+
+        </SwiperSlide>
         <SwiperSlide className="text-center text-xl bg-white flex justify-center items-center">Slide 4</SwiperSlide>
 
       </Swiper>
     </>
   
 
+            {/* --------------Espacio para diferentes tipos de comidas-------------------  */}
 
+        
+            {/* hero */}
+            <div className=" grid pt-10 pb-10 place-items-center bg-cover bg-center min-h-screen bg-base-100">
 
-
-
-
-            {/* <div className="bg-[url('../img/Dlish_design.png')] bg-cover bg-center  h-auto text-white py-24 px-10 object-fill">
-                <div className="md:w-1/2">
-                    <p className="font-bold text-sm uppercase">¿Con hambre?</p>
-                    <p className="text-3xl font-bold">D'Lish</p>
-                    <p className="text-2xl mb-10 leading-none">
-                        Ayudandote a saciar tu apetito
-                    </p>
-                    <Link
-                        to="#"
-                        className="bg-orange-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
-                    >
-                        Contactanos
-                    </Link>
-                </div>
-            </div> */}
-
-            {/* --------------Cafeterias-------------------  */}
-
-            <div className="hero min-h-screen bg-base-100">
-
-                <div className="hero-content flex-col lg:flex-row-reverse gap-10 bg-prim">
+            {/* hero-content */}
+                <div className="  z-0 flex items-center justify-center max-w-7xl p-4 flex-col lg:flex-row-reverse gap-10 bg-prim">
 
                     <div className="flex gap-2">
                         <div className="flex-row gap-2">
@@ -427,21 +426,18 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
                         </div>
                 </div>
             </div>
-
-
-            {/* Recomendacion segun horario */}
-            <h1 className="text-5xl font-title font-bold tracking-tight text-gray-800 text-center py-14">
-                ¿Se te antoja algo?
-            </h1>
+          
 
             {/* bg-[url('../img/banner_orange.jpg')] fue tambien otra opcion*/}
-            <div className="bg-prim bg-cover bg-center">
+
+            <div className="bg-primary bg-opacity-90 bg-cover bg-center">
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 font-plane">
                     <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-left">
-                        Lo mas <label className="text-white">comprado</label>
+                        Lo mas <label className="text-white">vendido</label>
                     </h2>
 
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    {/*sm: grid-cols-1  */}
+                    <div className="mt-6 grid gap-x-6 gap-y-10 grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
                         <div className="group relative bg-zinc-900 rounded-lg" >
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
