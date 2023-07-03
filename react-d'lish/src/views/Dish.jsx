@@ -24,52 +24,12 @@ return (
 
 <div className="flex flex-col w-full border-opacity-50">
 
-  <div className="mt-4 grid h-20 bg-[#f5f3ff] rounded-box place-items-center  text-black font-bold">Opciones Principales</div>
-          <div className="sm:mt-6">
-          <div className="dropdown dropdown-bottom">
-  <label tabIndex={0} className="btn m-1 hover:bg-primary">Ver Opciones</label>
-  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-    <li><a>Tocino
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Huevos Picado
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Platanos Fritos
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Frijoles Borrachos
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-  </ul>
-</div>
-</div>
+<br />
 
-<div className="py-6 mt-4 grid h-20 bg-[#f5f3ff] rounded-box place-items-center text-black font-bold">Complementos</div>
-          <div className="sm:mt-6">
-          <div className="dropdown dropdown-bottom">
-  <label tabIndex={0} className="btn m-1">Ver Opciones</label>
-  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-    <li><a>Queso Fresco
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Queso Duro
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Crema
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-  </ul>
-</div>
-</div>
-
-<div className="mt-4 grid h-20 bg-[#f5f3ff] rounded-box place-items-center text-black font-bold">Bebidas</div>
-          <div className="sm:mt-6">
-          <div className="dropdown dropdown-bottom">
-  <label tabIndex={0} className="btn m-1">Ver Opciones</label>
-  <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-    <li><a>Café
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-    <li><a>Fresco
-    <input type="checkbox" className="toggle toggle-success"/></a></li>
-  </ul>
-</div>
-</div>
-
-{/* <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div className=" text-white font-bold mb-1">Opciones Principales</div>
+<hr className='bg-white' />
+<br />
+ <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
    <div class="flow-root">
         <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
             <li class="py-3 sm:py-4">
@@ -80,7 +40,7 @@ return (
                         </p>
                     </div>
                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="toggle toggle-success"/>
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
@@ -92,7 +52,7 @@ return (
                         </p>
                     </div>
                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="toggle toggle-success"/>
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
@@ -104,7 +64,7 @@ return (
                         </p>
                     </div>
                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="toggle toggle-success"/>
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
@@ -116,7 +76,7 @@ return (
                         </p>
                     </div>
                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="toggle toggle-success"/>
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
@@ -128,13 +88,94 @@ return (
                         </p>
                     </div>
                     <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="toggle toggle-success"/>
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
         </ul>
    </div>
-</div> */}
+</div> 
+<br />
+<div className=" text-white font-bold mb-1">Complementos</div>
+<hr className='bg-white' />
+<br />
+ <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+   <div class="flow-root">
+        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Queso Fresco
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
+                    </div>
+                </div>
+            </li>
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Queso Duro
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
+                    </div>
+                </div>
+            </li>
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Crema
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+   </div>
+</div> 
+<br />
+<div className=" text-white font-bold mb-1">Bebidas</div>
+<hr className='bg-white' />
+<br />
+ <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+   <div class="flow-root">
+        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Café
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
+                    </div>
+                </div>
+            </li>
+            <li class="py-3 sm:py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Fresco
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+   </div>
+</div> 
+
 
 </div>
 
