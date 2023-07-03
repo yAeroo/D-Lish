@@ -5,208 +5,74 @@ import Carne from "../../public/img/carne.jpg";
 import { IoChevronBack } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import Navbar from '../components/Navbar';
+import NavCafetin from '../components/NavCafetin';
+import WiggleAlert from '../components/WiggleAlert';
+
 
 export default function CafetinView() {
+
+  
   return (
 
         <>
-        
-        {/* Navbar sujeto a cambios (sections obligatorios si se desea el navbar redondo) */}
-        
-        <section className="bg-white py-6 px-4">
-          <div className="flex items-center bg-white">
-            <IoChevronBack className="w-10 h-12 mr-4" />
-            <FaUserCircle className="w-12 h-12 ml-auto" />
-          </div>
-        
-          <div className='flex items-center'>
-            <h2 className="text-7xl font-bold mt-10 px-2">Miguel Magone</h2>
-            <FaRegHeart className="w-8 h-8 ml-3 mt-16" />
-          </div>
-        
-          
-        </section>
-        
-        <section className="bg-secu text-white mt-6 min-h-screen rounded-t-xl items-center justify-between">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold px-2 ml-6 mt-6 text-terc">● Abierto</h2>
-            <FaRegHeart className="w-8 h-8 mr-8 mt-7 " />
-          </div>
-        
-          <section className="flex items-center justify-between text-white my-8 px-6 md:mx-32  ">
 
-          
-
-              <button className='bg-prim rounded-xl'>
-                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Desayunos</h2>
-              </button>
-        
-              <button className='bg-prim rounded-xl'>
-                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Almuerzos</h2>
-              </button>
-        
-              <button className='bg-prim rounded-xl'>
-                <h2 className="text-xl font-normal px-2 py-2 md:px-7 md:py-7">Bebidas</h2>
-              </button>
+          <section className='md:px-8'>
+            <div className=''><NavCafetin></NavCafetin></div>
           </section>
-        
-          <div id="text-cont" className='inline-block mt-5'>
-                    <p className='font-title font-bold 
-                        text-3xl md:text-3xl 
-                        pt-5 text-white ml-10'> 
-                        Almuerzos del dia de hoy  <hr className='h-[3px] mt-1 border-prim rounded-full border-[2px]'/>
-                    </p>
-                    
-          </div>
-          
 
-          <section className="grid grid-cols-1 gap-8 md:grid-cols-4 md:mt-32 my-8 px-1 mt-5">
-        
-
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl text-3xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
+          <section className="mb-[3rem] md:mb-[5rem] animate-fade-right animate-ease-in-out animate-once animate-duration-[1000ms]">
+            <div className="flex justify-between items-center">
+              <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">Maria Auxiliadora</h1>
+              <div className="stat flex flex-col items-end">
+                <div className="stat-title text-xs md:text-lg">Recomendado por</div>
+                <div className="flex items-center">
+                  <div className="stat-figure text-primary text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 md:w-8 md:h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                  </div>
+                  <div className="stat-value text-sm md:text-3xl text-primary ml-1">171</div>
                 </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
+                <div className="stat-desc text-sm md:text-lg">Estudiantes</div>
               </div>
             </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Pollo} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Pollo a la parrilla</div>
-                </div>
-              </div>
-            </div>
-        
-            <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-              <div className="md:flex">
-                <div className="md:shrink-0">
-                  <img src={Carne} className="h-48 w-full object-cover md:h-full md:w-48" />
-                </div>
-                <div className="p-8 bg-prim">
-                  <div className="tracking-wide text-lg text-white font-semibold">Carne asada</div>
-                </div>
-              </div>
-            </div>
-        
-        
           </section>
+
+
+
+
+          <section className='bg-neutral text-white mt-6 min-h-screen rounded-xl items-center justify-between mx-2 animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]'>
         
-          <Footer />
-        
-        </section>
-        
-        
-        
-        
-        
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">● Abierto</h2>
+              </div>
+              <div className="flex items-center">
+                <h2 className="text-2xl px-1 ml-6 md:ml-[3rem] mt-6 text-white">171</h2>
+                <FaRegHeart className="w-7 h-7 ml-2 mt-6 mr-6 md:mr-[3rem]"/>
+              </div>
+            </div>
+
+            <section className='mb-10'>
+              <WiggleAlert />
+            </section>
+
+
+            <section className='flex items-center justify-center'>
+              <div className="join">
+                <input className="join-item btn bg-base-100" type="radio" name="options" aria-label="Desayunos" />
+                <input className="join-item btn bg-base-100" type="radio" name="options" aria-label="Almuerzos" />
+                <input className="join-item btn bg-base-100" type="radio" name="options" aria-label="Bebidas" />
+              </div>
+            </section>
             
+            
+
+
+          </section>
+
+
+          <Footer></Footer>
+
         </>
   );
 }
