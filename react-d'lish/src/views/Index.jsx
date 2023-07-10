@@ -3,12 +3,24 @@ import { useState } from 'react';
 import Footer from "../components/Footer";
 import Modal from "./Modal/Modal";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Importacion de estilos de swiper
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+// importacion de modulos requeridos
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 export default function Index() {
 
 const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
 
     return (
-        <div className="bg-white">
+        <div className="bg-base-100">
             <header className="relative inset-x-0 top-0 z-50">
                 <nav
                     className="flex items-center justify-between p-6 lg:px-8 bg-white shadow-md shadow-gray-500"
@@ -330,147 +342,102 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
                 )}
             </header>
 
-            <div className="bg-[url('../img/Dlish_design.png')] bg-cover bg-center  h-auto text-white py-24 px-10 object-fill">
-                <div className="md:w-1/2">
-                    <p className="font-bold text-sm uppercase">¿Con hambre?</p>
-                    <p className="text-3xl font-bold">D'Lish</p>
-                    <p className="text-2xl mb-10 leading-none">
-                        Ayudandote a saciar tu apetito
-                    </p>
-                    <Link
-                        to="#"
-                        className="bg-orange-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800"
-                    >
-                        Contactanos
-                    </Link>
+            {/* Carousel */}
+
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        // autoplay={{
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper w-full h-450 text-primary"
+      >
+        <SwiperSlide className="text-center text-xl bg-white flex justify-center items-center"><img src="..\img\Dlish_design.png" className="block w-full h-full object-cover"></img></SwiperSlide>
+        <SwiperSlide className="text-center text-xl bg-white flex justify-center items-center">
+                    <div className="hero min-h-screen bg-[url('../img/Dlish_design.png')]"  >
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+                <div className="max-w-md">
+                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>
-
-            {/* --------------Cafeterias-------------------  */}
-
-            <div className="bg-white">
-
-            {/* max-w-2xl  */}
-                <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                        Disfruta de...
-                    </h2>
-                    
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8 bg-prim rounded-md p-5 ">
-
-                        {/* De momento si se quiere agregar mas productos es de copiar el mismo codigo  */}
-                        <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-mdshadow-xl lg:aspect-none  group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80  bg-blue-500 ">
-                                <img
-                                    
-                                    src="\public\img\desayuno.png"
+            </div>
+        </SwiperSlide>
+        <SwiperSlide className="text-center text-xl  flex justify-center items-center">
+       
+        <div className="flex w-full">
+        <div className="text-center flex flex-1 items-center w-full max-h-full justify-center bg-base-100">
+        <div className=" max-w-full h-auto text-50 sm:text-xl">
+                <h1 className="mb-5 text-5xl font-bold">Cafetin Maria Auxiliadora</h1>
+                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                <button className="btn btn-primary"><p className="font-extrabold">COMPRAR</p></button>
+                </div>
+        </div>
+                                 <img 
+                                    src="\public\img\food.jpeg"
                                     alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center  lg:h-full lg:w-full"
+                                    class="max-w-full h-auto w-50 object-cover object-center"
                                 />
+        </div>
+
+        </SwiperSlide>
+        <SwiperSlide className="text-center text-xl bg-white flex justify-center items-center">Slide 4</SwiperSlide>
+
+      </Swiper>
+    </>
+  
+
+            {/* --------------Espacio para diferentes tipos de comidas-------------------  */}
+
+        
+            {/* hero */}
+            <div className=" grid pt-10 pb-10 place-items-center bg-cover bg-center min-h-screen bg-base-100">
+
+            {/* hero-content */}
+                <div className="  z-0 flex  items-center justify-center max-w-7xl p-4 flex-col lg:flex-row-reverse gap-10 bg-prim">
+
+                    <div className="flex gap-2">
+                        <div className="flex-row gap-2">
+                            <div className=" w-380 h-280 text-center text-xl bg-white rounded-lg flex justify-center items-center max-w-sm bg-[url('../img/desayuno.png')] bg-cover bg-center ">
+                            <h1 className=" text-5xl font-extrabold text-white drop-shadow-4xll"> Desayunos </h1>
                             </div>
-
-                              {/* color degradado en las categorias */}
-                              {/* <div class="absolute inset-0 "></div>
-                            <div class="absolute inset-0 flex items-center justify-center"></div> */}
-
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="text-white font-semibold text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-lg shadow-black">
-                                                Desayunos
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
-                            </div>
-                            
-                        </div>
-
-                        {/* Lo mismo se repite para cada producto */}
-
-                        <div className="group relative">
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl bg-gray-500 lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
-                                <img
-                                    src="\public\img\almuerzos.png"
-                                    alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                            </div>
-
-                            
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="/cafetinView">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="drop-shadow-lg shadow-black text-white font-semibold text-5xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                                Almuerzos
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
+                            <div className="w-380 h-280 text-center text-xl bg-white rounded-lg flex justify-center items-center max-w-sm mt-2 bg-[url('../img/Almuerzos.png')] bg-cover bg-center ">
+                            <h1 className="text-5xl font-extrabold text-white drop-shadow-4xll"> Almuerzos </h1>
                             </div>
                         </div>
-
-
-                        <div className="group relative ">
-                            
-                            <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md shadow-xl  bg-prim lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
-                                <img
-                                    src="\public\img\otros.png"
-                                    alt="Cafetin Don Bosco"
-                                    class="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                />
-                            </div>
-
-                           
-
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                        <Link to="#">
-                                            <span
-                                                aria-hidden="true"
-                                                className="absolute inset-0 "
-                                            ></span>
-                                            <p className="drop-shadow-lg shadow-black text-white font-semibold text-5xl   absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                                Otros
-                                            </p>
-                                        </Link>
-                                    </h3>
-                                </div>
-                            </div>
+                        <div className="h-auto w-380 text-center text-xl bg-white rounded-lg flex justify-center items-center bg-[url('../img/otros.png')] bg-cover bg-center ">
+                        <h1 className="text-5xl font-extrabold text-white drop-shadow-4xll"> Otros </h1>
                         </div>
-
-                        
-                        {/* Fin de las categorias */}
+                            
                     </div>
+
+                        <div>
+                        <img src="..\src\assets\logo\icon_bw.png" className="max-w-sm rounded-lg " />
+                        </div>
                 </div>
             </div>
-
-            {/* Recomendacion segun horario */}
-            <h1 className="text-5xl font-title font-bold tracking-tight text-gray-800 text-center py-14">
-                ¿Se te antoja algo?
-            </h1>
+          
 
             {/* bg-[url('../img/banner_orange.jpg')] fue tambien otra opcion*/}
-            <div className="bg-prim bg-cover bg-center">
+
+            <div className="bg-primary bg-opacity-90 bg-cover bg-center">
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 font-plane">
                     <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-left">
-                        Lo mas <label className="text-white">comprado</label>
+                        Lo mas <label className="text-white">vendido</label>
                     </h2>
 
-                    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    {/*sm: grid-cols-1  */}
+                    <div className="mt-6 grid gap-x-6 gap-y-10 grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
                         <div className="group relative bg-zinc-900 rounded-lg" >
                             <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-blue-500 shadow-xl lg:aspect-none group-hover:opacity-75 transition-width duration-300 ease-in-out lg:h-80">
@@ -604,65 +571,7 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
                 </div>
             </div>
 
-            <div className="relative isolate px-6 pt-14 lg:px-8 ">
-                <div
-                    className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 "
-                    aria-hidden="true"
-                >
-                    <div
-                        className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ffac80] to-[#89fcc6] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                        style={{
-                            clipPath:
-                                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-                        }}
-                    ></div>
-                </div>
-                <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 bg-gray-700 px-11 rounded-lg bg-[url('../img/money.png')] bg-no-repeat bg-contain">
-                    <div>
-                        <div className="text-center ">
-                            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                                ¿Sin Fondos?
-                            </h1>
-                            <h2 className="text-2x1 font-bold tracking-tight text-orange-500 sm:text-4xl mt-6">
-                                ¡No te quedes sin comer!
-                            </h2>
-                            <p className="mt-6 text-lg leading-8 text-white">
-                                Recuerda que puedes agregar mas fondos a tu
-                                monedero en cualquier momento.
-                            </p>
-
-                            <div className="mt-10 flex items-center justify-center gap-x-6">
-                                <Link
-                                    to="#"
-                                    className="rounded-2xl bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-lime-400 transition-width duration-300 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >
-                                    Ir a mi perfil
-                                </Link>
-                                <Link
-                                    to="#"
-                                    className="text-sm font-semibold leading-6 text-white hover:underline"
-                                >
-                                    ¿Quieres saber mas?{" "}
-                                    <span aria-hidden="true">→</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-                        aria-hidden="true"
-                    >
-                        <div
-                            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#0edbff9a] to-[#04ff92] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                            style={{
-                                clipPath:
-                                    "74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-                            }}
-                        ></div>
-                    </div>
-                </div>
-            </div>
-
+           
             {/* -----------Footer----------------- */}
             <Footer />
         </div>

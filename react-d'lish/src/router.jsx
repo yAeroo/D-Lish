@@ -67,7 +67,12 @@ const router = createBrowserRouter([
         //Pagina del Platillo
         path: '/dish',
         element: <Dish />
+    },
+    {
+        path: '/cafetinView',
+        element: <CafetinView />
     }
+    
     // {
     //     path: '/testModel',
     //     element: <TestModel />
