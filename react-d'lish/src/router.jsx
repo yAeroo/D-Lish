@@ -36,6 +36,10 @@ const router = createBrowserRouter([
         path: '/auth',
         element: < AuthLayout />,
         children: [
+            {
+                index: true,
+                element: <p>Hola</p>
+            },
             // Definición de sus hijos
             {
                 path: '/auth/login',
@@ -57,7 +61,7 @@ const router = createBrowserRouter([
     {
         //Pagina de Ordenar
         path: '/order',
-        element: <Order/>
+        element: <Order />
     },
     {
         //Pagina del Platillo

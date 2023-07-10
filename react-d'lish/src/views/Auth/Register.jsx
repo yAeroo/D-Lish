@@ -1,9 +1,46 @@
+import { createRef, useState } from 'react';
+import clienteAxios from '../../config/axios';
+
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
+// Componente 
 import Navbar from "../../components/Navbar";
+import Alert from '../../components/Alert';
 
 
 export default function Registro() {
+
+    // Acceden al elemento input del DOM y su valor
+    const nameRef = createRef();
+    const emailRef = createRef();
+    const genderRef = createRef();
+    const passwordRef = createRef();
+    const passwordConfirmationRef = createRef();
+
+    const [errores, setErrores] = useState([]);
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        // Propiedades del objeto, según como los espera Laravel
+        const datos = {
+            name: nameRef.current.value,
+            email: emailRef.current.value,
+            gender: genderRef.current.value,
+            password: passwordRef.current.value,
+            password_confirmation: passwordConfirmationRef.current.value
+        }
+
+        try {
+            const respuesta = await clienteAxios.post('/api/registro', datos);
+            console.log(respuesta);
+        } catch (error) {
+            // Errores dados por Axios
+            setErrores(Object.values(error.response.data.errors));
+        }
+    }
+
+    // HTML
     return (
         <>
             {/* Navbar sujeto a cambios (sections obligatorios si se desea el navbar redondo) */}
@@ -28,7 +65,12 @@ export default function Registro() {
 
 
                         {/* Form Register */}
-                        <form className="space-y-4 md:space-y-6" action="#">´
+                        <form className="space-y-4 md:space-y-6"
+                            onSubmit={handleSubmit}
+                            noValidate
+                        >
+
+                            {errores ? errores.map((error, i) => <Alert key={i}>{error}</Alert>) : ''}
 
                             {/* Input nombre*/}
                             <div className="form-control w-full">
@@ -40,6 +82,7 @@ export default function Registro() {
                                     placeholder="Nombre & Apellido"
                                     className="input input-bordered w-full bg-base-100"
                                     name="name"
+                                    ref={nameRef}
                                 />
                             </div>
 
@@ -53,8 +96,26 @@ export default function Registro() {
                                     placeholder="estudiante@cdb.edu.sv"
                                     className="input input-bordered w-full bg-base-100"
                                     name="email"
+                                    ref={emailRef}
                                 />
                             </div>
+
+                            {/* Input Genero */}
+                            <div className="form-control w-full ">
+                                <label className="label">
+                                    <span className="label-text">Género</span>
+                                </label>
+                                <select className="select select-bordered w-full text-gray-300"
+                                    defaultValue=""
+                                    name="gender"
+                                    ref={genderRef}
+                                >
+                                    <option disabled value="">Selecciona</option>
+                                    <option className='text-white' value="M" >Masculino</option>
+                                    <option className='text-white' value="F">Femenino</option>
+                                </select>
+                            </div>
+
 
                             {/* Input contraseña */}
                             <div className="form-control w-full">
@@ -63,9 +124,10 @@ export default function Registro() {
                                 </label>
                                 <input
                                     type="password"
-                                    placeholder="••••••••"
+                                    placeholder="••••••"
                                     className="input input-bordered w-full bg-base-100"
                                     name="password"
+                                    ref={passwordRef}
                                 />
                             </div>
 
@@ -76,9 +138,11 @@ export default function Registro() {
                                 </label>
                                 <input
                                     type="password"
-                                    placeholder="••••••••"
+                                    placeholder="••••••"
                                     className="input input-bordered w-full bg-base-100"
-                                    name="password_confirmation" />
+                                    name="password_confirmation"
+                                    ref={passwordConfirmationRef}
+                                />
                             </div>
 
 
