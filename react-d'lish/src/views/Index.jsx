@@ -376,17 +376,17 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
         <SwiperSlide className="text-center text-xl  flex justify-center items-center">
        
         <div className="flex w-full">
-        <div className="text-center flex items-center w-full justify-center bg-base-100">
-        <div className="max-w-md text-50 sm:text-xl">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+        <div className="text-center flex flex-1 items-center w-full max-h-full justify-center bg-base-100">
+        <div className=" max-w-full h-auto text-50 sm:text-xl">
+                <h1 className="mb-5 text-5xl font-bold">Cafetin Maria Auxiliadora</h1>
                 <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button className="btn btn-primary">Get Started</button>
+                <button className="btn btn-primary"><p className="font-extrabold">COMPRAR</p></button>
                 </div>
         </div>
                                  <img 
                                     src="\public\img\food.jpeg"
                                     alt="Cafetin Don Bosco"
-                                    class="h-auto w-50 object-cover object-center"
+                                    class="max-w-full h-auto w-50 object-cover object-center"
                                 />
         </div>
 
@@ -404,7 +404,7 @@ const [expanded, setExpanded, modalOpen, setModalOpen] = useState(false);
             <div className=" grid pt-10 pb-10 place-items-center bg-cover bg-center min-h-screen bg-base-100">
 
             {/* hero-content */}
-                <div className="  z-0 flex items-center justify-center max-w-7xl p-4 flex-col lg:flex-row-reverse gap-10 bg-prim">
+                <div className="  z-0 flex  items-center justify-center max-w-7xl p-4 flex-col lg:flex-row-reverse gap-10 bg-prim">
 
                     <div className="flex gap-2">
                         <div className="flex-row gap-2">
