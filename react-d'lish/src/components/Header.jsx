@@ -21,7 +21,7 @@ const Header = () => {
       </section>
 
       <div className="hero min-h-screen bg-gradient-to-r from-slate-900 to-base-100">
-        <div className="hero-content flex-col lg:flex-row-reverse px-10">
+        <div className="hero-content flex-col md:flex-row-reverse px-10">
           <img
             src={HeroImg}
             className="w-[34rem] md:-mt-[8rem] md:-mr-[8rem] rounded-lg animate-fade-left animate-duration-600 animate-ease-in-out"
@@ -46,19 +46,21 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen mt-[6rem] md:mx-[22rem]">
+        <h1 className="md:text-7xl text-4xl font-bold text-primary drop-shadow-lg text-center">
+          Descubre la nueva forma de hacer pedidos en línea
+        </h1>
 
-      <h1 className="md:text-7xl text-4xl font-bold text-primary drop-shadow-lg text-center">
-        Descubre la nueva forma de hacer pedidos en línea
-            </h1>
-
-        <div className="flex flex-col items-center justify-center w-full lg:flex-row md:mt-[6rem]">
+        <div className="flex flex-col items-center justify-center w-full md:flex-col lg:flex-row md:mt-[6rem]">
           <div className="w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
-                <IoFastFoodOutline className="text-6xl"/>
+              <IoFastFoodOutline className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
               <h2 className="card-title">Facil de usar</h2>
-              <p>Interfaz amigable e intuitiva que se adapta a todas tus necesidades.</p>
+              <p>
+                Interfaz amigable e intuitiva que se adapta a todas tus
+                necesidades.
+              </p>
             </div>
           </div>
 
@@ -66,11 +68,14 @@ const Header = () => {
 
           <div className="w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
-                <CgCoffee className="text-6xl"/>
+              <CgCoffee className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
               <h2 className="card-title">Para todos</h2>
-              <p>Plataforma adaptada para estudiantes, maestros, y propietarios de cafeterías.</p>
+              <p>
+                Plataforma adaptada para estudiantes, maestros, y propietarios
+                de cafeterías.
+              </p>
             </div>
           </div>
 
@@ -78,19 +83,22 @@ const Header = () => {
 
           <div className="w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
-                <MdOutlineScreenshot className="text-6xl"/>
+              <MdOutlineScreenshot className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
               <h2 className="card-title">Adaptable</h2>
-              <p>Interfaz responsiva y visualizacion adaptada a todos los dispositivos.</p>
+              <p>
+                Interfaz responsiva y visualizacion adaptada a todos los
+                dispositivos.
+              </p>
             </div>
           </div>
-
         </div>
 
-        <div class="w-full h-80 bg-gray-900 transform mt-[6rem]"></div>
+        <div className="divider md:mt-[10rem]"></div>
 
-        </div>
+        <div class="w-full h-80 transform mt-[6rem]"></div>
+      </div>
 
         
 
