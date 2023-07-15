@@ -45,10 +45,13 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-screen mt-[6rem] md:mx-[22rem]">
-        <h1 className="md:text-7xl text-4xl font-bold text-primary drop-shadow-lg text-center">
+      <div className="flex items-center justify-center mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
+        <h1 className="md:text-7xl text-6xl font-bold text-primary drop-shadow-lg text-center">
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
+      </div>
+
+      <div className="flex flex-col items-center justify-center min-h-screen mt-[6rem] md:mx-[22rem]">
 
         <div className="flex flex-col items-center justify-center w-full md:flex-col lg:flex-row md:mt-[6rem]">
           <div className="w-96 bg-base-100 shadow-xl">
