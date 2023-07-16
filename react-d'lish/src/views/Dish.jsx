@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const Dish = () => {
 return (
-    <div className='margin: 0 auto justify-items-center'>    
+    <div className='flex items-center justify-center w-full min-h-screen'>    
       <div
-        className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 2xl:col-span-2"
+        className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
       >
         <div className="xl:max-w-xl">
           <img className="h-25 rounded-lg" src="\public\img\Almuerzos.png" alt="ComidaPIC" />
@@ -28,129 +28,82 @@ return (
 
 <br />
 
-<form action="">
+<form className=''>
 
 <div className=" text-white font-bold mb-1">Opciones Principales * (solo puedes escoger 1)</div>
-<hr className='bg-white' />
+<hr className='bg-white  ' />
 <br />
- <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-   <div class="flow-root">
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Filete de Carne
-                        </p>
-                    </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox"   className="checkbox checkbox-success" />
-                    </div>
-                </div>
-            </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Filete de Pechuga
-                        </p>
-                    </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input 
-                    type="checkbox"  className="checkbox checkbox-success" />
-                    </div>
-                </div>
-            </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Alitas Fritas
-                        </p>
-                    </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="checkbox checkbox-success" />
-                    </div>
-                </div>
-            </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Torta 
-                        </p>
-                    </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="checkbox checkbox-success" />
-                    </div>
-                </div>
-            </li>
-            <li class="pt-3 pb-0 sm:pt-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Burritos
-                        </p>
-                    </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox"  className="checkbox checkbox-success" />
-                    </div>
-                </div>
-            </li>
-        </ul>
-   </div>
-</div> 
+<div class="w-full max-w-md p-4 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 md:w-96 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg md:dark:bg-gray-800 md:dark:border-gray-700 lg:w-2/4">
+  <div class="flow-root">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+      <li class="py-3">
+        <div class="flex items-center space-x-4">
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+              Filete de Carne
+            </p>
+          </div>
+          <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            <input type="checkbox" class="checkbox checkbox-success" />
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
 <br />
 <div className=" text-white font-bold mb-1">Complementos *  (solo puedes escoger 1 o 2)</div>
 <hr className='bg-white' />
 <br />
- <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-   <div class="flow-root">
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+ <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             Arroz
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+            <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             Casamiento
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+            <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             Papas Fritas
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+            <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             Ensalada
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
@@ -162,25 +115,25 @@ return (
 <div className=" text-white font-bold mb-1">Bebidas</div>
 <hr className='bg-white' />
 <br />
- <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-   <div class="flow-root">
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                            Agua en Botella
+ <div className="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+        <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Agua
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox"  required="required" className="checkbox checkbox-success" />
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <input type="checkbox"  className="checkbox checkbox-success" />
                     </div>
                 </div>
             </li>
-            <li class="py-3 sm:py-4">
-                <div class="flex items-center space-x-4">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+            <li className="py-3 ">
+                <div className="flex items-center space-x-4">
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                             {/* Open the modal using ID.showModal() method */}
 <button className=" text-sm font-medium text-gray-900 truncate dark:text-white" onClick={()=>window.my_modal_1.showModal()}>Fresco*</button>
 <dialog id="my_modal_1" className="modal">
@@ -203,7 +156,7 @@ return (
 </dialog>
                         </p>
                     </div>
-                    <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
                     <input type="checkbox" required="required" className="checkbox checkbox-success" />
                     </div>
                 </div>
