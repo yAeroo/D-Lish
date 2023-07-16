@@ -113,7 +113,7 @@ const Header = () => {
         </div>
       </div>
 
-<div className="hero min-h-screen bg-base-200 relative">
+<div className="hero min-h-screen bg-base-200 relative pb-[5rem] md:pb-[0rem]">
   <div className="hero-content flex-col lg:flex-row-reverse px-10 md:px-10 md:mt-[-6rem]">
     <div className="md:w-2/5 rounded-lg md:order-2 mt-8 md:mt-0 md:ml-8 animate-fade-left animate-duration-600 animate-ease-in-out order-2">
       <img
@@ -123,7 +123,7 @@ const Header = () => {
     </div>
 
     <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-      <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[1rem] md:mt-[4rem] pb-[2rem]">
+      <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]">
         Quienes somos?
       </h1>
       <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
@@ -131,7 +131,7 @@ const Header = () => {
       </p>
     </div>
   </div>
-  <div class="custom-shape-divider-bottom-1689489905">
+  <div class="custom-shape-divider-bottom-1689492744">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
     </svg>
@@ -157,31 +157,20 @@ const Header = () => {
         </p>
       </div>
     </div>
-    <div class="custom-shape-divider-bottom-1689489905">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-      </svg>
-    </div>
-    <div class="custom-shape-divider-bottom-1689491668">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-    </svg>
-</div>
-
   </div>
 </div>
 
-<div className="hero min-h-screen bg-base-200 relative">
-  <div className="hero-content flex-col-reverse lg:flex-row-reverse px-10 md:px-10 md:mt-[-6rem]">
+<div className="hero min-h-screen bg-base-200 relative pb-[5rem] md:pb-[0rem]">
+  <div className="hero-content flex-col lg:flex-row-reverse px-10 md:px-10 md:mt-[-6rem]">
     <div className="md:w-2/5 rounded-lg md:order-2 mt-8 md:mt-0 md:ml-8 animate-fade-left animate-duration-600 animate-ease-in-out order-2">
       <img
-        src={Coffee}
+        src={Almuerzos}
         className="w-full 2xl:ml-[-13rem] rounded-xl transform brightness-80"
       />
     </div>
 
     <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-      <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[1rem] md:mt-[4rem] pb-[2rem]">
+      <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[6rem]  md:mt-[4rem] pb-[2rem]">
         Visión
       </h1>
       <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
@@ -189,6 +178,11 @@ const Header = () => {
       </p>
     </div>
   </div>
+  <div class="custom-shape-divider-top-1689493240">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+</div>
 </div>
 
 
