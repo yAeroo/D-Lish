@@ -103,9 +103,9 @@ const Header = () => {
               <MdOutlineScreenshot className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
-              <h2 className="card-title">Adaptable</h2>
+              <h2 className="card-title">Multiplataforma</h2>
               <p>
-                Interfaz responsiva y visualizacion adaptada a todos los
+                Interfaz adaptable y visualizacion adecuada a todos los
                 dispositivos.
               </p>
             </div>
