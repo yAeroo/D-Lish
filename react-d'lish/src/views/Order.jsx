@@ -34,12 +34,12 @@ function Order() {
 
 <br />
 
-        <div id="confirmation-bt" className="w-full ">
+        <div id="confirmation-bt">
           <button className="rounded-lg mb-5 p-3 px-6 w-full text-white  bg-error shadow-2xl">Proceder a pagar</button>
         </div>
 
         <div id="cancel">
-        <button className="rounded-lg mb-5 p-3 px-6 w-full text-white  bg-error shadow-2xl">Cancelar</button>
+        <button className="rounded-lg mb-5 p-3 px-6 w-full text-white  shadow-2xl">Cancelar</button>
         </div>
         
       </div>
