@@ -4,7 +4,6 @@ import { BiLogoGmail } from "react-icons/bi";
 
 export default function Footer() {
     return (
-
         <footer className="footer footer-center p-8 bg-neutral text-white">
             <div>
                 <img src="../src/assets/logo/title_bw.png" className="h-12 cursor-pointer my-auto"></img>

@@ -59,18 +59,29 @@ const router = createBrowserRouter([
         element: <Homepage />
     },
     {
-        //Pagina de Ordenar
+        // Página de Ordenar
         path: '/order',
         element: <Order />
     },
     {
-        //Pagina del Platillo
+        // Página del Platillo
         path: '/dish',
         element: <Dish />
     },
     {
         path: '/cafetinView',
         element: <CafetinView />
+    },
+    {
+        // Base perfil de usuario
+        path: '/profile',
+        element: <Profile />,
+        // children: [
+        //     {
+        //         index: true,
+        //         element: 
+        //     }
+        // ]
     }
     
     // {

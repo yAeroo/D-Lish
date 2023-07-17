@@ -16,15 +16,19 @@ function Order() {
 
     {/* Estructura del cuadrito */}
  <div  className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide">
-    <div className="h-full col-start-2 py-20 place-self-center items-center md:  px-3">
+{/* lo que centra y maneja la posicion del cuadro  */}
+    <div className="h-full col-start-2 py-20  place-self-center items-center md:px-3 ">
       {/* Cuerpo del La card */}
-      <div id="card-body" className="grid grid-cols-1 justify-items-center px-20 py-10 bg-[#d6d3d1] rounded-b-lg  shadow-2xl">
-              <div id="order-title">
-                <h1 className="text-xl text-base-100 font-bold">Resumen del pedido</h1>
-              </div>
-              <div id="order-description" className="grid grid-cols-1">
-                <p className="text-center text-sm text-base-100 pt-2 pb-6 tracking-normal">Pedido Realizado en<br/>Cafeteria "Maria Auxiliadora"</p>
-              </div>
+      <div id="box" className="box lg:px-28 bg-[#a8a29e]">
+        {/* contenido carta */}
+        <div className='pt-5'>
+          <h1 className="text-xl text-black ">Resumen del pedido</h1>
+        </div>
+        <div className="grid grid-cols-1">
+          <p className="text-center text-sm text-black pt-2 pb-6 tracking-normal">
+            Pedido Realizado en<br/>Cafeteria "Maria Auxiliadora"</p>
+        </div>
+
       </div>
       </div>
   </div>
