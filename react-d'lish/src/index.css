@@ -19,6 +19,14 @@
   @apply rounded-2xl py-2 px-3 uppercase  font-bold cursor-pointer tracking-wider;
 }
 
+.fa-custom{
+  @apply animate-fade animate-duration-[900ms] animate-ease-in-out
+}
+
+.fu-custom{
+  @apply animate-duration-[780ms] animate-ease-in-out
+}
+
 /* Estilos propios */
 .li-elem {
   @apply mt-5 pb-2 border-b border-gray-200 flex;
