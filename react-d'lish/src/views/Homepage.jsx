@@ -6,13 +6,12 @@ import Footer from "../components/Footer";
 import '../css/homepage.css';
 
 // Imagenes
-import HeroImg from "../../public/img/dlishMockup3.png";
-import Coffee from "../../public/img/coffee.jpg";
-import Almuerzos from "../../public/img/Almuerzos.png";
-import Desayunos from "../../public/img/Desayuno.png";
-import Food from "../../public/img/food.jpeg";
-import ButtonFill from "../components/ButtonFill";
-import ButtonOutline from "../components/ButtonOutline";
+import HeroImg from "../../src/assets/homepage/dlishMockup3.png";
+import Coffee from "../../src/assets/homepage/coffee.jpg";
+import Almuerzos from "../../src/assets/homepage/Almuerzos.png";
+import Desayunos from "../../src/assets/homepage/Desayuno.png";
+
+//Iconos
 import { IoFastFoodOutline } from "react-icons/io5";
 import { CgCoffee } from "react-icons/cg";
 import { MdOutlineScreenshot } from "react-icons/md";
