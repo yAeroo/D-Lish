@@ -43,11 +43,6 @@ export default function Registro() {
     // HTML
     return (
         <>
-            {/* Navbar sujeto a cambios (sections obligatorios si se desea el navbar redondo) */}
-            <section className='bg-gradient-to-r py-4 md:px-24 px-4'>
-                <Navbar />
-            </section>
-
             <div className="content-form-center">
                 {/* Imagen de Logo */}
                 <a href="#" className="flex items-center mb-8  ">
