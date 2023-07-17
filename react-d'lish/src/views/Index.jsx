@@ -2,22 +2,19 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 import Footer from "../components/Footer";
 import Modal from "./Modal/Modal";
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Importacion de estilos de swiper
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-
-// importacion de modulos requeridos
-import { Autoplay, Pagination, Navigation } from "swiper";
-
+import Navbar from "../components/Navbar";
+import Carrousel from "../components/Carrousel";
 
 export default function Index() {
     return (
-        <div>Hola Dlish</div>
+        <>
+            <section className='py-4 md:px-24 px-4'>
+                <Navbar />
+            </section>
+
+            <div>
+                <Carrousel />
+            </div>
+        </>
     );
 }
