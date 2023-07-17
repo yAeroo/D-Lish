@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 function Order() {
   return (
-    <div className='flex items-center justify-center w-full'> 
- <div id="container" className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide">
-    <div id="order-summary-card" className="h-full col-start-2 py-20 place-self-center items-center md: py-3 px-3">
-      <div id="hero-image" className="">
-        <img src="../src/assets/logo/wide_orange.png" alt="" srcset="" className="w-full rounded-t-lg"/>
+    <div className='flex items-center justify-center w-full animate-fade-down'> 
+ <div  className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide">
+    <div id="pedidos" className="h-full col-start-2 py-20 place-self-center items-center md:  px-3">
+      <div id="image-dlish" className="">
+        <img src="../src/assets/logo/wide_orange.png" className="w-full rounded-t-lg"/>
       </div>
-      <div id="card-body" className="grid grid-cols-1 justify-items-center px-20 py-10 bg-[#141414] rounded-b-lg  shadow-2xl">
+      <div id="card-body" className="grid grid-cols-1 justify-items-center px-20 py-10 bg-neutral rounded-b-lg  shadow-2xl">
         <div id="order-title">
           <h1 className="text-xl">Resumen del pedido</h1>
         </div>
@@ -27,7 +27,7 @@ function Order() {
             <p className="md:text-sm px-5 text-gray-600 text-xs">$2.50</p>
           </div>
           <div id="change-link" className="grid place-content-center">
-            <a href="#" className="text-xs underline text-white font-medium">Cambiar</a>
+          <h1><Link className='text-xs underline text-white font-medium' to="/dish"> Cambiar</Link></h1>
           </div>
         </div>
 </div>
