@@ -1,4 +1,4 @@
-import from './css/cutoff-border.css';
+import '../css/cutoff-border.css';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar';
