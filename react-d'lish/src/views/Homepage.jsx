@@ -1,6 +1,11 @@
-import React from "react";
+// Componentes
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+// Css
+import '../css/homepage.css';
+
+// Imagenes
 import HeroImg from "../../public/img/dlishMockup3.png";
 import Coffee from "../../public/img/coffee.jpg";
 import Almuerzos from "../../public/img/Almuerzos.png";
@@ -12,7 +17,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { CgCoffee } from "react-icons/cg";
 import { MdOutlineScreenshot } from "react-icons/md";
 
-const Header = () => {
+export default function Homepage() {
   return (
     <>
       <section className="px-4 md:px-24 py-4 bg-gradient-to-r from-slate-900 to-emerald-900">
@@ -190,5 +195,3 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
