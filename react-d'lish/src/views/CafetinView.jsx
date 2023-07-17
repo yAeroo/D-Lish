@@ -1,13 +1,20 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Pollo from "../../public/img/pollo.jpg";
-import Carne from "../../public/img/carne.jpg";
-import { IoChevronBack } from "react-icons/io5";
-import { FaUserCircle } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+
+//Componentes
 import Navbar from "../components/Navbar";
 import NavCafetin from "../components/NavCafetin";
 import WiggleAlert from "../components/WiggleAlert";
+import Footer from "../components/Footer";
+
+//Imagenes
+import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
+import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
+
+//Iconos
+import { IoChevronBack } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
+
 
 export default function CafetinView() {
   return (
@@ -50,7 +57,7 @@ export default function CafetinView() {
         </div>
       </section>
 
-      <section className="bg-neutral text-white mt-6 min-h-screen rounded-xl items-center justify-between mx-2 animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
+      <section className="bg-neutral text-white mt-6 min-h-screen rounded-xl items-center justify-between mx-2 xl:mx-[3rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">
@@ -92,53 +99,53 @@ export default function CafetinView() {
           </div>
         </section>
 
-        <div className="flex flex-col md:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
 
-          <div className="card lg:card-side shadow-xl">
+          <div className="card 2xl:card-side shadow-xl">
             <figure>
               <img
-                src={Pollo}
-                alt="Album"
-                className="h-full"
-              />
-            </figure>
-            <div className="card-body bg-base-100">
-              <h2 className="card-title">Platillo de pasado</h2>
-              <p>Click the button to listen on Spotiwhy app.</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Listen</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="card lg:card-side shadow-xl">
-            <figure>
-              <img
-                src={Pollo}
+                src={PolloAsado}
                 alt="Album"
                 className="h-full"
               />
             </figure>
             <div className="card-body bg-base-100">
               <h2 className="card-title">Plato de Pollo Asado</h2>
-              <p>Click the button to listen on Spotiwhy app.</p>
+              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary">Listen</button>
               </div>
             </div>
           </div>
 
-          <div className="card xl:card-side shadow-xl">
+          <div className="card 2xl:card-side shadow-xl">
             <figure>
               <img
-                src={Pollo}
+                src={PolloAsado}
                 alt="Album"
                 className="h-full"
               />
             </figure>
             <div className="card-body bg-base-100">
-              <h2 className="card-title">Pollo Asado</h2>
-              <p>Click the button to listen on Spotiwhy app.</p>
+              <h2 className="card-title">Plato de Pollo Asado</h2>
+              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Listen</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="card 2xl:card-side shadow-xl">
+            <figure>
+              <img
+                src={PolloAsado}
+                alt="Album"
+                className="h-full"
+              />
+            </figure>
+            <div className="card-body bg-base-100">
+              <h2 className="card-title">Plato de Pollo Asado</h2>
+              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
                 <button className="btn btn-primary">Listen</button>
               </div>
@@ -147,7 +154,11 @@ export default function CafetinView() {
 
         </div>
         
+
+        <br />
       </section>
+
+      <br /> <br />
 
       <Footer></Footer>
     </>
