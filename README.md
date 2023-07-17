@@ -1,15 +1,15 @@
 
 <p align="center">
-    <img src="./laravel-d'lish/public/readme-src/logo.png" height='200'>
+    <img src="./laravel-d'lish/public/readme-src/logo.png" height='125' width="320">
 </p>
 
-## ¿Qué es Dlish? 💬
-Dlish es un proyecto escolar el cual consiste en un sitio web a nivel institucional en el que a través del mismo puedas acceder a los cafetines disponibles en la institución esto con el objetivo de agilizar las colas que se forman en los recesos al comprar desayunos, almuerzo.
+## ¿Qué es D'lish? 💬
+D'lish es un proyecto escolar el cual consiste en un sitio web a nivel institucional en el que a través del mismo puedas acceder a los cafetines disponibles en la institución esto con el objetivo de agilizar las colas que se forman en los recesos al comprar desayunos, almuerzo.
 
 ## Guía de instalación 📦
 Por el momento, el proyecto trabaja de manera local, sin embargo, se necesitan de algunas tecnologías y herramientas para poder lograr la ejecución y proyección del proyecto de manera correcta:
 
-| <img src="./public/readme-src/xampp-ico.svg" align='center' height='30' width='30'>  | <img src="./public/readme-src/composer-ico.svg" align='center' height='60' width='60'>   |  <img src="./public/readme-src/nodejs-ico.svg" align='center' height='40' width='40'>   | <img src="./public/readme-src/vsc-ico.svg" align='center' height='40' width='40'>| <img src="./public/readme-src/git-ico.svg" align='center' height='40' width='40'>|
+| <img src="./laravel-d'lish/public/readme-src/xampp-ico.svg" align='center' height='30' width='30'>  | <img src="./laravel-d'lish/public/readme-src/composer-ico.svg" align='center' height='60' width='60'>   |  <img src="./laravel-d'lish/public/readme-src/nodejs-ico.svg" align='center' height='40' width='40'>   | <img src="./laravel-d'lish/public/readme-src/vsc-ico.svg" align='center' height='40' width='40'>| <img src="./laravel-d'lish/public/readme-src/git-ico.svg" align='center' height='40' width='40'>|
 |:---:   | :---: | :---: | :---: | :---: |
 | [Xampp](https://www.apachefriends.org/es/index.html) | [Composer](https://getcomposer.org/download/)   | [NodeJs](https://nodejs.org/en)  | [Studio Code](https://code.visualstudio.com/) | [Git](https://git-scm.com/downloads) |
 
