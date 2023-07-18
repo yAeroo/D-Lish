@@ -27,6 +27,10 @@
   @apply animate-duration-[780ms] animate-ease-in-out;
 }
 
+.profile-bttn-text{
+  @apply hidden md:block font-bold text-base self-center text-white transition-all
+}
+
 /* Estilos propios */
 .li-elem {
   @apply mt-5 pb-2 border-b border-gray-200 flex;

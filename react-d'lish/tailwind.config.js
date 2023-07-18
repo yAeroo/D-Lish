@@ -57,6 +57,13 @@ export default {
         title: ['Trebuchet MS'],
         // Fuente para textos planos
         'body': ['Nunito', 'ui-sans-serif', 'system-ui']
+      },
+      backgroundImage: {
+        'profile': 'url("img/banner.jpg")'
+      },
+      screens: {
+        'xsm': '450px',
+        'lsm': '530px'
       }
     },
   },
