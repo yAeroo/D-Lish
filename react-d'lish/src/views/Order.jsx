@@ -19,14 +19,15 @@ function Order() {
 {/* lo que centra y maneja la posicion del cuadro  */}
     <div className="h-full col-start-2 py-20  place-self-center items-center md:px-3 ">
       {/* Cuerpo del La card */}
-      <div id="box" className="box lg:px-5 bg-[#a8a29e]">
+      <div id="box" className="box lg:px-5 bg-[#fef9c3]">
         {/* contenido carta */}
-        <div className='pt-5'>
-        <img src="../src/assets/logo/icon_bw.png" className='h-10 cursor-pointer my-auto ' alt="LogoType"/>
-          <h1 className="text-2xl text-warning title">Resumen del pedido</h1>
+        <div className='pt-7 px-4 flex'>
+        <img src="../src/assets/logo/icon_rounded.png" className='w-1/5 cursor-pointer my-auto  px-2 rotate-[-20deg] contrast-[.20]' alt="LogoType"/>  
+        <img src="../src/assets/logo/dlish_font_n.png" className='w-1/5 cursor-pointer my-auto   contrast-[.20]' alt="LogoType"/>    
         </div>
+        <h1 className="text-2xl px-2 text-[#4eb168] font-title font-extrabold text-center">Resumen del pedido</h1>
         <div className="grid grid-cols-1">
-          <p className="text-center text-sm text-black pt-2 pb-6 tracking-normal">
+          <p className="text-center text-sm text-black pt-2 pb-6 tracking-normal font-title font-extrabold">
             Pedido Realizado en<br/>Cafeteria "Maria Auxiliadora"</p>
         </div>
         {/* Listado */}
@@ -34,7 +35,7 @@ function Order() {
   <table className="table font-bold text-black">
     {/* head */}
     <thead>
-      <tr className='font-bold  text-accent '>
+      <tr className='border-dashed font-title font-extrabold border-[#4eb168] text-accent '>
         <th></th>
         <th>Producto</th>
         <th>Precio</th>
@@ -42,19 +43,19 @@ function Order() {
     </thead>
     <tbody>
       {/* row 1 */}
-      <tr className="">
+      <tr className="border-dashed border-[#4eb168]">
         <th>1</th>
         <td>Almuerzo</td>
         <td>$2.50</td>
       </tr>
       {/* row 2 */}
-      <tr className="">
+      <tr className="border-dashed border-[#4eb168]">
         <th>2</th>
         <td>Arroz</td>
         <td>$0.25</td>
       </tr>
       {/* row 3 */}
-      <tr className="">
+      <tr className="border-dashed border-[#4eb168]">
         <th>3</th>
         <td>Fresco</td>
         <td>$0.25</td>
