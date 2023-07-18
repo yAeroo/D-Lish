@@ -3,18 +3,20 @@ import { createBrowserRouter } from 'react-router-dom';
 // Layouts
 import Layout from './layouts/Layout';
 import AuthLayout from './layouts/AuthLayout';
-import Profile from './layouts/Profile';
+import ProfileLayout from './layouts/ProfileLayout';
 // Componentes importados
 import Index from './views/Index';
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
-import Settings from './views/Settings';
 import Homepage from './views/Homepage';
 import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
 import TestModel from './views/TestModel';
 import Order from './views/Order';
 import Dish from './views/Dish';
+import Profile from './views/Profile';
+import Settings from './views/Settings';
+
 
 
 // Las rutas se manejan mediante un arreglo de objetos
@@ -75,13 +77,17 @@ const router = createBrowserRouter([
     {
         // Base perfil de usuario
         path: '/profile',
-        element: <Profile />,
-        // children: [
-        //     {
-        //         index: true,
-        //         element: 
-        //     }
-        // ]
+        element: <ProfileLayout />,
+        children: [
+            {
+                index: true,
+                element: <Profile />
+            },
+            {
+                path: '/profile/settings',
+                element: <Settings />
+            }
+        ]
     }
     
     // {

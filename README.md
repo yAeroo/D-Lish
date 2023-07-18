@@ -26,7 +26,7 @@ Una vez teniendo instaladas las tecnologías y herramientas necesarias para le e
 Con estos sencillos pasos se puede ejecutar el proyecto de manera local y funcional
 
 ## Integrantes del equipo 👨‍💻
-- Eleazar Hazael Amaya Sánchez | #3 20210082
+- Eleazar Hazael Amaya Sánchez | #3 - 20210082
 - Oscar Emmanuel Arce Pineda   | #4 - 20210128
 - Víctor Rafael Cornejo García  | #10 - 20100325 
 - Carlos Marcelo Cruz Menjívar | #11 - 20140333
