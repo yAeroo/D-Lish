@@ -143,7 +143,7 @@ export default function Registro() {
 
                             <div className="pt-4">
                                 <button
-                                    className="btn no-animation w-full btn-error text-white font-plane"
+                                    className="btn no-animation w-full btn-info text-white font-plane"
                                     type="submit">
                                     Registrar
                                 </button>

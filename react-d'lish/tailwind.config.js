@@ -32,15 +32,15 @@ export default {
       },
       width: {
         '380': '380px',
-        '50' : '50%',
-        
+        '50': '50%',
+
       },
       maxWidth: {
         '8xl': '86rem',
       },
-      
+
       fontSize: {
-        '50' : '50%',
+        '50': '50%',
       },
       dropShadow: {
         '4xll': '4px 4px 17px rgba(0,0,0,0.76)',
@@ -67,14 +67,14 @@ export default {
       {
         mytheme: {
           "primary": "#4eb168",
-          "secondary": "#6d28d9",
+          "secondary": "#EC6718",
           "accent": "#242f5b",
           "neutral": "#1B2336",
           "base-100": "#141414",
-          "info": "#6d28d9",
+          "info": "#EC6718",
           "success": "#4eb168",
-          "warning": "#f2d95c",
-          "error": "#ec6718",
+          "warning": "#F25C5C",
+          "error": "#EE2F2F",
         },
       },
     ],

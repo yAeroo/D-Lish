@@ -1,0 +1,54 @@
+.food-type {
+  @apply text-center text-xl bg-white rounded-2xl flex justify-center items-center max-w-sm bg-cover bg-center;
+}
+
+.food-title-type {
+  @apply text-4xl font-extrabold text-white;
+}
+
+/* Flechas de navegación */
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  @apply pl-10;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  @apply pr-10;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  @apply text-primary text-5xl font-extrabold;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary;
+}
+
+.swiper-slide .swiper-slide-active img {
+  filter: contrast(4);
+}
+
+/* Animation de color */
+
+.color-animation {
+  background: linear-gradient(270deg, #4eb168 50%, #ec6718 100%);
+  animation: movinggradient 6s ease-in-out infinite;
+  background-size: 200%;
+}
+
+@keyframes movinggradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  0% {
+    background-position: 0% 50%;
+  }
+}
