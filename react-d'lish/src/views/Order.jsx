@@ -27,7 +27,7 @@ function Order() {
         <p className="text-center text-sm px-24 contrast-[.20] pt-[1.5rem] text-black pt- pb-6 tracking-normal font-title font-extrabold">
             26/08/21</p>   
         </div>
-        <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[1.5rem] font-title font-extrabold text-center">Vini Gay</h1>
+        <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[1.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
         <div className="grid grid-cols-1 ">
           <p className="text-center text-sm contrast-[.20] text-black pt-2 tracking-normal font-title font-extrabold pb-5">
             Pedido Realizado en<br/>Cafeteria "Maria Auxiliadora"</p>
