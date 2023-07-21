@@ -16,6 +16,7 @@ import Order from './views/Order';
 import Dish from './views/Dish';
 import Profile from './views/Profile';
 import Settings from './views/Settings';
+import Page404 from './views/Page404';
 
 
 
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
         element: <CafetinView />
     },
     {
+        path: "*",
+       element: <Page404/>
+    },
+    {
         // Base perfil de usuario
         path: '/profile',
         element: <ProfileLayout />,
@@ -86,7 +91,7 @@ const router = createBrowserRouter([
             {
                 path: '/profile/settings',
                 element: <Settings />
-            }
+            },
         ]
     },
     {
