@@ -2,6 +2,7 @@ import '../css/cutoff-border.css';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function Order() {
   return (
@@ -74,8 +75,8 @@ function Order() {
       </div>
       </div>
   </div>
-
   </div>
+  <Footer></Footer>
   </>
   )
 }
