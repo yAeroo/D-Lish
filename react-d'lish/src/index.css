@@ -31,6 +31,14 @@
   @apply hidden md:block font-bold text-base self-center text-white transition-all
 }
 
+.profile-banner{
+  background-image: url("../src/assets/img/banner.jpg");
+}
+
+.shadow-profile{
+  box-shadow: inset 0px -29px 8px 0px rgba(0,0,0,0.1);
+}
+
 /* Estilos propios */
 .li-elem {
   @apply mt-5 pb-2 border-b border-gray-200 flex;

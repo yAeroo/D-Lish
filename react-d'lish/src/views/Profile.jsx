@@ -14,6 +14,13 @@ export default function Profile() {
         
             {/* Perefencias */}
             <Preferences />
+
+            {/* Botón para cerrar sesión que no cierra sesión jaja */}
+            <form className="flex justify-center h-full pb-12">
+                <button type="submit" className="btn bg-prim text-white w-6/12 self-end">
+                    Cerrar Sesión
+                </button>
+            </form>
         </>
     )
 }

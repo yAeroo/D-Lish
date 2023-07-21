@@ -88,6 +88,10 @@ const router = createBrowserRouter([
                 element: <Settings />
             }
         ]
+    },
+    {
+        path: '/logs',
+        element: <Logs />
     }
     
     // {
