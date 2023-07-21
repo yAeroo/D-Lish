@@ -1,8 +1,11 @@
 import React from "react";
+//Iconos
 import { IoChevronBack } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
+//Link
 import { Link } from "react-router-dom";
+//Imagenes
 import User from "../../src/assets/index/user.png";
 
 export default function NavIndex() {
@@ -12,7 +15,7 @@ export default function NavIndex() {
         {/* Eliminar "rounded-2xl" para lograr el Navbar cuadrado (y hacer los respectivos cambios en el componente que se requiera)  */}
         <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none hidden md:flex">
           {/* Link a Homepage */}
-          <Link to="../../views/index.jsx">
+          <Link to="/">
             <img
               src="../src/assets/logo/icon_bw.png"
               alt="Logo"
@@ -32,9 +35,9 @@ export default function NavIndex() {
 
           </div>
           <div className="flex self-center gap-2">
-            <div className="text-slate-300">
+            <Link to="../profile" className="text-slate-300">
               <FaUserCircle className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10" />
-            </div>
+            </Link>
           </div>
         </nav>
       </section>
