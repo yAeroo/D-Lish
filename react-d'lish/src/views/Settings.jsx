@@ -1,24 +1,44 @@
 import { Link } from "react-router-dom";
+
 // Componentes
 import ProfileInfo from "../components/ProfileInfo"
 import ProfileSetttings from "../components/ProfileSetttings";
+import ProfilePfp from "../components/ProfilePfp";
+
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 // Icon
 import { TbCameraPlus } from "react-icons/tb";
 import { BiSave } from "react-icons/bi";
 import { IoChevronBackSharp } from "react-icons/io5";
 
 export default function Settings() {
+
+    const success = "success-noti";
+    const notify_success = () => toast.success("¡Cambios guardados con exito!", {
+        autoClose: 2000,
+        theme: "dark",
+        toastId: success,
+        transition: Slide,
+        className: "!bg-[#191E2B] !font-body !py-2"
+    });
+
+    const error = "error-noti";
+    const notify_error = () => toast.error("¡Oops! Ha ocurrido un error...", {
+        autoClose: 2000,
+        theme: "dark",
+        toastId: error,
+        transition: Slide,
+        className: "!bg-[#191E2B] !font-body !py-2"
+    });
+
     return (
         <>
             <div id="pf-bttns" className="relative">
-                <div id="edit-bttn" className="fu-custom animate-fade-left absolute top-8 right-[28%] xsm:right-[32%] lsm:right-[35%] md:right-[3%] lg:right-[10%]">
-                    <Link to="/profile/settings" className="flex bg-prim rounded-full p-2 md:px-5 ">
-                        <span className="mr-2 profile-bttn-text">
-                            Cambiar foto
-                        </span>
-                        <span> <TbCameraPlus size={"25"} color={"white"} /> </span>
-                    </Link>
-                </div>
+
+                {/* Cambio de foto de perfil */}
+                <ProfilePfp />
 
                 <div id="edit-bttn" className="fu-custom animate-fade-right absolute top-8 left-[5%] md:left-[3%] lg:left-[10%]">
                     <Link to="/profile" className="flex rounded-full p-2 md:px-5 ">
@@ -37,16 +57,27 @@ export default function Settings() {
             <ProfileSetttings />
 
             {/* Guardar cambios */}
-            <form className="flex justify-center h-full pb-12">
-                <button>
-                    <Link to="" className="flex bg-prim rounded-full p-2 md:px-5 ">
+            <div className="flex justify-center h-full pb-12">
+                <button onClick={notify_success}>
+                    <div className="flex bg-prim rounded-full p-2 md:px-5 ">
                         <span> <BiSave size={"25"} color={"white"} /> </span>
                         <span className="mx-2 profile-bttn-text !block">
                             Guardar cambios
                         </span>
-                    </Link>
+                    </div>
+                    <ToastContainer />
                 </button>
-            </form>
+
+                <button onClick={notify_error}>
+                    <div className="flex bg-red-500 rounded-full p-2 md:px-5 ">
+                        <span> <BiSave size={"25"} color={"white"} /> </span>
+                        <span className="mx-2 profile-bttn-text !block">
+                            ERROR
+                        </span>
+                    </div>
+                    <ToastContainer />
+                </button>
+            </div>
         </>
     )
 }

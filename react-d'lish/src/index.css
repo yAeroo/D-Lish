@@ -35,6 +35,19 @@
   background-image: url("../src/assets/img/banner.jpg");
 }
 
+#div-file{
+  background-color: rgba(16, 20, 44,0.5)
+}
+
+#div-file input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+
 .shadow-profile{
   box-shadow: inset 0px -29px 8px 0px rgba(0,0,0,0.1);
 }
