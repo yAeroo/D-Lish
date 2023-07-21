@@ -2,6 +2,9 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+//Link
+import { Link } from "react-router-dom";
+
 // Css
 import '../css/homepage.css';
 
@@ -47,12 +50,17 @@ export default function Homepage() {
             </p>
 
             <div className="flex space-x-4">
+            <Link to='/auth/register'>
               <button className="btn btn-info drop-shadow-lg text-zinc-50">
-                Regístrate
+                  Regístrate
               </button>
+            </Link>
+              
+            <Link to="/auth/login">
               <button className="btn btn-outline btn-info drop-shadow-lg">
                 Iniciar Sesión
               </button>
+            </Link>
             </div>
           </div>
         </div>
