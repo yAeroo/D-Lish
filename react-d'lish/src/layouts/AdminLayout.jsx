@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from "../components/Footer"
 
-function IndexAdminLayout() {
+function AdminLayout() {
   return (
     <div>
         <>
@@ -14,4 +14,4 @@ function IndexAdminLayout() {
   )
 }
 
-export default IndexAdminLayout
+export default AdminLayout
