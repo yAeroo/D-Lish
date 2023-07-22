@@ -4,7 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import AuthLayout from './layouts/AuthLayout';
 import ProfileLayout from './layouts/ProfileLayout';
-import IndexAdminLayout from './layouts/IndexAdminLayout';
+import AdminLayout from './layouts/AdminLayout';
 // Componentes importados
 import Index from './views/Index';
 import Login from './views/Auth/Login.jsx';
@@ -18,7 +18,7 @@ import Dish from './views/Dish';
 import Profile from './views/Profile';
 import Settings from './views/Settings';
 import Page404 from './views/Page404';
-import VentasAdmin from './views/VentasAdmin';
+import VentasAdmin from './views/Admin/VentasAdmin';
 import IndexAdmin from './views/IndexAdmin';
 
 
