@@ -80,7 +80,7 @@ const router = createBrowserRouter([
     },
     {
         path: "*",
-       element: <Page404/>
+        element: <Page404 />
     },
     {
         // Base perfil de usuario
@@ -99,15 +99,15 @@ const router = createBrowserRouter([
     },
     {
         //Base de vistas del Admin
-        path: '/indexadmin',
-        element: <IndexAdminLayout/>,
+        path: '/indexAdmin',
+        element: <IndexAdminLayout />,
         children: [
             {
                 index: true,
                 element: <IndexAdmin />
             },
             {
-                path: '/indexadmin/ventasadmin',
+                path: '/indexAdmin/ventasadmin',
                 element: <VentasAdmin />
             },
         ]
@@ -117,7 +117,7 @@ const router = createBrowserRouter([
         path: '/logs',
         element: <Logs />
     }
-    
+
     // {
     //     path: '/testModel',
     //     element: <TestModel />

@@ -1,7 +1,40 @@
+import { createRef, useState } from 'react';
+import clienteAxios from '../../config/axios';
+
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
+// Componente 
+import Alert from '../../components/Alert';
+
 
 export default function Login() {
+    // Acceden al elemento input del DOM y su valor
+    const emailRef = createRef();
+    const passwordRef = createRef();
+
+    const [errores, setErrores] = useState([]);
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+
+        // Propiedades del objeto, según como los espera Laravel
+        const datos = {
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+        }
+
+        try {
+            const { data } = await clienteAxios.post('/api/login', datos);
+            // Guardar token de auth en localstorage
+            localStorage.setItem('AUTH_TOKEN', data.token);
+            // Si todo esta bien
+            setErrores([]);
+        } catch (error) {
+            // Errores dados por Axios
+            setErrores(Object.values(error.response.data.errors));
+        }
+    }
+
     return (
         <>
             <div className="content-form-center">
@@ -16,12 +49,19 @@ export default function Login() {
                 <div className="w-full rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 bg-neutral">
                     <div className="p-6 space-y-4 sm:space-y-6 sm:p-8">
 
-                        <h1 className="title-form">
+                        <h1 className="text-4xl text-center text-white font-title font-semibold py-4">
                             Inicia Sesión
                         </h1>
 
+                        {/* Impresión de errores */}
+                        {errores ? errores.map((error, i) => <Alert key={i}>{error}</Alert>) : ''}
+
                         {/* Form Login */}
-                        <form className="space-y-4 md:space-y-6" action="#">
+                        <form
+                            className="space-y-4 md:space-y-6"
+                            onSubmit={handleSubmit}
+                            noValidate
+                        >
                             {/* Input */}
                             <div className="form-control w-full">
                                 <label className="label">
@@ -32,7 +72,7 @@ export default function Login() {
                                     placeholder="estudiante@cdb.edu.sv"
                                     className="input input-bordered w-full text-white bg-base-100"
                                     name="email"
-
+                                    ref={emailRef}
                                 />
                             </div>
 
@@ -46,6 +86,7 @@ export default function Login() {
                                     placeholder="••••••••"
                                     className="input input-bordered w-full text-white bg-base-100"
                                     name="password"
+                                    ref={passwordRef}
                                 />
                             </div>
 

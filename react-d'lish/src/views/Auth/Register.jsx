@@ -4,7 +4,6 @@ import clienteAxios from '../../config/axios';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 // Componente 
-import Navbar from "../../components/Navbar";
 import Alert from '../../components/Alert';
 
 
@@ -32,8 +31,10 @@ export default function Registro() {
         }
 
         try {
-            const respuesta = await clienteAxios.post('/api/registro', datos);
-            console.log(respuesta);
+            const { data } = await clienteAxios.post('/api/registro', datos);
+            console.log(data.token);
+            // Si todo esta bien
+            setErrores([]);
         } catch (error) {
             // Errores dados por Axios
             setErrores(Object.values(error.response.data.errors));
@@ -54,7 +55,7 @@ export default function Registro() {
 
                     <div className="p-6 space-y-4 sm:space-y-6 sm:p-8">
 
-                        <h1 className="title-form">
+                        <h1 className="text-4xl text-center text-white font-title font-semibold py-4">
                             Registrate
                         </h1>
 
@@ -65,12 +66,13 @@ export default function Registro() {
                             noValidate
                         >
 
+                            {/* Impresión de errores */}
                             {errores ? errores.map((error, i) => <Alert key={i}>{error}</Alert>) : ''}
 
                             {/* Input nombre*/}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Nobre Completo</span>
+                                    <span className="label-text">Nombre Completo</span>
                                 </label>
                                 <input
                                     type="text"

@@ -31,7 +31,7 @@ class RegisterRequest extends FormRequest
             'password' => [
                 'required', 'confirmed',
                 // Clase de validación de contraseña
-                PasswordRules::min(6)->letters()->symbols()->numbers()
+                PasswordRules::min(6)->letters()->numbers()
             ]
         ];
     }
