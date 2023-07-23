@@ -1,4 +1,4 @@
-import React from 'react'
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer"
 import SideBar from '../components/SideBar'
 
@@ -8,6 +8,8 @@ function AdminLayout() {
       <>
         <SideBar />
 
+        {/* Impresión del componente correspondiente */}
+        <Outlet />
 
         <Footer />
       </>
