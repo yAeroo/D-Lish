@@ -100,7 +100,7 @@ const router = createBrowserRouter([
     {
         //Base de vistas del Admin
         path: '/indexAdmin',
-        element: <IndexAdminLayout />,
+        element: <AdminLayout />,
         children: [
             {
                 index: true,
