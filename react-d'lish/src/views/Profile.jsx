@@ -3,6 +3,9 @@ import ProfileButtons from "../components/ProfileButtons";
 import ProfileInfo from "../components/ProfileInfo";
 import Preferences from "../components/Preferences";
 
+// Icons
+import { BiLogOut } from "react-icons/bi";
+
 export default function Profile() {
     return (
         <>
@@ -12,15 +15,23 @@ export default function Profile() {
             {/* Información de perfil */}
             <ProfileInfo />
         
-            {/* Perefencias */}
-            <Preferences />
+            {/* Contenedor para centrar info */}
+            <div className="flex flex-col justify-center flex-grow">
+                {/* Perefencias */}
+                <Preferences />
 
-            {/* Botón para cerrar sesión que no cierra sesión jaja */}
-            <form className="flex justify-center h-full pb-12">
-                <button type="submit" className="btn bg-prim text-white w-6/12 self-end">
-                    Cerrar Sesión
-                </button>
-            </form>
+                {/* Botón para cerrar sesión que no cierra sesión jaja */}
+                <div className="flex justify-center h-full pb-12 fa-custom animate-fade">
+                    <button>
+                        <div className="flex bg-secondary rounded-full p-2 px-14">
+                            <span> <BiLogOut size={"25"} color={"white"} /> </span>
+                            <span className="mx-2 profile-bttn-text !block">
+                                Cerrar sesión
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
         </>
     )
 }

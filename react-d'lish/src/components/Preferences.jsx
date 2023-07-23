@@ -8,17 +8,17 @@ import { IoIosArrowForward } from "react-icons/io";
 export default function Preferences() {
     return (
         <div className="mb-10 fa-custom animate-fade">
-            <ul className="w-9/12 m-auto ">
-                <Link to="">
+            <ul className="w-10/12 m-auto ">
+                <div>
                     <li className="li-elem !mb-4">
                         <MdOutlineAlternateEmail size={"25"} />
                         <div className="flex justify-between w-full">
-                            <span className="px-2 overflow-ellipsis w-[13.5rem] sm:w-full overflow-hidden">
+                            <span className="px-2 overflow-ellipsis min-w-[13.8rem] sm:w-full overflow-hidden">
                                 estudiante20100020@cdb.edu.sv
                             </span>
                         </div>
                     </li>
-                </Link>
+                </div>
 
                 <Link to="/profile/settings">
                     <li className="li-elem !mb-4">
@@ -39,6 +39,7 @@ export default function Preferences() {
                         </div>
                     </li>
                 </Link>
+
             </ul>
 
             {/* Boton cerrar sesión */}

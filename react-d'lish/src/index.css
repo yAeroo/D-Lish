@@ -27,12 +27,13 @@
   @apply animate-duration-[780ms] animate-ease-in-out;
 }
 
+/* Estilos profile */
 .profile-bttn-text{
   @apply hidden md:block font-bold text-base self-center text-white transition-all
 }
 
 .profile-banner{
-  background-image: url("../src/assets/img/banner.jpg");
+  background-image: url("../src/assets/img/banner-opacity-50.jpg");
 }
 
 #div-file{
@@ -46,7 +47,6 @@
     height: 1px;
     opacity: 0;
 }
-
 
 .shadow-profile{
   box-shadow: inset 0px -29px 8px 0px rgba(0,0,0,0.1);
