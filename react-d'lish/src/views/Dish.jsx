@@ -163,32 +163,30 @@ return (
                     <li className="py-3 ">
                         <div className="flex items-center space-x-4">
                             <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    {/* Open the modal using ID.showModal() method */}
-                                    <button className=" text-sm font-medium text-gray-900 truncate dark:text-white" onClick={()=>window.my_modal_1.showModal()}>Fresco*</button>
-                                    <dialog id="my_modal_1" className="modal">
-                                      <form method="dialog" className="modal-box">
-                                      <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-                                        <h1 className='text-white  md:px-40  md:text-50px  sm:items-center justify-center '>Escoge tu Bebida</h1>
-                                        <li className='dark:text-white mt-6'><h1>Tamarindo
-                                        <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                        <li className='dark:text-white'><h1>Té
-                                        <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                        <li className='dark:text-white' ><h1>Limonada
-                                        <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                        <li className='dark:text-white'><h1>Jamaica
-                                        <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                      </ul> 
-                                        <div className="modal-action">
-                                          {/* if there is a button in form, it will close the modal */}
-                                          <button className="btn">Close</button>
-                                        </div>
-                                      </form>
-                                    </dialog>
-                                </p>
+                              {/* DropDown */}
+                              <div tabIndex={0} className="collapse "> 
+                               <div className="collapse-title text-sm font-medium text-gray-900 truncate dark:text-white">
+                                 Frescos
+                               </div>
+                               <div className="collapse-content"> 
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow">
+                                         <h1 className='text-white   md:text-50px  sm:items-center'>Escoge tu Bebida</h1>
+                                         <li className='dark:text-white mt-6'><h1>Tamarindo
+                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                                         <li className='dark:text-white'><h1>Té
+                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                                         <li className='dark:text-white' ><h1>Limonada
+                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                                         <li className='dark:text-white'><h1>Jamaica
+                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                                       </ul> 
+                               </div>
+                              </div>
+
+
                             </div>
                             <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox" required="required" className="checkbox checkbox-success" />
+                            <input type="checkbox" required="required" className="checkbox checkbox-success modal-toggle !block" />
                             </div>
                         </div>
                     </li>
@@ -211,4 +209,14 @@ return (
 }
 
 export default Dish
-    
+                            // <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
+                            //             <h1 className='text-white  md:px-40  md:text-50px  sm:items-center justify-center '>Escoge tu Bebida</h1>
+                            //             <li className='dark:text-white mt-6'><h1>Tamarindo
+                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                            //             <li className='dark:text-white'><h1>Té
+                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                            //             <li className='dark:text-white' ><h1>Limonada
+                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                            //             <li className='dark:text-white'><h1>Jamaica
+                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
+                            //           </ul> 
