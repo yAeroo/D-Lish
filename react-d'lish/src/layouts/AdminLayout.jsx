@@ -4,7 +4,7 @@ import SideBar from '../components/SideBar'
 
 function AdminLayout() {
   return (
-    <div>
+    <div className="bg-neutral-100">
       <>
         <SideBar />
 

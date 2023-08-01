@@ -11,9 +11,9 @@ function IndexAdmin() {
 
 {/* Mensaje de Bienvenida y Boton de Edit Local */}
     <main className="p-6 sm:p-10 space-y-6">
-      <div classNameName="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between">
+      <div classNameName="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
         <div className="mr-6">
-          <h1 className="text-4xl font-semibold mb-2 text-white">Cafetín Maria Auxiliadora</h1>
+          <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín Maria Auxiliadora</h1>
           <h2 className="text-gray-600 ml-0.5">Mira las estadisticas de tu local</h2>
         </div>
         <div className="flex flex-wrap items-start justify-end -mb-3">
