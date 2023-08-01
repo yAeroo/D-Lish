@@ -11,7 +11,7 @@ function AdminLayout() {
         {/* Impresión del componente correspondiente */}
         <Outlet />
 
-        <Footer />
+
       </>
     </div>
   )
