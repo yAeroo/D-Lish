@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // Importación de iconos
 import { HiMenu} from "react-icons/hi";
@@ -6,6 +7,7 @@ import { BsGraphUp } from 'react-icons/bs';
 import { MdFoodBank } from 'react-icons/md'
 import { IoFastFoodSharp } from 'react-icons/io5';
 import { BiLogOut } from "react-icons/bi";
+
 
 function SideBar() {
   return (
@@ -31,9 +33,9 @@ function SideBar() {
           <ul className="menu p-4 w-[7rem] h-full fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
             <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 cursor-pointer mx-auto mt-5 mb-12' />
-            <li className="mb-7" title='Ventas'><a><BsGraphUp className='text-white text-2xl '/></a></li>
-            <li className="mb-7" title="Productos"><a><IoFastFoodSharp className='text-white text-2xl '/></a></li>
-            <li className="mb-7" title='Cafeteria'><a><MdFoodBank className='text-white text-2xl '/></a></li>
+            <li className="mb-7" title='Ventas'><Link to="/indexAdmin/ventasadmin"><BsGraphUp className='text-white text-2xl '/></Link></li>
+            <li className="mb-7" title="Productos"><Link to="#"><IoFastFoodSharp className='text-white text-2xl '/></Link></li>
+            <li className="mb-7" title='Cafeteria'><Link to="#"><MdFoodBank className='text-white text-2xl '/></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'><a className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl'/></a></li>
