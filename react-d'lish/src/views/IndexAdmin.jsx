@@ -1,12 +1,14 @@
 import React from 'react'
-import SideBar from '../components/SideBar'
 
 function IndexAdmin() {
   return (
-    <div>
+    <div className='lg:ml-[10rem] h-[100vh]'>
       
-    <SideBar/>
 
+
+      <img src="../public/favicon.png" alt="" />
+
+      <h1>PEPE</h1>
 
     </div>
   )
