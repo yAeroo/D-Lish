@@ -11,7 +11,7 @@ import { BiLogOut } from "react-icons/bi";
 
 function SideBar() {
   return (
-    <div>
+    <div className='z-10 relative'>
 
       {/* Contenedor del Sidebar */}
       <div className="drawer lg:drawer-open lg:absolute w-0">
@@ -20,7 +20,7 @@ function SideBar() {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
         {/* Botón para mostrar/ocultar el sidebar en vista móvil */}
-        <div className="fixed top-0 left-0 mt-4 ml-4">
+        <div className=" top-0 left-0 mt-4 ml-4">
           <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden"><HiMenu /></label>
         </div> 
 
@@ -32,10 +32,10 @@ function SideBar() {
           {/* Lista de elementos del sidebar */}
           <ul className="menu p-4 w-[7rem] h-full fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
-            <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 cursor-pointer mx-auto mt-5 mb-12' />
+            <Link to="/indexAdmin"><img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 cursor-pointer mx-auto mt-5 mb-12' /></Link>
             <li className="mb-7" title='Ventas'><Link to="/indexAdmin/ventasadmin"><BsGraphUp className='text-white text-2xl '/></Link></li>
             <li className="mb-7" title="Productos"><Link to="#"><IoFastFoodSharp className='text-white text-2xl '/></Link></li>
-            <li className="mb-7" title='Cafeteria'><Link to="#"><MdFoodBank className='text-white text-2xl '/></Link></li>
+            <li className="mb-7" title='Cafeteria'><Link to="/indexAdmin/profileadmin"><MdFoodBank className='text-white text-2xl '/></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'><a className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl'/></a></li>

@@ -20,6 +20,7 @@ import Settings from './views/Settings';
 import Page404 from './views/Page404';
 import VentasAdmin from './views/Admin/VentasAdmin';
 import IndexAdmin from './views/IndexAdmin';
+import ProfileAdmin from './views/Admin/ProfileAdmin';
 
 
 
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
             {
                 path: '/indexAdmin/ventasadmin',
                 element: <VentasAdmin />
+            },
+            {
+                path: '/indexAdmin/profileadmin',
+                element: <ProfileAdmin />
             },
         ]
 
