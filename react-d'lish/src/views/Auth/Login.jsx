@@ -1,5 +1,5 @@
 import { createRef, useState } from 'react';
-import clienteAxios from '../../config/axios';
+import { useAuth } from '../../hooks/useAuth';
 
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
@@ -14,6 +14,12 @@ export default function Login() {
 
     const [errores, setErrores] = useState([]);
 
+    // Simulamos parametros de laravel para el hook
+    const { login } = useAuth({
+        middleware: 'guest',
+        url: '/profile'
+    });
+
     const handleSubmit = async e => {
         e.preventDefault();
 
@@ -23,16 +29,8 @@ export default function Login() {
             password: passwordRef.current.value,
         }
 
-        try {
-            const { data } = await clienteAxios.post('/api/login', datos);
-            // Guardar token de auth en localstorage
-            localStorage.setItem('AUTH_TOKEN', data.token);
-            // Si todo esta bien
-            setErrores([]);
-        } catch (error) {
-            // Errores dados por Axios
-            setErrores(Object.values(error.response.data.errors));
-        }
+        // Pasamos los datos necesarios a la función
+        login(datos, setErrores);
     }
 
     return (

@@ -3,8 +3,15 @@ import { Outlet } from "react-router-dom";
 import PostAuthNavbar from "../components/Post-AuthNavbar";
 import NavIndex from "../components/NavIndex";
 import Footer from "../components/Footer"
+// Validación de Auth
+import { useAuth } from "../hooks/useAuth";
 
 export default function ProfileLayout() {
+    const { user, error } = useAuth({ middleware: 'auth' });
+
+    console.log(user);
+    console.log(error);
+
     return (
         <>
             {/* NavBar Flotante */}
