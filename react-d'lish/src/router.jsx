@@ -21,6 +21,7 @@ import Page404 from './views/Page404';
 import VentasAdmin from './views/Admin/VentasAdmin';
 import IndexAdmin from './views/IndexAdmin';
 import ProfileAdmin from './views/Admin/ProfileAdmin';
+import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
 
 
 
@@ -114,6 +115,10 @@ const router = createBrowserRouter([
             {
                 path: '/indexAdmin/profileadmin',
                 element: <ProfileAdmin />
+            },
+            {
+                path: '/indexAdmin/delivmode' ,
+                element: <DeliveryModeAdmin />
             },
         ]
 
