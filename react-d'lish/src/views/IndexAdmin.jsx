@@ -1,27 +1,30 @@
 import React from 'react'
 import TarjetasAdminIndex from '../components/TarjetasAdminIndex'
 import ExamplePfp from "../..//src/assets/img/example-pfp.jpg";
+import { Link } from 'react-router-dom';
 
 function IndexAdmin() {
   return (
     <>
     <div className='lg:ml-[10rem] h-[100%] animate-fade animate-duration-500'>
 
-      <div className="flex-grow text-gray-800">
+      <div className="flex-grow ">
 
-{/* Mensaje de Bienvenida y Boton de Edit Local */}
+{/* Mensaje de Bienvenida  */}
     <main className="p-6 sm:p-10 space-y-6">
       <div classNameName="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
         <div className="mr-6">
           <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín Maria Auxiliadora</h1>
-          <h2 className="text-white ml-0.5">Mira las estadisticas de tu local</h2>
+          <h2 className="text-black ml-0.5">Mira las estadisticas de tu local</h2>
         </div>
-        <div className="flex flex-wrap items-start justify-end -mb-3">
+
+        {/* Boton de Edit Local */}
+        <div className="flex flex-wrap items-start justify-end -mb-3 mt-6">
           <button className="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3">
             <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
             </svg>
-            Perfil Local
+            <Link to="/indexAdmin/profileadmin">Editar Local</Link>
           </button>
         </div>
       </div>

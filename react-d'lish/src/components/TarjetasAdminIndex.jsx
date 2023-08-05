@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function TarjetasAdminIndes() {
   return (
     <div>
             {/* Tarjetas */}
+
       <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+
               {/* Tarjeta 1*/}
         <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
           <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-purple-600 bg-purple-100 rounded-full mr-6">
@@ -13,10 +16,11 @@ function TarjetasAdminIndes() {
             </svg>
           </div>
           <div>
-            <span className="block text-2xl text-yellow-50 font-bold">58</span>
+            <span className="block text-2xl  text-yellow-50 font-bold">58</span>
             <span className="block text-white">Pedidos Diarios</span>
           </div>
         </div>
+
                {/* Tarjeta 2*/}
         <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
           <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-green-600 bg-green-100 rounded-full mr-6">
@@ -29,6 +33,7 @@ function TarjetasAdminIndes() {
             <span className="block text-white">Incremento Ventas</span>
           </div>
         </div>
+
                {/* Tarjeta 3*/}
         <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
           <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-red-600 bg-red-100 rounded-full mr-6">
@@ -41,6 +46,7 @@ function TarjetasAdminIndes() {
             <span className="block text-white">Pedidos No Recogidos</span>
           </div>
         </div>
+
                   {/* Tarjeta 4*/}
         <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
           <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-blue-600 bg-blue-100 rounded-full mr-6">
@@ -54,6 +60,7 @@ function TarjetasAdminIndes() {
           </div>
         </div>
       </section>
+      
     </div>
   )
 }
