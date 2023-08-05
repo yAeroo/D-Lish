@@ -22,17 +22,30 @@ export default function NavIndex() {
               className="h-10 md:h-12 cursor-pointer my-auto"
             />
           </Link>
-          <div className="flex items-center gap-1">
-            <input
-              type="text"
-              placeholder="¿Que estas buscando el dia de hoy?"
-              className="input input-bordered w-[10rem] md:w-[18rem] lg:w-[25rem] md:text-sm lg:text-md rounded-2xl bg-slate-900 drop-shadow-md px-7 py-6"
-            />
-
-            <button className="input input-bordered w-[3rem] rounded-xl bg-slate-900 text-white px-auto py-auto">
-              <IoSearch />
-            </button>
-
+          <div className="form-control">
+            <div className="input-group">
+              <input
+                type="text"
+                placeholder="¿Qué estas buscando el dia de hoy?"
+                className="input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] focus:outline-none"
+              />
+              <button className="btn bg-[#4cbb6a] hover:bg-[#4cbb69d5]">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="black"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="flex self-center gap-2">
             <Link to="../profile" className="text-slate-300">

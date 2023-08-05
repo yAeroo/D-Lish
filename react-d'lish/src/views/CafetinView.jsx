@@ -113,7 +113,7 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Agregar</button>
+                <button className="btn btn-primary mt-[1rem]">Agregar</button>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Agregar</button>
+                <button className="btn btn-primary mt-[1rem]">Agregar</button>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Agregar</button>
+                <button className="btn btn-primary mt-[1rem]">Agregar</button>
               </div>
             </div>
           </div>
