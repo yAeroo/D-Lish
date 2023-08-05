@@ -1,15 +1,15 @@
 import '../css/cutoff-border.css';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
-import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import NavCafetin from '../components/NavCafetin';
 
 function Order() {
   return (
     <>
     {/* Apartado de NavBar */}
           <section className='px-4 md:px-24 py-4 bg-gradient-to-r'>
-            <div className='animate-fade-up animate-once animate-delay-[1300ms]'><Navbar></Navbar></div>
+            <div className='animate-fade-up animate-once animate-delay-[1300ms]'><NavCafetin></NavCafetin></div>
           </section>
 
     {/* Cuerpo del trabajo + animación  */}
@@ -18,7 +18,7 @@ function Order() {
     {/* Estructura del cuadrito */}
  <div  className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide ">
 {/* lo que centra y maneja la posicion del cuadro  */}
-    <div className="h-full col-start-2 py-20  place-self-center items-center md:px-3 ">
+    <div className="h-full col-start-2 py-20  place-self-center items-center  md:px-3 ">
       {/* Cuerpo del La card */}
       <div id="box" className="box lg:px-5  bg-[#fef9c3]">
         {/* contenido carta */}
@@ -72,10 +72,16 @@ function Order() {
   </table>
 </div>
 
+      <div className="mt-10  py-7 flex items-center justify-end gap-x-6  md:mt-12 md:ml-80">
+        <button type="submit" className="rounded-md bg-secu px-3 py-2  text-sm font-semibold text-white shadow-sm hover:bg-[#1a47da] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Siguiente</button>
+      </div>
+
       </div>
       </div>
   </div>
+  
   </div>
+
   <Footer></Footer>
   </>
   )

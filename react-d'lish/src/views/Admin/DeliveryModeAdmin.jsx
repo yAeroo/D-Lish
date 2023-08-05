@@ -8,7 +8,7 @@ function DeliveryModeAdmin() {
         {/* Texto de arriba */}
         <section className='text-center flex h-[inherit] w-full justify-center items-center flex-col'>
             <div className='p-3 pb-10 text-xl'>
-                <div className="px-6 py-5 font-semibold border-b border-gray-100">Confirme su Orden</div>
+                <div className="px-6 py-5 font-semibold border-b text-secondary border-gray-100">Confirme su Orden</div>
             </div>
 
           {/* Imagen  QR */}

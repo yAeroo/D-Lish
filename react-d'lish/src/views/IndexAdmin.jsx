@@ -55,8 +55,8 @@ function IndexAdmin() {
             </svg>
           </div>
           <div>
-            <span className="block text-2xl text-yellow-50 font-bold">25</span>
-            <span className="block text-black"></span>
+            <span className="block text-2xl text-yellow-50 font-bold">5</span>
+            <span className="block text-white">Ventas Restantes</span>
           </div>
         </div>
 
