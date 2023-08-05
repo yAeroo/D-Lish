@@ -7,7 +7,7 @@ import { BsGraphUp } from 'react-icons/bs';
 import { MdFoodBank } from 'react-icons/md'
 import { IoFastFoodSharp } from 'react-icons/io5';
 import { BiLogOut } from "react-icons/bi";
-
+import {AiOutlineQrcode} from "react-icons/ai";
 
 function SideBar() {
   return (
@@ -36,6 +36,7 @@ function SideBar() {
             <li className="mb-7" title='Ventas'><Link to="/indexAdmin/ventasadmin"><BsGraphUp className='text-white text-2xl '/></Link></li>
             <li className="mb-7" title="Productos"><Link to="#"><IoFastFoodSharp className='text-white text-2xl '/></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/indexAdmin/profileadmin"><MdFoodBank className='text-white text-2xl '/></Link></li>
+            <li className="mb-7" title='Cafeteria'><Link to="/indexAdmin/delivmode"><AiOutlineQrcode className='text-white text-2xl '/></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'><a className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl'/></a></li>
