@@ -5,7 +5,7 @@ import ExamplePfp from "../..//src/assets/img/example-pfp.jpg";
 function IndexAdmin() {
   return (
     <>
-    <div className='lg:ml-[10rem] h-[100%]'>
+    <div className='lg:ml-[10rem] h-[100%] animate-fade animate-duration-500'>
 
       <div className="flex-grow text-gray-800">
 
