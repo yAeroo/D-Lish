@@ -14,7 +14,7 @@ function IndexAdmin() {
       <div classNameName="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
         <div className="mr-6">
           <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín Maria Auxiliadora</h1>
-          <h2 className="text-gray-600 ml-0.5">Mira las estadisticas de tu local</h2>
+          <h2 className="text-white ml-0.5">Mira las estadisticas de tu local</h2>
         </div>
         <div className="flex flex-wrap items-start justify-end -mb-3">
           <button className="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3">
@@ -30,8 +30,8 @@ function IndexAdmin() {
 
 {/* Espacio para Tarjeta de comida o Grafica  + demas Tarejtas*/}
       <section className="grid md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6">
-        <div className="flex flex-col md:col-span-2 md:row-span-2 bg-white shadow rounded-lg">
-          <div className="px-6 py-5 font-semibold border-b border-gray-100">Platillo más vendido o grafica</div>
+        <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
+          <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Platillo más vendido o grafica</div>
           <div className="p-4 flex-grow">
             <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
               <img className="h-25 rounded-lg" src="" alt="ComidaPIC" /></div>
@@ -40,7 +40,7 @@ function IndexAdmin() {
 
 
         {/* Trajetas de Abajo */}
-        <div className="flex items-center p-8 bg-white shadow rounded-lg">
+        <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
 
 
           {/* Trajetas de Abajo 1 */}
@@ -52,27 +52,27 @@ function IndexAdmin() {
             </svg>
           </div>
           <div>
-            <span className="block text-2xl font-bold">25</span>
-            <span className="block text-gray-500"></span>
+            <span className="block text-2xl text-yellow-50 font-bold">25</span>
+            <span className="block text-black"></span>
           </div>
         </div>
 
          {/* Trajetas de Abajo 2 */}
-        <div className="flex items-center p-8 bg-white shadow rounded-lg">
+        <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
           <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-teal-600 bg-teal-100 rounded-full mr-6">
             <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <div>
-            <span className="block text-2xl font-bold">11:50 am</span>
-            <span className="block text-gray-500">Hora de Pedididos concurrentes</span>
+            <span className="block text-2xl  text-yellow-50 font-bold">11:50 am</span>
+            <span className="block text-white">Hora de Pedididos concurrentes</span>
           </div>
         </div>
 
 
                 {/* Trajetas de Usuarios */}
-        <div className="row-span-3 bg-white shadow rounded-lg">
+        <div className="row-span-3 bg-neutral text-yellow-50 shadow rounded-lg">
           <div className="flex items-center justify-between px-6 py-5 font-semibold border-b border-gray-100">
             <span>Usuarios Frencuentes</span>
           </div>
@@ -83,49 +83,49 @@ function IndexAdmin() {
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Annette Watson profile picture"/>
                 </div>
-                <span className="text-gray-600">Javier Mejia</span>
+                <span className="text-yellow-50">Javier Mejia</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Calvin Steward profile picture"/>
                 </div>
-                <span className="text-gray-600">Eleazar Amaya</span>
+                <span className="text-yellow-50">Eleazar Amaya</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Ralph Richards profile picture"/>
                 </div>
-                <span className="text-gray-600">Victor Cornejo</span>
+                <span className="text-yellow-50">Victor Cornejo</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Bernard Murphy profile picture"/>
                 </div>
-                <span className="text-gray-600">Mateo Elia</span>
+                <span className="text-yellow-50">Mateo Elia</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Arlene Robertson profile picture"/>
                 </div>
-                <span className="text-gray-600">Oscar Arce</span>
+                <span className="text-yellow-50">Oscar Arce</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Jane Lane profile picture"/>
                 </div>
-                <span className="text-gray-600">Luis Marquez</span>
+                <span className="text-yellow-50">Luis Marquez</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Pat Mckinney profile picture"/>
                 </div>
-                <span className="text-gray-600">Martin Carbajal</span>
+                <span className="text-yellow-50">Martin Carbajal</span>
               </li>
               <li className="flex items-center">
                 <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
                   <img src={ExamplePfp} alt="Norman Walters profile picture"/>
                 </div>
-                <span className="text-gray-600">Alvin 2</span>
+                <span className="text-yellow-50">Alvin 2</span>
               </li>
             </ul>
           </div>
@@ -133,8 +133,8 @@ function IndexAdmin() {
 
 
                 {/* Trajetas de Larteral */}
-        <div className="flex flex-col row-span-3 bg-white shadow rounded-lg">
-          <div className="px-6 py-5 font-semibold border-b border-gray-100">Grafico</div>
+        <div className="flex flex-col row-span-3 bg-neutral shadow rounded-lg">
+          <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Grafico</div>
           <div className="p-4 flex-grow">
             <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">Grafico</div>
           </div>
