@@ -64,8 +64,8 @@ export default function Index() {
           Lo más vendido
         </h2>
 
-        <div className="flex items-center justify-center mx-1 h-[10rem] w-full">
-          <div className="flex items-center justify-start space-x-4 mt-4">
+        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
@@ -77,28 +77,47 @@ export default function Index() {
               <p className="text-sm text-neutral-200">$2.50</p>
             </div>
           </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-full ml-10">
-              Ver más
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
+              Ver
           </button>
         </div>
 
-        <div className="flex items-center justify-center mx-1 h-[10rem] w-full">
-          <div className="flex items-center justify-start space-x-4 mt-4">
+        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-lg font-bold text-neutral-100">
-                Pollo Asado
+                Carne Asada
+              </h2>
+              <h3 className="text-md text-neutral-200">Don Bosco</h3>
+              <p className="text-sm text-neutral-200">$2.50</p>
+            </div>
+          </div>
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
+              Ver
+          </button>
+        </div>
+
+        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
+            <div className="w-20 h-20 rounded overflow-hidden">
+              <img className="w-full h-full object-cover" src={PolloAsado} />
+            </div>
+            <div className="flex flex-col">
+              <h2 className="text-lg font-bold text-neutral-100">
+                Burrito de Pollo
               </h2>
               <h3 className="text-md text-neutral-200">Maria Auxiliadora</h3>
               <p className="text-sm text-neutral-200">$2.50</p>
             </div>
           </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-full ml-10">
-              Ver más
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
+              Ver
           </button>
         </div>
+
 
       </section>
 
