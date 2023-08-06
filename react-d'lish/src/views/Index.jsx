@@ -5,6 +5,9 @@ import "../components/NavMobileIndex";
 //Imagenes
 import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
+import Burrito from "../../src/assets/index/burrito.jpg";
+import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
+import Pupusas from "../../src/assets/index/pupusas.jpg";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -67,7 +70,7 @@ export default function Index() {
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
           <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={PolloAsado} />
+              <img className="w-full h-full object-cover" src={Pupusas} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
@@ -85,7 +88,7 @@ export default function Index() {
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
           <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={PolloAsado} />
+              <img className="w-full h-full object-cover" src={Burrito} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
@@ -103,7 +106,7 @@ export default function Index() {
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
           <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={PolloAsado} />
+              <img className="w-full h-full object-cover" src={JugosNaturales} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
