@@ -64,57 +64,57 @@ export default function Index() {
           Lo más vendido
         </h2>
 
-        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
+        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
-                Pollo Asado
+                Pupusas 3 x $1
               </h2>
-              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
-              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
+              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Maria Auxiliadora</h3>
+              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$1.00 | Desayunos</p>
             </div>
           </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
-              Ver
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
+              Agregar
           </button>
         </div>
 
-        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
+        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
-                Pollo Asado
+                Burrito de Carne
               </h2>
-              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
+              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Don Bosco</h3>
               <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
             </div>
           </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
-              Ver
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
+              Agregar
           </button>
         </div>
 
-        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
+        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
+          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
               <h2 className="text-md font-bold text-neutral-100">
-                Pollo Asado
+                Jugos Naturales
               </h2>
               <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
-              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
+              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$0.25 | Otros</p>
             </div>
           </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
-              Ver
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
+              Agregar
           </button>
         </div>
 
