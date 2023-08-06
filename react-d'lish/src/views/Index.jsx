@@ -2,6 +2,10 @@ import Carrousel from "../components/Carrousel";
 import "../css/IndexPage.css";
 import "../components/NavMobileIndex";
 
+//Imagenes
+import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
+import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
+
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -24,56 +28,49 @@ export default function Index() {
       {/* Slider de cafeterias */}
       <Carrousel />
 
-      <section className="p-6 bg-neutral w-full space-y-6">
+      <section className="p-6 bg-base-100 w-full space-y-6">
         {/* ----Espacio para diferentes tipos de comidas----  */}
-        <div className="space-y-6 px-8">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-center title-text from-primary to-blue-500 py-2">
+        <div className="space-y-6 px-1">
+          <h2 className="text-3xl md:text-4xl md:text-center font-semibold text-neutral-100 py-2">
             Categorías
           </h2>
 
           <div className="flex gap-4 flex-wrap place-content-between p-0 xl:px-[22rem] lg:px-24">
             <div className="card w-full bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center min-w-min h-auto lg:h-48">
-              <div className="card-body bg-black/50">
-                <h2 className="card-title text-white text-3xl">Almuerzos</h2>
+              <div className="card-body bg-black/80">
+                <h2 className="card-title text-neutral-200 text-3xl">Platos Completos | Almuerzos</h2>
               </div>
             </div>
             {/*  */}
             <div className="card  w-full md:w-[48%] bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center h-auto lg:h-48">
-              <div className="card-body bg-black/50 ">
-                <h2 className="card-title text-white text-3xl">Desayunos</h2>
+              <div className="card-body bg-black/80 ">
+                <h2 className="card-title text-neutral-200 text-3xl">Desayunos</h2>
               </div>
             </div>
             <div className="card w-full md:w-[48%] bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center h-auto lg:h-48">
-              <div className="card-body bg-black/50 ">
-                <h2 className="card-title text-white text-3xl">Otros</h2>
+              <div className="card-body bg-black/80 ">
+                <h2 className="card-title text-neutral-200 text-3xl">Otros</h2>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="rounded-box">
-        <h2 className="text-5xl title-text from-secondary to-yellow-100 py-2 text-center">
+      <section className="md:mx-[7rem]">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white py-6 px-8">
           Lo más vendido
         </h2>
 
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          className="w-full text-white"
-        >
-          <SwiperSlide>
-            <ComidaCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ComidaCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ComidaCard />
-          </SwiperSlide>
-        </Swiper>
+        <div className="card-popular">
+        <figure><img src={PolloAsado}/></figure>
+        <div className="card-body">
+          <h2 className="card-title">Pollo Asado</h2>
+          <p>Click the button to watch on Jetflix app.</p>
+          <div className="card-actions justify-end">
+            <button className="btn btn-primary">Watch</button>
+          </div>
+        </div>
+        </div>
       </section>
 
       <h2 className="text-5xl title-text from-blue-600 to-cyan-500 py-2 text-center">
