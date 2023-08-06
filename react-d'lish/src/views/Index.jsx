@@ -60,7 +60,7 @@ export default function Index() {
       </section>
 
       <section className="md:mx-[7rem] px-1 bg-base-200 pb-10">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white py-8 px-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8">
           Lo más vendido
         </h2>
 
@@ -100,7 +100,7 @@ export default function Index() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
+        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
           <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
