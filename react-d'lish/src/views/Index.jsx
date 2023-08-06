@@ -70,11 +70,11 @@ export default function Index() {
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
-              <h2 className="text-lg font-bold text-neutral-100">
+              <h2 className="text-md font-bold text-neutral-100">
                 Pollo Asado
               </h2>
-              <h3 className="text-md text-neutral-200">Miguel Magone</h3>
-              <p className="text-sm text-neutral-200">$2.50</p>
+              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
+              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
             </div>
           </div>
           <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
@@ -88,11 +88,11 @@ export default function Index() {
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
-              <h2 className="text-lg font-bold text-neutral-100">
-                Carne Asada
+              <h2 className="text-md font-bold text-neutral-100">
+                Pollo Asado
               </h2>
-              <h3 className="text-md text-neutral-200">Don Bosco</h3>
-              <p className="text-sm text-neutral-200">$2.50</p>
+              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
+              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
             </div>
           </div>
           <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
@@ -100,17 +100,17 @@ export default function Index() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8">
+        <div className="flex items-center justify-center mx-1 h-[8rem] w-[98%] hover:bg-base-100 rounded-lg px-8 py-8 mb-5">
           <div className="flex items-center justify-start space-x-6 mt-0 w-[90%]">
             <div className="w-20 h-20 rounded overflow-hidden">
               <img className="w-full h-full object-cover" src={PolloAsado} />
             </div>
             <div className="flex flex-col">
-              <h2 className="text-lg font-bold text-neutral-100">
-                Burrito de Pollo
+              <h2 className="text-md font-bold text-neutral-100">
+                Pollo Asado
               </h2>
-              <h3 className="text-md text-neutral-200">Maria Auxiliadora</h3>
-              <p className="text-sm text-neutral-200">$2.50</p>
+              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
+              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
             </div>
           </div>
           <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-9">
