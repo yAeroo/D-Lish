@@ -1,7 +1,3 @@
-.card-popular {
-  @apply card card-side flex items-center justify-center mx-5 text-white
-}
-
 .food-type {
   @apply text-center text-xl bg-white rounded-2xl flex justify-center items-center max-w-sm bg-cover bg-center;
 }

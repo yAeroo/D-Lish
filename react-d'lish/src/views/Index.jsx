@@ -20,10 +20,9 @@ import NavMobileIndex from "../components/NavMobileIndex";
 export default function Index() {
   return (
     <main>
+      <></>
 
-    <></>
-      
-        <NavMobileIndex/>
+      <NavMobileIndex />
 
       {/* Slider de cafeterias */}
       <Carrousel />
@@ -38,13 +37,17 @@ export default function Index() {
           <div className="flex gap-4 flex-wrap place-content-between p-0 xl:px-[22rem] lg:px-24">
             <div className="card w-full bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center min-w-min h-auto lg:h-48">
               <div className="card-body bg-black/80">
-                <h2 className="card-title text-neutral-200 text-3xl">Platos Completos | Almuerzos</h2>
+                <h2 className="card-title text-neutral-200 text-3xl">
+                  Platos Completos | Almuerzos
+                </h2>
               </div>
             </div>
             {/*  */}
             <div className="card  w-full md:w-[48%] bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center h-auto lg:h-48">
               <div className="card-body bg-black/80 ">
-                <h2 className="card-title text-neutral-200 text-3xl">Desayunos</h2>
+                <h2 className="card-title text-neutral-200 text-3xl">
+                  Desayunos
+                </h2>
               </div>
             </div>
             <div className="card w-full md:w-[48%] bg-base-100 shadow-xl bg-[url('/src/assets/img/food.jpeg')] bg-cover bg-center h-auto lg:h-48">
@@ -56,21 +59,47 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="md:mx-[7rem]">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white py-6 px-8">
+      <section className="md:mx-[7rem] px-1 bg-base-200 pb-10">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white py-8 px-8">
           Lo más vendido
         </h2>
 
-        <div className="card-popular">
-        <figure><img src={PolloAsado}/></figure>
-        <div className="card-body">
-          <h2 className="card-title">Pollo Asado</h2>
-          <p>Click the button to watch on Jetflix app.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+        <div className="flex items-center justify-center mx-1 h-[10rem] w-full">
+          <div className="flex items-center justify-start space-x-4 mt-4">
+            <div className="w-20 h-20 rounded overflow-hidden">
+              <img className="w-full h-full object-cover" src={PolloAsado} />
+            </div>
+            <div className="flex flex-col">
+              <h2 className="text-lg font-bold text-neutral-100">
+                Pollo Asado
+              </h2>
+              <h3 className="text-md text-neutral-200">Miguel Magone</h3>
+              <p className="text-sm text-neutral-200">$2.50</p>
+            </div>
           </div>
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-full ml-10">
+              Ver más
+          </button>
         </div>
+
+        <div className="flex items-center justify-center mx-1 h-[10rem] w-full">
+          <div className="flex items-center justify-start space-x-4 mt-4">
+            <div className="w-20 h-20 rounded overflow-hidden">
+              <img className="w-full h-full object-cover" src={PolloAsado} />
+            </div>
+            <div className="flex flex-col">
+              <h2 className="text-lg font-bold text-neutral-100">
+                Pollo Asado
+              </h2>
+              <h3 className="text-md text-neutral-200">Maria Auxiliadora</h3>
+              <p className="text-sm text-neutral-200">$2.50</p>
+            </div>
+          </div>
+          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-full ml-10">
+              Ver más
+          </button>
         </div>
+
       </section>
 
       <h2 className="text-5xl title-text from-blue-600 to-cyan-500 py-2 text-center">
