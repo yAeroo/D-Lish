@@ -21,7 +21,7 @@ function SideBar() {
 
         {/* Botón para mostrar/ocultar el sidebar en vista móvil */}
         <div className=" top-0 left-0 mt-4 ml-4">
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden"><HiMenu /></label>
+          <label htmlFor="my-drawer-2" className="btn btn-primary text-[20px] drawer-button lg:hidden"><HiMenu className='  font-extrabold' /></label>
         </div> 
 
         {/* Contenido del sidebar */}
@@ -32,9 +32,9 @@ function SideBar() {
           {/* Lista de elementos del sidebar */}
           <ul className="menu p-4 w-[7rem] h-full fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
-            <Link to="/indexAdmin"><img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 cursor-pointer mx-auto mt-5 mb-12' /></Link>
-            <li className="mb-7" title='Ventas'><Link to="/indexAdmin/ventasadmin"><BsGraphUp className='text-white text-2xl '/></Link></li>
-            <li className="mb-7" title="Productos"><Link to="#"><IoFastFoodSharp className='text-white text-2xl '/></Link></li>
+            <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
+            <li className="mb-7" title='Ventas'><Link to="/indexAdmin"><BsGraphUp className='text-white text-2xl '/></Link></li>
+            <li className="mb-7" title="Productos"><Link to="/indexAdmin/products"><IoFastFoodSharp className='text-white text-2xl '/></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/indexAdmin/profileadmin"><MdFoodBank className='text-white text-2xl '/></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/indexAdmin/delivmode"><AiOutlineQrcode className='text-white text-2xl '/></Link></li>
 

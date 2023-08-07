@@ -18,10 +18,10 @@ import Dish from './views/Dish';
 import Profile from './views/Profile';
 import Settings from './views/Settings';
 import Page404 from './views/Page404';
-import VentasAdmin from './views/Admin/VentasAdmin';
 import IndexAdmin from './views/IndexAdmin';
 import ProfileAdmin from './views/Admin/ProfileAdmin';
 import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
+import ProductAdmin from './views/Admin/ProductAdmin';
 
 
 
@@ -109,10 +109,6 @@ const router = createBrowserRouter([
                 element: <IndexAdmin />
             },
             {
-                path: '/indexAdmin/ventasadmin',
-                element: <VentasAdmin />
-            },
-            {
                 path: '/indexAdmin/profileadmin',
                 element: <ProfileAdmin />
             },
@@ -120,6 +116,10 @@ const router = createBrowserRouter([
                 path: '/indexAdmin/delivmode' ,
                 element: <DeliveryModeAdmin />
             },
+            {
+                path: '/indexAdmin/products' ,
+                element: <ProductAdmin />
+            }
         ]
 
     },

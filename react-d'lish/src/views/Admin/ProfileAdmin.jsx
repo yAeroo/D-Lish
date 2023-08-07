@@ -11,7 +11,7 @@ function ProfileAdmin() {
             <form>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12 pt-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Ajustes de perfil</h2>
+          <h2 className="text-xl font-semibold leading-7 text-terc">Ajustes de perfil</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">Recuerda que cualquier cosa aqui colocada sera publica para cualquier usuario exceptuando datos privados.</p>
 
             {/* Ajustes generales  */}
@@ -47,6 +47,8 @@ function ProfileAdmin() {
 
             <div className="col-span-full">
               <label htmlFor="cover-photo" className="block text-sm font-medium leading-6 text-gray-900">Foto de portada</label>
+
+              {/* CUADRO DE IMAGEN */}
               <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                 <div className="text-center">
                   <svg className="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -57,17 +59,22 @@ function ProfileAdmin() {
                       <span>Sube tu imagen</span>
                       <input id="file-upload" name="file-upload" type="file" className="sr-only" />
                     </label>
-                    <p className="pl-1">o arrastra o sueltala aqui</p>
+                    <p className="pl-1 hidden sm:block">o arrastra o sueltala aqui</p>
                   </div>
                   <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF de alrededor de 10MB</p>
                 </div>
               </div>
+
+
             </div>
+
+          
+
           </div>
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Informacion especifica</h2>
+          <h2 className="text-xl font-semibold leading-7 text-terc">Informacion especifica</h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">Datos que apareceran para dar soporte a los usuarios</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
