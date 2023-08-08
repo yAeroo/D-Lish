@@ -15,7 +15,7 @@ import CafetinView from './views/CafetinView';
 import TestModel from './views/TestModel';
 import Order from './views/Order';
 import Dish from './views/Dish';
-import Profile from './views/Profile';
+import Profile from './views/Auth/Profile';
 import Settings from './views/Settings';
 import Page404 from './views/Page404';
 import IndexAdmin from './views/IndexAdmin';

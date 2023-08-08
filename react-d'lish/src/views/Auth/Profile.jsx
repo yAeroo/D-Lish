@@ -9,6 +9,8 @@ import { useAuth } from "../../hooks/useAuth";
 import { BiLogOut } from "react-icons/bi";
 
 export default function Profile() {
+    const { logout } = useAuth({ middleware: 'auth' })
+
     return (
         <>
             {/* Botones de edición y fondos */}
@@ -24,7 +26,7 @@ export default function Profile() {
 
                 {/* Botón para cerrar sesión que no cierra sesión jaja */}
                 <div className="flex justify-center h-full pb-12 fa-custom animate-fade">
-                    <button>
+                    <button onClick={logout}>
                         <div className="flex bg-secondary rounded-full p-2 px-14">
                             <span> <BiLogOut size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">

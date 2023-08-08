@@ -45,8 +45,18 @@ export const useAuth = ({ middleware, url }) => {
 
     }
 
-    const logout = () => {
-        console.log('click');
+    const logout = async () => {
+        try {
+            // Petición tipo post: hacía la ruta... | con un objeto nulo
+            await clienteAxios.post('/api/logout', null, {
+                // token Sactum, conocer que usuario remueve su token
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+        } catch (error) {
+            throw Error(error?.response?.data?.errors)
+        }
     }
 
     console.log(user);
