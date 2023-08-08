@@ -34,11 +34,11 @@ export const useAuth = ({ middleware, url }) => {
             setErrores([]);
             // Función para forzar revalidación
             await mutate();
+            navigate('/');
         } catch (error) {
             // Errores dados por Axios
             setErrores(Object.values(error.response.data.errors));
         }
-
     }
 
     const registro = () => {
@@ -46,13 +46,11 @@ export const useAuth = ({ middleware, url }) => {
     }
 
     const logout = () => {
-
+        console.log('click');
     }
 
     console.log(user);
     console.log(error);
-
-    console.log(middleware);
     console.log(url);
 
     // UseEffect atento a User ó Error
@@ -62,7 +60,7 @@ export const useAuth = ({ middleware, url }) => {
         }
         // Condicional que válida la sesión
         if (middleware === 'auth' && error) {
-            navigate('/auth/login')
+            navigate('/homepage')
         }
     }, [user, error])
 

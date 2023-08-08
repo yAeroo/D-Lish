@@ -1,7 +1,9 @@
 // Componentes
-import ProfileButtons from "../components/ProfileButtons";
-import ProfileInfo from "../components/ProfileInfo";
-import Preferences from "../components/Preferences";
+import ProfileButtons from "../../components/ProfileButtons";
+import ProfileInfo from "../../components/ProfileInfo";
+import Preferences from "../../components/Preferences";
+// Protección de rutas
+import { useAuth } from "../../hooks/useAuth";
 
 // Icons
 import { BiLogOut } from "react-icons/bi";
@@ -11,10 +13,10 @@ export default function Profile() {
         <>
             {/* Botones de edición y fondos */}
             <ProfileButtons />
-                        
+
             {/* Información de perfil */}
             <ProfileInfo />
-        
+
             {/* Contenedor para centrar info */}
             <div className="flex flex-col justify-center flex-grow">
                 {/* Perefencias */}

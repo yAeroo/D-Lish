@@ -64,7 +64,8 @@ const router = createBrowserRouter([
     {
         // Base homepage
         path: '/homepage',
-        element: <Homepage />
+        element: <Homepage />,
+        index: true
     },
     {
         // Página de Ordenar
@@ -113,11 +114,11 @@ const router = createBrowserRouter([
                 element: <ProfileAdmin />
             },
             {
-                path: '/indexAdmin/delivmode' ,
+                path: '/indexAdmin/delivmode',
                 element: <DeliveryModeAdmin />
             },
             {
-                path: '/indexAdmin/products' ,
+                path: '/indexAdmin/products',
                 element: <ProductAdmin />
             }
         ]
