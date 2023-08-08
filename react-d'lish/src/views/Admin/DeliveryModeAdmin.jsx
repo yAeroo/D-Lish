@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Webcam from "react-webcam";
 
 function DeliveryModeAdmin() {
   return (
@@ -12,9 +12,10 @@ function DeliveryModeAdmin() {
             </div>
 
           {/* Imagen  QR */}
-          <div className="  shadow-xl">
+          <div className="">
             <figure className=' ml-12 w-3/4 h-3/4  md:w-72 md:mr-11  md:h-72 '>
-                <img src="../src/assets/img/qrpreview.png" alt="QR" />
+              
+
             </figure>
           </div>
         </section>

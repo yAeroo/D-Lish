@@ -73,7 +73,10 @@ function Order() {
 </div>
 
       <div className="mt-10  py-7 flex items-center justify-end gap-x-6  md:mt-12 md:ml-80">
+        <Link to="/delivmode">
         <button type="submit" className="rounded-md bg-secu px-3 py-2  text-sm font-semibold text-white shadow-sm hover:bg-[#1a47da] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Siguiente</button>
+        </Link>
+      
       </div>
 
       </div>
