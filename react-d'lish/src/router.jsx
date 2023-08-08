@@ -22,6 +22,7 @@ import IndexAdmin from './views/IndexAdmin';
 import ProfileAdmin from './views/Admin/ProfileAdmin';
 import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
 import ProductAdmin from './views/Admin/ProductAdmin';
+import DeliveryMode from './views/DeliveryMode';
 
 
 
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
         // Página del Platillo
         path: '/dish',
         element: <Dish />
+    },
+    {
+        // Página del QR
+        path: '/delivmode',
+        element: <DeliveryMode />
     },
     {
         path: '/cafetinView',
