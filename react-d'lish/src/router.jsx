@@ -108,7 +108,7 @@ const router = createBrowserRouter([
     },
     {
         //Base de vistas del Admin
-        path: '/indexAdmin',
+        path: '/admin',
         element: <AdminLayout />,
         children: [
             {
@@ -116,15 +116,15 @@ const router = createBrowserRouter([
                 element: <IndexAdmin />
             },
             {
-                path: '/indexAdmin/profileadmin',
+                path: '/admin/profile',
                 element: <ProfileAdmin />
             },
             {
-                path: '/indexAdmin/delivmode',
+                path: '/admin/delivmode',
                 element: <DeliveryModeAdmin />
             },
             {
-                path: '/indexAdmin/products',
+                path: '/admin/products',
                 element: <ProductAdmin />
             }
         ]

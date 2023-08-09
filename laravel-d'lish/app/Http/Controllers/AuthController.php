@@ -54,6 +54,11 @@ class AuthController extends Controller
     {
         // Del request obtenido, extraermos el token del usuario
         $user = $request->user();
-        $user->currentAccesToken()->delete();
+        $user->currentAccessToken()->delete();
+
+        // Devolvemos como respuesta al usuario en valor nulo
+        return [
+            'user' => null
+        ];
     }
 }

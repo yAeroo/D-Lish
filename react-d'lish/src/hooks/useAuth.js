@@ -41,8 +41,18 @@ export const useAuth = ({ middleware, url }) => {
         }
     }
 
-    const registro = () => {
-
+    const registro = async (datos, setErrores) => {
+        try {
+            const { data } = await clienteAxios.post('/api/registro', datos);
+            localStorage.setItem('AUTH_TOKEN', data.token)
+            // Limpiar State
+            setErrores([]);
+            // Revalidar token de usuario
+            await mutate();
+        } catch (error) {
+            // Errores dados por Axios
+            setErrores(Object.values(error.response.data.errors));
+        }
     }
 
     const logout = async () => {
@@ -54,13 +64,15 @@ export const useAuth = ({ middleware, url }) => {
                     Authorization: `Bearer ${token}`
                 }
             });
+            localStorage.removeItem('AUTH_TOKEN');
+            // Cambiar el valor de la caché de la sesión
+            await mutate(undefined);
         } catch (error) {
             throw Error(error?.response?.data?.errors)
         }
     }
 
     console.log(user);
-    console.log(error);
     console.log(url);
 
     // UseEffect atento a User ó Error

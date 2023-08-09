@@ -9,7 +9,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { BiLogOut } from "react-icons/bi";
 
 export default function Profile() {
-    const { logout } = useAuth({ middleware: 'auth' })
+    const { logout, user } = useAuth({ middleware: 'auth' })
 
     return (
         <>
@@ -17,12 +17,12 @@ export default function Profile() {
             <ProfileButtons />
 
             {/* Información de perfil */}
-            <ProfileInfo />
+            <ProfileInfo user={user} />
 
             {/* Contenedor para centrar info */}
             <div className="flex flex-col justify-center flex-grow">
                 {/* Perefencias */}
-                <Preferences />
+                <Preferences user={user} />
 
                 {/* Botón para cerrar sesión que no cierra sesión jaja */}
                 <div className="flex justify-center h-full pb-12 fa-custom animate-fade">

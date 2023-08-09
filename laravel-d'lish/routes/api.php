@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
-    Route::post('/logut', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 
 Route::get('/cafeterias', [CafeteriaController::class, 'index']);
