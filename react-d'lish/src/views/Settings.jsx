@@ -5,41 +5,35 @@ import ProfileInfo from "../components/ProfileInfo"
 import ProfileSetttings from "../components/ProfileSetttings";
 import ProfilePfp from "../components/ProfilePfp";
 
-import { ToastContainer, toast, Slide } from 'react-toastify';
+import { ToastContainer, Slide } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 // Icon
 import { BiSave } from "react-icons/bi";
 import { IoChevronBackSharp } from "react-icons/io5";
 
+// Helper
+import Notificacion from "../helper/Notify";
+
 export default function Settings() {
 
-    const success = "success-noti";
-    const notify_success = () => toast.success("¡Cambios guardados con exito!", {
-        toastId: success,
-        className: "!bg-[#191E2B] !font-body !py-2",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "dark",
+    // Se define el Toast
+    const toastSuccesId = "error-noti";
+    // Se instancia con referencia al ID Definido
+    const NotiExito = Notificacion(
+        "success",
+        toastSuccesId,
+        '¡Cambios guardados con exito!',
+        "!bg-[#191E2B] !font-body !py-2"
+    );
 
-    });
-
-    const error = "error-noti";
-    const notify_error = () => toast.error("¡Oops! Ha ocurrido un error...", {
-        toastId: error,
-        className: "!bg-[#191E2B] !font-body !py-2",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "dark",
-    });
+    const toastErrorId = "error-noti";
+    const NotiError = Notificacion(
+        "error",
+        toastErrorId,
+        '¡Oops! Ha ocurrido un error...',
+        "!bg-[#191E2B] !font-body !py-2"
+    );
 
     return (
         <>
@@ -68,7 +62,7 @@ export default function Settings() {
 
                 {/* Guardar cambios */}
                 <div className="flex justify-center h-full pb-12 fa-custom animate-fade">
-                    <button onClick={notify_success}>
+                    <button onClick={NotiExito}>
                         <div className="flex bg-secondary rounded-full p-2 md:px-5 ">
                             <span> <BiSave size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">
@@ -78,7 +72,7 @@ export default function Settings() {
                         <ToastContainer />
                     </button>
 
-                    <button onClick={notify_error}>
+                    <button onClick={NotiError}>
                         <div className="flex bg-red-500 rounded-full p-2 md:px-5 ">
                             <span> <BiSave size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">

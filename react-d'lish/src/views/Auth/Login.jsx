@@ -1,11 +1,12 @@
 import { createRef, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 // Componente 
 import Alert from '../../components/Alert';
-
+// Helper - Toastify
+import { ToastContainer, Slide } from 'react-toastify';
+import Notify from '../../helper/Notify';
 
 export default function Login() {
     // Acceden al elemento input del DOM y su valor
@@ -33,8 +34,21 @@ export default function Login() {
         login(datos, setErrores);
     }
 
+    // Toastify
+    const toastErrorId = "error-noti";
+    const NotiError = Notify(
+        "error",
+        toastErrorId,
+        '¡Oops! Ha ocurrido un error...',
+        "!bg-[#191E2B] !font-body !py-2"
+    );
+
+    function mostrarErrores() { if (errores) NotiError };
+
     return (
         <>
+            <ToastContainer />
+
             <div className="content-form-center">
 
                 {/* Imagen de Logo */}
@@ -89,7 +103,7 @@ export default function Login() {
                             </div>
 
                             <div className="pt-4">
-                                <button
+                                <button onClick={mostrarErrores}
                                     className="btn no-animation w-full btn-success text-white font-plane"
                                     type="submit">
                                     Iniciar
