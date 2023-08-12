@@ -5,7 +5,6 @@ import ProfileInfo from "../components/ProfileInfo"
 import ProfileSetttings from "../components/ProfileSetttings";
 import ProfilePfp from "../components/ProfilePfp";
 
-import { ToastContainer, Slide } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 // Icon
@@ -18,7 +17,7 @@ import Notificacion from "../helper/Notify";
 export default function Settings() {
 
     // Se define el Toast
-    const toastSuccesId = "error-noti";
+    const toastSuccesId = "success-noti";
     // Se instancia con referencia al ID Definido
     const NotiExito = Notificacion(
         "success",
@@ -69,7 +68,6 @@ export default function Settings() {
                                 Guardar cambios
                             </span>
                         </div>
-                        <ToastContainer />
                     </button>
 
                     <button onClick={NotiError}>

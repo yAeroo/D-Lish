@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 // Componente 
 import Alert from '../../components/Alert';
 // Helper - Toastify
-import { ToastContainer, Slide } from 'react-toastify';
 import Notify from '../../helper/Notify';
 
 export default function Login() {
@@ -23,6 +22,7 @@ export default function Login() {
 
     const handleSubmit = async e => {
         e.preventDefault();
+        setErrores([]);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -32,6 +32,7 @@ export default function Login() {
 
         // Pasamos los datos necesarios a la función
         login(datos, setErrores);
+        mostrarErrores();
     }
 
     // Toastify
@@ -39,15 +40,17 @@ export default function Login() {
     const NotiError = Notify(
         "error",
         toastErrorId,
-        '¡Oops! Ha ocurrido un error...',
+        '¡Oops! Credenciales incorrectas...',
         "!bg-[#191E2B] !font-body !py-2"
     );
-
-    function mostrarErrores() { if (errores) NotiError };
+    // Evalua si hay errores o no
+    function mostrarErrores() {
+        console.log(errores.length);
+        if (errores.length > 0) NotiError()
+    };
 
     return (
         <>
-            <ToastContainer />
 
             <div className="content-form-center">
 
@@ -103,7 +106,7 @@ export default function Login() {
                             </div>
 
                             <div className="pt-4">
-                                <button onClick={mostrarErrores}
+                                <button
                                     className="btn no-animation w-full btn-success text-white font-plane"
                                     type="submit">
                                     Iniciar

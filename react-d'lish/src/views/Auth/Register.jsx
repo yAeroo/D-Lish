@@ -1,11 +1,13 @@
 import { createRef, useState } from 'react';
-
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 // Componente 
 import Alert from '../../components/Alert';
 // Auth
 import { useAuth } from '../../hooks/useAuth';
+// Helper - Toastify
+import Notify from '../../helper/Notify';
+
 
 export default function Registro() {
 
@@ -21,6 +23,7 @@ export default function Registro() {
 
     const handleSubmit = async e => {
         e.preventDefault();
+        setErrores([]);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -32,7 +35,21 @@ export default function Registro() {
         }
 
         registro(datos, setErrores);
+        mostrarErrores()
     }
+
+    // Toastify
+    const toastErrorId = "error-noti";
+    const NotiError = Notify(
+        "error",
+        toastErrorId,
+        '¡Oops! Visualiza los errores arriba 👆🏻',
+        "!bg-[#191E2B] !font-body !py-2"
+    );
+    // Evalua si hay errores o no
+    function mostrarErrores() {
+        if (errores.length > 0) NotiError()
+    };
 
     // HTML
     return (
@@ -137,7 +154,7 @@ export default function Registro() {
 
 
                             <div className="pt-4">
-                                <button
+                                <button onClick={mostrarErrores}
                                     className="btn no-animation w-full btn-info text-white font-plane"
                                     type="submit">
                                     Registrar
