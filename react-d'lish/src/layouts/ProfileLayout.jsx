@@ -20,13 +20,13 @@ export default function ProfileLayout() {
 
             <section id="profile" className="min-h-screen profile-banner bg-cover flex items-end justify-center pt-60">
 
-                <article id="profile-info" className="bg-[#202949] min-h-[70vh] max-w-[65rem] sm:w-10/12 w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile absolute">
+                <article id="profile-info" className="bg-[#202949] min-h-[70vh] max-w-[65rem] sm:w-10/12 w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile md:absolute">
                     <div className="w-full">
                         {/* Información de perfil */}
                         <ProfileInfo user={user} className="relative" />
 
                         {/* Impresión del componente correspondiente */}
-                        <Outlet />
+                        <Outlet className />
 
                     </div>
 
