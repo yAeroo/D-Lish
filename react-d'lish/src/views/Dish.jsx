@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import FoodCard from '../components/FoodCard';
+import FoodCardDish from '../components/FoodCardDish';
 import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
 import Burrito from "../../src/assets/index/burrito.jpg";
@@ -48,14 +48,14 @@ return (
         <hr className='bg-white  ' />
         <br />
         
-        <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12 ">
+        <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
           <div className="flow-root">
 
-          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+          <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
 
-          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+          <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
-          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />           
+          <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />           
           </div>
         </div>
         
@@ -64,15 +64,15 @@ return (
         <hr className='bg-white' />
         <br />
         
-         <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12">
+        <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
            <div className="flow-root">
         
 
-          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+          <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
 
-          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+          <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
-          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />  
+          <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />  
            </div>
         </div> 
         
@@ -81,14 +81,14 @@ return (
         <div className=" text-white font-bold mb-1">Bebidas</div>
         <hr className='bg-white' />
         <br />
-         <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12">
+        <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
            <div className="flow-root">
               
-          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+           <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
 
-          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+           <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
-          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" /> 
+           <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" /> 
            </div>
         </div> 
 
