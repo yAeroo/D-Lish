@@ -4,6 +4,8 @@ import { useAuth } from '../../hooks/useAuth';
 import { Link } from "react-router-dom";
 // Componente 
 import Alert from '../../components/Alert';
+// Images
+import LogoImg from '../../assets/logo/wide_blue.png'
 // Helper - Toastify
 import Notify from '../../helper/Notify';
 
@@ -49,7 +51,7 @@ export default function Login() {
 
                 {/* Imagen de Logo */}
                 <a href="#" className="flex items-center mb-8  ">
-                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src="../src/assets/logo/wide_blue.png" alt="logo" />
+                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={ LogoImg } alt="logo" />
                 </a>
 
                 {/* Formulario e Inputs */}

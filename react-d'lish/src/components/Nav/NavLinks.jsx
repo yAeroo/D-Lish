@@ -16,7 +16,7 @@ const NavLinks = () => {
     return (
         <>
             {Enlaces.map((Enlace, i) => (
-                <li key={i} className="text-xl font-semibold hover:text-terc hover:bg-accent">
+                <li key={i} className="text-xl font-semibold hover:text-terc">
                     <Link to={Enlace.link}>{Enlace.name}</Link>
                 </li>
             ))}

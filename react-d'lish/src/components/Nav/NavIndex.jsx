@@ -28,6 +28,7 @@ export default function NavIndex() {
                 type="text"
                 placeholder="¿Qué estas buscando el dia de hoy?"
                 className="input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] focus:outline-none"
+                autoComplete="off"
               />
               <button className="btn bg-[#4cbb6a] hover:bg-[#4cbb69d5]">
                 <svg
