@@ -3,6 +3,12 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import FoodCard from '../components/FoodCard';
+import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
+import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
+import Burrito from "../../src/assets/index/burrito.jpg";
+import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
+import Pupusas from "../../src/assets/index/pupusas.jpg";
 
 
 const Dish = () => {
@@ -44,36 +50,12 @@ return (
         
         <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12 ">
           <div className="flow-root">
-            <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-        
-              <li className="py-3">
-                <div className="flex items-center space-x-4">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Filete de Carne
-                    </p>
-                  </div>
-                  <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="checkbox checkbox-success" />
-                  </div>
-                </div>
-              </li>
-        
-              <li className="py-3">
-                <div className="flex items-center space-x-4">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                      Filete de Carne
-                    </p>
-                  </div>
-                  <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                    <input type="checkbox" className="checkbox checkbox-success" />
-                  </div>
-                </div>
-              </li>
-              
-        
-            </ul>
+
+          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+
+          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+
+          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />           
           </div>
         </div>
         
@@ -85,58 +67,12 @@ return (
          <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12">
            <div className="flow-root">
         
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-        
-                    <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Arroz
-                                </p>
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox"  className="checkbox checkbox-success" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Casamiento
-                                </p>
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox"  className="checkbox checkbox-success" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Papas Fritas
-                                </p>
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox"  className="checkbox checkbox-success" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Ensalada
-                                </p>
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox"  className="checkbox checkbox-success" />
-                            </div>
-                        </div>
-                    </li>
-        
-                </ul>
+
+          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+
+          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+
+          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />  
            </div>
         </div> 
         
@@ -147,50 +83,12 @@ return (
         <br />
          <div className="w-full max-w-md p-4 border border-gray-200 rounded-lg bg-neutral shadow sm:p-8 md:w-53 md:mx-auto md:p-6 md:border md:rounded-lg md:shadow-lg lg:w-11/12">
            <div className="flow-root">
-                <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-                <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                    Agua
-                                </p>
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox"  className="checkbox checkbox-success" />
-                            </div>
-                        </div>
-                    </li>
-                    <li className="py-3 ">
-                        <div className="flex items-center space-x-4">
-                            <div className="flex-1 min-w-0">
-                              {/* DropDown */}
-                              <div tabIndex={0} className="collapse "> 
-                               <div className="collapse-title text-sm font-medium text-gray-900 truncate dark:text-white">
-                                 Frescos
-                               </div>
-                               <div className="collapse-content"> 
-                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow">
-                                         <h1 className='text-white   md:text-50px  sm:items-center'>Escoge tu Bebida</h1>
-                                         <li className='dark:text-white mt-6'><h1>Tamarindo
-                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                         <li className='dark:text-white'><h1>Té
-                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                         <li className='dark:text-white' ><h1>Limonada
-                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                         <li className='dark:text-white'><h1>Jamaica
-                                         <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                                       </ul> 
-                               </div>
-                              </div>
+              
+          <FoodCard name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
 
+          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
-                            </div>
-                            <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                            <input type="checkbox" required="required" className="checkbox checkbox-success modal-toggle !block" />
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" /> 
            </div>
         </div> 
 

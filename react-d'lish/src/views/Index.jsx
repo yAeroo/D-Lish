@@ -19,6 +19,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ComidaCard from "../components/ComidaCard";
 import NavMobileIndex from "../components/NavMobileIndex";
+import FoodCard from "../components/FoodCard";
 
 export default function Index() {
   return (
@@ -66,60 +67,16 @@ export default function Index() {
         <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8">
           Lo más vendido
         </h2>
+        
+          {/* Props del apartado de comidas  */}
 
-        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
-            <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={Pupusas} />
-            </div>
-            <div className="flex flex-col">
-              <h2 className="text-md font-bold text-neutral-100">
-                Pupusas 3 x $1
-              </h2>
-              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Maria Auxiliadora</h3>
-              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$1.00 | Desayunos</p>
-            </div>
-          </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
-              Agregar
-          </button>
-        </div>
+        <FoodCard name="Pupusas 3 x $1" photo={Pupusas} cafetin="Miguel Magone" />
 
-        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-5">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
-            <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={Burrito} />
-            </div>
-            <div className="flex flex-col">
-              <h2 className="text-md font-bold text-neutral-100">
-                Burrito de Carne
-              </h2>
-              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Don Bosco</h3>
-              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$2.50 | Almuerzos</p>
-            </div>
-          </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
-              Agregar
-          </button>
-        </div>
+        <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
-        <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
-          <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
-            <div className="w-20 h-20 rounded overflow-hidden">
-              <img className="w-full h-full object-cover" src={JugosNaturales} />
-            </div>
-            <div className="flex flex-col">
-              <h2 className="text-md font-bold text-neutral-100">
-                Jugos Naturales
-              </h2>
-              <h3 className="pt-[0.01rem] text-sm text-neutral-200">Miguel Magone</h3>
-              <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$0.25 | Otros</p>
-            </div>
-          </div>
-          <button className="border-primary border-2 text-primary text-xs px-2 py-1 rounded-md ml-5">
-              Agregar
-          </button>
-        </div>
+        <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
+
+
 
 
       </section>
