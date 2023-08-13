@@ -22,7 +22,6 @@ export default function Login() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        setErrores([]);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -31,8 +30,7 @@ export default function Login() {
         }
 
         // Pasamos los datos necesarios a la función
-        login(datos, setErrores);
-        mostrarErrores();
+        await login(datos, setErrores, NotiError);
     }
 
     // Toastify
@@ -43,11 +41,6 @@ export default function Login() {
         '¡Oops! Credenciales incorrectas...',
         "!bg-[#191E2B] !font-body !py-2"
     );
-    // Evalua si hay errores o no
-    function mostrarErrores() {
-        console.log(errores.length);
-        if (errores.length > 0) NotiError()
-    };
 
     return (
         <>

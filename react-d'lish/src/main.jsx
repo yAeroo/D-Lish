@@ -7,8 +7,10 @@ import { ToastContainer } from 'react-toastify'
 import router from './router'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
+    // <React.StrictMode>
+    <>
         <RouterProvider router={router} />
         <ToastContainer className="z-40" />
-    </React.StrictMode>,
+    </>
+    // </React.StrictMode>
 )

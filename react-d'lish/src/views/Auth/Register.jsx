@@ -23,7 +23,6 @@ export default function Registro() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        setErrores([]);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -34,8 +33,7 @@ export default function Registro() {
             password_confirmation: passwordConfirmationRef.current.value
         }
 
-        registro(datos, setErrores);
-        mostrarErrores()
+        registro(datos, setErrores, NotiError);
     }
 
     // Toastify
@@ -46,10 +44,6 @@ export default function Registro() {
         '¡Oops! Visualiza los errores arriba 👆🏻',
         "!bg-[#191E2B] !font-body !py-2"
     );
-    // Evalua si hay errores o no
-    function mostrarErrores() {
-        if (errores.length > 0) NotiError()
-    };
 
     // HTML
     return (
@@ -154,7 +148,7 @@ export default function Registro() {
 
 
                             <div className="pt-4">
-                                <button onClick={mostrarErrores}
+                                <button
                                     className="btn no-animation w-full btn-info text-white font-plane"
                                     type="submit">
                                     Registrar

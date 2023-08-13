@@ -24,7 +24,7 @@ export const useAuth = ({ middleware, url }) => {
     );
 
     // Función async await
-    const login = async (datos, setErrores) => {
+    const login = async (datos, setErrores, notiError) => {
 
         try {
             const { data } = await clienteAxios.post('/api/login', datos);
@@ -34,15 +34,19 @@ export const useAuth = ({ middleware, url }) => {
             setErrores([]);
             // Función para forzar revalidación
             await mutate();
-            navigate('/');
         } catch (error) {
             // Errores dados por Axios
-            setErrores(Object.values(error.response.data.errors));
+            let Errores = Object.values(error.response.data.errors);
+            // Define errores para el frontend
+            setErrores(Errores);
+            // Evalua si hay errores o no para notificar
+            Errores ? notiError() : null;
         }
     }
 
-    const registro = async (datos, setErrores) => {
+    const registro = async (datos, setErrores, notiError) => {
         try {
+            console.log(datos);
             const { data } = await clienteAxios.post('/api/registro', datos);
             localStorage.setItem('AUTH_TOKEN', data.token)
             // Limpiar State
@@ -51,7 +55,11 @@ export const useAuth = ({ middleware, url }) => {
             await mutate();
         } catch (error) {
             // Errores dados por Axios
-            setErrores(Object.values(error.response.data.errors));
+            let Errores = Object.values(error.response.data.errors);
+            // Define errores para el frontend
+            setErrores(Errores);
+            // Evalua si hay errores o no para notificar
+            Errores ? notiError() : null;
         }
     }
 

@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 // Peticiones protegidas
 Route::middleware('auth:sanctum')->group(function () {
-
     Route::get('user', function (Request $request) {
         return $request->user();
     });
@@ -28,8 +27,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::get('/cafeterias', [CafeteriaController::class, 'index']);
 
-
 // Autenticación
 Route::post('/registro', [AuthController::class, 'register']);
-
 Route::post('/login', [AuthController::class, 'login']);
