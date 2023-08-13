@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 // Componentes
-import ProfileInfo from "../components/ProfileInfo"
-import ProfileSetttings from "../components/ProfileSetttings";
-import ProfilePfp from "../components/ProfilePfp";
+import ProfileInfo from "../../components/Profile/ProfileInfo";
+import ProfileSetttings from "../../components/Profile/ProfileSetttings";
+import ProfilePfp from "../../components/Profile/ProfilePfp";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -12,7 +12,7 @@ import { BiSave } from "react-icons/bi";
 import { IoChevronBackSharp } from "react-icons/io5";
 
 // Helper
-import Notificacion from "../helper/Notify";
+import Notificacion from "../../helper/Notify";
 
 export default function Settings() {
 
@@ -36,8 +36,7 @@ export default function Settings() {
 
     return (
         <>
-            <div id="pf-bttns" className="relative">
-
+            <div id="pf-bttns" >
                 {/* Botón cambio foto de perfil */}
                 <ProfilePfp />
 
@@ -50,9 +49,6 @@ export default function Settings() {
                     </Link>
                 </div>
             </div>
-
-            {/* Foto y nombre */}
-            <ProfileInfo />
 
             {/* Contenedor para centrar info */}
             <div className="flex flex-col flex-grow justify-center">
@@ -70,14 +66,14 @@ export default function Settings() {
                         </div>
                     </button>
 
-                    <button onClick={NotiError}>
+                    {/* <button onClick={NotiError}>
                         <div className="flex bg-red-500 rounded-full p-2 md:px-5 ">
                             <span> <BiSave size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">
                                 ERROR
                             </span>
                         </div>
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </>

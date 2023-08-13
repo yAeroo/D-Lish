@@ -1,9 +1,10 @@
 import React from 'react'
-import TarjetasAdminIndex from '../components/TarjetasAdminIndex'
-import ExamplePfp from "../..//src/assets/img/example-pfp.jpg";
+import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
+import ExamplePfp from "../../assets/img/example-pfp.jpg";
+
 import { Link } from 'react-router-dom';
 
-function IndexAdmin() {
+export default function Admin() {
   return (
     <>
       <div className='lg:ml-[10rem] h-[100%] animate-fade animate-duration-500'>
@@ -155,4 +156,3 @@ function IndexAdmin() {
   )
 }
 
-export default IndexAdmin

@@ -19,7 +19,7 @@ export default function Registro() {
     const passwordConfirmationRef = createRef();
 
     const [errores, setErrores] = useState([]);
-    const { registro } = useAuth({ middleware: 'guest', url: '/' })
+    const { registro } = useAuth({ middleware: 'guest', url: '/profile' })
 
     const handleSubmit = async e => {
         e.preventDefault();

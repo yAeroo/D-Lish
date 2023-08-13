@@ -1,8 +1,8 @@
 import React from "react";
 
 //Componentes
-import Navbar from "../components/Navbar";
-import NavCafetin from "../components/NavCafetin";
+import Navbar from "../components/Nav/Navbar";
+import NavCafetin from "../components/Nav/NavCafetin";
 import WiggleAlert from "../components/WiggleAlert";
 import Footer from "../components/Footer";
 
@@ -153,7 +153,7 @@ export default function CafetinView() {
           </div>
 
         </div>
-        
+
 
         <br />
       </section>

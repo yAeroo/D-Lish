@@ -1,6 +1,6 @@
 import Carrousel from "../components/Carrousel";
 import "../css/IndexPage.css";
-import "../components/NavMobileIndex";
+import "../components/Nav/NavMobileIndex";
 
 //Imagenes
 import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
@@ -18,7 +18,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ComidaCard from "../components/ComidaCard";
-import NavMobileIndex from "../components/NavMobileIndex";
+import NavMobileIndex from "../components/Nav/NavMobileIndex";
 import FoodCard from "../components/FoodCard";
 
 export default function Index() {
@@ -67,8 +67,8 @@ export default function Index() {
         <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8">
           Lo más vendido
         </h2>
-        
-          {/* Props del apartado de comidas  */}
+
+        {/* Props del apartado de comidas  */}
 
         <FoodCard name="Pupusas 3 x $1" photo={Pupusas} cafetin="Miguel Magone" />
 

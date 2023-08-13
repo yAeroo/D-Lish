@@ -12,13 +12,12 @@ import Register from './views/Auth/Register';
 import Homepage from './views/Homepage';
 import Logs from './views/Logs';
 import CafetinView from './views/CafetinView';
-import TestModel from './views/TestModel';
-import Order from './views/Order';
+import Order from './views/Profile/Order';
 import Dish from './views/Dish';
-import Profile from './views/Auth/Profile';
-import Settings from './views/Settings';
+import Profile from './views/Profile/Profile';
+import Settings from './views/Profile/Settings';
 import Page404 from './views/Page404';
-import IndexAdmin from './views/IndexAdmin';
+import IndexAdmin from './views/Admin/Index';
 import ProfileAdmin from './views/Admin/ProfileAdmin';
 import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
 import ProductAdmin from './views/Admin/ProductAdmin';
@@ -135,10 +134,6 @@ const router = createBrowserRouter([
         element: <Logs />
     }
 
-    // {
-    //     path: '/testModel',
-    //     element: <TestModel />
-    // },
     // {
     //     path: '/',
     //     element: <Layout />,

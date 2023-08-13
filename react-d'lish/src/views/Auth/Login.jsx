@@ -17,7 +17,7 @@ export default function Login() {
     // Simulamos parametros de laravel para el hook
     const { login } = useAuth({
         middleware: 'guest',
-        url: '/profile'
+        url: '/'
     });
 
     const handleSubmit = async e => {

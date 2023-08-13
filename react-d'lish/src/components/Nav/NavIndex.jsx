@@ -6,7 +6,7 @@ import { IoSearch } from "react-icons/io5";
 //Link
 import { Link } from "react-router-dom";
 //Imagenes
-import User from "../../src/assets/index/user.png";
+import User from "../../assets/index/user.png";
 
 export default function NavIndex() {
   return (

@@ -1,7 +1,5 @@
 // Componentes
-import ProfileButtons from "../../components/ProfileButtons";
-import ProfileInfo from "../../components/ProfileInfo";
-import Preferences from "../../components/Preferences";
+import Preferences from "../../components/Profile/Preferences";
 // Protección de rutas
 import { useAuth } from "../../hooks/useAuth";
 
@@ -13,14 +11,7 @@ export default function Profile() {
 
     return (
         <>
-            {/* Botones de edición y fondos */}
-            <ProfileButtons />
-
-            {/* Información de perfil */}
-            <ProfileInfo user={user} />
-
-            {/* Contenedor para centrar info */}
-            <div className="flex flex-col justify-center flex-grow">
+            <div className="flex flex-col pt-4 flex-grow">
                 {/* Perefencias */}
                 <Preferences user={user} />
 

@@ -1,5 +1,5 @@
 // Componentes
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Nav/Navbar";
 import Footer from "../components/Footer";
 
 //Link
@@ -50,17 +50,17 @@ export default function Homepage() {
             </p>
 
             <div className="flex space-x-4">
-            <Link to='/auth/register'>
-              <button className="btn btn-info drop-shadow-lg text-zinc-50">
+              <Link to='/auth/register'>
+                <button className="btn btn-info drop-shadow-lg text-zinc-50">
                   Regístrate
-              </button>
-            </Link>
-              
-            <Link to="/auth/login">
-              <button className="btn btn-outline btn-info drop-shadow-lg">
-                Iniciar Sesión
-              </button>
-            </Link>
+                </button>
+              </Link>
+
+              <Link to="/auth/login">
+                <button className="btn btn-outline btn-info drop-shadow-lg">
+                  Iniciar Sesión
+                </button>
+              </Link>
             </div>
           </div>
         </div>
