@@ -14,20 +14,17 @@ export default function ProfileLayout() {
     return (
         <>
             {/* NavBar Flotante */}
-            <div className='absolute w-full z-10'>
+            <div className='absolute w-full'>
                 <NavIndex />
             </div>
 
-            <section id="profile" className="min-h-screen profile-banner bg-cover flex items-end justify-center pt-60">
+            <section id="profile" className="min-h-screen profile-banner bg-cover flex items-end justify-center pt-32 md:pt-60">
 
-                <article id="profile-info" className="bg-[#202949] min-h-[70vh] max-w-[65rem] sm:w-10/12 w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile md:absolute">
+                <article id="profile-info" className="bg-[#202949] min-h-[70vh] max-w-[65rem] sm:w-10/12 w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile">
                     <div className="w-full">
-                        {/* Información de perfil */}
-                        <ProfileInfo user={user} className="relative" />
 
                         {/* Impresión del componente correspondiente */}
-                        <Outlet className />
-
+                        <Outlet />
                     </div>
 
                 </article>

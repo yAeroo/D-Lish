@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import { MdOutlineAlternateEmail, MdLockOutline } from "react-icons/md";
 import { HiOutlineWallet } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
-// Componentes
-import ProfileButtons from "./ProfileButtons";
+import { TbPigMoney } from "react-icons/tb";
 
 export default function Preferences(props) {
     return (
         <>
-            <ProfileButtons />
             <div className="mb-10 fa-custom animate-fade">
                 <ul className="w-10/12 m-auto ">
                     <div>
@@ -44,6 +42,15 @@ export default function Preferences(props) {
                         </li>
                     </Link>
 
+                    <Link to="/logs/">
+                        <li className="li-elem">
+                            <TbPigMoney size={"25"} />
+                            <div className="flex justify-between w-full">
+                                <span className="px-2">Fondos</span>
+                                <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
+                            </div>
+                        </li>
+                    </Link>
                 </ul>
 
                 {/* Boton cerrar sesión */}

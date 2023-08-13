@@ -92,11 +92,11 @@ const FileUpload = () => {
 			</label>
 
 			<div className="modal-action justify-between">
-				<button className="flex rounded-full bg-secondary text-white p-2 md:px-5" onClick={handleCancel}>
+				<button className="flex rounded-full bg-secondary hover:bg-base-100 transition-all text-white p-2 md:px-5" onClick={handleCancel}>
 					<span className="mr-2"> 
 						<TbCameraCancel size={"25"} color={"white"} /> 
 					</span>
-					Cancelar
+					<p className='self-center'>Cancelar</p>
 				</button>
 
 				{/* Botón aceptar DESHABILITADO */}
@@ -108,7 +108,7 @@ const FileUpload = () => {
 				</div>
 
 				{isFileSelected && 
-					<button className="flex rounded-full bg-primary text-white p-2 md:px-5 animate-jump" onClick={handleAccept}>
+					<button className="flex rounded-full bg-primary hover:bg-base-100 transition-all text-white p-2 md:px-5 animate-jump" onClick={handleAccept}>
 						Aceptar
 						<span className="ml-2"> 
 							<TbCameraCheck size={"25"} color={"white"} /> 
