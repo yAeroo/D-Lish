@@ -14,9 +14,12 @@ class CafeteriaResource extends JsonResource
      */
     public function toArray($request)
     {
+        // Datos enviados de cafeteria
         return [
             'id' => $this->id,
-            'nombre' => $this->cafeteria_name
+            'nombre' => $this->cafeteria_name,
+            'cafe_pfp' => $this->cafeteria_img,
+            'cafe_wallp' => $this->cafeteria_wallpaper,
         ];
     }
 }
