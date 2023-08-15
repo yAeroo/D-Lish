@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
-import Navbar from '../components/Nav/Navbar';
+import NavCafetin from '../components/Nav/NavCafetin';
 import Footer from '../components/Footer';
 import FoodCardDish from '../components/FoodCardDish';
 import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
@@ -16,7 +16,7 @@ const Dish = () => {
     <>
       {/* Apartado de NavBar */}
       <section className='px-4 md:px-24 py-4 bg-gradient-to-r'>
-        <div className='animate-fade-up animate-once animate-delay-[1300ms]'><Navbar></Navbar></div>
+        <div className='animate-fade-up animate-once animate-delay-[1300ms]'><NavCafetin></NavCafetin></div>
       </section>
 
       <div className='flex items-center justify-center w-full min-h-screen animate-fade-up animate-once animate-delay-[1300ms]'>
