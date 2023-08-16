@@ -34,9 +34,9 @@ function SideBar() {
             {/* Contenido del Sidebar */}
             <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
             <li className="mb-7" title='Ventas'><Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7" title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7 hidden" title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/admin/profile"><MdFoodBank className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7" title='Cafeteria'><Link to="/admin/delivmode"><AiOutlineQrcode className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7 hidden" title='Cafeteria'><Link to="/admin/delivmode"><AiOutlineQrcode className='text-white text-2xl ' /></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'><a className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl' /></a></li>
