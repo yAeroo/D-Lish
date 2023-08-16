@@ -1,16 +1,45 @@
 // Componentes
 import Preferences from "../../components/Profile/Preferences";
+import { Link } from "react-router-dom";
+import ProfileInfo from "../../components/Profile/ProfileInfo";
 // Protección de rutas
 import { useAuth } from "../../hooks/useAuth";
 
 // Icons
 import { BiLogOut } from "react-icons/bi";
+import { PiNotePencilBold } from "react-icons/pi";
+import { IoChevronBackSharp } from "react-icons/io5";
 
 export default function Profile() {
     const { logout, user } = useAuth({ middleware: 'auth' })
 
     return (
         <>
+            {/* Botones de edición y regresar */}
+            <div id="pf-bttns" className="relative">
+
+                <div id="edit-bttn" className="fu-custom animate-fade-right absolute top-8 left-[5%] md:left-[3%] lg:left-[10%]">
+                    <Link to="/" className="flex rounded-full p-2 md:px-5 ">
+                        <span> <IoChevronBackSharp size={"25"} color={"white"} /> </span>
+                        <span className="ml-2 profile-bttn-text">
+                            Regresar
+                        </span>
+                    </Link>
+                </div>
+
+                <div id="edit-bttn" className="fu-custom animate-fade-left absolute top-5 right-[5%] md:right-[3%] lg:right-[10%]">
+                    <Link to="/profile/settings" className="flex bg-secondary hover:bg-base-100 transition-all rounded-full p-2 md:px-5 ">
+                        <span className="mr-2 profile-bttn-text">
+                            Editar perfil
+                        </span>
+                        <span> <PiNotePencilBold size={"25"} color={"white"} /> </span>
+                    </Link>
+                </div>
+            </div>
+
+            {/* Información de perfil */}
+            <ProfileInfo user={user} />
+
             <div className="flex flex-col pt-4 flex-grow">
                 {/* Perefencias */}
                 <Preferences user={user} />

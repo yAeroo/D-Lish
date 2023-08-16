@@ -12,7 +12,6 @@ function FoodCardDish(props) {
                   {props.name}
                 </h2>
                 <h3 className="pt-[0.01rem] text-sm text-neutral-200">{props.cafetin}</h3>
-                <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">$0.25 | Otros</p>
               </div>
             </div>
             <button className=" text-primary text-xs px-2 py-1 rounded-md ml-5">

@@ -1,4 +1,3 @@
-import ProfileButtons from './ProfileButtons';
 
 export default function ProfileInfo(props) {
   return (

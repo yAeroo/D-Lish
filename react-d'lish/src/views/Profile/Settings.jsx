@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 import ProfileSetttings from "../../components/Profile/ProfileSetttings";
 import ProfilePfp from "../../components/Profile/ProfilePfp";
-
 import "react-toastify/dist/ReactToastify.css";
 
-// Icon
+// Protección de rutas
+import { useAuth } from "../../hooks/useAuth";
+
+// Icons
 import { BiSave } from "react-icons/bi";
 import { IoChevronBackSharp } from "react-icons/io5";
 
@@ -15,6 +17,8 @@ import { IoChevronBackSharp } from "react-icons/io5";
 import Notificacion from "../../helper/Notify";
 
 export default function Settings() {
+
+    const { user } = useAuth({ middleware: 'auth' })
 
     // Se define el Toast
     const toastSuccesId = "success-noti";
@@ -36,7 +40,7 @@ export default function Settings() {
 
     return (
         <>
-            <div id="pf-bttns" >
+            <div id="pf-bttns" className="relative">
                 {/* Botón cambio foto de perfil */}
                 <ProfilePfp />
 
@@ -49,6 +53,9 @@ export default function Settings() {
                     </Link>
                 </div>
             </div>
+
+            {/* Información de perfil */}
+            <ProfileInfo user={user} />
 
             {/* Contenedor para centrar info */}
             <div className="flex flex-col flex-grow justify-center">

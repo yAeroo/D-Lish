@@ -3,7 +3,7 @@ import useCafeterias from '../hooks/useCafeterias';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from "react-router-dom";
 // Importacion de estilos de swiper
 import "swiper/css";
 import "swiper/css/pagination";

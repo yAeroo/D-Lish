@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Alert from '../../components/Alert';
 // Auth
 import { useAuth } from '../../hooks/useAuth';
+// Images
+import LogoImg from '../../assets/logo/wide_orange.png'
 // Helper - Toastify
 import Notify from '../../helper/Notify';
 
@@ -51,7 +53,7 @@ export default function Registro() {
             <div className="content-form-center">
                 {/* Imagen de Logo */}
                 <a href="#" className="flex items-center mb-8  ">
-                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src="../src/assets/logo/wide_orange.png" alt="logo" />
+                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={ LogoImg } alt="logo" />
                 </a>
 
                 {/* Formulario e Inputs */}

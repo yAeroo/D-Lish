@@ -7,6 +7,7 @@ import ProfileLayout from './layouts/ProfileLayout';
 import AdminLayout from './layouts/AdminLayout';
 // Componentes importados
 import Index from './views/Index';
+import AuthSelection from './views/Auth/AuthSelection';
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
 import Homepage from './views/Homepage';
@@ -42,11 +43,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/auth',
-        element: < AuthLayout />,
+        element: <AuthLayout />,
         children: [
             {
                 index: true,
-                element: <p>Hola</p>
+                element: <AuthSelection />
             },
             // Definición de sus hijos
             {
