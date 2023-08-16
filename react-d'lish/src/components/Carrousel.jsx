@@ -12,9 +12,6 @@ import "swiper/css/navigation";
 // importacion de modulos requeridos
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-// Importamos link para enviar a la cafeteria
-import { Link } from 'react-router-dom';
-
 export default function Carrousel() {
     // Extraemos datos del ccontext
     const { cafeterias } = useCafeterias();
