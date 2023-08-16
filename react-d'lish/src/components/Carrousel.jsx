@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { Link } from "react-router-dom";
 // Importacion de estilos de swiper
 import "swiper/css";
 import "swiper/css/pagination";
@@ -35,9 +35,11 @@ export default function Carrousel() {
                         <div className="max-w-md md:text-start text-center">
                             <h1 className="mb-5 text-5xl md:text-7xl font-bold">Don Bosco</h1>
                             <p className="mb-5 text-xl md:text-2xl">Bachillerato & Tercer Ciclo.</p>
+                            <Link to="/cafetinview">
                             <button className="btn btn-primary">
                                 Ver Cafetín
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </SwiperSlide>

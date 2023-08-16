@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 //Componentes
 import Navbar from "../components/Nav/Navbar";
 import NavCafetin from "../components/Nav/NavCafetin";
@@ -113,7 +113,9 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
+                <Link to="/dish">
                 <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -130,7 +132,9 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
+              <Link to="/dish">
                 <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -147,7 +151,9 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
+              <Link to="/dish">
                 <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                </Link>
               </div>
             </div>
           </div>

@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import NavCafetin from '../components/Nav/NavCafetin';
 import Footer from '../components/Footer';
 import FoodCardDish from '../components/FoodCardDish';
-import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
-import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
@@ -33,7 +31,7 @@ const Dish = () => {
               <span className="text-primary"> Almuerzo</span>
             </h1>
             <p className="mt-2 sm:mt-4 sm:text-xl text-white-900">
-              Agrega Lo que Desees para el almuerzo:
+              Agrega lo que desees para el almuerzo:
             </p>
             <p className="mt-2 sm:mt-4 sm:text-xl text-gray">
               Los campos con * son obligatorios
@@ -44,49 +42,51 @@ const Dish = () => {
 
               <form className=''>
 
-                <div className=" text-white font-bold mb-1">Opciones Principales * (solo puedes escoger 1)</div>
+                <div className=" text-white font-bold mb-1">Opciones principales * (solo puedes escoger 1)</div>
                 <hr className='bg-white  ' />
                 <br />
 
-                <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
+                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
 
-                    <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Pollo a la plancha" photo={Pupusas} cafetin="Miguel Magone" />
 
-                    <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Carne a la plancha" photo={Pupusas} cafetin="Miguel Magone" />
 
-                    <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Lasagna" photo={Pupusas} cafetin="Miguel Magone" />
+
+                    <FoodCardDish name="Burritos" photo={Pupusas} cafetin="Miguel Magone" />
                   </div>
                 </div>
 
                 <br />
-                <div className=" text-white font-bold mb-1">Complementos *  (solo puedes escoger 1 o 2)</div>
+                <div className=" text-white font-bold mb-1">Complementos *  (escoge 2)</div>
                 <hr className='bg-white' />
                 <br />
 
-                <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
+                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
 
 
-                    <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Arroz" photo={Burrito} cafetin="Miguel Magone" />
 
-                    <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Casamiento" photo={Burrito} cafetin="Miguel Magone" />
 
-                    <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Chimol" photo={Burrito} cafetin="Miguel Magone" />
                   </div>
                 </div>
 
                 <br />
 
-                <div className=" text-white font-bold mb-1">Bebidas</div>
+                <div className=" text-white font-bold mb-1">Bebidas | +$0.25</div>
                 <hr className='bg-white' />
                 <br />
-                <div className="w-full max-w-md p-4 sm:p-8 md:w-53 md:mx-auto md:p-6  lg:w-11/12 ">
+                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
 
-                    <FoodCardDish name="Pupusas 3x $1" photo={Pupusas} cafetin="Miguel Magone" />
+                  <FoodCardDish name="Agua en bolsa" photo={JugosNaturales} cafetin="Miguel Magone" />
 
-                    <FoodCardDish name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Agua en botella" photo={JugosNaturales} cafetin="Miguel Magone" />
 
                     <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
                   </div>
@@ -97,7 +97,9 @@ const Dish = () => {
             </div>
 
           </div>
+          <Link to="/order">
           <button className="btn no-animation w-full   disabled font-plane bg-accent text-white mt-4">Ordenar</button>
+          </Link>
         </div>
 
       </div>
