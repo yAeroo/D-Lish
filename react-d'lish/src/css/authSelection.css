@@ -1,0 +1,3 @@
+.authCardClasses{
+    @apply !flex-col !items-center h-full !bg-[#2c2c2c] shadow-xl min-w-[300px] max-w-[300px] lg:min-w-[425px] lg:max-w-[425px]
+}
