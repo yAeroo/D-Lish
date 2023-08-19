@@ -23,13 +23,13 @@ import { MdOutlineScreenshot } from "react-icons/md";
 export default function Homepage() {
   return (
     <>
-      <section className=" bg-gradient-to-r from-slate-900 to-emerald-900">
+      <section className="bg-green-500">
         <div className="animate-fade-up animate-once animate-delay-[1300ms]">
           <Navbar></Navbar>
         </div>
       </section>
 
-      <div className="hero min-h-screen bg-gradient-to-r from-slate-900 to-emerald-900">
+      <div className="hero min-h-screen bg-gradient-to-b from-green-500 from-1%  to-emerald-900">
 
         <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -43,10 +43,10 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-primary">
+            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
               Ordena tu comida de manera rápida y sencilla
             </h1>
-            <p className="md:text-2xl py-4 md:py-6 mb-[0]">
+            <p className="md:text-2xl py-4 md:py-6 mb-[0] text-slate-200">
               ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
             </p>
 
@@ -58,7 +58,7 @@ export default function Homepage() {
               </Link>
 
               <Link to="/auth/login">
-                <button className="btn btn-outline btn-info drop-shadow-lg">
+                <button className="btn btn-info drop-shadow-lg text-zinc-50">
                   Iniciar Sesión
                 </button>
               </Link>
