@@ -20,12 +20,12 @@ export default function AuthSelection() {
 
                         <div id="LoginCard">
                             <div className="card lg:card-side authCardClasses">
-                                    <figure><AiOutlineUser size={50} className="mt-7" /></figure>
+                                <figure><AiOutlineUser size={50} className="mt-7" /></figure>
                                 <div className="card-body !py-5">
                                     <h2 className="card-title font-title self-center text-2xl">Inicia sesión</h2>
                                     <p className="text-center self-center inline-block py-3">No esperes para reservar, ingresa tus credenciales y comienza a pedir.</p>
                                     <div className="card-actions justify-center">
-                                        <button className="bg-info hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Ingresar</button>
+                                        <Link to="/auth/login" className="bg-secondary hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Ingresar</Link>
                                     </div>
                                 </div>
                             </div>
@@ -35,12 +35,12 @@ export default function AuthSelection() {
 
                         <div id="SignUpCard">
                             <div className="card lg:card-side authCardClasses">
-                                    <figure><AiOutlineUserAdd size={50} className="mt-7" /></figure>
+                                <figure><AiOutlineUserAdd size={50} className="mt-7" /></figure>
                                 <div className="card-body !py-5">
                                     <h2 className="card-title font-title self-center text-2xl">Regístrate</h2>
                                     <p className="text-center self-center inline-block py-3">Reserva, disfruta, repite. Únete a D'Lish hoy mismo.</p>
                                     <div className="card-actions justify-center">
-                                        <button className="bg-info hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Ingresar</button>
+                                        <Link to="auth/register" className="bg-info hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Ingresar</Link>
                                     </div>
                                 </div>
                             </div>

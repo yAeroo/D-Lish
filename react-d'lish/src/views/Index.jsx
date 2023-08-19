@@ -76,21 +76,8 @@ export default function Index() {
 
         <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
 
-
-
-
       </section>
 
-      <h2 className="text-5xl title-text from-blue-600 to-cyan-500 py-2 text-center">
-        Disfruta con D'lish
-      </h2>
-      <section className="text-center rounded-box m-2 color-animation">
-        <label className="swap swap-flip text-9xl p-4">
-          <input type="checkbox" />
-          <div className="swap-off">🍱</div>
-          <div className="swap-on">😋</div>
-        </label>
-      </section>
     </main>
   );
 }
