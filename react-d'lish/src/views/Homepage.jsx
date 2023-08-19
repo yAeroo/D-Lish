@@ -2,7 +2,6 @@
 import Navbar from "../components/Nav/Navbar";
 import Footer from "../components/Footer";
 import AuthSelection from "../views/Auth/AuthSelection";
-import AuthSelection from "../views/Auth/AuthSelection";
 
 //Link
 import { Link } from "react-router-dom";
@@ -45,35 +44,33 @@ export default function Homepage() {
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
             <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-primary">
-              <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-primary">
-                Ordena tu comida de manera rápida y sencilla
-              </h1>
-              <p className="md:text-2xl py-4 md:py-6 mb-[0]">
-                ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
-              </p>
+              Ordena tu comida de manera rápida y sencilla
+            </h1>
+            <p className="md:text-2xl py-4 md:py-6 mb-[0]">
+              ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
+            </p>
 
-              <div className="flex space-x-4">
-                <Link to='/auth/register'>
-                  <button className="btn btn-info drop-shadow-lg text-zinc-50">
-                    Regístrate
-                  </button>
-                </Link>
+            <div className="flex space-x-4">
+              <Link to='/auth/register'>
+                <button className="btn btn-info drop-shadow-lg text-zinc-50">
+                  Regístrate
+                </button>
+              </Link>
 
-                <Link to="/auth/login">
-                  <button className="btn btn-outline btn-info drop-shadow-lg">
-                    Iniciar Sesión
-                  </button>
-                </Link>
-              </div>
+              <Link to="/auth/login">
+                <button className="btn btn-outline btn-info drop-shadow-lg">
+                  Iniciar Sesión
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
         <h1 className="md:text-7xl text-4xl text-center text-primary font-bold">
-          <h1 className="md:text-7xl text-4xl text-center text-primary font-bold">
-            Descubre la nueva forma de hacer pedidos en línea
-          </h1>
+          Descubre la nueva forma de hacer pedidos en línea
+        </h1>
       </div>
 
       <div className="flex flex-col items-center justify-center h-25 mt-[6rem] mb-[15rem] md:mx-[22rem]">
@@ -134,13 +131,11 @@ export default function Homepage() {
 
           <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
             <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
-              <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
-                ¿Quiénes somos?
-              </h1>
-              <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
-                En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
-                En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
-              </p>
+              ¿Quiénes somos?
+            </h1>
+            <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
+              En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
+            </p>
           </div>
         </div>
         <div className="custom-shape-divider-bottom-1689492744">
@@ -166,7 +161,6 @@ export default function Homepage() {
               </h1>
               <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
                 En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!
-                En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!
               </p>
             </div>
           </div>
@@ -188,7 +182,6 @@ export default function Homepage() {
             </h1>
             <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
               En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra.
-              En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra.
             </p>
           </div>
         </div>
@@ -202,11 +195,6 @@ export default function Homepage() {
       <div className="mt-[3rem] mb-[3rem]">
         <AuthSelection />
       </div>
-      <div className="mt-[3rem] mb-[3rem]">
-        <AuthSelection />
-      </div>
-
-
 
       <Footer></Footer>
     </>
