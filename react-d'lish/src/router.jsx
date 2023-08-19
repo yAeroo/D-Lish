@@ -42,7 +42,12 @@ const router = createBrowserRouter([
             {
                 path: '/logs',
                 element: <Logs />
-            }
+            },
+            {
+                // Ruta dinamica
+                path: '/cafeteria/:cafeteriaId',
+                element: <CafetinView />
+            },
         ]
     },
     {
@@ -86,10 +91,6 @@ const router = createBrowserRouter([
         // Página del QR
         path: '/delivmode',
         element: <DeliveryMode />
-    },
-    {
-        path: '/cafetinView',
-        element: <CafetinView />
     },
     {
         path: "*",
@@ -155,10 +156,6 @@ const router = createBrowserRouter([
     //             path: '/logs',
     //             element: <Logs />
     //         },
-    //         {
-    //             path: '/cafetinView',
-    //             element: <CafetinView />
-    //         }
     //     ]
     // }
 ]);

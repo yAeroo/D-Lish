@@ -1,22 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //Componentes
 import Navbar from "../components/Nav/Navbar";
 import NavCafetin from "../components/Nav/NavCafetin";
 import WiggleAlert from "../components/WiggleAlert";
 import Footer from "../components/Footer";
 
+//
+import useCafeterias from "../hooks/useCafeterias";
+
 //Imagenes
 import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
-import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
 
 //Iconos
-import { IoChevronBack } from "react-icons/io5";
-import { FaUserCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 
-
 export default function CafetinView() {
+  // Todas las cafeterias
+  const { cafeterias } = useCafeterias();
+  // Extraer parametro
+  const { cafeteriaId } = useParams();
+  // Extraer cafeteria actual
+  const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
+
   return (
     <>
       <section className="md:px-8">
@@ -28,9 +34,9 @@ export default function CafetinView() {
       <section className="mb-[3rem] md:mb-[5rem] animate-fade-right animate-ease-in-out animate-once animate-duration-[1000ms]">
         <div className="flex justify-between items-center">
           <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">
-            Maria Auxiliadora
+            {cafeteria ? cafeteria.nombre : ''}
           </h1>
-          <div className="stat flex flex-col items-end">
+          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria ? cafeteria.cafe_wallp : ''}.jpg')` }}>
             <div className="stat-title text-xs md:text-lg">Recomendado por</div>
             <div className="flex items-center">
               <div className="stat-figure text-primary text-xs">
@@ -49,13 +55,13 @@ export default function CafetinView() {
                 </svg>
               </div>
               <div className="stat-value text-sm md:text-3xl text-primary ml-1">
-                171
+                {cafeteria ? cafeteria.likes : ''}
               </div>
             </div>
             <div className="stat-desc text-sm md:text-lg">Estudiantes</div>
           </div>
         </div>
-      </section>
+      </section >
 
       <section className="bg-neutral text-white mt-6 min-h-screen rounded-xl items-center justify-between mx-2 xl:mx-[1rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex items-center justify-between mb-10">
@@ -114,7 +120,7 @@ export default function CafetinView() {
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
                 <Link to="/dish">
-                <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
                 </Link>
               </div>
             </div>
@@ -132,8 +138,8 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
-              <Link to="/dish">
-                <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                <Link to="/dish">
+                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
                 </Link>
               </div>
             </div>
@@ -151,8 +157,8 @@ export default function CafetinView() {
               <h2 className="card-title">Plato de Pollo Asado</h2>
               <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
               <div className="card-actions justify-end">
-              <Link to="/dish">
-                <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                <Link to="/dish">
+                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
                 </Link>
               </div>
             </div>
@@ -165,8 +171,6 @@ export default function CafetinView() {
       </section>
 
       <br /> <br />
-
-      <Footer></Footer>
     </>
   );
 }

@@ -8,10 +8,10 @@ import router from './router'
 import { CafeteriasProvider } from './context/CafeteriasProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    // <React.StrictMode>
-    <CafeteriasProvider>
-        <RouterProvider router={router} />
-        <ToastContainer className="z-40" />
-    </CafeteriasProvider>
-    // </React.StrictMode>
+    <React.StrictMode>
+        <CafeteriasProvider>
+            <RouterProvider router={router} />
+            <ToastContainer className="z-40" />
+        </CafeteriasProvider>
+    </React.StrictMode>
 )

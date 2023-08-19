@@ -1,16 +1,13 @@
 import Carrousel from "../components/Carrousel";
 import "../css/IndexPage.css";
 import "../components/Nav/NavMobileIndex";
+import NavIndex from "../components/Nav/NavIndex";
 
 //Imagenes
-import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
-import PolloAsadoPNG from "../../src/assets/cafetinview/PolloAsadoPNG.png";
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,7 +21,11 @@ import FoodCard from "../components/FoodCard";
 export default function Index() {
   return (
     <main>
-      <></>
+
+      {/* NavBar Flotante */}
+      <div className='absolute w-full z-10'>
+        <NavIndex />
+      </div>
 
       <NavMobileIndex />
 
@@ -75,8 +76,8 @@ export default function Index() {
         <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
 
         <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
-
       </section>
+
 
     </main>
   );

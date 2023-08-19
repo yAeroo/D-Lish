@@ -19,7 +19,8 @@ class CafeteriaResource extends JsonResource
             'id' => $this->id,
             'nombre' => $this->cafeteria_name,
             'cafe_pfp' => $this->cafeteria_img,
-            'cafe_wallp' => $this->cafeteria_wallpaper
+            'cafe_wallp' => $this->cafeteria_wallpaper,
+            'likes' => $this->likes
         ];
     }
 }
