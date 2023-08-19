@@ -16,6 +16,7 @@ export default function Layout() {
                 <NavIndex />
             </div>
             <Outlet />
+            
             <Footer />
         </div>
     );
