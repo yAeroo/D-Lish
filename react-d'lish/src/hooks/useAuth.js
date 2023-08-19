@@ -46,7 +46,6 @@ export const useAuth = ({ middleware, url }) => {
 
     const registro = async (datos, setErrores, notiError) => {
         try {
-            console.log(datos);
             const { data } = await clienteAxios.post('/api/registro', datos);
             localStorage.setItem('AUTH_TOKEN', data.token)
             // Limpiar State
