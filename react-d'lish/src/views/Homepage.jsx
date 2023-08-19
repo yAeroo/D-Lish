@@ -1,5 +1,5 @@
 // Componentes
-import Navbar from "../components/Nav/Navbar";
+import NavbarHomepage from "../components/Nav/NavbarHomepage";
 import Footer from "../components/Footer";
 import AuthSelection from "../views/Auth/AuthSelection";
 
@@ -23,13 +23,13 @@ import { MdOutlineScreenshot } from "react-icons/md";
 export default function Homepage() {
   return (
     <>
-      <section className="bg-green-500">
+      <section className="bg-green-600">
         <div className="animate-fade-up animate-once animate-delay-[1300ms]">
-          <Navbar></Navbar>
+          <NavbarHomepage></NavbarHomepage>
         </div>
       </section>
 
-      <div className="hero min-h-screen bg-gradient-to-b from-green-500 from-1%  to-emerald-900">
+      <div className="hero min-h-screen bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
 
         <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -52,13 +52,13 @@ export default function Homepage() {
 
             <div className="flex space-x-4">
               <Link to='/auth/register'>
-                <button className="btn btn-info drop-shadow-lg text-zinc-50">
+                <button className="btn border-none hover:bg-orange-600 bg-orange-500 drop-shadow-lg text-zinc-50">
                   Regístrate
                 </button>
               </Link>
 
               <Link to="/auth/login">
-                <button className="btn btn-info drop-shadow-lg text-zinc-50">
+                <button className="btn border-2 border-orange-500 hover:bg-orange-600 hover:text-zinc-50 hover:border-none bg-orange-500 bg-opacity-50 drop-shadow-lg text-zinc-50">
                   Iniciar Sesión
                 </button>
               </Link>
