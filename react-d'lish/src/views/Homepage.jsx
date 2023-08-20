@@ -24,12 +24,12 @@ export default function Homepage() {
   return (
     <>
       <section className="bg-green-600">
-        <div className="animate-fade-up animate-once animate-delay-[1300ms]">
+        <div className="md:fixed md:top-0 md:left-0 md:w-full z-10 animate-fade-up animate-once animate-delay-[1300ms] ">
           <NavbarHomepage></NavbarHomepage>
         </div>
       </section>
 
-      <div className="hero min-h-screen bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
+      <div className="hero min-h-screen pt-[12rem] bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
 
         <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
