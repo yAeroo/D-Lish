@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import '../css/homepage.css';
 
 // Imagenes
-import HeroImg from "../../src/assets/homepage/dlishMockup3.png";
+import HeroImg from "../../src/assets/homepage/food-removebg-preview.png";
 import Coffee from "../../src/assets/homepage/coffee.jpg";
 import Almuerzos from "../../src/assets/homepage/Almuerzos.png";
 import Desayunos from "../../src/assets/homepage/Desayuno.png";
@@ -29,9 +29,9 @@ export default function Homepage() {
         </div>
       </section>
 
-      <div className="hero min-h-screen pt-[-5rem] md:pt-[12rem] bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
+      <div className="hero min-h-screen mt-[-5rem] md:-[0rem] md:pt-[12rem] bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
 
-        <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
+        <div className="md:mb-[5rem] mb-[-8.8rem] bg-red hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" cla="shape-fill"></path>
           </svg>

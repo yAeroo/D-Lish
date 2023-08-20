@@ -29,7 +29,7 @@ const NavbarHomepage = () => {
 
   return (
     <section className={`py-4 px-4 md:py-0 md:px-0 ${scrolling ? 'bg-transparent' : ''}`}>
-      <nav className={`flex justify-between rounded-2xl md:rounded-none px-10 py-4 md:px-[3rem] md:py-5 list-none ${scrolling ? 'bg-base-100 md:bg-green-600' : 'bg-base-300 md:bg-transparent'}`}>
+      <nav className={`flex justify-between rounded-2xl md:rounded-none px-10 py-4 md:px-[3rem] md:py-5 list-none ${scrolling ? 'bg-base-100 md:bg-neutral' : 'bg-base-300 md:bg-transparent'}`}>
         <Link to="/">
           <img src="../src/assets/logo/icon_bw.png" alt="Logo" className="block md:hidden h-12 cursor-pointer my-auto" />
           <img src="../src/assets/logo/wide_white.png" alt="Logo" className="hidden md:block h-12 cursor-pointer my-auto" />
