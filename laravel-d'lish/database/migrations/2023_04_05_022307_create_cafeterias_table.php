@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Columna 'User_id' - Llave foranea para referenciar al id del propitario de la cafeteria
             $table->string('cafeteria_img'); // Columna 'cafeteria_img' - String
             $table->string('cafeteria_wallpaper'); // Columna 'cafeteria_wallpaper' - String
-            $table->bigInteger('likes')->nullable();
+            $table->unsignedBigInteger('likes')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cafeteria');
+        Schema::dropIfExists('cafeterias');
     }
 };

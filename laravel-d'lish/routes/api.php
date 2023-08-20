@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CafeteriaController;
+use App\Models\FinalDish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::get('/cafeterias', [CafeteriaController::class, 'index']);
+
+Route::get('/final_dishes', [CafeteriaController::class, 'finalDishes']);
 
 // Autenticación
 Route::post('/registro', [AuthController::class, 'register']);

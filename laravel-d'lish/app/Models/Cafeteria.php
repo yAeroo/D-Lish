@@ -15,4 +15,9 @@ class Cafeteria extends Model
         'cafeteria_img',
         'cafeteria_wallpaper',
     ];
+
+    public function finalDishes()
+    {
+        return $this->hasMany(FinalDish::class);
+    }
 }

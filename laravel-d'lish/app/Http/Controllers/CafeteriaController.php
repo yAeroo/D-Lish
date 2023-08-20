@@ -2,21 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Resources\CafeteriaCollection;
 use App\Models\Cafeteria;
-use Illuminate\Http\Request;
+use App\Http\Resources\FinalDishResource;
+use App\Http\Resources\FinalDishCollection;
+use App\Models\FinalDish;
 
 class CafeteriaController extends Controller
 {
     // Retornar cafeterias de la DB
     public function index()
     {
-        // Antigua forma "simple"
-        // return response()->json(['cafeterias' => Cafeteria::all()])
 
-        // Forma API
         return new CafeteriaCollection(Cafeteria::all());
     }
+
+    public function finalDishes()
+    {
+        // $cafetin = Cafeteria::findOrFail($cafetinId);
+        // $finalDishes = $cafetin->finalDishes;
+
+        return new FinalDishCollection(FinalDish::all());
+    }
+
 
     // Extraer canciones del album ==========
     // public function index(User $user, Album $album)
