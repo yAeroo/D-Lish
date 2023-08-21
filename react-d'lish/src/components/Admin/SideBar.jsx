@@ -34,7 +34,7 @@ function SideBar() {
             {/* Contenido del Sidebar */}
             <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
             <li className="mb-7" title='Ventas'><Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7 hidden" title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7 " title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/admin/profile"><MdFoodBank className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title='Pedidos'><Link to="/admin/delivmode"><BiSolidNotepad className='text-white text-2xl ' /></Link></li>
 

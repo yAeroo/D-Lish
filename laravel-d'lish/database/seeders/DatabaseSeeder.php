@@ -22,5 +22,12 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(UserSeeder::class);
         $this->call(CafeteriaSeeder::class);
+        //
+        $this->call(MainDishSeeder::class);
+        $this->call(SideDish1Seeder::class);
+        $this->call(SideDish2Seeder::class);
+        $this->call(AccompanimentSeeder::class);
+        $this->call(DrinkSeeder::class);
+        $this->call(FinalDishSeeder::class);
     }
 }

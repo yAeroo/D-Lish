@@ -40,7 +40,7 @@ class CafeteriaSeeder extends Seeder
             'cafeteria_name' => 'Mamá Margarita',
             'user_id' => '1',
             'cafeteria_img' => 'ma_pfp',
-            'cafeteria_wallpaper' => 'ma_pfp',
+            'cafeteria_wallpaper' => 'ma_wall',
             'likes' => 125,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

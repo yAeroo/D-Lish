@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('img', 40)->nullable();
             $table->enum('category', ['desayuno', 'almuerzo'])->nullable();
             // $table->foreignId('caferia_id')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('caferia_id');
+            $table->unsignedBigInteger('cafeteria_id');
             $table->unsignedBigInteger('main_dish_id');
             $table->unsignedBigInteger('side_dish1_id')->nullable();
             $table->unsignedBigInteger('side_dish2_id')->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Relaciones
-            $table->foreign('caferia_id')->references('id')->on('cafeterias')->onDelete('cascade');
+            $table->foreign('cafeteria_id')->references('id')->on('cafeterias')->onDelete('cascade');
             $table->foreign('main_dish_id')->references('id')->on('main_dishes')->onDelete('cascade');
             $table->foreign('side_dish1_id')->references('id')->on('side_dishes1')->nullOnDelete();
             $table->foreign('side_dish2_id')->references('id')->on('side_dishes2')->nullOnDelete();
