@@ -11,10 +11,8 @@ import Pupusas from "../../src/assets/index/pupusas.jpg";
 import { useParams } from 'react-router-dom';
 
 const Dish = () => {
-
   // Extraer parametros
   const { cafeteriaId, dishId } = useParams();
-  console.log(cafeteriaId, dishId);
 
   return (
     <>
@@ -28,7 +26,7 @@ const Dish = () => {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-            <img className="h-25 rounded-lg" src="../src/assets/img/Almuerzos.png" alt="ComidaPIC" />
+            <img className="h-25 rounded-lg" src="" alt="ComidaPIC" />
             <h1
               className="mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl lg:"
             >
