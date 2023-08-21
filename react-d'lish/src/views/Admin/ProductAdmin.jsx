@@ -9,7 +9,7 @@ import DeleteModal from '../../components/Admin/ProductDeleteModal';
 
 
 function ProductAdmin() {
-	const products = [
+	const almuerzodesayuno = [
 	  { id: 1, name: 'Producto 1', img: 'image1.jpg', price: 10.99 },
 	  { id: 2, name: 'Producto 2', img: 'image2.jpg', price: 19.99 },
 	  { id: 3, name: 'Producto 3', img: 'image3.jpg', price: 12.99 },
@@ -29,7 +29,7 @@ function ProductAdmin() {
 
 			<h3 className='my-7 text-center text-terc font-bold text-2xl'> Almuerzos/Desayunos </h3>
 
-<div class="flex items-center sm:w-[95%] justify-center">
+<div className="flex items-center w-[95%] justify-center">
 
 
 
@@ -38,7 +38,7 @@ function ProductAdmin() {
 		<table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
 			<thead class="text-white">
 				
-			{products.map((product) => (
+			{almuerzodesayuno.map((product) => (
 				// Encabezado de la tabla para cada producto
                 <tr className="bg-terc flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-3 text-left">Id</th>
@@ -62,7 +62,7 @@ function ProductAdmin() {
 			</thead>
 			<tbody class="flex-1 sm:flex-none text-[#414141]">
 				
-			{products.map((product) => (
+			{almuerzodesayuno.map((product) => (
                 <ProductRow
                   key={product.id}
                   ProductNum={product.id}
