@@ -1,79 +1,108 @@
 import React from 'react';
-import { BsFillBagCheckFill } from "react-icons/bs";
-import { MdOutlineShoppingCartCheckout } from "react-icons/md";
-import { GiCancel } from "react-icons/gi";
+// Icons
+import { AiOutlineShop } from "react-icons/ai";
+import { BiCalendar } from "react-icons/bi";
+import { MdOutlineShoppingCart, MdOutlineShoppingCartCheckout, MdOutlineRemoveShoppingCart } from "react-icons/md";
+// Imgs
+import Img from "../assets/Dishes/pupusas_meal.jpg"
+import Img2 from "../assets/Dishes/tortas_lunch.jpg"
 
 export default function LogCard() {
     return (
         <>
-            <section id="log-card" className='p-2 my-2 flex shadow-lg shadow-slate-500 bg-[#ecf0f1] rounded-md w-96'>
-                <div id="img-cont w-full">
-                    <img src="img/coffee-square.jpg" alt="Img" className='h-[100px] w-[125px] rounded-lg'/>
-                </div>
+            <div className="py-3 flex justify-center">
+                <div className="flex-grow flex max-w-md bg-[#121212] shadow-lg rounded-lg overflow-hidden self-center">
+                    <div className="w-1/3 bg-cover" style={{background: `url(${Img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover'}}>
+                        </div> 
 
-                <div id="info-cont" className='p-2 w-full'>
-                    <div id="top-cont" className='flex justify-between'>
-                        <article id="status-cont" className='bg-green-500 inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
-                            <BsFillBagCheckFill color={"white"} size={"15"} className='mr-1'/> <p>Completado</p>
+                    <div className="w-2/3 p-4">
+                        <div id="top-cont" className='flex justify-between mb-2'>
+                            <article id="status-cont" className='bg-success inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
+                                <MdOutlineShoppingCart color={"white"} size={"15"} className='mr-1'/> <p>Completado</p>
+                            </article>
+
+                            <article id="price-cont" className='font-bold text-white'>
+                                $1.00
+                            </article>
+                        </div>
+
+                        <article id="info-dish" className='mt-2'>
+                        <p className='font-title text-xl font-bold text-center text-white'>Pupusas</p>
+                        <article className='flex flex-col items-center'>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <AiOutlineShop color={"#afafaf"} size={"15"} className='mr-1 self-center'/>Cafetín · Don Bosco
+                            </p>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <BiCalendar color={"#afafaf"} size={"15"} className='mr-1 self-center'/>20/08/2023
+                            </p>
                         </article>
-
-                        <article id="price-cont" className='font-bold font-plane'>
-                           $1.00
-                        </article>
-                    </div>
-
-                    <article id="info-dish" className='mt-2'>
-                        <p className='font-title text-lg font-bold text-center'>Café</p>
-                        <p className='font-title text-sm font-bold text-center text-slate-500'>Cafetín · Don Bosco</p>
                     </article>
-                </div>
-            </section>
-
-            <section id="log-card" className='p-2 my-2 flex shadow-lg shadow-slate-500 bg-[#ecf0f1] rounded-md w-96'>
-                <div id="img-cont w-full">
-                    <img src="img/desayuno.png" alt="Img" className='h-[100px] w-[125px] rounded-lg'/>
-                </div>
-
-                <div id="info-cont" className='p-2 w-full'>
-                    <div id="top-cont" className='flex justify-between'>
-                        <article id="status-cont" className='bg-orange-500 inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
-                            <MdOutlineShoppingCartCheckout color={"white"} size={"15"} className='mr-1'/> <p>Pendiente</p>
-                        </article>
-
-                        <article id="price-cont" className='font-bold font-plane'>
-                           $2.50
-                        </article>
                     </div>
+                </div>
+            </div>
 
-                    <article id="info-dish" className='mt-2'>
-                        <p className='font-title text-lg font-bold text-center'>Desayuno completo</p>
-                        <p className='font-title text-sm font-bold text-center text-slate-500'>Cafetín · Domingo Savio</p>
+            <div className="py-3 flex justify-center">
+                <div className="flex-grow flex max-w-md bg-[#121212] shadow-lg rounded-lg overflow-hidden">
+                    <div className="w-1/3 bg-cover" style={{background: `url(${Img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover'}}>
+                        </div> 
+
+                    <div className="w-2/3 p-4">
+                        <div id="top-cont" className='flex justify-between mb-2'>
+                            <article id="status-cont" className='bg-info inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
+                                <MdOutlineShoppingCartCheckout color={"white"} size={"15"} className='mr-1'/> <p>Cancelado</p>
+                            </article>
+
+                            <article id="price-cont" className='font-bold text-white'>
+                                $1.00
+                            </article>
+                        </div>
+
+                        <article id="info-dish" className='mt-2'>
+                        <p className='font-title text-xl font-bold text-center text-white'>Pupusas</p>
+                        <article className='flex flex-col items-center'>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <AiOutlineShop color={"#afafaf"} size={"15"} className='mr-1 self-center'/>Cafetín · Don Bosco
+                            </p>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <BiCalendar color={"#afafaf"} size={"15"} className='mr-1 self-center'/>20/08/2023
+                            </p>
+                        </article>
                     </article>
-                </div>
-            </section>
-
-            <section id="log-card" className='p-2 my-2 flex shadow-lg shadow-slate-500 bg-[#ecf0f1] rounded-md w-96'>
-                <div id="img-cont w-full">
-                    <img src="img/pan-dulce.png" alt="Img" className='h-[100px] w-[125px] rounded-lg'/>
-                </div>
-
-                <div id="info-cont" className='p-2 w-full'>
-                    <div id="top-cont" className='flex justify-between'>
-                        <article id="status-cont" className='bg-red-500 inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
-                            <GiCancel color={"white"} size={"15"} className='mr-1'/> <p>Cancelado</p>
-                        </article>
-
-                        <article id="price-cont" className='font-bold font-plane'>
-                           $1.50
-                        </article>
                     </div>
-
-                    <article id="info-dish" className='mt-2'>
-                        <p className='font-title text-lg font-bold text-center'>Combo de pan dulce</p>
-                        <p className='font-title text-sm font-bold text-center text-slate-500'>Cafetín · María auxiliadora</p>
-                    </article>
                 </div>
-            </section>
+            </div>
+
+            <div className="py-3 flex justify-center">
+                <div className="flex-grow flex max-w-md bg-[#121212] shadow-lg rounded-lg overflow-hidden">
+                    <div className="w-1/3 bg-cover" style={{background: `url(${Img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover'}}>
+                        </div> 
+
+                    <div className="w-2/3 p-4">
+                        <div id="top-cont" className='flex justify-between mb-2'>
+                            <article id="status-cont" className='bg-error inline-flex items-center font-title text-sm font-bold text-white px-2 py-1 rounded-full'>
+                                <MdOutlineRemoveShoppingCart color={"white"} size={"15"} className='mr-1'/> <p>Cancelado</p>
+                            </article>
+
+                            <article id="price-cont" className='font-bold text-white'>
+                                $1.00
+                            </article>
+                        </div>
+
+                        <article id="info-dish" className='mt-2'>
+                        <p className='font-title text-xl font-bold text-center text-white'>Pupusas</p>
+                        <article className='flex flex-col items-center'>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <AiOutlineShop color={"#afafaf"} size={"15"} className='mr-1 self-center'/>Cafetín · Don Bosco
+                            </p>
+                            <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
+                                <BiCalendar color={"#afafaf"} size={"15"} className='mr-1 self-center'/>20/08/2023
+                            </p>
+                        </article>
+                    </article>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }

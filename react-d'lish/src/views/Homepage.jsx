@@ -1,5 +1,5 @@
 // Componentes
-import Navbar from "../components/Nav/Navbar";
+import NavbarHomepage from "../components/Nav/NavbarHomepage";
 import Footer from "../components/Footer";
 import AuthSelection from "../views/Auth/AuthSelection";
 
@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import '../css/homepage.css';
 
 // Imagenes
-import HeroImg from "../../src/assets/homepage/dlishMockup3.png";
+import HeroImg from "../../src/assets/homepage/food-removebg-preview.png";
 import Coffee from "../../src/assets/homepage/coffee.jpg";
 import Almuerzos from "../../src/assets/homepage/Almuerzos.png";
 import Desayunos from "../../src/assets/homepage/Desayuno.png";
@@ -23,15 +23,15 @@ import { MdOutlineScreenshot } from "react-icons/md";
 export default function Homepage() {
   return (
     <>
-      <section className=" bg-gradient-to-r from-slate-900 to-emerald-900">
-        <div className="animate-fade-up animate-once animate-delay-[1300ms]">
-          <Navbar></Navbar>
+      <section className="bg-green-600">
+        <div className="md:fixed md:top-0 md:left-0 md:w-full z-10 animate-fade-up animate-once animate-delay-[1300ms] ">
+          <NavbarHomepage></NavbarHomepage>
         </div>
       </section>
 
-      <div className="hero min-h-screen bg-gradient-to-r from-slate-900 to-emerald-900">
+      <div className="hero min-h-screen mt-[-5rem] md:mt-[-2rem] md:pt-[13rem] bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
 
-        <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
+        <div className="md:mb-[2rem] mb-[-8.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" cla="shape-fill"></path>
           </svg>
@@ -43,22 +43,22 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-primary">
+            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
               Ordena tu comida de manera rápida y sencilla
             </h1>
-            <p className="md:text-2xl py-4 md:py-6 mb-[0]">
+            <p className="md:text-2xl py-4 md:py-6 mb-[0] text-slate-200">
               ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
             </p>
 
             <div className="flex space-x-4">
               <Link to='/auth/register'>
-                <button className="btn btn-info drop-shadow-lg text-zinc-50">
+                <button className="btn border-none hover:bg-orange-600 bg-orange-500 drop-shadow-lg text-zinc-50">
                   Regístrate
                 </button>
               </Link>
 
               <Link to="/auth/login">
-                <button className="btn btn-outline btn-info drop-shadow-lg">
+                <button className="btn border-2 border-orange-500 hover:bg-orange-600 hover:text-zinc-50 hover:border-none bg-orange-500 bg-opacity-50 drop-shadow-lg text-zinc-50">
                   Iniciar Sesión
                 </button>
               </Link>

@@ -13,7 +13,7 @@ export default function Admin() {
 
           {/* Mensaje de Bienvenida  */}
           <main className="p-6 sm:p-10 space-y-6">
-            <div classNameName="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
+            <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
               <div className="mr-6">
                 <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín Maria Auxiliadora</h1>
                 <h2 className="text-black ml-0.5">Mira las estadisticas de tu local</h2>

@@ -5,6 +5,7 @@ import { LiaCoinsSolid } from "react-icons/lia";
 // Componentes
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import LogCard from "../components/LogCard.jsx"
 
 export default function Logs() {
     ChartJS.register(ArcElement, Tooltip, Legend);
@@ -35,7 +36,7 @@ export default function Logs() {
     return (
         <>
             {/* Contenedor principal */}
-            <div id="logs-container" className='min-h-screen pt-32 px-5 mb-7 flex justify-center'>
+            <div id="logs-container" className='min-h-screen pt-32 px-5 mb-7 flex items-center flex-col'>
                 {/* Contenedor de fondos */}
                 <section id="founds-summ" className='mt-7 bg-[#1a1a1a] rounded-lg p-3 w-full sm:w-11/12 h-1/2 shadow-sm shadow-[#080808]'>
 
@@ -71,13 +72,28 @@ export default function Logs() {
                     </div>
 
                     {/* Chart */}
-                    <div className="flex justify-center -mt-12 -mb-12">
+                    <div className="flex justify-center -mt-12 -mb-12 relative">
+                        <p className='absolute text-white font-title font-semibold text-2xl top-36 text-center'>Análisis <br /> de fondos</p>
                         <div className="chart-cont relative inline-block text-center">
                             <Doughnut data={data} options={options} />
                         </div>
                     </div>
-
                 </section>
+
+                <section id="logs-cards-cont" className='mt-7 bg-[#1a1a1a] rounded-lg p-3 w-full sm:w-11/12 h-1/2 shadow-sm shadow-[#080808]'>
+                    {/* Título de la sección */}
+                    <div className="flex justify-center md:justify-normal">
+                        <p className='text-white font-title font-semibold text-2xl md:text-3xl transition-all md:mx-5 my-5 inline-block'>
+                            Historial de pedidos
+                            <hr className='border-success rounded-full border-[1px]' />
+                        </p>
+                    </div>
+                    
+                    <div id="logs-cont" className='grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-1 gap-x-7 gap-y-4 px-3'>
+                        <LogCard />
+                    </div>
+                </section>
+
             </div>
         </>
     )
