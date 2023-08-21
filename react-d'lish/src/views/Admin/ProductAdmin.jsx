@@ -22,7 +22,7 @@ function ProductAdmin() {
             
 
 			{/* ------- Open the modal using ID.showModal() method ----------*/}
-			<button className="btn btn-primary mt-[150px]" onClick={()=>window.product_modal_1.showModal()}>Agregar producto</button>
+			<button className="btn btn-primary mt-[48px] sm:ml-[36px] sm:mt-[150px]" onClick={()=>window.product_modal_1.showModal()}>Agregar producto</button>
 				<ProductModal ModalId="product_modal_1" ModalTypebtn="Subir producto" ModalType="Agrega cualquier tipo de producto"/>
 			
 			{/* ------------- FIN DEL MODAL ------------ */}

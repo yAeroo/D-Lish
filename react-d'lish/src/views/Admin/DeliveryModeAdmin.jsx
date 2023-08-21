@@ -6,7 +6,7 @@ import Pupusas from "../../assets/index/pupusas.jpg";
 
 function DeliveryModeAdmin() {
   return (
-    <div className='lg:ml-[7rem] my-[-65px] lg:my-[0px] h-[100%] min-h-screen animate-fade animate-duration-500'>
+    <div className='lg:ml-[10rem] sm:ml-[5rem] ml-[2rem] h-[100%] animate-fade animate-duration-500'>
   
 
   {/* Mensaje de Arriba */}
@@ -19,48 +19,19 @@ function DeliveryModeAdmin() {
         </div>
       </div>
 
-           <table className="w-full border-b border-gray-200">
-        <thead className=' bg-orange-400'>
-          <tr className="text-sm font-medium text-gray-700 border-b border-gray-200">
-            <td className="py-4 px-4 text-center">Producto</td>
-            <td className="py-4 px-4 text-center">Usuario</td>
-            <td className="py-4 px-4 text-center">Aceptar</td>
-            <td className="py-4 px-4 text-center">Denegar</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="transition-colors group">
-            <td className="font-medium text-center text-primary">
-              <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
-            <td className="font-medium text-center text-primary">Eleazar Amaya</td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
-          </tr>
-          <tr className="transition-colors group">
-            <td className="font-medium text-center text-primary">
-              <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
-            <td className="font-medium text-center text-primary">Eleazar Amaya</td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
-          </tr>
-          <tr className="transition-colors group">
-            <td className="font-medium text-center text-primary">
-              <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
-            <td className="font-medium text-center text-primary">Eleazar Amaya</td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
-          </tr>
-          <tr className="transition-colors group">
-            <td className="font-medium text-center text-primary">
-              <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
-            <td className="font-medium text-center text-primary">Eleazar Amaya</td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
-            <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
-          </tr>
-        </tbody>
-      </table> 
+ 
+      <div className="flex flex-col sm:w-[97%] w-[90%] lg:flex-row  sm:p-5 ">
+      <div className="grid h-full p-5 flex-grow  card bg-base-300 rounded-box place-items-center">
+      <td className="font-medium text-center text-primary">
+            <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
+        <td className="font-medium text-center text-primary">Eleazar Amaya</td></div> 
 
+       <div className="flex flex-row gap-3 justify-center flex-grow h-32 card bg-base-300 rounded-box place-items-center"> {/*  estaba en grid           */}
+      <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
+        <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
+      </div>
 
+</div>
 
     </div>
   )
