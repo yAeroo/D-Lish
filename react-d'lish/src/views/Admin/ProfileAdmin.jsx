@@ -81,14 +81,14 @@ function ProfileAdmin() {
             <div className="sm:col-span-3">
               <label htmlFor="ubicacion" className="block text-sm font-medium leading-6 text-gray-900">Ubicacion</label>
               <div className="mt-2">
-                <input type="text" name="ubicacion" id="ubicacion" autoComplete="given-name" placeholder='Seccion de Cafeterias' className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset px-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" />
+                <input type="text" name="ubicacion" id="ubicacion"  placeholder='Seccion de Cafeterias' className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset px-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" />
               </div>
             </div>
 
             <div className="sm:col-span-3">
               <label htmlFor="edificio" className="block text-sm font-medium leading-6 text-gray-900">Edificio</label>
               <div className="mt-2">
-                <input type="text" name="edificio" id="edificio" placeholder='Colegio Don Bosco' autoComplete="family-name" className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" />
+                <input type="text" name="edificio" id="edificio" placeholder='Colegio Don Bosco' className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" />
               </div>
             </div>
 

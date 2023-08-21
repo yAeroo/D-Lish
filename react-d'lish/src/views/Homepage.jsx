@@ -1,6 +1,7 @@
 // Componentes
-import Navbar from "../components/Nav/Navbar";
+import NavbarHomepage from "../components/Nav/NavbarHomepage";
 import Footer from "../components/Footer";
+import AuthSelection from "../views/Auth/AuthSelection";
 
 //Link
 import { Link } from "react-router-dom";
@@ -9,7 +10,7 @@ import { Link } from "react-router-dom";
 import '../css/homepage.css';
 
 // Imagenes
-import HeroImg from "../../src/assets/homepage/dlishMockup3.png";
+import HeroImg from "../../src/assets/homepage/food-removebg-preview.png";
 import Coffee from "../../src/assets/homepage/coffee.jpg";
 import Almuerzos from "../../src/assets/homepage/Almuerzos.png";
 import Desayunos from "../../src/assets/homepage/Desayuno.png";
@@ -22,15 +23,15 @@ import { MdOutlineScreenshot } from "react-icons/md";
 export default function Homepage() {
   return (
     <>
-      <section className=" bg-gradient-to-r from-slate-900 to-emerald-900">
-        <div className="animate-fade-up animate-once animate-delay-[1300ms]">
-          <Navbar></Navbar>
+      <section className="bg-green-600">
+        <div className="md:fixed md:top-0 md:left-0 md:w-full z-10 animate-fade-up animate-once animate-delay-[1300ms] ">
+          <NavbarHomepage></NavbarHomepage>
         </div>
       </section>
 
-      <div className="hero min-h-screen bg-gradient-to-r from-slate-900 to-emerald-900">
+      <div className="hero min-h-screen mt-[-5rem] md:mt-[-2rem] md:pt-[13rem] bg-gradient-to-b from-green-600 from-1%  to-emerald-950">
 
-        <div className="md:mb-[-7.5rem] mb-[-7.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
+        <div className="md:mb-[2rem] mb-[-8.8rem] hidden md:block custom-shape-divider-bottom-1689485827">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" cla="shape-fill"></path>
           </svg>
@@ -42,22 +43,22 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-            <h1 className="md:text-6xl text-4xl font-bold text-primary drop-shadow-lg md:mt-[-4rem] mb-[0]  title-text from-secondary to-white">
+            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
               Ordena tu comida de manera rápida y sencilla
             </h1>
-            <p className="md:text-2xl py-4 md:py-6 mb-[0]">
+            <p className="md:text-2xl py-4 md:py-6 mb-[0] text-slate-200">
               ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
             </p>
 
             <div className="flex space-x-4">
               <Link to='/auth/register'>
-                <button className="btn btn-info drop-shadow-lg text-zinc-50">
+                <button className="btn border-none hover:bg-orange-600 bg-orange-500 drop-shadow-lg text-zinc-50">
                   Regístrate
                 </button>
               </Link>
 
               <Link to="/auth/login">
-                <button className="btn btn-outline btn-info drop-shadow-lg">
+                <button className="btn border-2 border-orange-500 hover:bg-orange-600 hover:text-zinc-50 hover:border-none bg-orange-500 bg-opacity-50 drop-shadow-lg text-zinc-50">
                   Iniciar Sesión
                 </button>
               </Link>
@@ -66,10 +67,8 @@ export default function Homepage() {
         </div>
       </div>
 
-
-
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
-        <h1 className="md:text-7xl text-4xl title-text text-center from-primary to-white">
+        <h1 className="md:text-7xl text-4xl text-center text-primary font-bold">
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
       </div>
@@ -131,11 +130,11 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-            <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem] title-text from-blue-600 to-primary ">
+            <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
               ¿Quiénes somos?
             </h1>
             <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
-              En Dlish, nos dedicamos a revolucionar la forma en que los estudiantes acceden a los alimentos en las cafeterías escolares. Nos hemos propuesto eliminar las largas filas y el tiempo desperdiciado en esperar para realizar un pedido. Somos una aplicación creada con pasión y compromiso para brindar una experiencia de compra conveniente y eficiente a los estudiantes.
+              En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
             </p>
           </div>
         </div>
@@ -161,7 +160,7 @@ export default function Homepage() {
                 Misión
               </h1>
               <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
-                En Dlish, nos dedicamos a revolucionar la forma en que los estudiantes acceden a los alimentos en las cafeterías escolares. Nos hemos propuesto eliminar las largas filas y el tiempo desperdiciado en esperar para realizar un pedido. Somos una aplicación creada con pasión y compromiso para brindar una experiencia de compra conveniente y eficiente a los estudiantes.
+                En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!
               </p>
             </div>
           </div>
@@ -182,7 +181,7 @@ export default function Homepage() {
               Visión
             </h1>
             <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
-              En Dlish, nos dedicamos a revolucionar la forma en que los estudiantes acceden a los alimentos en las cafeterías escolares. Nos hemos propuesto eliminar las largas filas y el tiempo desperdiciado en esperar para realizar un pedido. Somos una aplicación creada con pasión y compromiso para brindar una experiencia de compra conveniente y eficiente a los estudiantes.
+              En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra.
             </p>
           </div>
         </div>
@@ -193,6 +192,9 @@ export default function Homepage() {
         </div>
       </div>
 
+      <div className="mt-[3rem] mb-[3rem]">
+        <AuthSelection />
+      </div>
 
       <Footer></Footer>
     </>

@@ -38,6 +38,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Index />
+            },
+            {
+                path: '/logs',
+                element: <Logs />
             }
         ]
     },
@@ -129,10 +133,6 @@ const router = createBrowserRouter([
             }
         ]
 
-    },
-    {
-        path: '/logs',
-        element: <Logs />
     }
 
     // {
