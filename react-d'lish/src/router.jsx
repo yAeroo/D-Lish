@@ -48,6 +48,11 @@ const router = createBrowserRouter([
                 path: '/cafeteria/:cafeteriaId',
                 element: <CafetinView />
             },
+            {
+                // Página del Platillo
+                path: '/cafeteria/:cafeteriaId/dish/:dishId',
+                element: <Dish />
+            },
         ]
     },
     {
@@ -81,11 +86,6 @@ const router = createBrowserRouter([
         // Página de Ordenar
         path: '/order',
         element: <Order />
-    },
-    {
-        // Página del Platillo
-        path: '/dish',
-        element: <Dish />
     },
     {
         // Página del QR

@@ -8,8 +8,14 @@ import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
 
+import { useParams } from 'react-router-dom';
 
 const Dish = () => {
+
+  // Extraer parametros
+  const { cafeteriaId, dishId } = useParams();
+  console.log(cafeteriaId, dishId);
+
   return (
     <>
       {/* Apartado de NavBar */}
@@ -83,8 +89,7 @@ const Dish = () => {
                 <br />
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
-
-                  <FoodCardDish name="Agua en bolsa" photo={JugosNaturales} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Agua en bolsa" photo={JugosNaturales} cafetin="Miguel Magone" />
 
                     <FoodCardDish name="Agua en botella" photo={JugosNaturales} cafetin="Miguel Magone" />
 
@@ -98,7 +103,7 @@ const Dish = () => {
 
           </div>
           <Link to="/order">
-          <button className="btn no-animation w-full   disabled font-plane bg-accent text-white mt-4">Ordenar</button>
+            <button className="btn no-animation w-full   disabled font-plane bg-accent text-white mt-4">Ordenar</button>
           </Link>
         </div>
 

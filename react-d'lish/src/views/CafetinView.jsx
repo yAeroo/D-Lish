@@ -14,12 +14,15 @@ import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
+import FoodCard from "../components/Cafeteria/FoodCard";
 
 export default function CafetinView() {
   // Todas las cafeterias
   const { cafeterias } = useCafeterias();
   // Extraer parametro
   const { cafeteriaId } = useParams();
+
+
   // Extraer cafeteria actual
   const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
 
@@ -107,66 +110,9 @@ export default function CafetinView() {
 
         <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
 
-          <div className="card 2xl:card-side shadow-xl">
-            <figure>
-              <img
-                src={PolloAsado}
-                alt="Album"
-                className="h-full"
-              />
-            </figure>
-            <div className="card-body bg-base-100">
-              <h2 className="card-title">Plato de Pollo Asado</h2>
-              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
-              <div className="card-actions justify-end">
-                <Link to="/dish">
-                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="card 2xl:card-side shadow-xl">
-            <figure>
-              <img
-                src={PolloAsado}
-                alt="Album"
-                className="h-full"
-              />
-            </figure>
-            <div className="card-body bg-base-100">
-              <h2 className="card-title">Plato de Pollo Asado</h2>
-              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
-              <div className="card-actions justify-end">
-                <Link to="/dish">
-                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="card 2xl:card-side shadow-xl">
-            <figure>
-              <img
-                src={PolloAsado}
-                alt="Album"
-                className="h-full"
-              />
-            </figure>
-            <div className="card-body bg-base-100">
-              <h2 className="card-title">Plato de Pollo Asado</h2>
-              <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
-              <div className="card-actions justify-end">
-                <Link to="/dish">
-                  <button className="btn btn-primary mt-[1rem]">Agregar</button>
-                </Link>
-              </div>
-            </div>
-          </div>
+          <FoodCard img={PolloAsado} cafeteriaId={cafeteriaId} />
 
         </div>
-
-
         <br />
       </section>
 

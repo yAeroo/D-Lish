@@ -7,6 +7,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { TbPigMoney } from "react-icons/tb";
 
 export default function Preferences(props) {
+    const { user } = props;
+
     return (
         <>
             <div className="mb-10 fa-custom animate-fade">
@@ -16,7 +18,7 @@ export default function Preferences(props) {
                             <MdOutlineAlternateEmail size={"25"} />
                             <div className="flex justify-between w-full">
                                 <span className="px-2 overflow-ellipsis min-w-[13.8rem] sm:w-full overflow-hidden">
-                                    {props.user?.email}
+                                    {user?.email}
                                 </span>
                             </div>
                         </li>
