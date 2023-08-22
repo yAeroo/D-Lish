@@ -17,8 +17,8 @@ class FinalDishResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'cafeteria_id' => $this->cafeteria_id,
-            // Otros atributos si los tienes
+            //  Respues API Consistente utilizando Cafeteria Resource
+            'cafeteria_id' => CafeteriaResource::collection($this->whenLoaded('cafeteria')),
         ];
     }
 }

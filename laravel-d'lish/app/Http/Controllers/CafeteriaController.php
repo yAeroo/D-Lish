@@ -14,7 +14,6 @@ class CafeteriaController extends Controller
     // Retornar cafeterias de la DB
     public function index()
     {
-
         return new CafeteriaCollection(Cafeteria::all());
     }
 
@@ -22,9 +21,10 @@ class CafeteriaController extends Controller
     {
         // $cafetin = Cafeteria::findOrFail($cafetinId);
         // $finalDishes = $cafetin->finalDishes;
-
         // return new FinalDishCollection(FinalDish::all());
-        return new FinalDishCollection(FinalDish::with('cafeteria')->get());
+
+        $finalDishes = FinalDish::with(['cafeteria']);
+        return FinalDishResource::collection($finalDishes->paginate(50))->response();
     }
 
 

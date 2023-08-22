@@ -20,7 +20,8 @@ class CafeteriaResource extends JsonResource
             'nombre' => $this->cafeteria_name,
             'cafe_pfp' => $this->cafeteria_img,
             'cafe_wallp' => $this->cafeteria_wallpaper,
-            'likes' => $this->likes
+            'likes' => $this->likes,
+            'Platillos' => FinalDishResource::collection($this->finalDishes)
         ];
     }
 }
