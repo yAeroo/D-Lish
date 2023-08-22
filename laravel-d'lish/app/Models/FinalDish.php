@@ -49,6 +49,6 @@ class FinalDish extends Model
 
     public function cafeteria()
     {
-        return $this->belongsTo(Cafetin::class);
+        return $this->belongsTo(cafeteria::class);
     }
 }

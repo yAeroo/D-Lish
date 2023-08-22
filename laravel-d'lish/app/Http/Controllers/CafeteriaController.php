@@ -23,11 +23,12 @@ class CafeteriaController extends Controller
         // $cafetin = Cafeteria::findOrFail($cafetinId);
         // $finalDishes = $cafetin->finalDishes;
 
-        return new FinalDishCollection(FinalDish::all());
+        // return new FinalDishCollection(FinalDish::all());
+        return new FinalDishCollection(FinalDish::with('cafeteria')->get());
     }
 
 
-    // Extraer canciones del album ==========
+    // Extraer canciones del album ==========d
     // public function index(User $user, Album $album)
     // {
     //     $CountSongs = Song::where([['album_id', $album->id], ['visibility', true]])->get();

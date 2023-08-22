@@ -15,13 +15,16 @@ import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
 import FoodCard from "../components/Cafeteria/FoodCard";
+import useFinalDishes from "../hooks/useFinalDishes";
 
 export default function CafetinView() {
   // Todas las cafeterias
   const { cafeterias } = useCafeterias();
+  const { finalDishes } = useFinalDishes();
   // Extraer parametro
   const { cafeteriaId } = useParams();
 
+  console.log(finalDishes);
 
   // Extraer cafeteria actual
   const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
