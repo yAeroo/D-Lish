@@ -68,7 +68,7 @@ export default function Homepage() {
       </div>
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
-        <h1 className="md:text-5xl xl:text-6xl text-4xl text-center text-primary font-bold">
+        <h1 className="md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold">
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
       </div>
@@ -169,7 +169,7 @@ export default function Homepage() {
 
       <div className="hero min-h-screen bg-base-200 relative pb-[5rem] md:pb-[0rem]">
         <div className="hero-content flex-col lg:flex-row-reverse px-10 md:px-10 md:mt-[-6rem]">
-          <div className="md:w-2/5 rounded-lg md:order-2 mt-8 md:mt-0 md:ml-8 animate-fade-left animate-duration-600 animate-ease-in-out order-2">
+          <div className="md:w-2/5 rounded-lg md:order-2 mt-[15rem] md:mt-0 md:ml-8 animate-fade-left animate-duration-600 animate-ease-in-out order-2">
             <img
               src={Almuerzos}
               className="w-full 2xl:ml-[-13rem] rounded-xl transform brightness-80"
@@ -177,7 +177,7 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[6rem]  md:mt-[4rem] pb-[2rem]">
+            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[6rem] md:mt-[4rem] pb-[2rem]">
               Visión
             </h1>
             <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">

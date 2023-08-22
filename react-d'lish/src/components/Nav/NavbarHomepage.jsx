@@ -29,7 +29,7 @@ const NavbarHomepage = () => {
 
   return (
     <section className={`py-4 px-4 md:py-0 md:px-0 ${scrolling ? 'bg-transparent' : ''}`}>
-      <nav className={`flex justify-between rounded-2xl md:rounded-none px-10 py-4 md:px-[3rem] md:py-5 list-none ${scrolling ? 'bg-base-100 md:bg-neutral' : 'bg-base-300 md:bg-transparent'}`}>
+      <nav className={`flex justify-between rounded-2xl md:rounded-2xl md:mx-9 md:my-3 px-8 py-4 md:px-[3rem] md:py-5 list-none ${scrolling ? 'bg-neutral md:bg-neutral' : 'bg-neutral md:bg-transparent'}`}>
         <Link to="/">
           <img src="../src/assets/logo/icon_bw.png" alt="Logo" className="block md:hidden h-12 cursor-pointer my-auto" />
           <img src="../src/assets/logo/wide_white.png" alt="Logo" className="hidden md:block h-12 cursor-pointer my-auto" />
@@ -40,7 +40,7 @@ const NavbarHomepage = () => {
         <IoIosMenu className="md:hidden text-white text-4xl cursor-pointer my-2 list-none" onClick={handleMenuClick} />
       </nav>
       {showMenu && (
-        <div className={`md:hidden flex flex-col items-center justify-center gap-5 py-3 my-1 text-white list-none ${scrolling ? 'bg-base-100' : 'bg-base-100'} 0 rounded-t-lg rounded-2xl animate-fade-down animate-duration-300 animate-ease-in-out`}>
+        <div className={`md:hidden flex flex-col items-center justify-center gap-5 py-3 my-1 text-white list-none ${scrolling ? 'bg-neutral' : 'bg-neutral'} 0 rounded-t-lg rounded-2xl animate-fade-down animate-duration-300 animate-ease-in-out`}>
           <NavLinks />
         </div>
       )}
