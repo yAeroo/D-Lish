@@ -68,15 +68,15 @@ export default function Homepage() {
       </div>
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
-        <h1 className="md:text-7xl text-4xl text-center text-primary font-bold">
+        <h1 className="md:text-5xl xl:text-6xl text-4xl text-center text-primary font-bold">
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
       </div>
 
-      <div className="flex flex-col items-center justify-center h-25 mt-[6rem] mb-[15rem] md:mx-[22rem]">
-        <div className="flex flex-col 2xl:flex-row items-center justify-center w-full md:mt-[6rem]">
+      <div className="flex flex-col items-center justify-center h-25 mt-[6rem] xl:mt-2 mb-[15rem] xl:mb-[10rem] md:mx-[10rem]">
+        <div className="flex flex-col xl:flex-row items-center justify-center w-full md:mt-[6rem]">
           <div className="w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
+            <figure className="px-5 pt-10 bg-base-100 flex items-center justify-center ">
               <IoFastFoodOutline className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
@@ -129,11 +129,11 @@ export default function Homepage() {
             />
           </div>
 
-          <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-            <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
+          <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right md:mt-5">
+            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
               ¿Quiénes somos?
             </h1>
-            <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
+            <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">
               En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
             </p>
           </div>
@@ -155,11 +155,11 @@ export default function Homepage() {
               />
             </div>
 
-            <div className="md:w-3/5 order-1 md:order-2 text-left lg:text-left animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-              <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[1rem] md:mt-[4rem] pb-[2rem]">
+            <div className="md:w-3/6 order-1 md:order-2 text-left lg:text-left animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem] md:mt-5">
+              <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[1rem] md:mt-[4rem] pb-[2rem]">
                 Misión
               </h1>
-              <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
+              <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">
                 En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!
               </p>
             </div>
@@ -176,11 +176,11 @@ export default function Homepage() {
             />
           </div>
 
-          <div className="md:w-3/5 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
-            <h1 className="xl:text-7xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[6rem]  md:mt-[4rem] pb-[2rem]">
+          <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
+            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[6rem]  md:mt-[4rem] pb-[2rem]">
               Visión
             </h1>
-            <p className="xl:text-3xl md:text-xl text-xl py-4 md:py-6">
+            <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">
               En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra.
             </p>
           </div>
