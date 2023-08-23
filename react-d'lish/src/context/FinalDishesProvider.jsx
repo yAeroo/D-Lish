@@ -20,9 +20,9 @@ const FinalDishesProvider = ({ children }) => {
     }
 
     // Manda a llamar al cargar el componente
-    useEffect(() => {
-        obtenerFinalDishes();
-    }, [])
+    // useEffect(() => {
+    //     obtenerFinalDishes();
+    // }, [])
 
     return (
         // Se pasan los datos al global

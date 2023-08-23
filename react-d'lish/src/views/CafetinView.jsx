@@ -20,11 +20,13 @@ import useFinalDishes from "../hooks/useFinalDishes";
 export default function CafetinView() {
   // Todas las cafeterias
   const { cafeterias } = useCafeterias();
-  const { finalDishes } = useFinalDishes();
+  // const { finalDishes } = useFinalDishes();
   // Extraer parametro
   const { cafeteriaId } = useParams();
 
-  console.log(finalDishes);
+  console.log(cafeterias);
+
+  // console.log(finalDishes);
 
   // Extraer cafeteria actual
   const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);

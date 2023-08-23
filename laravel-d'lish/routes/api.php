@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 Route::get('/cafeterias', [CafeteriaController::class, 'index']);
 
-Route::get('/final_dishes', [CafeteriaController::class, 'finalDishes']);
+// Route::get('/final_dishes', [CafeteriaController::class, 'finalDishes']);
 
 // Autenticación
 Route::post('/registro', [AuthController::class, 'register']);
