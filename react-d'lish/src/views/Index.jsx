@@ -66,24 +66,28 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="px-1 bg-base-200 pb-10 w-full">
+      <section className="lg:mx-[6rem] 2xl:rounded-2xl 2xl:px-10 bg-base-200 pb-10 my-[4rem]">
         <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8">
           Lo más vendido
         </h2>
 
         {/* Props del apartado de comidas  */}
 
-        <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" />
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8">
+          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos"/>
 
-        <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" />
+          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos"/>
 
-        <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" />
+          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" precio="0.25" categoria="Otros"/>
 
-        <FoodCard name="Pupusas" photo={Pupusas} cafetin="Miguel Magone"/>
+          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Miguel Magone" precio="1.00" categoria="Desayunos"/>
 
-        <FoodCard name="Pollo Asado" photo={PolloAsado} cafetin="Maria Auxiliadora"/>
+          <FoodCard name="Pollo Asado" photo={PolloAsado} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos"/>
 
-        <FoodCard name="Tortas" photo={Tortas} cafetin="Don Bosco"/>
+          <FoodCard name="Tortas" photo={Tortas} cafetin="Don Bosco" precio="2.50" categoria="Almuerzos"/>
+        </div>
+
+        
 
       </section>
 
