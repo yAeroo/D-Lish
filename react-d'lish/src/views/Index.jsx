@@ -7,6 +7,8 @@ import NavIndex from "../components/Nav/NavIndex";
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
+import Tortas from "../../src/assets/index/Tortas.jpg";
+import PolloAsado from "../../src/assets/index/polloAsado.jpg";
 
 
 // Import Swiper styles
@@ -64,18 +66,25 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="md:mx-[7rem] px-1 bg-base-200 pb-10">
+      <section className="px-1 bg-base-200 pb-10 w-full">
         <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8">
           Lo más vendido
         </h2>
 
         {/* Props del apartado de comidas  */}
 
-        <FoodCard name="Pupusas 3 x $1" photo={Pupusas} cafetin="Miguel Magone" />
+        <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" />
 
-        <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Miguel Magone" />
+        <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" />
 
-        <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
+        <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" />
+
+        <FoodCard name="Pupusas" photo={Pupusas} cafetin="Miguel Magone"/>
+
+        <FoodCard name="Pollo Asado" photo={PolloAsado} cafetin="Maria Auxiliadora"/>
+
+        <FoodCard name="Tortas" photo={Tortas} cafetin="Don Bosco"/>
+
       </section>
 
 
