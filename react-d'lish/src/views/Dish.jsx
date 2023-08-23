@@ -7,6 +7,7 @@ import FoodCardDish from '../components/FoodCardDish';
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
+import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
 import { useParams } from 'react-router-dom';
 
@@ -26,7 +27,7 @@ const Dish = () => {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-            <img className="h-25 rounded-lg" src="" alt="ComidaPIC" />
+            <img className="h-25 rounded-lg" src={Almuerzo} alt="ComidaPIC" />
             <h1
               className="mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl lg:"
             >
@@ -106,20 +107,9 @@ const Dish = () => {
         </div>
 
       </div>
-      <Footer></Footer>
+ 
     </>
   )
 }
 
 export default Dish
-                            // <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100  w-52">
-                            //             <h1 className='text-white  md:px-40  md:text-50px  sm:items-center justify-center '>Escoge tu Bebida</h1>
-                            //             <li className='dark:text-white mt-6'><h1>Tamarindo
-                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                            //             <li className='dark:text-white'><h1>Té
-                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                            //             <li className='dark:text-white' ><h1>Limonada
-                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                            //             <li className='dark:text-white'><h1>Jamaica
-                            //             <input type="checkbox"  className="checkbox checkbox-success" /></h1></li>
-                            //           </ul> 
