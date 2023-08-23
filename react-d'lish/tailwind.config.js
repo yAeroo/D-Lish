@@ -62,6 +62,7 @@ export default {
         'profile': 'url("img/banner.jpg")'
       },
       screens: {
+        'xxsm':'375px',
         'xsm': '450px',
         'lsm': '530px'
       }

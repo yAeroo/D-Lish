@@ -38,7 +38,7 @@ export default function Homepage() {
         </div>
 
         <div className="hero-content flex flex-col md:flex-row-reverse px-10 md:px-10 md:mt-[-6rem] relative">
-          <div className="md:w-2/5 rounded-lg mt-1 md:ml-1 animate-fade-left animate-duration-600 animate-ease-in-out order-1 md:order-1">
+          <div className="md:w-2/5 xxsm:w-4/5 rounded-lg mt-6 md:ml-1 animate-fade-left animate-duration-600 animate-ease-in-out order-1 md:order-1">
             <img src={HeroImg} className="w-full 2xl:ml-[15rem]" />
           </div>
 
