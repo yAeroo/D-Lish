@@ -1,44 +1,36 @@
 import React from 'react'
 import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
+//Comida pic
+import Almuerzo from "../../assets/homepage/Almuerzos.png"
 //chart imports 
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
+import { Bar } from "react-chartjs-2";
 
 import { Link } from 'react-router-dom';
 
 export default function Admin() {
 
-  ChartJS.register(ArcElement, Tooltip, Legend);
-    
-  const data={
-      labels: ['Fondos disponibles', 'Gastos totales'],
-      datasets: [{
-              data: [100, 25],
-              backgroundColor: ['rgba(96, 185, 119, 0.9)', 'rgba(72, 72, 72, 0.5)',],
-              borderColor: ['#275934','#151515'],
-              borderWidth: 2,
-              borderRadius: 20
-          },
-      ],
-  };
-
-  const options = { 
-      plugins: {
-          legend: { display: false },
-          tooltip: { enabled: false },
-      },
-      circumference: 180,
-      rotation: 270,
-      cutout: '75%',
-      offset: 20
+  ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend );
+  const data = {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri' ],
+    datasets: [
+      {
+        label: 'ver',
+        data: [52, 48, 35, 32, 28],
+        backgroundColor: ['white', 'blue', 'orange', 'green', 'yellow'],
+        borderWidth: 2,
+      }
+    ]
   }
+
+
 
   return (
     <>
       <div className='lg:ml-[10rem] h-[100%] animate-fade animate-duration-500'>
 
-        <div className="flex-grow  ">
+        <div className="flex-grow">
 
           {/* Mensaje de Bienvenida  */}
           <main className="p-6 sm:p-10 space-y-6">
@@ -64,10 +56,12 @@ export default function Admin() {
             {/* Espacio para Tarjeta de comida o Grafica  + demas Tarejtas*/}
             <section className="grid justify-center md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6 ">
               <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
-                <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Platillo más vendido o grafica</div>
+                <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Platillo más vendido</div>
                 <div className="p-4 flex-grow">
-                  <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
-                    <img className="h-25 rounded-lg" src="" alt="ComidaPIC" /></div>
+                  <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold  border-2 border-gray-200 border-dashed rounded-md">
+                  {/* Grafico espacio 1 */}
+                  <img src={Almuerzo} alt="comidapic" className='h-44 md:h-280' />
+                  </div>
                 </div>
               </div>
 
@@ -119,11 +113,11 @@ export default function Admin() {
 
               {/* Trajetas de Larteral */}
               <div className="flex flex-col row-span-3 bg-neutral shadow rounded-lg">
-                <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Grafico</div>
+                <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Ventas Semanales</div>
                 <div className="p-4 flex-grow">
                   <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
                     {/* Espacio exacto para grafica */}
-                  <Doughnut data={data} options={options} />
+                    <Bar data={data}  />
                     </div>
                 </div>
               </div>

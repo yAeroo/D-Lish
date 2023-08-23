@@ -20,19 +20,20 @@ function DeliveryModeAdmin() {
       </div>
 
  
-      <div className="flex flex-col sm:w-[97%] w-[90%] lg:flex-row  sm:p-5 ">
-      <div className="grid h-full p-5 flex-grow  card bg-base-300 rounded-box place-items-center">
-      <td className="font-medium text-center text-primary">
-            <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</td>
-        <td className="font-medium text-center text-primary">Eleazar Amaya</td></div> 
-
-       <div className="flex flex-row gap-3 justify-center flex-grow h-32 card bg-base-300 rounded-box place-items-center"> {/*  estaba en grid           */}
-      <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
-        <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
+      <div className="flex flex-col sm:w-[97%] w-[90%] lg:flex-row sm:p-5  bg-secu ">
+         <div className="grid h-full p-5 flex-grow  card  rounded-box place-items-center">
+   
+         <section className="font-medium text-center  text-primary">
+               <img src={Pupusas} alt="" className='w-40 aspect-[3/2] rounded-lg object-cover object-top' />Pupusa</section>
+           <td className="font-medium text-center text-primary">Eleazar Amaya</td></div> 
+   
+          <div className="flex flex-row gap-3 justify-center flex-grow h-32 card bg-base-300 rounded-box place-items-center"> {/*  estaba en grid           */}
+         <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-success">Success</button></td>
+           <td className="font-medium text-center text-primary"><button className="btn btn-outline btn-error">Error</button></td>
+         </div>
+   
       </div>
-
-</div>
-
+   
     </div>
   )
 }
