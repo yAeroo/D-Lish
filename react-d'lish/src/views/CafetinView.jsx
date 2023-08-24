@@ -31,7 +31,7 @@ export default function CafetinView() {
     return <p className=" text-9xl">Cargando</p>
   }
 
-  const platillos = cafeteria.Platillos;
+  const platillos = cafeteria.platillos;
   console.log(platillos);
 
   return (

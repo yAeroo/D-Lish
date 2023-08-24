@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Accompaniments extends Model
 {
     use HasFactory;
+
+    public function orderDishes()
+    {
+        return $this->belongsTo(OrderDish::class);
+    }
+
+    public function cafeteria()
+    {
+        return $this->belongsTo(cafeteria::class);
+    }
 }

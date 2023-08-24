@@ -19,6 +19,7 @@ class DrinkSeeder extends Seeder
         DB::table('drinks')->insert([
             'name' => 'agua',
             'price' => 0.15,
+            'cafeteria_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

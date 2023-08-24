@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class SideDish1 extends Model
 {
     use HasFactory;
+    protected $table = 'side_dishes1';
+
+    public function orderDishes()
+    {
+        return $this->belongsTo(OrderDish::class);
+    }
+
+    public function cafeteria()
+    {
+        return $this->belongsTo(cafeteria::class);
+    }
 }

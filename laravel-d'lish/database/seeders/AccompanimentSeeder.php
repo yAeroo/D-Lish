@@ -18,6 +18,7 @@ class AccompanimentSeeder extends Seeder
     {
         DB::table('accompaniments')->insert([
             'name' => 'Tortillas',
+            'cafeteria_id' => 1,
             // 'price' => 0,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

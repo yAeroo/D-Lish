@@ -20,7 +20,7 @@ class OrderDishResource extends JsonResource
             'description' => $this->description,
             'img' => $this->img,
             //  Respues API Consistente utilizando Cafeteria Resource
-            'cafeteria_id' => CafeteriaResource::collection($this->whenLoaded('cafeteria')),
+            // 'cafeteria_id' => CafeteriaResource::collection($this->whenLoaded('cafeteria')),
         ];
     }
 }
