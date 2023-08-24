@@ -32,6 +32,7 @@ export default function CafetinView() {
   }
 
   const platillos = cafeteria.Platillos;
+  console.log(platillos);
 
   return (
     <>
@@ -120,8 +121,8 @@ export default function CafetinView() {
           {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
           {platillos.length ?
             platillos.map(
-              (platillo) => (
-                <FoodCard name={platillo.name} key={platillo.id} />
+              (platillo, id) => (
+                <FoodCard name={platillo.name} key={id} id={platillo.id} description={platillo.description} cafeteriaId={cafeteriaId} />
               )) :
             'No hay nada'
           }
