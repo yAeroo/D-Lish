@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import clienteAxios from '../config/axios';
 
 // Definimos nuestro contexto de cafeterias
 const CafeteriasContext = createContext();
@@ -7,16 +7,26 @@ const CafeteriasContext = createContext();
 // Proveedor de datos, quien va a servir la información de las cafeterias
 const CafeteriasProvider = ({ children }) => {
     const [cafeterias, setCafeterias] = useState([]);
+    const [contenidoCafeteria, setContenidoCafeteria] = useState([]);
 
     // Función asincrona que llama los datos
     const obtenerCafeterias = async () => {
         try {
-            const { data } = await axios('http://127.0.0.1:8000/api/cafeterias');
+            const { data } = await clienteAxios('/api/cafeterias');
             setCafeterias(data.data);
         } catch (error) {
             console.log(error);
         }
+    }
 
+    // Función asincrona que llama los datos
+    const obtenerContenidoCafeteria = async (cafeteriaId) => {
+        try {
+            const { data } = await clienteAxios(`/api/cafeteria/${cafeteriaId}/content`);
+            setContenidoCafeteria(data.data);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     // Manda a llamar al cargar el componente
@@ -27,7 +37,9 @@ const CafeteriasProvider = ({ children }) => {
     return (
         // Se pasan los datos al global
         <CafeteriasContext.Provider value={{
-            cafeterias
+            cafeterias,
+            obtenerContenidoCafeteria,
+            contenidoCafeteria
         }}>
             {children}
         </CafeteriasContext.Provider>
