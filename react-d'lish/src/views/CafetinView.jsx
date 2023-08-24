@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 //Componentes
-import Navbar from "../components/Nav/Navbar";
 import NavCafetin from "../components/Nav/NavCafetin";
 import WiggleAlert from "../components/WiggleAlert";
-import Footer from "../components/Footer";
 
 //
 import useCafeterias from "../hooks/useCafeterias";
@@ -15,21 +13,25 @@ import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
 import FoodCard from "../components/Cafeteria/FoodCard";
-import useFinalDishes from "../hooks/useFinalDishes";
 
 export default function CafetinView() {
-  // Todas las cafeterias
-  const { cafeterias } = useCafeterias();
-  // const { finalDishes } = useFinalDishes();
   // Extraer parametro
   const { cafeteriaId } = useParams();
+  const { obtenerContenidoCafeteria, contenidoCafeteria } = useCafeterias();
 
-  console.log(cafeterias);
+  // Extraer cafeteria actual al tener el ID y Tener la
+  useEffect(() => {
+    obtenerContenidoCafeteria(cafeteriaId);
+  }, []);
 
-  // console.log(finalDishes);
+  const cafeteria = contenidoCafeteria[0];
 
-  // Extraer cafeteria actual
-  const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
+  // ESPERA === Componente de carga
+  if (!cafeteria) {
+    return <p className=" text-9xl">Cargando</p>
+  }
+
+  const platillos = cafeteria.Platillos;
 
   return (
     <>
@@ -115,13 +117,22 @@ export default function CafetinView() {
 
         <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
 
-          <FoodCard img={PolloAsado} cafeteriaId={cafeteriaId} />
+          {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
+          {platillos.length ?
+            platillos.map(
+              (platillo) => (
+                <FoodCard name={platillo.name} key={platillo.id} />
+              )) :
+            'No hay nada'
+          }
 
         </div>
         <br />
       </section>
 
       <br /> <br />
+
+
     </>
   );
 }

@@ -37,7 +37,7 @@ class CafeteriaSeeder extends Seeder
         ]);
 
         DB::table('cafeterias')->insert([
-            'cafeteria_name' => 'Mamá Margarita',
+            'cafeteria_name' => 'María Auxiliadora',
             'user_id' => '1',
             'cafeteria_img' => 'ma_pfp',
             'cafeteria_wallpaper' => 'ma_wall',

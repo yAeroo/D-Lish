@@ -23,13 +23,16 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+    // DESLOGUEO =================
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 
-Route::get('/cafeterias', [CafeteriaController::class, 'index']);
-
-// Route::get('/final_dishes', [CafeteriaController::class, 'finalDishes']);
-
-// Autenticación
+// AUTENTICACIÓN =================
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+
+// CONTENIDOS ===================
+Route::get('/cafeterias', [CafeteriaController::class, 'index']);
+
+// ENPOITN - ROUTE MODEL BINDING - Buscar un contenido en específico
+Route::get('/cafeteria/{id}/content', [CafeteriaController::class, 'content']);
