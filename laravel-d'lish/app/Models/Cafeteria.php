@@ -16,8 +16,8 @@ class Cafeteria extends Model
         'cafeteria_wallpaper',
     ];
 
-    public function finalDishes()
+    public function OrderDishes()
     {
-        return $this->hasMany(FinalDish::class);
+        return $this->hasMany(OrderDish::class);
     }
 }

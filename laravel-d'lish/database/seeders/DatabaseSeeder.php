@@ -28,6 +28,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SideDish2Seeder::class);
         $this->call(AccompanimentSeeder::class);
         $this->call(DrinkSeeder::class);
-        $this->call(FinalDishSeeder::class);
+        $this->call(OrderDishSeeder::class);
     }
 }

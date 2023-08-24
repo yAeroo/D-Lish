@@ -9,8 +9,8 @@ class MainDish extends Model
 {
     use HasFactory;
 
-    public function finalDishes()
+    public function OrderDishes()
     {
-        return $this->belongsTo(FinalDish::class);
+        return $this->belongsTo(OrderDish::class);
     }
 }

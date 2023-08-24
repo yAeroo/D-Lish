@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class FinalDishSeeder extends Seeder
+class OrderDishSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class FinalDishSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('final_dishes')->insert([
+        DB::table('order_dishes')->insert([
             'name' => 'Pollo a la plancha',
             'description' => 'Delicioso pollo a la planca con complementos',
             'img' => 'defaultDish.png',

@@ -21,7 +21,7 @@ class CafeteriaResource extends JsonResource
             'cafe_pfp' => $this->cafeteria_img,
             'cafe_wallp' => $this->cafeteria_wallpaper,
             'likes' => $this->likes,
-            'Platillos' => FinalDishResource::collection($this->finalDishes)
+            'Platillos' => OrderDishResource::collection($this->orderDishes)
         ];
     }
 }

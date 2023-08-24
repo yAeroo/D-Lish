@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\CafeteriaCollection;
 use App\Models\Cafeteria;
-use App\Http\Resources\FinalDishResource;
-use App\Http\Resources\FinalDishCollection;
-use App\Models\FinalDish;
 
 class CafeteriaController extends Controller
 {

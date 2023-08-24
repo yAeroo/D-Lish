@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CafeteriaController;
-use App\Models\FinalDish;
+use App\Models\OrderDish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

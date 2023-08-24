@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import FinalDishesContext from '../context/FinalDishesProvider';
+import OrderDishesContext from '../context/OrderDishesProvider';
 
 // "use" react agiliza el código
-const useFinalDishes = () => {
-    return useContext(FinalDishesContext);
+const useOrderDishes = () => {
+    return useContext(OrderDishesContext);
 }
 
-export default useFinalDishes;
+export default useOrderDishes;
