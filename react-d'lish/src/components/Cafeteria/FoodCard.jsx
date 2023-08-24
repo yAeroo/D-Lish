@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function FoodCard(props) {
-    const { cafeteriaId, img } = props;
+    const { name, cafeteriaId, img } = props;
 
     return (
         <div className="card 2xl:card-side shadow-xl">
@@ -13,7 +13,7 @@ export default function FoodCard(props) {
                 />
             </figure>
             <div className="card-body bg-base-100">
-                <h2 className="card-title">Plato de Pollo Asado</h2>
+                <h2 className="card-title">{name}</h2>
                 <p>Pollo a la mostaza acompañado de 2 acompañamientos a escoger.</p>
                 <div className="card-actions justify-end">
                     <Link to={`/cafeteria/${cafeteriaId}/dish/1`}>
