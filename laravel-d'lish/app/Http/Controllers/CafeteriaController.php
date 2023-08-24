@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\CafeteriaCollection;
+use App\Http\Resources\CafeteriaContentResource;
 use App\Models\Cafeteria;
 
 class CafeteriaController extends Controller
@@ -19,6 +20,6 @@ class CafeteriaController extends Controller
         // Buscamos según ID
         $cafeteria = Cafeteria::where('id', $id)->get();
         // Retornamos
-        return new CafeteriaCollection($cafeteria);
+        return CafeteriaContentResource::collection($cafeteria);
     }
 }

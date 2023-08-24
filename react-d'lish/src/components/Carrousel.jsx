@@ -35,7 +35,8 @@ export default function Carrousel() {
                             <div className="max-w-md md:text-start text-center">
                                 <h1 className="mb-5 text-5xl md:text-7xl font-bold">{cafe.nombre}</h1>
                                 <p className="mb-5 text-xl md:text-2xl">Bachillerato & Tercer Ciclo.</p>
-                                <Link to={`/cafeteria/${cafe.id}`} className="btn btn-primary">
+
+                                <Link to={`/cafeteria/${cafe.id}`} className="btn btn-primary" >
                                     Ver Cafetín
                                 </Link>
                             </div>

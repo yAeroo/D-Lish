@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 //Componentes
-import NavCafetin from "../components/Nav/NavCafetin";
 import WiggleAlert from "../components/WiggleAlert";
 
-//
+// CONTENIDO VARIABLE
 import useCafeterias from "../hooks/useCafeterias";
-
-//Imagenes
-import PolloAsado from "../../src/assets/cafetinview/PolloAsado.jpg";
 
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
@@ -16,38 +12,33 @@ import FoodCard from "../components/Cafeteria/FoodCard";
 
 export default function CafetinView() {
   // Extraer parametro
+  const { cafeterias, obtenerContenidoCafeteria, contenidoCafeteria, limpiarCafeteria } = useCafeterias();
   const { cafeteriaId } = useParams();
-  const { obtenerContenidoCafeteria, contenidoCafeteria } = useCafeterias();
 
-  // Extraer cafeteria actual al tener el ID y Tener la
+  // Extraer contenido de la cafeteria actual al tener el ID 
   useEffect(() => {
+    limpiarCafeteria();
     obtenerContenidoCafeteria(cafeteriaId);
   }, []);
 
-  const cafeteria = contenidoCafeteria[0];
-
   // ESPERA === Componente de carga
-  if (!cafeteria) {
+  if (contenidoCafeteria.length == [] || cafeterias.length == []) {
     return <p className=" text-9xl">Cargando</p>
   }
 
-  const platillos = cafeteria.platillos;
-  console.log(platillos);
+  // Contenido de la cafeteria
+  const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
+  const { nombre, cafe_wallp, likes } = cafeteria;
+  const { platillos } = contenidoCafeteria;
 
   return (
     <>
-      <section className="md:px-8">
-        <div className="">
-          <NavCafetin></NavCafetin>
-        </div>
-      </section>
-
       <section className="mb-[3rem] md:mb-[5rem] animate-fade-right animate-ease-in-out animate-once animate-duration-[1000ms]">
         <div className="flex justify-between items-center">
           <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">
-            {cafeteria ? cafeteria.nombre : ''}
+            {nombre ? nombre : ''}
           </h1>
-          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria ? cafeteria.cafe_wallp : ''}.jpg')` }}>
+          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafe_wallp ? cafe_wallp : ''}.jpg')` }}>
             <div className="stat-title text-xs md:text-lg">Recomendado por</div>
             <div className="flex items-center">
               <div className="stat-figure text-primary text-xs">
@@ -66,7 +57,7 @@ export default function CafetinView() {
                 </svg>
               </div>
               <div className="stat-value text-sm md:text-3xl text-primary ml-1">
-                {cafeteria ? cafeteria.likes : ''}
+                {likes ? likes : ''}
               </div>
             </div>
             <div className="stat-desc text-sm md:text-lg">Estudiantes</div>

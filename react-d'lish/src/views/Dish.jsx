@@ -1,27 +1,38 @@
-import React, { useState } from 'react'
+import { useEffect } from 'react'
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
 import NavCafetin from '../components/Nav/NavCafetin';
-import Footer from '../components/Footer';
 import FoodCardDish from '../components/FoodCardDish';
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Pupusas from "../../src/assets/index/pupusas.jpg";
 import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
+// IMPORTACIÓN DE CONTENIDO VARIABLE
+import useCafeterias from "../hooks/useCafeterias";
 import { useParams } from 'react-router-dom';
 
 const Dish = () => {
-  // Extraer parametros
-  const { cafeteriaId, dishId } = useParams();
+  // Extraer parametro
+  const { dishId } = useParams();
+  const { cafeterias, contenidoCafeteria } = useCafeterias();
+
+  // ESPERA === Componente de carga
+  if (contenidoCafeteria.length == [] || cafeterias.length == []) {
+    return <p className=" text-9xl">Cargando</p>
+  }
+
+  const { platillos } = contenidoCafeteria;
+  console.log(cafeterias);
+  const cafeteria = cafeterias.find(cafeteria => cafeteria.id == contenidoCafeteria.id);
+
+  const platillo = platillos.find(platillo => platillo.id == dishId);
+  const { acompañantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
+
+  console.log(complementos1);
 
   return (
     <>
-      {/* Apartado de NavBar */}
-      <section className='px-4 md:px-24 py-4 bg-gradient-to-r'>
-        <div className='animate-fade-up animate-once animate-delay-[1300ms]'><NavCafetin></NavCafetin></div>
-      </section>
-
       <div className='flex items-center justify-center w-full min-h-screen animate-fade-up animate-once animate-delay-[1300ms]'>
         <div
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
@@ -31,7 +42,7 @@ const Dish = () => {
             <h1
               className="mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl lg:"
             >
-              Cafetín "Maria Auxiliadora"
+              Cafetín {cafeteria.nombre}
               <br className="hidden lg:inline" />
               <span className="text-primary"> Almuerzo</span>
             </h1>
@@ -42,62 +53,59 @@ const Dish = () => {
               Los campos con * son obligatorios
             </p>
             <div className="flex flex-col w-full border-opacity-50">
-
               <br />
-
               <form className=''>
 
-                <div className=" text-white font-bold mb-1">Opciones principales * (solo puedes escoger 1)</div>
+                <div className=" text-white font-bold mb-1">Platillo Principal</div>
                 <hr className='bg-white  ' />
                 <br />
-
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
-
-                    <FoodCardDish name="Pollo a la plancha" photo={Pupusas} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Carne a la plancha" photo={Pupusas} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Lasagna" photo={Pupusas} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Burritos" photo={Pupusas} cafetin="Miguel Magone" />
+                    <FoodCardDish name={platillo.name} photo={Burrito} cafetin="Miguel Magone" />
                   </div>
                 </div>
 
                 <br />
-                <div className=" text-white font-bold mb-1">Complementos *  (escoge 2)</div>
+                <div className=" text-white font-bold mb-1">Complemento 1</div>
                 <hr className='bg-white' />
                 <br />
-
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
+                    <FoodCardDish name={complementos1[0].name} photo={Burrito} cafetin="Miguel Magone" />
+                  </div>
+                </div>
+                <br />
 
+                <div className=" text-white font-bold mb-1">Complemento 2</div>
+                <hr className='bg-white' />
+                <br />
+                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
+                  <div className="flow-root">
+                    <FoodCardDish name={complementos2[0].name} photo={Burrito} cafetin="Miguel Magone" />
+                  </div>
+                </div>
+                <br />
 
-                    <FoodCardDish name="Arroz" photo={Burrito} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Casamiento" photo={Burrito} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Chimol" photo={Burrito} cafetin="Miguel Magone" />
+                <div className=" text-white font-bold mb-1">Acompañantes</div>
+                <hr className='bg-white' />
+                <br />
+                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
+                  <div className="flow-root">
+                    <FoodCardDish name={bebidas[0].name} photo={JugosNaturales} cafetin="Miguel Magone" />
                   </div>
                 </div>
 
-                <br />
 
                 <div className=" text-white font-bold mb-1">Bebidas | +$0.25</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
-                    <FoodCardDish name="Agua en bolsa" photo={JugosNaturales} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Agua en botella" photo={JugosNaturales} cafetin="Miguel Magone" />
-
-                    <FoodCardDish name="Jugos Naturales" photo={JugosNaturales} cafetin="Miguel Magone" />
+                    <FoodCardDish name="Tortillas" photo={JugosNaturales} cafetin="Miguel Magone" />
                   </div>
                 </div>
 
               </form>
-
             </div>
 
           </div>
@@ -107,7 +115,6 @@ const Dish = () => {
         </div>
 
       </div>
- 
     </>
   )
 }

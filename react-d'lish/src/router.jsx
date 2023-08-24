@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import AuthLayout from './layouts/AuthLayout';
 import ProfileLayout from './layouts/ProfileLayout';
+import CafeteriaLayout from './layouts/CafeteriaLayout';
 import AdminLayout from './layouts/AdminLayout';
 // Componentes importados
 import Index from './views/Index';
@@ -42,7 +43,20 @@ const router = createBrowserRouter([
             {
                 path: '/logs',
                 element: <Logs />
+            }
+        ]
+    },
+    {
+        path: '/cafeteria',
+        // Componente a mostrar ó Layout
+        element: <CafeteriaLayout />,
+        // Subcomponentes ó "hijos"
+        children: [
+            {
+                index: true,
+                element: <Page404 />
             },
+            ,
             {
                 // Ruta dinamica
                 path: '/cafeteria/:cafeteriaId',
@@ -54,7 +68,8 @@ const router = createBrowserRouter([
                 element: <Dish />
             },
         ]
-    },
+    }
+    ,
     {
         path: '/auth',
         element: <AuthLayout />,

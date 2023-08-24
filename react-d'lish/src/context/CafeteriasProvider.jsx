@@ -23,10 +23,18 @@ const CafeteriasProvider = ({ children }) => {
     const obtenerContenidoCafeteria = async (cafeteriaId) => {
         try {
             const { data } = await clienteAxios(`/api/cafeteria/${cafeteriaId}/content`);
-            setContenidoCafeteria(data.data);
+            const cafeteria = data.data[0];
+
+            // Guardar en localStorage
+            localStorage.setItem('contenidoCafeteria', JSON.stringify(cafeteria));
+            setContenidoCafeteria(cafeteria);
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const limpiarCafeteria = () => {
+        setContenidoCafeteria([]);
     }
 
     // Manda a llamar al cargar el componente
@@ -39,7 +47,8 @@ const CafeteriasProvider = ({ children }) => {
         <CafeteriasContext.Provider value={{
             cafeterias,
             obtenerContenidoCafeteria,
-            contenidoCafeteria
+            contenidoCafeteria,
+            limpiarCafeteria
         }}>
             {children}
         </CafeteriasContext.Provider>
