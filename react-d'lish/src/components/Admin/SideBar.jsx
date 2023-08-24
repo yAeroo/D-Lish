@@ -36,7 +36,7 @@ function SideBar() {
             <li className="mb-7" title='Ventas'><Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title='Cafeteria'><Link to="/admin/profile"><MdFoodBank className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7 hidden" title='Pedidos'><Link to="/admin/delivmode"><BiSolidNotepad className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7" title='Pedidos'><Link to="/admin/delivmode"><BiSolidNotepad className='text-white text-2xl ' /></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'><Link to="/homepage" className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl' /></Link></li>
