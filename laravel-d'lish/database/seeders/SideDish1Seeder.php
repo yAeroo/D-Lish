@@ -18,7 +18,7 @@ class SideDish1Seeder extends Seeder
     {
         DB::table('side_dishes1')->insert([
             'name' => 'Arroz',
-            'price' => 0.50,
+            // 'price' => 0.50,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

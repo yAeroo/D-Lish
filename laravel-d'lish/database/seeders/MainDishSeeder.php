@@ -18,7 +18,7 @@ class MainDishSeeder extends Seeder
     {
         DB::table('main_dishes')->insert([
             'name' => 'Pollo',
-            'price' => 1.50,
+            // 'price' => 1.50,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

@@ -24,7 +24,7 @@ class FinalDish extends Model
 
     public function mainDish()
     {
-        return $this->belongsTo(MainDish::class);
+        return $this->hasMany(MainDish::class);
     }
 
     public function sideDish1()
