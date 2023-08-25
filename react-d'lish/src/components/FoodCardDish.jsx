@@ -1,7 +1,21 @@
-import React from 'react'
+import { useEffect } from 'react';
+import useOrders from '../hooks/useOrders';
 
 function FoodCardDish(props) {
-    const { photo, name, cafetin } = props;
+    const { photo, name, cafetin, chekeable, lectura, id } = props;
+    const { pedido, handleAgregarPedido } = useOrders();
+
+    // useEffect(() => {
+    //     // Detecta si ya esta dentro de nuestro pedido
+    //     if (pedido.some((pedidoState) => pedidoState.id === producto.id)) {
+    //         const productoEdicion = pedido.filter(
+    //             (pedidoState) => pedidoState.id === producto.id
+    //         )[0];
+
+    //         setCantidad(productoEdicion.cantidad);
+    //         setEdicion(true);
+    //     }
+    // }, [pedido]);
 
     return (
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
@@ -16,11 +30,17 @@ function FoodCardDish(props) {
                     <h3 className="pt-[0.01rem] text-sm text-neutral-200">{cafetin}</h3>
                 </div>
             </div>
-            <button className=" text-primary text-xs px-2 py-1 rounded-md ml-5">
+            <label className=" text-primary text-xs px-2 py-1 rounded-md ml-5">
                 <div className="form-control">
-                    <input type="checkbox" className="checkbox checkbox-success" />
+                    <input
+                        type="checkbox"
+                        className="checkbox
+                     checkbox-success"
+                        checked={chekeable}
+                        readOnly={lectura}
+                    />
                 </div>
-            </button>
+            </label>
         </div>
     )
 }

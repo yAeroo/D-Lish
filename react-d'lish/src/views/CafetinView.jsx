@@ -21,14 +21,8 @@ export default function CafetinView() {
     obtenerContenidoCafeteria(cafeteriaId);
   }, []);
 
-  // ESPERA === Componente de carga
-  if (contenidoCafeteria.length == [] || cafeterias.length == []) {
-    return <p className=" text-9xl">Cargando</p>
-  }
-
   // Contenido de la cafeteria
-  const cafeteria = cafeterias.find(cafeteria => cafeteria.id == cafeteriaId);
-  const { nombre, cafe_wallp, likes } = cafeteria;
+  const cafeteria = cafeterias?.find(cafeteria => cafeteria?.id == cafeteriaId);
   const { platillos } = contenidoCafeteria;
 
   return (
@@ -36,9 +30,9 @@ export default function CafetinView() {
       <section className="mb-[3rem] md:mb-[5rem] animate-fade-right animate-ease-in-out animate-once animate-duration-[1000ms]">
         <div className="flex justify-between items-center">
           <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">
-            {nombre ? nombre : ''}
+            {cafeteria?.nombre}
           </h1>
-          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafe_wallp ? cafe_wallp : ''}.jpg')` }}>
+          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria?.afe_wallp}.jpg')` }}>
             <div className="stat-title text-xs md:text-lg">Recomendado por</div>
             <div className="flex items-center">
               <div className="stat-figure text-primary text-xs">
@@ -57,7 +51,7 @@ export default function CafetinView() {
                 </svg>
               </div>
               <div className="stat-value text-sm md:text-3xl text-primary ml-1">
-                {likes ? likes : ''}
+                {cafeteria?.likes}
               </div>
             </div>
             <div className="stat-desc text-sm md:text-lg">Estudiantes</div>
@@ -110,7 +104,7 @@ export default function CafetinView() {
         <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
 
           {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
-          {platillos.length ?
+          {platillos?.length ?
             platillos.map(
               (platillo, id) => (
                 <FoodCard name={platillo.name} key={id} id={platillo.id} description={platillo.description} cafeteriaId={cafeteriaId} />
