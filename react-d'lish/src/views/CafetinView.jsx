@@ -32,7 +32,7 @@ export default function CafetinView() {
           <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">
             {cafeteria?.nombre}
           </h1>
-          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria?.afe_wallp}.jpg')` }}>
+          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria?.cafe_wallp}.jpg')` }}>
             <div className="stat-title text-xs md:text-lg">Recomendado por</div>
             <div className="flex items-center">
               <div className="stat-figure text-primary text-xs">
@@ -107,7 +107,11 @@ export default function CafetinView() {
           {platillos?.length ?
             platillos.map(
               (platillo, id) => (
-                <FoodCard name={platillo.name} key={id} id={platillo.id} description={platillo.description} cafeteriaId={cafeteriaId} />
+                <FoodCard
+                  name={platillo.name}
+                  key={id} id={platillo.id}
+                  description={platillo.description}
+                  cafeteriaId={cafeteriaId} />
               )) :
             'No hay nada'
           }

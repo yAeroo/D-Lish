@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import { toast } from "react-toastify";
 import clienteAxios from "../config/axios";
 
@@ -9,6 +9,7 @@ const OrdersProvider = ({ children }) => {
     // const [categorias, setCategorias] = useState([]);
     // const [categoriaActual, setCategoriaActual] = useState({});
     // const [modal, setModal] = useState(false);
+    const [ordenComplete, setOrdenComplete] = useState(false);
     const [producto, setProducto] = useState({});
     const [orden, setOrden] = useState({});
     // const [total, setTotal] = useState(0);
@@ -51,25 +52,31 @@ const OrdersProvider = ({ children }) => {
     //     setModal(!modal);
     // };
 
+    // Saber si el objeto esta nulo o no
+    const comprobarOrdenCompleta = (objeto) => {
+        const valores = Object.values(objeto);
+        const bool = valores.every(valor => valor !== null);
+        setOrdenComplete(bool) // Verifica si todos los valores son diferentes de null
+    }
+
     // Obtención del producto desde el componente
     const handleSetProducto = (producto) => {
         setProducto(producto);
     };
 
     // Sacar elementos de un objeto
-    const handleAgregarplatillo = ({ categoria_id, ...producto }) => {
-        if (orden.some((platilloState) => platilloState.id === producto.id)) {
-            // Iterar por cada uno de los elementos
-            const platilloActualizado = orden.map((platilloState) =>
-                platilloState.id === producto.id ? producto : platilloState
-            );
+    const handleAgregarOrden = (id, type) => {
+        orden[type] = id;
+        setOrden(orden);
 
-            setOrden(platilloActualizado);
-            console.log("Guardado Correctamente");
-        } else {
-            setOrden([...orden, producto]);
-            console.log("Agregado al Orden");
-        }
+        console.log(orden);
+    };
+
+    const handleRemoverOrden = (type) => {
+        orden[type] = null;
+        setOrden(orden);
+
+        console.log(orden);
     };
 
     const handleEditarCantidad = (id) => {
@@ -95,9 +102,11 @@ const OrdersProvider = ({ children }) => {
                 orden,
                 setOrden,
                 handleSetProducto,
-                handleAgregarplatillo,
+                handleAgregarOrden,
                 handleEliminarProductoplatillo,
-                handleEditarCantidad
+                handleEditarCantidad,
+                ordenComplete,
+                comprobarOrdenCompleta
             }}
         >
             {children}

@@ -1,21 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useOrders from '../hooks/useOrders';
 
 function FoodCardDish(props) {
-    const { photo, name, cafetin, chekeable, lectura, id } = props;
-    const { pedido, handleAgregarPedido } = useOrders();
+    const { id, name, type, photo, cafetin, chekeable, lectura } = props;
+    const { orden, handleAgregarOrden, comprobarOrdenCompleta } = useOrders();
 
-    // useEffect(() => {
-    //     // Detecta si ya esta dentro de nuestro pedido
-    //     if (pedido.some((pedidoState) => pedidoState.id === producto.id)) {
-    //         const productoEdicion = pedido.filter(
-    //             (pedidoState) => pedidoState.id === producto.id
-    //         )[0];
-
-    //         setCantidad(productoEdicion.cantidad);
-    //         setEdicion(true);
-    //     }
-    // }, [pedido]);
+    const handleCheckboxClick = (id, tipo) => {
+        handleAgregarOrden(id, tipo);
+        comprobarOrdenCompleta(orden);
+    };
 
     return (
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
@@ -38,6 +31,7 @@ function FoodCardDish(props) {
                      checkbox-success"
                         checked={chekeable}
                         readOnly={lectura}
+                        onChange={() => { handleCheckboxClick(id, type) }}
                     />
                 </div>
             </label>

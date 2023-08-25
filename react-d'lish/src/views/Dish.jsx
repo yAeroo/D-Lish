@@ -1,11 +1,11 @@
 // Multimedia
-import FoodCardDish from '../components/FoodCardDish';
+import OrderComponent from '../components/OrderComponent';
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
 // IMPORTACIÓN DE CONTENIDO VARIABLE
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import useCafeterias from "../hooks/useCafeterias";
 import useOrders from '../hooks/useOrders';
@@ -24,18 +24,22 @@ const Dish = () => {
     setOrden({
       userId: user?.id,
       userName: user?.name,
-      cafeteriaId: cafeteriaId,
-      main_dish: dishId
+      cafeteriaId: +cafeteriaId,
+      main_dish: +dishId,
+      side_dish1: null,
+      side_dish2: null,
+      accompaniement: null,
+      drink: null,
     })
-  }, []);
+  }, [user]);
 
   const { platillos } = contenidoCafeteria;
   const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == contenidoCafeteria.id);
 
   const platillo = platillos?.find(platillo => platillo.id == dishId);
-  const { acompañantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
+  const { acompanantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
+  const { ordenComplete } = useOrders();
 
-  console.log(orden);
 
   return (
     <>
@@ -66,7 +70,7 @@ const Dish = () => {
                 <br />
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
-                    <FoodCardDish
+                    <OrderComponent
                       name={platillo?.name}
                       id={dishId}
                       chekeable={true}
@@ -83,9 +87,9 @@ const Dish = () => {
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
                     {complementos1 ? complementos1.map((complemento, id) => (
-                      <FoodCardDish
-                        key={complemento.id}
+                      <OrderComponent key={complemento.id}
                         id={complemento.id}
+                        type="side_dish1"
                         name={complemento.name}
                         photo={Burrito}
                         cafetin="Miguel Magone" />
@@ -100,9 +104,9 @@ const Dish = () => {
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
                     {complementos2 ? complementos2.map((complemento, id) => (
-                      <FoodCardDish
-                        key={complemento.id}
+                      <OrderComponent key={complemento.id}
                         id={complemento.id}
+                        type="side_dish2"
                         name={complemento.name}
                         photo={Burrito}
                         cafetin="Miguel Magone" />
@@ -116,9 +120,10 @@ const Dish = () => {
                 <br />
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
-                    <FoodCardDish
+                    <OrderComponent
                       name="Tortillas"
-                      id={1}
+                      type="accompaniement"
+                      id={2}
                       photo={JugosNaturales}
                       cafetin="Miguel Magone" />
                   </div>
@@ -131,9 +136,9 @@ const Dish = () => {
                 <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
                   <div className="flow-root">
                     {bebidas ? bebidas.map((bebida, id) => (
-                      <FoodCardDish
-                        key={bebida.id}
+                      <OrderComponent key={bebida.id}
                         name={bebida.name}
+                        type="drink"
                         id={bebida.id}
                         photo={Burrito}
                         cafetin="Miguel Magone" />
@@ -145,7 +150,7 @@ const Dish = () => {
             </div>
 
           </div>
-          <button className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white" disabled>Ordenar</button>
+          <button className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white" disabled={!ordenComplete}>Ordenar</button>
         </div>
 
       </div>
