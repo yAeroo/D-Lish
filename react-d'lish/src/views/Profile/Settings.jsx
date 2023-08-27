@@ -15,6 +15,7 @@ import { IoChevronBackSharp } from "react-icons/io5";
 
 // Helper
 import Notificacion from "../../helper/Notify";
+import RegresarProfile from "../../components/Profile/RegresarProfile";
 
 export default function Settings() {
 
@@ -43,15 +44,7 @@ export default function Settings() {
             <div id="pf-bttns" className="relative">
                 {/* Botón cambio foto de perfil */}
                 <ProfilePfp />
-
-                <div id="edit-bttn" className="fu-custom animate-fade-right absolute top-8 left-[5%] md:left-[3%] lg:left-[10%]">
-                    <Link to="/profile" className="flex rounded-full p-2 md:px-5 ">
-                        <span> <IoChevronBackSharp size={"25"} color={"white"} /> </span>
-                        <span className="ml-2 profile-bttn-text">
-                            Regresar
-                        </span>
-                    </Link>
-                </div>
+                <RegresarProfile url="/profile" />
             </div>
 
             {/* Información de perfil */}

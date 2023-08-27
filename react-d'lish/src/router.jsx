@@ -12,7 +12,7 @@ import AuthSelection from './views/Auth/AuthSelection';
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
 import Homepage from './views/Homepage';
-import Logs from './views/Logs';
+import Logs from './views/Profile/Logs';
 import CafetinView from './views/CafetinView';
 import Order from './views/Profile/Order';
 import Dish from './views/Dish';
@@ -39,10 +39,6 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Index />
-            },
-            {
-                path: '/logs',
-                element: <Logs />
             }
         ]
     },
@@ -124,6 +120,11 @@ const router = createBrowserRouter([
                 path: '/profile/settings',
                 element: <Settings />
             },
+            ,
+            {
+                path: '/profile/logs',
+                element: <Logs />
+            }
         ]
     },
     {

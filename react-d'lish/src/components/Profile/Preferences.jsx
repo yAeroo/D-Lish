@@ -34,17 +34,17 @@ export default function Preferences(props) {
                         </li>
                     </Link>
 
-                    <Link to="/logs/">
+                    <Link to="/profile/logs/">
                         <li className="li-elem">
                             <HiOutlineWallet size={"25"} />
                             <div className="flex justify-between w-full">
-                                <span className="px-2">Registros</span>
+                                <span className="px-2">Fondos & Registros</span>
                                 <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
                             </div>
                         </li>
                     </Link>
 
-                    <Link to="/logs/">
+                    {/* <Link to="/profile/logs/">
                         <li className="li-elem">
                             <TbPigMoney size={"25"} />
                             <div className="flex justify-between w-full">
@@ -52,7 +52,7 @@ export default function Preferences(props) {
                                 <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
                             </div>
                         </li>
-                    </Link>
+                    </Link> */}
                 </ul>
 
                 {/* Boton cerrar sesión */}

@@ -1,28 +1,33 @@
 import React from 'react'
+import { useAuth } from '../../hooks/useAuth.js';
+
+import ProfileInfo from "../../components/Profile/ProfileInfo";
+
 // Icons
 import { TbPigMoney } from "react-icons/tb";
 import { LiaCoinsSolid } from "react-icons/lia";
 // Componentes
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import LogCard from "../components/LogCard.jsx"
+import LogCard from "../../components/Profile/LogCard.jsx"
+import RegresarProfile from '../../components/Profile/RegresarProfile.jsx';
 
 export default function Logs() {
     ChartJS.register(ArcElement, Tooltip, Legend);
-    
-    const data={
+
+    const data = {
         labels: ['Fondos disponibles', 'Gastos totales'],
         datasets: [{
-                data: [100, 25],
-                backgroundColor: ['rgba(96, 185, 119, 0.9)', 'rgba(72, 72, 72, 0.5)',],
-                borderColor: ['#275934','#151515'],
-                borderWidth: 2,
-                borderRadius: 20
-            },
+            data: [100, 25],
+            backgroundColor: ['rgba(96, 185, 119, 0.9)', 'rgba(72, 72, 72, 0.5)',],
+            borderColor: ['#275934', '#151515'],
+            borderWidth: 2,
+            borderRadius: 20
+        },
         ],
     };
 
-    const options = { 
+    const options = {
         plugins: {
             legend: { display: false },
             tooltip: { enabled: false },
@@ -33,8 +38,18 @@ export default function Logs() {
         offset: 20
     }
 
+    const { user } = useAuth({ middleware: 'auth' })
+
     return (
         <>
+            {/* Botones de edición y regresar */}
+            <div id="pf-bttns" className="relative">
+                <RegresarProfile url="/profile" />
+            </div>
+
+            {/* Información de perfil */}
+            <ProfileInfo user={user} />
+
             {/* Contenedor principal */}
             <div id="logs-container" className='min-h-screen pt-32 px-5 mb-7 flex items-center flex-col'>
                 {/* Contenedor de fondos */}
@@ -88,7 +103,7 @@ export default function Logs() {
                             <hr className='border-success rounded-full border-[1px]' />
                         </p>
                     </div>
-                    
+
                     <div id="logs-cont" className='grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-1 gap-x-7 gap-y-4 px-3'>
                         <LogCard />
                     </div>
