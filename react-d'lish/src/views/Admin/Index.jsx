@@ -3,27 +3,60 @@ import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
 //Comida pic
 import Almuerzo from "../../assets/homepage/Almuerzos.png"
-//chart imports 
-import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
-import { Bar } from "react-chartjs-2";
+//chart LINE imports 
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend , ArcElement, Tooltip,} from "chart.js";
+//chart Doughnut imports 
+import { Pie } from "react-chartjs-2";
 
 import { Link } from 'react-router-dom';
 
 export default function Admin() {
 
-  ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend );
+  ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend );
   const data = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri' ],
     datasets: [
       {
-        label: 'ver',
-        data: [52, 48, 35, 32, 28],
-        backgroundColor: ['white', 'blue', 'orange', 'green', 'yellow'],
+        label: 'Ventas Semanales',
+        data: [12, 15, 10, 17, 14],
+        backgroundColor: ['green'],
+        borderColor: 'lightblue',
+        pointBorderColor: 'green' ,
         borderWidth: 2,
-      }
-    ]
+        fill: true ,
+        tension: 0.4
+      },
+    ],
   }
 
+  const options = {
+    Plugins: {
+      legend: true
+    },
+    scales: {
+      y:{
+        
+
+      }
+    }
+  }
+
+
+  ChartJS.register( ArcElement, Tooltip, Legend );
+  const data1 = {
+    labels: ['Pupusas', 'Pollo', 'Carne'],
+    datasets: [
+      {
+      label: 'My First Dataset',
+      data: [25, 50, 35],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
+      ],
+    }]
+  }
 
 
   return (
@@ -56,11 +89,11 @@ export default function Admin() {
             {/* Espacio para Tarjeta de comida o Grafica  + demas Tarejtas*/}
             <section className="grid justify-center md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6 ">
               <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
-                <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Platillo más vendido</div>
+                <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Ventas semanales</div>
                 <div className="p-4 flex-grow">
                   <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold  border-2 border-gray-200 border-dashed rounded-md">
                   {/* Grafico espacio 1 */}
-                  <img src={Almuerzo} alt="comidapic" className='h-44 md:h-280' />
+                 <Line data={data} options={options}  />
                   </div>
                 </div>
               </div>
@@ -80,7 +113,7 @@ export default function Admin() {
                 </div>
                 <div>
                   <span className="block text-2xl text-yellow-50 font-bold">5</span>
-                  <span className="block text-white ">Ventas Restantes</span>
+                  <span className="block text-white ">Ventas restantes</span>
                 </div>
               </div>
 
@@ -93,7 +126,7 @@ export default function Admin() {
                 </div>
                 <div>
                   <span className="block text-2xl  text-yellow-50 font-bold">11:50 am</span>
-                  <span className="block text-white">Hora de Pedididos concurrentes</span>
+                  <span className="block text-white">Hora de pedididos concurrentes</span>
                 </div>
               </div>
 
@@ -113,11 +146,11 @@ export default function Admin() {
 
               {/* Trajetas de Larteral */}
               <div className="flex flex-col row-span-3 bg-neutral shadow rounded-lg">
-                <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Ventas Semanales</div>
+                <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Platillos más vendidos</div>
                 <div className="p-4 flex-grow">
-                  <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
+                  <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold border-2 border-gray-200 border-dashed rounded-md">
                     {/* Espacio exacto para grafica */}
-                    <Bar data={data}  />
+                    <Pie  data={data1}  />
                     </div>
                 </div>
               </div>
@@ -125,9 +158,6 @@ export default function Admin() {
 
           </main>
         </div>
-
-
-
 
       </div>
     </>
