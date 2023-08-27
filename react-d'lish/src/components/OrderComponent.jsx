@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import useOrders from '../hooks/useOrders';
 
 function FoodCardDish(props) {
-    const { id, name, type, photo, cafetin, chekeable, lectura } = props;
+    const { id, name, type, photo, cafetin, principal } = props;
+    // Funciones para agregar a la orden
     const { orden, handleAgregarOrden, comprobarOrdenCompleta } = useOrders();
 
     const handleCheckboxClick = (id, tipo) => {
@@ -25,17 +26,19 @@ function FoodCardDish(props) {
             </div>
             <label className=" text-primary text-xs px-2 py-1 rounded-md ml-5">
                 <div className="form-control">
-                    <input
-                        type="checkbox"
-                        className="checkbox
-                     checkbox-success"
-                        checked={chekeable}
-                        readOnly={lectura}
-                        onChange={() => { handleCheckboxClick(id, type) }}
-                    />
+                    {principal ?
+                        <input type="radio" className="checkbox checkbox-success"
+                            checked readOnly
+                        />
+                        :
+                        <input type="radio" className="checkbox checkbox-success"
+                            name={type}
+                            onChange={() => { handleCheckboxClick(id, type) }}
+                        />
+                    }
                 </div>
-            </label>
-        </div>
+            </label >
+        </div >
     )
 }
 

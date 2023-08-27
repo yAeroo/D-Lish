@@ -11,7 +11,7 @@ class MainDish extends Model
 
     protected $fillable = [
         'name',
-        'description',
+        'cafeteria_id',
         'img'
     ];
 

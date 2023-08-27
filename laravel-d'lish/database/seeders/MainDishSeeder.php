@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MainDish;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16,26 +17,79 @@ class MainDishSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('main_dishes')->insert([
-            'name' => 'Filete de Pollo',
-            'cafeteria_id' => 1,
-            // 'price' => 1.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('main_dishes')->insert([
-            'name' => 'Fajitas de carne',
-            'cafeteria_id' => 1,
-            // 'price' => 1.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('main_dishes')->insert([
-            'name' => 'Alitas de Pollo',
-            'cafeteria_id' => 2,
-            // 'price' => 1.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        $registros = [
+            [
+                'name' => 'Pollo a la parrilla',
+                'cafeteria_id' => 1,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Relleno de papa',
+                'cafeteria_id' => 1,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Filete de Pollo',
+                'cafeteria_id' => 1,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Burritos',
+                'cafeteria_id' => 1,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Pasta con queso',
+                'cafeteria_id' => 1,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Pollo Guisado',
+                'cafeteria_id' => 2,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Tacos de Carne Asada',
+                'cafeteria_id' => 2,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Burrito Vegetariano',
+                'cafeteria_id' => 2,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Filete de pollo',
+                'cafeteria_id' => 3,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Costilla en BBQ',
+                'cafeteria_id' => 3,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ];
+
+        MainDish::insert($registros);
     }
 }

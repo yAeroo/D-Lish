@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cafeteria_id');
             $table->string('name', 40);
             $table->string('img', 40)->nullable();
-            // $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->timestamps();
             $table->foreign('cafeteria_id')->references('id')->on('cafeterias')->onDelete('cascade');
         });

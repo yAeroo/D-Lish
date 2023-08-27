@@ -15,9 +15,9 @@ export default function FoodCard(props) {
             <div className="card-body bg-base-100">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
-                <div className="card-actions justify-end">
-                    <Link to={`/cafeteria/${cafeteriaId}/dish/${id}`}>
-                        <button className="btn btn-primary mt-[1rem]">Agregar</button>
+                <div className="card-actions">
+                    <Link to={`/cafeteria/${cafeteriaId}/dish/${id}`} className="w-full">
+                        <button className="btn btn-primary mt-[1rem] w-full">Agregar</button>
                     </Link>
                 </div>
             </div>

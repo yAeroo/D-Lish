@@ -5,8 +5,8 @@ import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
 // IMPORTACIÓN DE CONTENIDO VARIABLE
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
 import useCafeterias from "../hooks/useCafeterias";
 import useOrders from '../hooks/useOrders';
 import { useAuth } from '../hooks/useAuth';
@@ -16,11 +16,16 @@ const Dish = () => {
   const { user } = useAuth({ middleware: 'auth' })
   const { cafeteriaId, dishId } = useParams();
   const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria } = useCafeterias();
-  const { orden, setOrden } = useOrders();
+  const { setOrden, handleRemoverOrden } = useOrders();
 
   useEffect(() => {
     limpiarCafeteria();
+    handleRemoverOrden()
+  }, [])
+
+  useEffect(() => {
     obtenerContenidoCafeteria(cafeteriaId);
+
     setOrden({
       userId: user?.id,
       userName: user?.name,
@@ -40,6 +45,10 @@ const Dish = () => {
   const { acompanantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
   const { ordenComplete } = useOrders();
 
+  const navigate = useNavigate();
+  const navigateHome = () => {
+    navigate('/');
+  };
 
   return (
     <>
@@ -73,8 +82,7 @@ const Dish = () => {
                     <OrderComponent
                       name={platillo?.name}
                       id={dishId}
-                      chekeable={true}
-                      lectura={true}
+                      principal={true}
                       photo={Burrito}
                       cafetin="Miguel Magone" />
                   </div>
@@ -150,7 +158,11 @@ const Dish = () => {
             </div>
 
           </div>
-          <button className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white" disabled={!ordenComplete}>Ordenar</button>
+          <button to="/order" disabled={!ordenComplete} onClick={navigateHome}
+            className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white"
+          >
+            Ordenar
+          </button>
         </div>
 
       </div>
