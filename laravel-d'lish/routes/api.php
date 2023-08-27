@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\DishController;
 use App\Models\OrderDish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // DESLOGUEO =================
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    // ORDEN  ====================
+    Route::post('/orden', [DishController::class, 'store']);
 });
 
 // AUTENTICACIÓN =================

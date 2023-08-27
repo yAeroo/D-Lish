@@ -10,7 +10,6 @@ import Footer from '../../components/Footer';
 // Contenido variables
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import useFechaActual from '../../hooks/useFecha';
 import TableRow from '../../components/TableRow';
 import useOrders from '../../hooks/useOrders';
@@ -25,7 +24,6 @@ function Order() {
   const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == cafeteriaId);
 
   useEffect(() => {
-    console.log(contenidoCafeteria);
     window.scrollTo(0, 0);
   }, [])
 

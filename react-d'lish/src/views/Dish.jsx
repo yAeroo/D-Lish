@@ -1,29 +1,41 @@
 // Multimedia
 import "../css/dishSelection.css"
 import "../css/buttons.css"
-import OrderComponent from '../components/OrderComponent';
 import Burrito from "../../src/assets/index/burrito.jpg";
-import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
 import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
+import OrderComponent from '../components/OrderComponent';
+
 // IMPORTACIÓN DE CONTENIDO VARIABLE
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 import useCafeterias from "../hooks/useCafeterias";
 import useOrders from '../hooks/useOrders';
-import { useAuth } from '../hooks/useAuth';
+import Notify from '../helper/Notify';
 
-const Dish = () => {
+export default function Dish() {
   // Extraer parametro
+  const [errores, setErrores] = useState([]);
   const { user } = useAuth({ middleware: 'auth' })
   const { cafeteriaId, dishId } = useParams();
   const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria } = useCafeterias();
   const { setOrden, handleRemoverOrden } = useOrders();
 
+  // Toastify
+  const toastErrorId = "error-noti";
+  const NotiError = Notify(
+    "error",
+    toastErrorId,
+    '¡Oops! Ah ocurrido un error...',
+    "!bg-[#191E2B] !font-body !py-2"
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
     limpiarCafeteria();
     handleRemoverOrden()
+
   }, [])
 
   useEffect(() => {
@@ -38,30 +50,34 @@ const Dish = () => {
       accompaniement: null,
       drink: 0,
     })
-  }, [user]);
+  }, [user,]);
 
   const { platillos } = contenidoCafeteria;
   const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == contenidoCafeteria.id);
 
   const platillo = platillos?.find(platillo => platillo.id == dishId);
   const { acompanantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
-  const { ordenComplete } = useOrders();
+  const { orden, ordenComplete, registrarOrden } = useOrders();
 
   const navigate = useNavigate();
-  const confirmarOrden = () => {
-    navigate(`/confirmed-order`);
+  const confirmarOrden = async () => {
+    await registrarOrden(orden, setErrores, NotiError, redirigir);
   };
+
+  const redirigir = () => {
+    navigate(`/confirmed-order`);
+  }
 
   return (
     <>
-      <div className='flex items-center justify-center w-full mt-[4.5rem] min-h-screen animate-fade-up animate-once animate-delay-[800ms]'>
+      <div className='principalContenedor'>
         <div
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
             <img className="h-25 rounded-lg" src={Almuerzo} alt="ComidaPIC" />
             <h1
-              className="mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl lg:"
+              className="titulo"
             >
               Cafetín {cafeteria?.nombre}
               <br className="hidden lg:inline" />
@@ -74,9 +90,9 @@ const Dish = () => {
               Debes seleccionar al menos 1 opción por cada uno</p>
             <div className="flex flex-col w-full border-opacity-50">
               <br />
-              <form className=''>
-                <div className=" text-white font-bold mb-1">Platillo Principal</div>
-                <hr className='bg-white  ' />
+              <form className='text-white'>
+                <div className=" font-bold mb-1">Platillo Principal</div>
+                <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
                   <OrderComponent
@@ -88,7 +104,7 @@ const Dish = () => {
                 </div>
 
                 <br />
-                <div className=" text-white font-bold mb-1">Complemento 1</div>
+                <div className=" font-bold mb-1">Complemento 1</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -103,7 +119,7 @@ const Dish = () => {
                 </div>
                 <br />
 
-                <div className=" text-white font-bold mb-1">Complemento 2</div>
+                <div className=" font-bold mb-1">Complemento 2</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -118,20 +134,22 @@ const Dish = () => {
                 </div>
                 <br />
 
-                <div className=" text-white font-bold mb-1">Acompañantes</div>
+                <div className=" font-bold mb-1">Acompañantes</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
-                  <OrderComponent
-                    name="Tortillas"
-                    type="accompaniement"
-                    id={2}
-                    photo={JugosNaturales}
-                    cafetin="Miguel Magone" />
+                  {acompanantes ? acompanantes.map((acompanante) => (
+                    <OrderComponent key={acompanante.id}
+                      name={acompanante.name}
+                      type="accompaniement"
+                      id={acompanante.id}
+                      photo={Burrito}
+                      cafetin="Miguel Magone" />
+                  )) : ''}
                 </div>
                 <br />
 
-                <div className=" text-white font-bold mb-1">AcompañantesBebidas | +$0.25</div>
+                <div className=" font-bold mb-1">Bebidas | +$0.25</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -159,5 +177,3 @@ const Dish = () => {
     </>
   )
 }
-
-export default Dish

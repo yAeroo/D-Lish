@@ -1,8 +1,12 @@
 import { createContext, useState } from "react";
+import clienteAxios from "../config/axios";
 
 const OrdersContext = createContext();
 
 const OrdersProvider = ({ children }) => {
+    // Obtenemos token del localStorage
+    const token = localStorage.getItem('AUTH_TOKEN');
+
     // State - contenido a variar
     const [ordenComplete, setOrdenComplete] = useState(false);
     const [producto, setProducto] = useState({});
@@ -26,7 +30,28 @@ const OrdersProvider = ({ children }) => {
         setOrden({ userId: null });
     };
 
+    // Función asíncrona para registrar una Orden
+    const registrarOrden = async (datos, setErrores, notiError, redirigir) => {
+        // Formateo de Objeto para la API
+        const { userName, ...data } = datos;
 
+        // Try Catch en donde se intenta mandar los datos a la API con el Tonken
+        try {
+            setErrores([]);
+            const { res } = await clienteAxios.post('/api/orden', data, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            // Redirigir
+            redirigir();
+        } catch (error) {
+            let Errores = Object.values(error.response.data.errors);
+            setErrores(Errores);
+            // Evalua si hay errores o no para notificar
+            Errores ? notiError() : null;
+        }
+    }
 
     return (
         <OrdersContext.Provider
@@ -38,6 +63,7 @@ const OrdersProvider = ({ children }) => {
                 ordenComplete,
                 comprobarOrdenCompleta,
                 handleRemoverOrden,
+                registrarOrden,
             }}
         >
             {children}
@@ -46,4 +72,5 @@ const OrdersProvider = ({ children }) => {
 };
 
 export { OrdersProvider };
+
 export default OrdersContext;

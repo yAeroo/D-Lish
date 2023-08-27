@@ -16,50 +16,20 @@ class OrderDishSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('order_dishes')->insert([
-            'name' => 'Pollo a la plancha',
-            'description' => 'Delicioso pollo a la planca con complementos',
-            'img' => 'defaultDish.png',
-            'category' => 'almuerzo',
-            'cafeteria_id' => 1,
-            'main_dish_id' => 1,
-            'side_dish1_id' => 1,
-            'side_dish2_id' => 1,
-            'accompaniment_id' => 1,
-            'drink_id' => 1,
-            'final_price' => 2.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('order_dishes')->insert([
-            'name' => 'Pollo en Salsa',
-            'description' => 'Delicioso pollo en salsa con complementos',
-            'img' => 'defaultDish.png',
-            'category' => 'almuerzo',
-            'cafeteria_id' => 1,
-            'main_dish_id' => 1,
-            'side_dish1_id' => 1,
-            'side_dish2_id' => 1,
-            'accompaniment_id' => 1,
-            'drink_id' => 1,
-            'final_price' => 2.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
-        DB::table('order_dishes')->insert([
-            'name' => 'Carne Oreada',
-            'description' => 'Deliciosa carne de doggy',
-            'img' => 'defaultDish.png',
-            'category' => 'almuerzo',
-            'cafeteria_id' => 2,
-            'main_dish_id' => 1,
-            'side_dish1_id' => 1,
-            'side_dish2_id' => 1,
-            'accompaniment_id' => 1,
-            'drink_id' => 1,
-            'final_price' => 2.50,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        // DB::table('order_dishes')->insert([
+        //     'name' => 'Pollo a la plancha',
+        //     'description' => 'Delicioso pollo a la planca con complementos',
+        //     'img' => 'defaultDish.png',
+        //     'category' => 'almuerzo',
+        //     'cafeteria_id' => 1,
+        //     'main_dish_id' => 1,
+        //     'side_dish1_id' => 1,
+        //     'side_dish2_id' => 1,
+        //     'accompaniment_id' => 1,
+        //     'drink_id' => 1,
+        //     'final_price' => 2.50,
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        // ]);
     }
 }

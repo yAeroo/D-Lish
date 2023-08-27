@@ -1,3 +1,11 @@
 .componentsDish {
-  @apply w-full max-w-md  md:w-50 md:mx-auto lg:w-11/12;
+  @apply w-full max-w-md md:mx-auto lg:w-11/12;
+}
+
+.principalContenedor {
+  @apply flex items-center justify-center w-full mt-[4.5rem] min-h-screen animate-fade-up animate-once animate-delay-[800ms];
+}
+
+.titulo {
+  @apply mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl;
 }

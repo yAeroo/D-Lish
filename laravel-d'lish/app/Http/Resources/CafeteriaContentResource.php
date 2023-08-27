@@ -22,7 +22,7 @@ class CafeteriaContentResource extends JsonResource
             'complementos1' => SideDish1Resource::collection($this->sideDishes1),
             'complementos2' => SideDish2Resource::collection($this->sideDishes2),
             'bebidas' => DrinkResource::collection($this->drinks),
-            'acompañantes' => [],
+            'acompanantes' => AccompanimentResource::collection($this->accompaniments),
         ];
     }
 }

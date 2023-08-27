@@ -9,9 +9,13 @@ import { useAuth } from "../../hooks/useAuth";
 import { BiLogOut } from "react-icons/bi";
 import { PiNotePencilBold } from "react-icons/pi";
 import { IoChevronBackSharp } from "react-icons/io5";
+import { useEffect } from "react";
 
 export default function Profile() {
-    const { logout, user } = useAuth({ middleware: 'auth' })
+    const { logout, user } = useAuth({ middleware: 'auth' });
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <>

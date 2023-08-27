@@ -1,8 +1,6 @@
 export default function TableRow(props) {
     const { compontent, cafeteria } = props;
 
-    console.log(cafeteria);
-
     return (
         <tr className="border-dashed contrast-[.0] border-slate-500">
             <td></td>

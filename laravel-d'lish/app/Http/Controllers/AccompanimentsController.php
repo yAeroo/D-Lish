@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Accompaniments;
+use App\Models\Accompaniment;
 use Illuminate\Http\Request;
 
-class AccompanimentsController extends Controller
+class AccompanimentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class AccompanimentsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Accompaniments  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniments
      * @return \Illuminate\Http\Response
      */
-    public function show(Accompaniments $accompaniments)
+    public function show(Accompaniment $accompaniments)
     {
         //
     }
@@ -43,10 +43,10 @@ class AccompanimentsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Accompaniments  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniments
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accompaniments $accompaniments)
+    public function update(Request $request, Accompaniment $accompaniments)
     {
         //
     }
@@ -54,10 +54,10 @@ class AccompanimentsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Accompaniments  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniments
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accompaniments $accompaniments)
+    public function destroy(Accompaniment $accompaniments)
     {
         //
     }

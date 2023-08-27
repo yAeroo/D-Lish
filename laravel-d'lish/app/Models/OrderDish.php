@@ -10,10 +10,10 @@ class OrderDish extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
-        'img',
+        'user_id',
+        'cafeteria_id',
         'category',
+        //
         'main_dish_id',
         'side_dish1_id',
         'side_dish2_id',

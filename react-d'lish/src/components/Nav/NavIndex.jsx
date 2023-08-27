@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 //Iconos
 import { IoChevronBack } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
@@ -67,7 +67,7 @@ export default function NavIndex() {
           )}
         </div>
         <div className="flex self-center gap-2">
-          <Link to="../profile" className="text-slate-300">
+          <Link to="/profile" className="text-slate-300">
             <FaUserCircle className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10" />
           </Link>
         </div>

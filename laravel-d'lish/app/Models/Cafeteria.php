@@ -41,6 +41,11 @@ class Cafeteria extends Model
         return $this->hasMany(Drink::class);
     }
 
+    public function accompaniments()
+    {
+        return $this->hasMany(Accompaniment::class);
+    }
+
     public function orderDishes()
     {
         return $this->hasMany(OrderDish::class);
