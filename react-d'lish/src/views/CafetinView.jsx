@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 //Componentes
 import WiggleAlert from "../components/WiggleAlert";
+import db_wall from "../assets/cafeterias/db_wall.jpg";
 
 // CONTENIDO VARIABLE
 import useCafeterias from "../hooks/useCafeterias";
@@ -9,6 +10,7 @@ import useCafeterias from "../hooks/useCafeterias";
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
 import FoodCard from "../components/Cafeteria/FoodCard";
+import NavCafetin from "../components/Nav/NavCafetin";
 
 export default function CafetinView() {
   // Extraer parametro
@@ -27,15 +29,24 @@ export default function CafetinView() {
 
   return (
     <>
-      <section className="mb-[3rem] md:mb-[5rem] animate-fade-right animate-ease-in-out animate-once animate-duration-[1000ms]">
-        <div className="flex justify-between items-center">
-          <h1 className="text-4xl md:text-7xl font-bold mt-10 ml-10 md:px-10">
+
+        <section className="fixed bg-transparent md:fixed top-0 md:left-0 w-full z-10 text-white">
+          <NavCafetin/>
+        </section>
+
+
+      <section className="mb-[0em] md:mb-[0rem]">
+      <div className="flex w-full h-[15rem] z-0 md:mb-[9rem]">
+        <img src={db_wall} className="bg-cover w-full md:min-h-screen filter brightness-50"/>
+      </div>
+        <div className="flex justify-between items-center bg-green-600 mt-[-1rem] md:px-7 md:pt-1 rounded-t-2xl drop-shadow-md">
+          <h1 className="text-4xl md:text-6xl font-bold my-10 pb-[1rem] ml-10 md:px-1 text-white">
             {cafeteria?.nombre}
           </h1>
-          <div className="stat flex flex-col items-end" style={{ backgroundImage: `url('../src/assets/cafeterias/${cafeteria?.cafe_wallp}.jpg')` }}>
-            <div className="stat-title text-xs md:text-lg">Recomendado por</div>
+          <div className="stat flex flex-col items-end">
+            <div className="stat-title text-xs md:text-lg text-white">Recomendado por</div>
             <div className="flex items-center">
-              <div className="stat-figure text-primary text-xs">
+              <div className="stat-figure text-white text-xs font-bold">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -50,16 +61,16 @@ export default function CafetinView() {
                   ></path>
                 </svg>
               </div>
-              <div className="stat-value text-sm md:text-3xl text-primary ml-1">
+              <div className="stat-value text-sm md:text-3xl ml-1 text-white">
                 {cafeteria?.likes}
               </div>
             </div>
-            <div className="stat-desc text-sm md:text-lg">Estudiantes</div>
+            <div className="stat-desc text-sm md:text-lg text-white">Estudiantes</div>
           </div>
         </div>
       </section >
 
-      <section className="bg-neutral text-white mt-6 min-h-screen rounded-xl items-center justify-between mx-2 xl:mx-[1rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
+      <section className="bg-base-300 text-white mt-[-1rem] min-h-screen rounded-t-2xl items-center justify-between mx-0 xl:mx-[0rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">
@@ -67,10 +78,10 @@ export default function CafetinView() {
             </h2>
           </div>
           <div className="flex items-center">
-            <h2 className="text-2xl px-1 ml-6 md:ml-[3rem] mt-6 text-white">
+            <h2 className="text-2xl px-1 ml-6 md:ml-[3rem] mt-6 text-red-500">
               171
             </h2>
-            <FaRegHeart className="w-7 h-7 ml-2 mt-6 mr-6 md:mr-[3rem]" />
+            <FaRegHeart className="w-7 h-7 ml-2 mt-6 mr-6 md:mr-[3rem] text-red-500" />
           </div>
         </div>
 

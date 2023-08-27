@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const NavCafetin = () => {
   return (
     <>
-        <nav className='flex justify-between rounded-2xl drop-shadow-md px-9 py-5 list-none '>
+        <nav className='flex justify-between rounded-2xl drop-shadow-md px-9 py-5 list-none'>
         <Link onClick={() => window.history.back()}> 
             <div className='flex items-center'><IoChevronBack className="w-10 h-12 mr-5 font-bold"/>
 

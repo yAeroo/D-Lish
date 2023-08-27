@@ -49,7 +49,7 @@ const router = createBrowserRouter([
     {
         path: '/cafeteria',
         // Componente a mostrar ó Layout
-        element: <CafeteriaLayout />,
+        // element: <CafeteriaLayout />,
         // Subcomponentes ó "hijos"
         children: [
             {
