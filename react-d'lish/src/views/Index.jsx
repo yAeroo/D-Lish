@@ -51,7 +51,7 @@ export default function Index() {
       </section>
 
       <section className="lg:mx-[6rem] 2xl:mx-[8rem] lg:rounded-2xl 2xl:px-10 bg-base-200 pb-10 my-[4rem]">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-2xl py-8 px-8 md:text-center">
+        <h2 className="text-3xl md:text-5xl font-bold drop-shadow-2xl py-8 px-8 md:text-center">
           Lo más vendido
         </h2>
 
