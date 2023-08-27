@@ -70,7 +70,7 @@ export default function CafetinView() {
         </div>
       </section >
 
-      <section className="bg-base-300 text-white mt-[-1rem] min-h-screen rounded-t-2xl items-center justify-between mx-0 xl:mx-[0rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
+      <section className="bg-base-100 text-white mt-[-1rem] min-h-screen rounded-t-2xl items-center justify-between mx-0 xl:mx-[0rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">
@@ -92,19 +92,19 @@ export default function CafetinView() {
         <section className="flex items-center justify-center ">
           <div className="join">
             <input
-              className="join-item btn bg-base-100"
+              className="join-item btn bg-base-300"
               type="radio"
               name="options"
               aria-label="Desayunos"
             />
             <input
-              className="join-item btn bg-base-100"
+              className="join-item btn bg-base-300"
               type="radio"
               name="options"
               aria-label="Almuerzos"
             />
             <input
-              className="join-item btn bg-base-100"
+              className="join-item btn bg-base-300"
               type="radio"
               name="options"
               aria-label="Bebidas"

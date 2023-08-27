@@ -12,7 +12,7 @@ export default function FoodCard(props) {
                     className="h-full"
                 />
             </figure>
-            <div className="card-body bg-base-100">
+            <div className="card-body bg-base-300">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
                 <div className="card-actions">
