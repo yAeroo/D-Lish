@@ -48,7 +48,7 @@ export default function Admin() {
     labels: ['Pupusas', 'Pollo', 'Carne'],
     datasets: [
       {
-      label: 'My First Dataset',
+      label: 'Platillo más vendido',
       data: [25, 50, 35],
       backgroundColor: [
         'rgb(255, 99, 132)',
@@ -91,7 +91,7 @@ export default function Admin() {
               <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
                 <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Ventas semanales</div>
                 <div className="p-4 flex-grow">
-                  <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold  border-2 border-gray-200 border-dashed rounded-md">
+                  <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold border-2 border-gray-200 border-dashed rounded-md">
                   {/* Grafico espacio 1 */}
                  <Line data={data} options={options}  />
                   </div>
@@ -148,7 +148,7 @@ export default function Admin() {
               <div className="flex flex-col row-span-3 bg-neutral shadow rounded-lg">
                 <div className="px-6 py-5 font-semibold border-b text-yellow-50 border-gray-100">Platillos más vendidos</div>
                 <div className="p-4 flex-grow">
-                  <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold border-2 border-gray-200 border-dashed rounded-md">
+                  <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold border-2  border-gray-200 border-dashed rounded-md">
                     {/* Espacio exacto para grafica */}
                     <Pie  data={data1}  />
                     </div>
