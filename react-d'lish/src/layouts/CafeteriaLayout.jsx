@@ -8,10 +8,9 @@ export default function Layout() {
 
     return (
         <div className="text-white bg-gradient-to-r h-full ">
-            <section className="py-2 md:px-24">
-                <div className="animate-fade-up animate-once animate-delay-[800ms]">
-                    <NavCafetin></NavCafetin>
-                </div>
+
+            <section className="absolute top-0 md:left-0 w-full z-10 text-white">
+                <NavCafetin />
             </section>
 
             <Outlet />

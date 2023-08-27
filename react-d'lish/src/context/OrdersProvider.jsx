@@ -20,11 +20,9 @@ const OrdersProvider = ({ children }) => {
     const handleAgregarOrden = (id, type) => {
         orden[type] = id;
         setOrden(orden);
-        console.log(orden);
     };
 
     const handleRemoverOrden = () => {
-        console.log(orden);
         setOrden({ userId: null });
     };
 

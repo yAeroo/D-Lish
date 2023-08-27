@@ -49,7 +49,7 @@ const router = createBrowserRouter([
     {
         path: '/cafeteria',
         // Componente a mostrar ó Layout
-        // element: <CafeteriaLayout />,
+        element: <CafeteriaLayout />,
         // Subcomponentes ó "hijos"
         children: [
             {
@@ -66,13 +66,13 @@ const router = createBrowserRouter([
                 // Página del Platillo
                 path: '/cafeteria/:cafeteriaId/dish/:dishId',
                 element: <Dish />
-            },
-            {
-                // Página de Ordenar
-                path: '/cafeteria/confirm-order',
-                element: <Order />
             }
         ]
+    },
+    {
+        // Página de Ordenar
+        path: '/confirmed-order',
+        element: <Order />
     }
     ,
     {

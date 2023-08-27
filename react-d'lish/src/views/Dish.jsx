@@ -1,4 +1,6 @@
 // Multimedia
+import "../css/dishSelection.css"
+import "../css/buttons.css"
 import OrderComponent from '../components/OrderComponent';
 import Burrito from "../../src/assets/index/burrito.jpg";
 import JugosNaturales from "../../src/assets/index/jugosNaturales.jpg";
@@ -19,13 +21,13 @@ const Dish = () => {
   const { setOrden, handleRemoverOrden } = useOrders();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     limpiarCafeteria();
     handleRemoverOrden()
   }, [])
 
   useEffect(() => {
     obtenerContenidoCafeteria(cafeteriaId);
-
     setOrden({
       userId: user?.id,
       userName: user?.name,
@@ -47,12 +49,12 @@ const Dish = () => {
 
   const navigate = useNavigate();
   const confirmarOrden = () => {
-    navigate('/cafeteria/confirm-order');
+    navigate(`/confirmed-order`);
   };
 
   return (
     <>
-      <div className='flex items-center justify-center w-full min-h-screen animate-fade-up animate-once animate-delay-[800ms]'>
+      <div className='flex items-center justify-center w-full mt-[4.5rem] min-h-screen animate-fade-up animate-once animate-delay-[800ms]'>
         <div
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
@@ -73,93 +75,81 @@ const Dish = () => {
             <div className="flex flex-col w-full border-opacity-50">
               <br />
               <form className=''>
-
                 <div className=" text-white font-bold mb-1">Platillo Principal</div>
                 <hr className='bg-white  ' />
                 <br />
-                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
-                  <div className="flow-root">
-                    <OrderComponent
-                      name={platillo?.name}
-                      id={dishId}
-                      principal={true}
-                      photo={Burrito}
-                      cafetin="Miguel Magone" />
-                  </div>
+                <div className="componentsDish">
+                  <OrderComponent
+                    name={platillo?.name}
+                    id={dishId}
+                    principal={true}
+                    photo={Burrito}
+                    cafetin="Miguel Magone" />
                 </div>
 
                 <br />
                 <div className=" text-white font-bold mb-1">Complemento 1</div>
                 <hr className='bg-white' />
                 <br />
-                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
-                  <div className="flow-root">
-                    {complementos1 ? complementos1.map((complemento, id) => (
-                      <OrderComponent key={complemento.id}
-                        id={complemento.id}
-                        type="side_dish1"
-                        name={complemento.name}
-                        photo={Burrito}
-                        cafetin="Miguel Magone" />
-                    )) : ''}
-                  </div>
+                <div className="componentsDish">
+                  {complementos1 ? complementos1.map((complemento) => (
+                    <OrderComponent key={complemento.id}
+                      id={complemento.id}
+                      type="side_dish1"
+                      name={complemento.name}
+                      photo={Burrito}
+                      cafetin="Miguel Magone" />
+                  )) : ''}
                 </div>
                 <br />
 
                 <div className=" text-white font-bold mb-1">Complemento 2</div>
                 <hr className='bg-white' />
                 <br />
-                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
-                  <div className="flow-root">
-                    {complementos2 ? complementos2.map((complemento, id) => (
-                      <OrderComponent key={complemento.id}
-                        id={complemento.id}
-                        type="side_dish2"
-                        name={complemento.name}
-                        photo={Burrito}
-                        cafetin="Miguel Magone" />
-                    )) : ''}
-                  </div>
+                <div className="componentsDish">
+                  {complementos2 ? complementos2.map((complemento) => (
+                    <OrderComponent key={complemento.id}
+                      id={complemento.id}
+                      type="side_dish2"
+                      name={complemento.name}
+                      photo={Burrito}
+                      cafetin="Miguel Magone" />
+                  )) : ''}
                 </div>
                 <br />
 
                 <div className=" text-white font-bold mb-1">Acompañantes</div>
                 <hr className='bg-white' />
                 <br />
-                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
-                  <div className="flow-root">
-                    <OrderComponent
-                      name="Tortillas"
-                      type="accompaniement"
-                      id={2}
-                      photo={JugosNaturales}
-                      cafetin="Miguel Magone" />
-                  </div>
+                <div className="componentsDish">
+                  <OrderComponent
+                    name="Tortillas"
+                    type="accompaniement"
+                    id={2}
+                    photo={JugosNaturales}
+                    cafetin="Miguel Magone" />
                 </div>
                 <br />
 
                 <div className=" text-white font-bold mb-1">AcompañantesBebidas | +$0.25</div>
                 <hr className='bg-white' />
                 <br />
-                <div className="w-full max-w-md  md:w-53 md:mx-auto lg:w-11/12 ">
-                  <div className="flow-root">
-                    {bebidas ? bebidas.map((bebida, id) => (
-                      <OrderComponent key={bebida.id}
-                        name={bebida.name}
-                        type="drink"
-                        id={bebida.id}
-                        photo={Burrito}
-                        cafetin="Miguel Magone" />
-                    )) : ''}
-                  </div>
+                <div className="componentsDish">
+                  {bebidas ? bebidas.map((bebida) => (
+                    <OrderComponent key={bebida.id}
+                      name={bebida.name}
+                      type="drink"
+                      id={bebida.id}
+                      photo={Burrito}
+                      cafetin="Miguel Magone" />
+                  )) : ''}
                 </div>
-
               </form>
             </div>
 
           </div>
           <button to="/order" disabled={!ordenComplete} onClick={confirmarOrden}
-            className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white"
+            className="btn font-plane buttonActive"
           >
             Ordenar
           </button>

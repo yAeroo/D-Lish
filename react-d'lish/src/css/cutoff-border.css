@@ -1,21 +1,18 @@
-.box{
-    position: relative;
-    width: 350px;
-    height: 500px;
+.box {
+  position: relative;
+  width: 350px;
+  height: 485px;
 }
 
-
-.box::before
-{
-    padding-top: -20rem;
-    content: "" ;
-    position:  absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 24px;
-    background: linear-gradient(-135deg, #141414 12px,  transparent 0%),
-     linear-gradient(135deg, #141414 12px,  transparent 0%);;
-    background-size: 24px;
+.box::before {
+  padding-top: -20rem;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(-135deg, #141414 12px, transparent 0%),
+    linear-gradient(135deg, #141414 12px, transparent 0%);
+  background-size: 24px;
 }
-

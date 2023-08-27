@@ -1,84 +1,95 @@
 import '../../css/cutoff-border.css';
-// Habilitando archivo para router link
-import { Link } from "react-router-dom";
+import '../../css/dishSelection.css';
+import "../../css/buttons.css";
+
+import logoDlish from '../../assets/logo/icon_rounded.png';
+import fontDlish from '../../assets/logo/dlish_font_n.png';
+
 import Footer from '../../components/Footer';
-import NavCafetin from '../../components/Nav/NavCafetin';
+
+// Contenido variables
+import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import useFechaActual from '../../hooks/useFecha';
+import TableRow from '../../components/TableRow';
+import useOrders from '../../hooks/useOrders';
 
 function Order() {
+  const { orden } = useOrders();
+  const fechaActual = useFechaActual();
+
+  useEffect(() => {
+    console.log(orden);
+    window.scrollTo(0, 0);
+  }, [])
+
+  const { cafeteriaId, dishId } = useParams();
+
   return (
     <>
       {/* Cuerpo del trabajo + animación  */}
-      <div className='flex items-center justify-center w-full animate-fade-down animate-delay-[600ms]'>
 
+      <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] '>
         {/* Estructura del cuadrito */}
-        <div className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide ">
+
+        <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow">
+
           {/* lo que centra y maneja la posicion del cuadro  */}
-          <div className="h-full col-start-2 py-20  place-self-center items-center  md:px-3 ">
+
+          <div className="col-start-2  place-self-center items-center  md:px-1 ">
+            <h2 className='text-center text-3xl font-bold '>¡ORDEN REALIZADA!</h2>
             {/* Cuerpo del La card */}
-            <div id="box" className="box lg:px-5  bg-[#fef9c3]">
+            <div id="box" className="box lg:px-4 bg-[#fffde7]">
               {/* contenido carta */}
               <div className='pt-7 px-4 flex'>
-                <img src="../src/assets/logo/icon_rounded.png" className='w-1/5 cursor-pointer my-auto  px-2 rotate-[-20deg] contrast-[.20]' alt="LogoType" />
-                <img src="../src/assets/logo/dlish_font_n.png" className='w-1/5 cursor-pointer my-auto contrast-[.20]' alt="LogoType" />
+                <img src={logoDlish} className='w-1/5 cursor-pointer my-auto px-2 rotate-[-20deg] contrast-[.20]' alt="LogoType" />
+                <img src={fontDlish} className='w-1/5 cursor-pointer my-auto contrast-[.20]' alt="FontType" />
                 <p className="text-center text-sm px-24 contrast-[.20] pt-[1.5rem] text-black pt- pb-6 tracking-normal font-title font-extrabold">
-                  26/08/21</p>
+                  {fechaActual}
+                </p>
               </div>
-              <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[1.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
+              <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[0.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
               <div className="grid grid-cols-1 ">
                 <p className="text-center text-sm contrast-[.20] text-black pt-2 tracking-normal font-title font-extrabold pb-5">
                   Pedido Realizado en<br />Cafeteria "Maria Auxiliadora"</p>
               </div>
               {/* Listado */}
               <div className="">
-                <table className="table font-bold text-black">
+                <table className="table font-bold  border-slate-400">
                   {/* head */}
                   <thead>
-                    <tr className='border-dashed  font-title font-extrabold contrast-[.20] border-black text-accent '>
+                    <tr className='border-dashed border-slate-500  font-title font-extrabold contrast-[.20] text-accent '>
                       <th></th>
+                      <th>#</th>
                       <th>Producto</th>
-                      <th>Precio</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="border-dashed contrast-[.20] border-black">
-                      <th>1</th>
-                      <td>Almuerzo</td>
-                      <td>$2.50</td>
-                    </tr>
-                    {/* row 2 */}
-                    <tr className="border-dashed contrast-[.20] border-black">
-                      <th>2</th>
-                      <td>Arroz</td>
-                      <td>$0.25</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr className="border-dashed contrast-[.20]   border-black">
-                      <th>3</th>
-                      <td>Fresco</td>
-                      <td>$0.25</td>
-                    </tr>
-                    {/* row 3 */}
-                    <tr className="border-dashed  font-bold border-black">
-                      <th>Total:</th>
-                      <td>$3.00</td>
-                    </tr>
+                    <TableRow />
+                    <TableRow />
+                    <TableRow />
+                    <TableRow />
+                    <TableRow />
                   </tbody>
                 </table>
               </div>
 
-              <div className="mt-10  py-7 flex items-center justify-end gap-x-6  md:mt-12 md:ml-80">
-                <Link to="/delivmode">
-                  <button type="submit" className="rounded-md bg-secu px-3 py-2  text-sm font-semibold text-white shadow-sm hover:bg-[#1a47da] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Siguiente</button>
+              <div className="mt-3">
+                <Link to="/" className="btn font-plane buttonActive">
+                  Ir al Inicio
                 </Link>
-
               </div>
 
             </div>
           </div>
         </div>
 
+        <Footer />
+
       </div>
+
+
     </>
   )
 }

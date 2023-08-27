@@ -1,0 +1,3 @@
+.componentsDish {
+  @apply w-full max-w-md  md:w-50 md:mx-auto lg:w-11/12;
+}

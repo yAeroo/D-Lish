@@ -1,0 +1,3 @@
+.buttonActive {
+  @apply no-animation w-full  hover:bg-accent text-white mt-4 border-2  hover:border-primary border-white;
+}
