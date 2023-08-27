@@ -24,7 +24,7 @@ export default function Homepage() {
   return (
     <>
       <section className="bg-green-600">
-        <div className="md:fixed md:top-0 md:left-0 md:w-full z-10 animate-fade-up animate-once animate-delay-[1300ms] ">
+        <div className="md:fixed md:top-0 md:left-0 md:w-full z-10 animate-fade-up animate-once animate-delay-[800ms] ">
           <NavbarHomepage></NavbarHomepage>
         </div>
       </section>

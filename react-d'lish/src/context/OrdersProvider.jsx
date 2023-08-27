@@ -1,6 +1,4 @@
 import { createContext, useState } from "react";
-import { toast } from "react-toastify";
-import clienteAxios from "../config/axios";
 
 const OrdersContext = createContext();
 
@@ -41,7 +39,7 @@ const OrdersProvider = ({ children }) => {
                 handleAgregarOrden,
                 ordenComplete,
                 comprobarOrdenCompleta,
-                handleRemoverOrden
+                handleRemoverOrden,
             }}
         >
             {children}

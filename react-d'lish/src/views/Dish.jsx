@@ -46,13 +46,13 @@ const Dish = () => {
   const { ordenComplete } = useOrders();
 
   const navigate = useNavigate();
-  const navigateHome = () => {
-    navigate('/');
+  const confirmarOrden = () => {
+    navigate('/cafeteria/confirm-order');
   };
 
   return (
     <>
-      <div className='flex items-center justify-center w-full min-h-screen animate-fade-up animate-once animate-delay-[1300ms]'>
+      <div className='flex items-center justify-center w-full min-h-screen animate-fade-up animate-once animate-delay-[800ms]'>
         <div
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
@@ -158,7 +158,7 @@ const Dish = () => {
             </div>
 
           </div>
-          <button to="/order" disabled={!ordenComplete} onClick={navigateHome}
+          <button to="/order" disabled={!ordenComplete} onClick={confirmarOrden}
             className="btn no-animation w-full font-plane bg-accent text-white mt-4 border-2 border-white"
           >
             Ordenar

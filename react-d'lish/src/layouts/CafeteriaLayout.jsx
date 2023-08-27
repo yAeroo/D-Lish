@@ -9,7 +9,7 @@ export default function Layout() {
     return (
         <div className="text-white bg-gradient-to-r h-full ">
             <section className="py-2 md:px-24">
-                <div className="animate-fade-up animate-once animate-delay-[1300ms]">
+                <div className="animate-fade-up animate-once animate-delay-[800ms]">
                     <NavCafetin></NavCafetin>
                 </div>
             </section>

@@ -7,13 +7,8 @@ import NavCafetin from '../../components/Nav/NavCafetin';
 function Order() {
   return (
     <>
-      {/* Apartado de NavBar */}
-      <section className='px-4 md:px-24 py-4 bg-gradient-to-r'>
-        <div className='animate-fade-up animate-once animate-delay-[1300ms]'><NavCafetin></NavCafetin></div>
-      </section>
-
       {/* Cuerpo del trabajo + animación  */}
-      <div className='flex items-center justify-center w-full animate-fade-down animate-delay-[1300ms]'>
+      <div className='flex items-center justify-center w-full animate-fade-down animate-delay-[600ms]'>
 
         {/* Estructura del cuadrito */}
         <div className="h-screen grid grid-cols-1 md:grid-cols-3 tracking-wide ">
@@ -84,8 +79,6 @@ function Order() {
         </div>
 
       </div>
-
-      <Footer></Footer>
     </>
   )
 }

@@ -67,6 +67,11 @@ const router = createBrowserRouter([
                 path: '/cafeteria/:cafeteriaId/dish/:dishId',
                 element: <Dish />
             },
+            {
+                // Página de Ordenar
+                path: '/cafeteria/confirm-order',
+                element: <Order />
+            }
         ]
     }
     ,
@@ -88,7 +93,7 @@ const router = createBrowserRouter([
                 path: '/auth/register',
                 // Coponente llamado
                 element: <Register />,
-            }
+            },
         ]
     },
     {
@@ -96,11 +101,6 @@ const router = createBrowserRouter([
         path: '/homepage',
         element: <Homepage />,
         index: true
-    },
-    {
-        // Página de Ordenar
-        path: '/order',
-        element: <Order />
     },
     {
         // Página del QR
@@ -150,29 +150,6 @@ const router = createBrowserRouter([
         ]
 
     }
-
-    // {
-    //     path: '/',
-    //     element: <Layout />,
-    //     children: [
-    //         {
-    //             index: true,
-    //             element: <Index />
-    //         },
-    //         {
-    //             path: '/profile',
-    //             element: <Profile />
-    //         },
-    //         {
-    //             path: '/profile/settings',
-    //             element: <Settings />
-    //         },
-    //         {
-    //             path: '/logs',
-    //             element: <Logs />
-    //         },
-    //     ]
-    // }
 ]);
 
 export default router;
