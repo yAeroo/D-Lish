@@ -36,7 +36,7 @@ const Dish = () => {
       side_dish1: null,
       side_dish2: null,
       accompaniement: null,
-      drink: null,
+      drink: 0,
     })
   }, [user]);
 

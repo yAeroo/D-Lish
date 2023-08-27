@@ -14,29 +14,29 @@ import { useParams } from 'react-router-dom';
 import useFechaActual from '../../hooks/useFecha';
 import TableRow from '../../components/TableRow';
 import useOrders from '../../hooks/useOrders';
+import useCafeterias from '../../hooks/useCafeterias';
 
 function Order() {
   const { orden } = useOrders();
+  const { cafeterias, contenidoCafeteria } = useCafeterias();
+  const { cafeteriaId, drink, main_dish, side_dish1, side_dish2, accompaniement } = orden;
+
   const fechaActual = useFechaActual();
+  const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == cafeteriaId);
 
   useEffect(() => {
-    console.log(orden);
+    console.log(contenidoCafeteria);
     window.scrollTo(0, 0);
   }, [])
 
-  const { cafeteriaId, dishId } = useParams();
 
   return (
     <>
       {/* Cuerpo del trabajo + animación  */}
-
       <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] '>
         {/* Estructura del cuadrito */}
-
         <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow">
-
           {/* lo que centra y maneja la posicion del cuadro  */}
-
           <div className="col-start-2  place-self-center items-center  md:px-1 ">
             <h2 className='text-center text-3xl font-bold '>¡ORDEN REALIZADA!</h2>
             {/* Cuerpo del La card */}
@@ -51,11 +51,13 @@ function Order() {
               </div>
               <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[0.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
               <div className="grid grid-cols-1 ">
-                <p className="text-center text-sm contrast-[.20] text-black pt-2 tracking-normal font-title font-extrabold pb-5">
-                  Pedido Realizado en<br />Cafeteria "Maria Auxiliadora"</p>
+                <p className="text-center text-sm contrast-[.20] text-black pt-2 tracking-normal font-title font-extrabold pb-2">
+                  Pedido Realizado en
+                  <br />Cafeteria "{cafeteria?.nombre}"
+                </p>
               </div>
               {/* Listado */}
-              <div className="">
+              <div >
                 <table className="table font-bold  border-slate-400">
                   {/* head */}
                   <thead>
@@ -66,30 +68,24 @@ function Order() {
                     </tr>
                   </thead>
                   <tbody>
-                    <TableRow />
-                    <TableRow />
-                    <TableRow />
-                    <TableRow />
-                    <TableRow />
+                    <TableRow compontent={main_dish ? main_dish : ''} cafeteria={contenidoCafeteria} />
+                    <TableRow compontent={side_dish1 ? side_dish1 : ''} cafeteria={contenidoCafeteria} />
+                    <TableRow compontent={side_dish2 ? side_dish2 : ''} cafeteria={contenidoCafeteria} />
+                    <TableRow compontent={accompaniement ? accompaniement : ''} cafeteria={contenidoCafeteria} />
+                    {drink != 0 ? <TableRow compontent={drink} cafeteria={contenidoCafeteria} /> : ''}
                   </tbody>
                 </table>
               </div>
-
-              <div className="mt-3">
+              <div className="mt-7">
                 <Link to="/" className="btn font-plane buttonActive">
                   Ir al Inicio
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
-
         <Footer />
-
       </div>
-
-
     </>
   )
 }
