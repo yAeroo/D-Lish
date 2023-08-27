@@ -15,7 +15,8 @@ class DishController extends Controller
 
         // Evaluamos si incluyo bebida o no
         $precioFinal = 2.50;
-        if ($data['drink'] != 0) {
+
+        if ($data['drink'] != null) {
             $precioFinal = 2.75;
         }
 

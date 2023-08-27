@@ -34,6 +34,8 @@ const OrdersProvider = ({ children }) => {
     const registrarOrden = async (datos, setErrores, notiError, redirigir) => {
         // Formateo de Objeto para la API
         const { userName, ...data } = datos;
+        // Si no selecciono bebida marcar como nulo
+        if (data.drink === 0) data.drink = null;
 
         // Try Catch en donde se intenta mandar los datos a la API con el Tonken
         try {
