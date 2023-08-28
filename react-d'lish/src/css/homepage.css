@@ -1,3 +1,39 @@
+/* Estilos para el efecto de fade de abajo hacia arriba */
+.fade-up {
+  opacity: 0;
+  transform: translateY(2rem); /* Empieza 2rem abajo para luego desplazarse hacia arriba */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0); /* Llega a la posición original */
+}
+
+/* Efecto de fade scroll DERECHA a IZQUIERDA */
+.fade-right {
+  opacity: 0;
+  transform: translateX(2rem); /* Empieza 20rem a la DERECHA para luego desplazarse a la IZQUIERDA */
+  transition: opacity 1s ease-in, transform 1s ease-in;
+}
+
+.fade-right.active {
+  opacity: 1;
+  transform: translateX(0); /* Llega a la posición original */
+}
+
+/* Efecto de fade de IZQUIERDA a DERECHA */
+.fade-left {
+  opacity: 0;
+  transform: translateX(2rem); /* Empieza 20rem a la IZQUIERDA para luego desplazarse a la DERECHA */
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.fade-left.active {
+  opacity: 1;
+  transform: translateX(0); /* Llega a la posición original */
+}
+
 /* Division Wave */
 .custom-shape-divider-bottom-1689485827 {
     position: absolute;

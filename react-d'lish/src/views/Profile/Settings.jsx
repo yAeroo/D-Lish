@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Componentes
 import ProfileInfo from "../../components/Profile/ProfileInfo";
@@ -65,15 +66,6 @@ export default function Settings() {
                             </span>
                         </div>
                     </button>
-
-                    {/* <button onClick={NotiError}>
-                        <div className="flex bg-red-500 rounded-full p-2 md:px-5 ">
-                            <span> <BiSave size={"25"} color={"white"} /> </span>
-                            <span className="mx-2 profile-bttn-text !block">
-                                ERROR
-                            </span>
-                        </div>
-                    </button> */}
                 </div>
             </div>
         </>

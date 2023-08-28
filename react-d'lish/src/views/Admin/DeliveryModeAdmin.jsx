@@ -19,7 +19,7 @@ function DeliveryModeAdmin() {
       </div>
 
    {/* Content */}
-<OrderProps nameuser="tilin amaya" platillo="Desayuno"  content1="3 pupusas x$1" content2="Fresco $0.25"/>
+<OrderProps nameuser="tilin amaya" platillo="Desayuno"  content1="Pupusas" content2="Fresco $0.25"/>
 
 
    <br />

@@ -1,16 +1,16 @@
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 // Componentes
 import Preferences from "../../components/Profile/Preferences";
-import { Link } from "react-router-dom";
 import ProfileInfo from "../../components/Profile/ProfileInfo";
+import RegresarProfile from "../../components/Profile/RegresarProfile";
 // Protección de rutas
 import { useAuth } from "../../hooks/useAuth";
-
 // Icons
 import { BiLogOut } from "react-icons/bi";
-import { PiNotePencilBold } from "react-icons/pi";
-import { IoChevronBackSharp } from "react-icons/io5";
+import { MdSettings } from "react-icons/md";
 import { useEffect } from "react";
-import RegresarProfile from "../../components/Profile/RegresarProfile";
 
 export default function Profile() {
     const { logout, user } = useAuth({ middleware: 'auth' });
@@ -18,6 +18,8 @@ export default function Profile() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+    const { t } = useTranslation();
 
     return (
         <>
@@ -29,9 +31,9 @@ export default function Profile() {
                 <div id="edit-bttn" className="fu-custom animate-fade-left absolute top-5 right-[5%] md:right-[3%] lg:right-[10%]">
                     <Link to="/profile/settings" className="flex bg-secondary hover:bg-base-100 transition-all rounded-full p-2 md:px-5 ">
                         <span className="mr-2 profile-bttn-text">
-                            Editar perfil
+                            {t("profile.settings")}
                         </span>
-                        <span> <PiNotePencilBold size={"25"} color={"white"} /> </span>
+                        <span> <MdSettings size={"25"} color={"white"} /> </span>
                     </Link>
                 </div>
             </div>
