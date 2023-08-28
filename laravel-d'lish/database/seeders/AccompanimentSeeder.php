@@ -23,6 +23,7 @@ class AccompanimentSeeder extends Seeder
                 'name' => 'Tortillas',
                 'cafeteria_id' => 1,
                 // 'price' => 0,
+                'img' => 'tortilla.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
