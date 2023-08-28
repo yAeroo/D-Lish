@@ -5,6 +5,7 @@ import AuthSelection from "../views/Auth/AuthSelection";
 
 //Link
 import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
 
 // Css
 import '../css/homepage.css';
@@ -21,6 +22,29 @@ import { CgCoffee } from "react-icons/cg";
 import { MdOutlineScreenshot } from "react-icons/md";
 
 export default function Homepage() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleFadeOnScroll = () => {
+      const elements = document.querySelectorAll('.fade-up , .fade-left , .fade-right');
+
+      elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if (elementTop < window.innerHeight) {
+          element.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleFadeOnScroll);
+    handleFadeOnScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleFadeOnScroll);
+    };
+  }, []);
+
   return (
     <>
       <section className="bg-green-600">
@@ -43,9 +67,9 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
-              Ordena tu comida de manera rápida y sencilla
-            </h1>
+              <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
+                Ordena tu comida de manera rápida y sencilla
+              </h1>
             <p className="md:text-2xl py-4 md:py-6 mb-[0] text-slate-200">
               ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
             </p>
@@ -68,7 +92,7 @@ export default function Homepage() {
       </div>
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
-        <h1 className="md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold">
+        <h1 className={`md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold ${isVisible ? 'fade-up active' : 'fade-up'}`}>
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
       </div>
@@ -130,7 +154,7 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right md:mt-5">
-            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ">
+            <h1 className={`xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ${isVisible ? 'fade-left active' : 'fade-left'}`}>
               ¿Quiénes somos?
             </h1>
             <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">
