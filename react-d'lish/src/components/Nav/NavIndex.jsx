@@ -7,6 +7,15 @@ import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
 //Imagenes
 import User from "../../assets/index/user.png";
+import Burrito from "/src/assets/index/burrito.jpg";
+import JugosNaturales from "/src/assets/index/jugosNaturales.jpg";
+import Pupusas from "/src/assets/index/pupusas.jpg";
+import Tortas from "/src/assets/index/Tortas.jpg";
+import PolloAsado from "/src/assets/index/polloAsado.jpg";
+import almuerzoWall from "/src/assets/index/lunchWall.jpg";
+import desayunoWall from "/src/assets/index/desayunoWall.jpg";
+//Componentes
+import FoodCardSearch from "../FoodCardSearch";
 
 export default function NavIndex() {
 
@@ -61,8 +70,18 @@ export default function NavIndex() {
           {showFloatingContainer && (
 
             /* Contenido del contenedor flotante */
-            <div className="absolute input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] h-[4rem] focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
-              Lucas Ríos estuvo aquí
+            <div className="absolute input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+              <div className="h-auto">
+
+              <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
+
+              <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+
+              <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
+
+              <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+
+        </div>
             </div>
           )}
         </div>
