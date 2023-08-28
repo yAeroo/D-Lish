@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CafeteriaController;
-use App\Http\Controllers\DishController;
 use App\Models\OrderDish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DishController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CafeteriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,20 +25,20 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
-
-    // DESLOGUEO =================
+    // DESLOGUEO ================
     Route::post('/logout', [AuthController::class, 'logout']);
 
-    // ORDEN  ====================
-    Route::post('/orden', [DishController::class, 'store']);
+    // ORDENES  ===================
+    Route::apiResource('/cafeteria/{id}/ordenes', [OrderController::class, 'index']);
+    Route::apiResource('/orden', [OrderController::class, 'store']);
 });
 
-// AUTENTICACIÓN =================
+// AUTENTICACIÓN ================
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 // CONTENIDOS ===================
 Route::get('/cafeterias', [CafeteriaController::class, 'index']);
 
-// ENPOITN - ROUTE MODEL BINDING - Buscar un contenido en específico
+// CONTENIDO CAFETERIA ==========
 Route::get('/cafeteria/{id}/content', [CafeteriaController::class, 'content']);

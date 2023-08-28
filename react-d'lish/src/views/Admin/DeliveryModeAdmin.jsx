@@ -1,9 +1,21 @@
 import React from 'react'
 import OrderProps from '../../components/Admin/OrderProps'
 
-
+// COMPONENTES DE CONTENIDO VARIABLE
+import useSWR from 'swr';
+import clienteAxios from '../../../src/config/axios';
 
 function DeliveryModeAdmin() {
+  const token = localStorage.getItem('AUTH_TOKEN');
+  const fetcher = () => clienteAxios('/api/cafeteria/1/ordenes', {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+
+  const { data, error, isLoading } = useSWR('/api/cafeteria/1/ordenes', fetcher);
+  console.log(data, error, isLoading);
+
   return (
     <div className='lg:ml-[10rem] sm:ml-[5rem] ml-[2rem] h-[100%] animate-fade animate-duration-500'>
 
