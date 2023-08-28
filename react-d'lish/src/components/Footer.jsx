@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 // Images
 import LogoText from "../..//src/assets/logo/wide_white.png";
 
@@ -7,14 +9,16 @@ import { BiLogoGmail } from "react-icons/bi";
 
 
 export default function Footer() {
+    const { t } = useTranslation();
+
     return (
         <footer className="footer footer-center px-8 py-5 bg-neutral text-white">
             <div>
                 <img src={LogoText} className="h-12 cursor-pointer my-auto"></img>
                 <p className="font-bold">
-                    Proyecto Crea-J 2023
+                    {t("footer.project-desc")}
                 </p>
-                <p>Copyright ©  - Todos los derechos reservados</p>
+                <p>{t("footer.copyright")}</p>
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">

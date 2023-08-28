@@ -1,12 +1,56 @@
 {
-    "profile":{
-        "go-back": "Regresar",
-        "log-off": "Cerrar sesión",
-        "settings": "Configuración"
+    "actions" : {
+        "login"    : "Iniciar sesión",
+        "to-login"  : "Ingresar",
+        "register" : "Registrarse",
+        "to-register" : "Regístrate",
+        "go-back"  : "Regresar",
+        "log-off"  : "Cerrar sesión"
     },
-    "settings":{
-        "lang": "Cambiar idioma",
-        "lang-es": "Español",
-        "lang-en": "Inglés"
+    "homepage" : {
+        "hero-title" : "Ordena tu comida de manera rápida y sencilla.",
+        "hero-desc"  : "¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.",
+        "features-title"  : "Descubre la nueva forma de hacer pedidos en línea.",
+        "feature-1-title" : "Fácil de usar",
+        "feature-1-desc"  : "Interfaz amigable e intuitiva que se adapta a todas tus necesidades.",
+        "feature-2-title" : "Para todos",
+        "feature-2-desc"  : "Plataforma adaptada para estudiantes, maestros, y propietarios de cafeterías.",
+        "feature-3-title" : "Multiplataforma",
+        "feature-3-desc"  : "Interfaz adaptable y visualización adecuada a todos los dispositivos.",
+        "who-title" : "¿Quiénes somos?",
+        "who-desc"  : "En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una aplicación web apasionada por brindar un servicio compra conveniente y eficiente.",
+        "mission-title"   : "Misión",
+        "mission-desc"    : "En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra aplicación web conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!",
+        "vission-title" : "Visión",
+        "vission-desc"  : "En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra."
+    },
+    "auth" : {
+        "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",
+        "login-card-desc"    : "No esperes para reservar, ingresa tus credenciales y comienza a pedir.",
+        "register-card-desc" : "Reserva, disfruta, repite. Únete a D'Lish hoy mismo.",
+
+        "not-acc-msg"    : "¿No tienes una cuenta?",
+        "create-acc" : "Crea una cuenta",
+        "exist-acc-msg" : "¿Ya tienes una cuenta?",
+        "login-acc" : "Ingresa ahora"
+    },
+    "credentials" : {
+        "complete-name" : "Nombre completo",
+        "name-placeholder" : "Nombre & apellido",
+
+        "student-email" : "Correo institucional",
+        "student-email-placeholder" : "estudiante@cdb.edu.sv",
+
+        "gender" : "Género",
+        "select-gender" : "Seleccionar género",
+        "gender-M" : "Masculino",
+        "gender-F" : "Femenino",
+
+        "password" : "Contraseña",
+        "repeat-pw" : "Repetir contraseña"
+    },
+    "footer" : {
+        "project-desc" : "Proyecto Crea-J 2023",
+        "copyright"    : "Copyright ©  - Todos los derechos reservados"
     }
 }

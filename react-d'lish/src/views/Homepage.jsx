@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 // Componentes
 import NavbarHomepage from "../components/Nav/NavbarHomepage";
 import Footer from "../components/Footer";
@@ -26,6 +28,7 @@ import { CgCoffee } from "react-icons/cg";
 import { MdOutlineScreenshot } from "react-icons/md";
 
 export default function Homepage() {
+  const { t } = useTranslation();
 
   AOS.init({
     duration: 800, // Duración de las animaciones en milisegundos
@@ -53,23 +56,28 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/5 order-1 md:order-2 animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem]">
-              <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
-                Ordena tu comida de manera rápida y sencilla
-              </h1>
+            <h1 className="md:text-6xl text-4xl font-bold drop-shadow-lg md:mt-[-4rem] mb-[0] text-slate-100">
+              {/* Título */}
+              {t("homepage.hero-title")}
+            </h1>
+
             <p className="md:text-2xl py-4 md:py-6 mb-[0] text-slate-200">
-              ¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.
+              {/* Descripción */}
+              {t("homepage.hero-desc")}
             </p>
 
             <div className="flex space-x-4">
+              {/* Botón de registro */}
               <Link to='/auth/register'>
                 <button className="btn border-none hover:bg-orange-600 bg-orange-500 drop-shadow-lg text-zinc-50">
-                  Regístrate
+                  {t("actions.to-register")}
                 </button>
               </Link>
 
+              {/* Botón inicio de sesión */}
               <Link to="/auth/login">
                 <button className="btn border-2 border-orange-500 hover:bg-orange-600 hover:text-zinc-50 hover:border-none bg-orange-500 bg-opacity-50 drop-shadow-lg text-zinc-50">
-                  Iniciar Sesión
+                  {t("actions.login")}
                 </button>
               </Link>
             </div>
@@ -79,7 +87,8 @@ export default function Homepage() {
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
         <h1 className="md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold" data-aos="fade-up">
-          Descubre la nueva forma de hacer pedidos en línea
+          {/* Título de características */}
+          {t("homepage.features-title")}
         </h1>
       </div>
 
@@ -90,10 +99,10 @@ export default function Homepage() {
               <IoFastFoodOutline className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
-              <h2 className="card-title">Facil de usar</h2>
+              {/* Título - Feature */}
+              <h2 className="card-title">{t("homepage.feature-1-title")}</h2>
               <p>
-                Interfaz amigable e intuitiva que se adapta a todas tus
-                necesidades.
+                {/* Desc. - Feature */} {t("homepage.feature-1-desc")}
               </p>
             </div>
           </div>
@@ -105,10 +114,10 @@ export default function Homepage() {
               <CgCoffee className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
-              <h2 className="card-title">Para todos</h2>
+              {/* Título - Feature */}
+              <h2 className="card-title">{t("homepage.feature-2-title")}</h2>
               <p>
-                Plataforma adaptada para estudiantes, maestros, y propietarios
-                de cafeterías.
+                {/* Desc. - Feature */} {t("homepage.feature-2-desc")}
               </p>
             </div>
           </div>
@@ -120,10 +129,10 @@ export default function Homepage() {
               <MdOutlineScreenshot className="text-6xl" />
             </figure>
             <div className="card-body items-center text-center bg-base-100">
-              <h2 className="card-title">Multiplataforma</h2>
+              {/* Título - Feature */}
+              <h2 className="card-title">{t("homepage.feature-3-title")}</h2>
               <p>
-                Interfaz adaptable y visualizacion adecuada a todos los
-                dispositivos.
+                {/* Desc. - Feature */} {t("homepage.feature-3-desc")}
               </p>
             </div>
           </div>
@@ -141,10 +150,12 @@ export default function Homepage() {
 
           <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right md:mt-5">
             <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] text-white" data-aos="fade-left">
-              ¿Quiénes somos?
+              {/* ¿Quiénes somos? - Title */}
+              {t("homepage.who-title")}
             </h1>
             <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6" data-aos="fade-left">
-              En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una app apasionada por brindar compra conveniente y eficiente.
+              {/* ¿Quiénes somos? - Desc. */}
+              {t("homepage.who-desc")}
             </p>
           </div>
         </div>
@@ -167,10 +178,12 @@ export default function Homepage() {
 
             <div className="md:w-3/6 order-1 md:order-2 text-left lg:text-left animate-fade-up animate-once animate-delay-[600ms] 2xl:ml-[-20rem] md:mt-5">
               <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[1rem] md:mt-[4rem] pb-[2rem]" data-aos="fade-right">
-                Misión
+                {/* Misión - Title */}
+                {t("homepage.mission-title")}
               </h1>
               <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6" data-aos="fade-right">
-                En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!
+                {/* Misión - Desc. */}
+                {t("homepage.mission-desc")}
               </p>
             </div>
           </div>
@@ -188,10 +201,12 @@ export default function Homepage() {
 
           <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right">
             <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[10rem] md:mt-[4rem] pb-[2rem]" data-aos="fade-left">
-              Visión
+              {/* Visión - Title */}
+              {t("homepage.vission-title")}
             </h1>
             <p className="xl:text-2xl md:text-xl text-xl pt-1 pb-0 md:py-6" data-aos="fade-left">
-              En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra.
+              {/* Visión - Desc. */}
+              {t("homepage.vission-desc")}
             </p>
           </div>
         </div>

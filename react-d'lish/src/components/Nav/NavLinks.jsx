@@ -1,14 +1,18 @@
+import { useTranslation } from "react-i18next";
 // Para una mejor velocidad entre link
 import { Link } from 'react-router-dom';
 
 const NavLinks = () => {
+
+    const { t } = useTranslation();
+
     const Enlaces = [
         {
-            name: "Iniciar sesión",
+            name: t("actions.login"),
             link: "/auth/login",
         },
         {
-            name: "Registrarse",
+            name: t("actions.register"),
             link: "/auth/register",
         },
     ];
