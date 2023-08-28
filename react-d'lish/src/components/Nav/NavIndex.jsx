@@ -45,7 +45,7 @@ export default function NavIndex() {
             <input
               type="text"
               placeholder="¿Qué estas buscando el dia de hoy?"
-              className="input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] focus:outline-none"
+              className="input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] focus:outline-none"
               autoComplete="off"
               value={searchText}
               onChange={handleSearchInput}
@@ -70,7 +70,7 @@ export default function NavIndex() {
           {showFloatingContainer && (
 
             /* Contenido del contenedor flotante */
-            <div className="absolute input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+            <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
               <div className="h-auto">
 
               <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
