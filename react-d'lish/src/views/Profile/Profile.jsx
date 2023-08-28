@@ -14,6 +14,7 @@ import RegresarProfile from "../../components/Profile/RegresarProfile";
 
 export default function Profile() {
     const { logout, user } = useAuth({ middleware: 'auth' });
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])

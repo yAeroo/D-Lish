@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useAuth } from '../../hooks/useAuth.js';
-
 import ProfileInfo from "../../components/Profile/ProfileInfo";
+import { formatearDinero } from "../../helper";
 
 // Icons
 import { TbPigMoney } from "react-icons/tb";
@@ -13,12 +13,13 @@ import LogCard from "../../components/Profile/LogCard.jsx"
 import RegresarProfile from '../../components/Profile/RegresarProfile.jsx';
 
 export default function Logs() {
-    ChartJS.register(ArcElement, Tooltip, Legend);
+    const { user } = useAuth({ middleware: 'auth' })
 
+    ChartJS.register(ArcElement, Tooltip, Legend);
     const data = {
         labels: ['Fondos disponibles', 'Gastos totales'],
         datasets: [{
-            data: [100, 25],
+            data: [user?.saldo_disp, user?.saldo_off],
             backgroundColor: ['rgba(96, 185, 119, 0.9)', 'rgba(72, 72, 72, 0.5)',],
             borderColor: ['#275934', '#151515'],
             borderWidth: 2,
@@ -37,9 +38,6 @@ export default function Logs() {
         cutout: '75%',
         offset: 20
     }
-
-    const { user } = useAuth({ middleware: 'auth' })
-
     return (
         <>
             {/* Botones de edición y regresar */}
@@ -51,15 +49,14 @@ export default function Logs() {
             <ProfileInfo user={user} />
 
             {/* Contenedor principal */}
-            <div id="logs-container" className='min-h-screen pt-32 px-5 mb-7 flex items-center flex-col'>
+            <div id="logs-container" className='min-h-screen px-5 mb-7 flex items-center flex-col'>
                 {/* Contenedor de fondos */}
                 <section id="founds-summ" className='mt-7 bg-[#1a1a1a] rounded-lg p-3 w-full sm:w-11/12 h-1/2 shadow-sm shadow-[#080808]'>
 
                     {/* Título de la sección */}
                     <div className="flex justify-center md:justify-normal">
-                        <p className='text-white font-title font-semibold text-2xl md:text-3xl transition-all md:mx-5 my-5 inline-block'>
+                        <p className='text-white font-title font-semibold text-2xl md:text-3xl transition-all md:mx-5 my-5 inline-block underline decoration-3 decoration-primary underline-offset-8'>
                             Resumen de fondos
-                            <hr className='border-success rounded-full border-[1px]' />
                         </p>
                     </div>
 
@@ -72,7 +69,7 @@ export default function Logs() {
                                     <TbPigMoney size={40} />
                                 </div>
                                 <div className="stat-title text-white font-bold">Fondos disponibles</div>
-                                <div className="stat-value">$100.00</div>
+                                <div className="stat-value">{user ? formatearDinero(+user.saldo_disp) : ''}</div>
                             </div>
 
                             <div className="stat w-[300px]">
@@ -80,7 +77,7 @@ export default function Logs() {
                                     <LiaCoinsSolid size={40} />
                                 </div>
                                 <div className="stat-title text-white font-bold">Gastos totales</div>
-                                <div className="stat-value">$25.00</div>
+                                <div className="stat-value">{user ? formatearDinero(+user.saldo_off) : ''}</div>
                             </div>
 
                         </div>
@@ -98,9 +95,8 @@ export default function Logs() {
                 <section id="logs-cards-cont" className='mt-7 bg-[#1a1a1a] rounded-lg p-3 w-full sm:w-11/12 h-1/2 shadow-sm shadow-[#080808]'>
                     {/* Título de la sección */}
                     <div className="flex justify-center md:justify-normal">
-                        <p className='text-white font-title font-semibold text-2xl md:text-3xl transition-all md:mx-5 my-5 inline-block'>
+                        <p className='text-white font-title font-semibold text-2xl md:text-3xl transition-all md:mx-5 my-5 inline-block underline decoration-3 decoration-primary underline-offset-8'>
                             Historial de pedidos
-                            <hr className='border-success rounded-full border-[1px]' />
                         </p>
                     </div>
 

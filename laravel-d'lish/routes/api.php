@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 
+
     // DESLOGUEO =================
     Route::post('/logout', [AuthController::class, 'logout']);
 
