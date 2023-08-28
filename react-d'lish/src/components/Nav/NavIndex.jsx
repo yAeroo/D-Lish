@@ -15,7 +15,7 @@ import PolloAsado from "/src/assets/index/polloAsado.jpg";
 import almuerzoWall from "/src/assets/index/lunchWall.jpg";
 import desayunoWall from "/src/assets/index/desayunoWall.jpg";
 //Componentes
-import FoodCard from "../FoodCard";
+import FoodCardSearch from "../FoodCardSearch";
 
 export default function NavIndex() {
 
@@ -70,19 +70,17 @@ export default function NavIndex() {
           {showFloatingContainer && (
 
             /* Contenido del contenedor flotante */
-            <div className="absolute input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] h-[4rem] focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8">
-          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
+            <div className="absolute input bg-slate-900 xl:w-[19rem] xl:text-md md:w-[17rem] md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+              <div className="h-auto">
 
-          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+              <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
 
-          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" precio="0.25" categoria="Otros" />
+              <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
 
-          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Miguel Magone" precio="1.00" categoria="Desayunos" />
+              <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
 
-          <FoodCard name="Pollo Asado" photo={PolloAsado} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+              <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
 
-          <FoodCard name="Tortas" photo={Tortas} cafetin="Don Bosco" precio="2.50" categoria="Almuerzos" />
         </div>
             </div>
           )}
