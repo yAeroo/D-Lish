@@ -29,11 +29,11 @@ export default function CafetinView() {
 
   return (
     <>
-      <section className="mb-[0em] md:mb-[0rem]">
+      <section className="mb-[0em] md:mb-[0rem] animate-fade animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex w-full h-[15rem] z-0 md:mb-[9rem]">
           <img src={db_wall} className="bg-cover w-full md:min-h-screen filter brightness-50" />
         </div>
-        <div className="flex justify-between items-center bg-green-600 mt-[-1rem] md:px-7 md:pt-1 rounded-t-2xl drop-shadow-md">
+        <div className="flex justify-between items-center bg-green-600 mt-[-1rem] md:px-7 md:pt-1 rounded-t-2xl drop-shadow-md animate-fade animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
           <h1 className="text-4xl md:text-6xl font-bold my-10 pb-[1rem] ml-10 md:px-1 text-white">
             {cafeteria?.nombre}
           </h1>
@@ -64,7 +64,7 @@ export default function CafetinView() {
         </div>
       </section >
 
-      <section className="bg-base-100 text-white mt-[-1rem] min-h-screen rounded-t-2xl items-center justify-between mx-0 xl:mx-[0rem] animate-fade-up animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
+      <section className="bg-base-100 text-white mt-[-1rem] min-h-screen rounded-t-2xl items-center justify-between mx-0 xl:mx-[0rem] animate-fade animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[800ms]">
         <div className="flex items-center justify-between mb-10">
           <div>
             <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">
