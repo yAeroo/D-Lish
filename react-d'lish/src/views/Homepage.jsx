@@ -9,6 +9,8 @@ import React, { useEffect, useState } from 'react';
 
 // Css
 import '../css/homepage.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Imagenes
 import HeroImg from "../../src/assets/homepage/food-removebg-preview.png";
@@ -22,6 +24,11 @@ import { CgCoffee } from "react-icons/cg";
 import { MdOutlineScreenshot } from "react-icons/md";
 
 export default function Homepage() {
+
+  AOS.init({
+    duration: 800, // Duración de las animaciones en milisegundos
+  });
+
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -154,7 +161,7 @@ export default function Homepage() {
           </div>
 
           <div className="md:w-3/6 2xl:mr-[-10rem] md:order-1 text-left lg:text-right md:mt-5">
-            <h1 className={`xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white ${isVisible ? 'fade-left active' : 'fade-left'}`}>
+            <h1 className="xl:text-6xl md:text-5xl text-5xl font-bold drop-shadow-lg mt-[5rem] md:mt-[4rem] pb-[2rem]text-white" data-aos="fade-left">
               ¿Quiénes somos?
             </h1>
             <p className="xl:text-2xl md:text-xl text-xl py-4 md:py-6">

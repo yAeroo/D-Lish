@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "axios": "^1.4.0",
     "chart.js": "^4.3.3",
     "modal": "^1.2.0",
