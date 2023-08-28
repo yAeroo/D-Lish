@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { createRef, useState } from 'react';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
@@ -12,6 +14,8 @@ import Notify from '../../helper/Notify';
 
 
 export default function Registro() {
+
+    const { t } = useTranslation();
 
     // Acceden al elemento input del DOM y su valor
     const nameRef = createRef();
@@ -62,7 +66,7 @@ export default function Registro() {
                     <div className="p-6 space-y-4 sm:space-y-6 sm:p-8">
 
                         <h1 className="text-4xl text-center text-white font-title font-semibold py-4">
-                            Registrate
+                            {t("actions.register")}
                         </h1>
 
 
@@ -78,11 +82,11 @@ export default function Registro() {
                             {/* Input nombre*/}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Nombre Completo</span>
+                                    <span className="label-text">{t("credentials.complete-name")}</span>
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Nombre & Apellido"
+                                    placeholder={t("credentials.name-placeholder")}
                                     className="input input-bordered w-full bg-base-100"
                                     name="name"
                                     ref={nameRef}
@@ -92,11 +96,11 @@ export default function Registro() {
                             {/* Input correo */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Correo institucional</span>
+                                    <span className="label-text">{t("credentials.student-email")}</span>
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder="estudiante@cdb.edu.sv"
+                                    placeholder={t("credentials.student-email-placeholder")}
                                     className="input input-bordered w-full bg-base-100"
                                     name="email"
                                     ref={emailRef}
@@ -106,16 +110,16 @@ export default function Registro() {
                             {/* Input Genero */}
                             <div className="form-control w-full ">
                                 <label className="label">
-                                    <span className="label-text">Género</span>
+                                    <span className="label-text">{t("credentials.gender")}</span>
                                 </label>
                                 <select className="select select-bordered w-full text-gray-300"
                                     defaultValue=""
                                     name="gender"
                                     ref={genderRef}
                                 >
-                                    <option disabled value="">Selecciona</option>
-                                    <option className='text-white' value="M" >Masculino</option>
-                                    <option className='text-white' value="F">Femenino</option>
+                                    <option disabled value="">{t("credentials.select-gender")}</option>
+                                    <option className='text-white' value="M" >{t("credentials.gender-M")}</option>
+                                    <option className='text-white' value="F">{t("credentials.gender-F")}</option>
                                 </select>
                             </div>
 
@@ -123,7 +127,7 @@ export default function Registro() {
                             {/* Input contraseña */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Contraseña</span>
+                                    <span className="label-text">{t("credentials.password")}</span>
                                 </label>
                                 <input
                                     type="password"
@@ -137,7 +141,7 @@ export default function Registro() {
                             {/* Repetir contraseña */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Repetir ontraseña</span>
+                                    <span className="label-text">{t("credentials.repeat-pw")}</span>
                                 </label>
                                 <input
                                     type="password"
@@ -153,15 +157,15 @@ export default function Registro() {
                                 <button
                                     className="btn no-animation w-full btn-info text-white font-plane"
                                     type="submit">
-                                    Registrar
+                                    {t("actions.to-register")}
                                 </button>
                             </div>
 
                         </form>
 
-                        <p className="text-white">¿Ya tienes una cuenta?
+                        <p className="text-white"> {t("auth.exist-acc-msg")}
                             <span className="font-extrabold">
-                                <Link to="/auth/login"> Inicia sesión</Link>
+                                <Link to="/auth/login"> {t("auth.login-acc")}</Link>
                             </span>
                         </p>
 

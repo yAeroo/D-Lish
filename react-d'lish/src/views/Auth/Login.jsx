@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { createRef, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 // Habilitando archivo para router link
@@ -10,6 +12,8 @@ import LogoImg from '../../assets/logo/wide_blue.png'
 import Notify from '../../helper/Notify';
 
 export default function Login() {
+    const { t } = useTranslation();
+
     // Acceden al elemento input del DOM y su valor
     const emailRef = createRef();
     const passwordRef = createRef();
@@ -60,7 +64,7 @@ export default function Login() {
                     <div className="p-6 space-y-4 sm:space-y-6 sm:p-8">
 
                         <h1 className="text-4xl text-center text-white font-title font-semibold py-4">
-                            Inicia Sesión
+                            {t("actions.login")}
                         </h1>
 
                         {/* Impresión de errores */}
@@ -75,11 +79,11 @@ export default function Login() {
                             {/* Input */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Correo institucional</span>
+                                    <span className="label-text">{t("credentials.student-email")}</span>
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder="estudiante@cdb.edu.sv"
+                                    placeholder={t("credentials.student-email-placeholder")}
                                     className="input input-bordered w-full text-white bg-base-100"
                                     name="email"
                                     ref={emailRef}
@@ -89,7 +93,7 @@ export default function Login() {
                             {/* Input contraseña */}
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text">Contraseña</span>
+                                    <span className="label-text">{t("credentials.password")}</span>
                                 </label>
                                 <input
                                     type="password"
@@ -104,15 +108,15 @@ export default function Login() {
                                 <button
                                     className="btn no-animation w-full btn-success text-white font-plane"
                                     type="submit">
-                                    Iniciar
+                                    {t("actions.to-login")}
                                 </button>
                             </div>
 
                         </form>
 
-                        <p className="text-white">¿No tienes una cuenta?
+                        <p className="text-white">{t("auth.not-acc-msg")}
                             <span className="font-extrabold">
-                                <Link to="/auth/register"> Crea una</Link>
+                                <Link to="/auth/register"> {t("auth.create-acc")}</Link>
                             </span>
                         </p>
                     </div>

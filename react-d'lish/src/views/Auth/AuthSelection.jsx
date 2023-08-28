@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { useTranslation } from "react-i18next";
 
 // Image
 import LogoImg from "../../assets/logo/wide_orange.png";
@@ -8,14 +9,16 @@ import "../../css/authSelection.css";
 import { AiOutlineUserAdd, AiOutlineUser } from "react-icons/ai";
 
 export default function AuthSelection() {
+    const { t } = useTranslation();
+
     return (
         <>
             <div id="authSelector" className="min-h-[80vh] mb-4 px-8 sm:px-20 grid transition-all">
 
                 <div id="authSelectCont" className="w-full flex flex-col place-self-center">
                     <img src={LogoImg} alt="LogoImg" className="w-auto h-32 self-center" />
-                    <p className="text-white text-2xl font-title text-center font-bold my-5">Accede a D'Lish y disfruta de sabores únicos.</p>
-
+                    <p className="text-white text-2xl font-title text-center font-bold my-5">{t("auth.header-title")}</p> {/* Título principal */}
+                    
                     <div className="flex-col md:flex-row w-full flex justify-center items-center mt-5 text-white">
 
                         {/* Card de Inicio de sesión */}
@@ -23,10 +26,12 @@ export default function AuthSelection() {
                             <div className="card lg:card-side authCardClasses">
                                 <figure><AiOutlineUser size={50} className="mt-7" /></figure>
                                 <div className="card-body !py-5">
-                                    <h2 className="card-title font-title self-center text-2xl">Inicia sesión</h2>
-                                    <p className="text-center self-center inline-block py-3">No esperes para reservar, ingresa tus credenciales y comienza a pedir.</p>
+                                    <h2 className="card-title font-title self-center text-2xl">{t("actions.login")}</h2> {/* Iniciar sesión - Title */}
+                                    <p className="text-center self-center inline-block py-3">{t("auth.login-card-desc")}</p>
                                     <div className="card-actions justify-center">
-                                        <Link to="/auth/login" className="bg-secondary hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Iniciar</Link>
+                                        <Link to="/auth/login" className="bg-secondary hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">
+                                            {t("actions.to-login")} {/* Iniciar sesión - Bttn */}
+                                        </Link> 
                                     </div>
                                 </div>
                             </div>
@@ -39,10 +44,12 @@ export default function AuthSelection() {
                             <div className="card lg:card-side authCardClasses">
                                 <figure><AiOutlineUserAdd size={50} className="mt-7" /></figure>
                                 <div className="card-body !py-5">
-                                    <h2 className="card-title font-title self-center text-2xl">Regístrate</h2>
-                                    <p className="text-center self-center inline-block py-3">Reserva, disfruta, repite. Únete a D'Lish hoy mismo.</p>
+                                    <h2 className="card-title font-title self-center text-2xl">{t("actions.register")}</h2> {/* Registrarse - Title */}
+                                    <p className="text-center self-center inline-block py-3">{t("auth.register-card-desc")}</p> {/* Registrarse - Desc. */}
                                     <div className="card-actions justify-center">
-                                        <Link to="/auth/register" className="bg-info hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">Registrar</Link>
+                                        <Link to="/auth/register" className="bg-info hover:bg-base-100 transition-all rounded-full p-2 text-white mt-2 px-8 font-bold">
+                                            {t("actions.to-register")} {/* Registrarse - Bttn */}
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
