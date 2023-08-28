@@ -53,6 +53,8 @@ class MainDishSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
+
+            // Cafeteria2
             [
                 'name' => 'Pollo Guisado',
                 'cafeteria_id' => 2,
@@ -76,6 +78,22 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Filete de pollo',
+                'cafeteria_id' => 2,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Chow mein',
+                'cafeteria_id' => 2,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+
+            // Cafeteria3
+            [
+                'name' => 'Filete de pollo',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -83,6 +101,27 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Costilla en BBQ',
+                'cafeteria_id' => 3,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Lonja de pescado',
+                'cafeteria_id' => 3,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'lasagna',
+                'cafeteria_id' => 3,
+                'price' => 1.50,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Rellenos de papa',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
