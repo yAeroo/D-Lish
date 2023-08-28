@@ -7,10 +7,12 @@ import AuthSelection from "../views/Auth/AuthSelection";
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 
-// Css
-import '../css/homepage.css';
+//AOS (Animated On Scroll)
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+// Css
+import '../css/homepage.css';
 
 // Imagenes
 import HeroImg from "../../src/assets/homepage/food-removebg-preview.png";
@@ -28,29 +30,6 @@ export default function Homepage() {
   AOS.init({
     duration: 800, // Duración de las animaciones en milisegundos
   });
-
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleFadeOnScroll = () => {
-      const elements = document.querySelectorAll('.fade-up , .fade-left , .fade-right');
-
-      elements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-
-        if (elementTop < window.innerHeight) {
-          element.classList.add('active');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleFadeOnScroll);
-    handleFadeOnScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleFadeOnScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -99,7 +78,7 @@ export default function Homepage() {
       </div>
 
       <div className="flex items-center justify-center h-33 mt-[10rem] mx-[2rem] md:mx-[1rem] lg:mx-[15rem]">
-        <h1 className={`md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold ${isVisible ? 'fade-up active' : 'fade-up'}`}>
+        <h1 className="md:text-5xl xl:text-6xl 2xl:text-7xl text-4xl text-center text-primary font-bold" data-aos="fade-up">
           Descubre la nueva forma de hacer pedidos en línea
         </h1>
       </div>
