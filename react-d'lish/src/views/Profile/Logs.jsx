@@ -9,8 +9,11 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import LogCard from "../../components/Profile/LogCard.jsx"
 import RegresarProfile from '../../components/Profile/RegresarProfile.jsx';
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Logs() {
+    const { user } = useAuth({ middleware: 'auth' });
+
     ChartJS.register(ArcElement, Tooltip, Legend);
     const data = {
         labels: ['Fondos disponibles', 'Gastos totales'],

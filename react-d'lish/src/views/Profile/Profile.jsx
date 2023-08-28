@@ -51,7 +51,7 @@ export default function Profile() {
                         <div className="flex bg-secondary rounded-full p-2 px-14">
                             <span> <BiLogOut size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">
-                                Cerrar sesión
+                            {t("profile.log-off")}
                             </span>
                         </div>
                     </button>

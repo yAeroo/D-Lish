@@ -2,38 +2,13 @@
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 import ProfileSetttings from "../../components/Profile/ProfileSetttings";
 import ProfilePfp from "../../components/Profile/ProfilePfp";
-import "react-toastify/dist/ReactToastify.css";
+import RegresarProfile from "../../components/Profile/RegresarProfile";
 
 // Protección de rutas
 import { useAuth } from "../../hooks/useAuth";
 
-// Icons
-import { BiSave } from "react-icons/bi";
-
-// Helper
-import Notificacion from "../../helper/Notify";
-import RegresarProfile from "../../components/Profile/RegresarProfile";
-
 export default function Settings() {
-    const { user } = useAuth();
-
-    // Se define el Toast
-    const toastSuccesId = "success-noti";
-    // Se instancia con referencia al ID Definido
-    const NotiExito = Notificacion(
-        "success",
-        toastSuccesId,
-        '¡Cambios guardados con exito!',
-        "!bg-[#191E2B] !font-body !py-2"
-    );
-
-    const toastErrorId = "error-noti";
-    const NotiError = Notificacion(
-        "error",
-        toastErrorId,
-        '¡Oops! Ha ocurrido un error...',
-        "!bg-[#191E2B] !font-body !py-2"
-    );
+    const { user } = useAuth({ middleware: 'auth' });
 
     return (
         <>
@@ -49,19 +24,7 @@ export default function Settings() {
             {/* Contenedor para centrar info */}
             <div className="flex flex-col flex-grow justify-center">
                 {/* Campos de configuración */}
-                <ProfileSetttings />
-
-                {/* Guardar cambios */}
-                <div className="flex justify-center h-full pb-12 fa-custom animate-fade">
-                    <button onClick={NotiExito}>
-                        <div className="flex bg-secondary rounded-full p-2 md:px-5 ">
-                            <span> <BiSave size={"25"} color={"white"} /> </span>
-                            <span className="mx-2 profile-bttn-text !block">
-                                Guardar cambios
-                            </span>
-                        </div>
-                    </button>
-                </div>
+                <ProfileSetttings /> 
             </div>
         </>
     )
