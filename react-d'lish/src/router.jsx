@@ -8,6 +8,7 @@ import CafeteriaLayout from './layouts/CafeteriaLayout';
 import AdminLayout from './layouts/AdminLayout';
 // Componentes importados
 import Index from './views/Index';
+import Search from "./views/Search";
 import AuthSelection from './views/Auth/AuthSelection';
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
@@ -69,8 +70,12 @@ const router = createBrowserRouter([
         // Página de Ordenar
         path: '/confirmed-order',
         element: <Order />
-    }
-    ,
+    },
+    {
+        // Página Search Mobile
+        path: '/search',
+        element: <Search />
+    },
     {
         path: '/auth',
         element: <AuthLayout />,

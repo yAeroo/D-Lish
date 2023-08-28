@@ -2,6 +2,7 @@ import Carrousel from "../components/Carrousel";
 import "../css/IndexPage.css";
 import "../components/Nav/NavMobileIndex";
 import NavIndex from "../components/Nav/NavIndex";
+import Search from "../views/Search";
 
 //Imagenes
 import Burrito from "/src/assets/index/burrito.jpg";
@@ -57,10 +58,10 @@ export default function Index() {
 
         {/* Props del apartado de comidas  */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
           <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
 
-          <FoodCard name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+          <FoodCard name="Burrito" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
 
           <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" precio="0.25" categoria="Otros" />
 
@@ -74,7 +75,6 @@ export default function Index() {
 
 
       </section>
-
 
     </main>
   );

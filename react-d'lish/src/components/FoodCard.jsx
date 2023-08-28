@@ -4,7 +4,7 @@ export default function FoodCard(props) {
     const { photo, name, cafetin, precio, categoria } = props;
 
     return (
-        <div className="flex items-center justify-center mx-0 md:mx-1 h-[7rem] w-[100%] hover:bg-base-100 rounded-lg px-0 md:px-4 py-0 mb-1">
+        <div className="flex items-center justify-center mx-0 md:mx-1 h-[7rem] w-[100%] md:hover:bg-base-100 px-1 rounded-lg md:px-4 py-0 mb-2">
             <div className="flex items-center justify-start space-x-4 md:space-x-5 mt-0 w-[70%] md:w-[70%]">
                 <div className="w-20 h-20 rounded overflow-hidden">
                     <img className="w-full h-full object-cover" src={photo} />
