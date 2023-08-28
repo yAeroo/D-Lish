@@ -40,7 +40,7 @@ const OrdersProvider = ({ children }) => {
         // Try Catch en donde se intenta mandar los datos a la API con el Tonken
         try {
             setErrores([]);
-            const { res } = await clienteAxios.post('/api/orden', data, {
+            const { data } = await clienteAxios.post('/api/orden', data, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'saldo_disp' => 200,
             'saldo_off' => 175,
             'password' => Hash::make('con123'),
-            'type' => 'admin',
+            'type' => 'owner',
             'gender' => 'M',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

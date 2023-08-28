@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react'
-import { useAuth } from '../../hooks/useAuth.js';
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 import { formatearDinero } from "../../helper";
 
@@ -13,8 +11,6 @@ import LogCard from "../../components/Profile/LogCard.jsx"
 import RegresarProfile from '../../components/Profile/RegresarProfile.jsx';
 
 export default function Logs() {
-    const { user } = useAuth({ middleware: 'auth' })
-
     ChartJS.register(ArcElement, Tooltip, Legend);
     const data = {
         labels: ['Fondos disponibles', 'Gastos totales'],

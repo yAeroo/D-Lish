@@ -8,10 +8,13 @@ import { MdFoodBank } from 'react-icons/md'
 import { IoFastFoodSharp } from 'react-icons/io5';
 import { BiLogOut } from "react-icons/bi";
 import { BiSolidNotepad } from "react-icons/bi";
+import { useAuth } from '../../hooks/useAuth';
 
 function SideBar() {
+  const { logout } = useAuth({ middleware: 'auth' });
+
   return (
-    <div className='z-10 relative'>
+    <aside className='z-10 relative'>
 
       {/* Contenedor del Sidebar */}
       <div className="drawer lg:drawer-open lg:absolute w-0">
@@ -33,18 +36,27 @@ function SideBar() {
           <ul className="menu p-4 w-[7rem] h-full fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
             <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
-            <li className="mb-7" title='Ventas'><Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7" title="Productos"><Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7" title='Cafeteria'><Link to="/admin/profile"><MdFoodBank className='text-white text-2xl ' /></Link></li>
-            <li className="mb-7" title='Pedidos'><Link to="/admin/delivmode"><BiSolidNotepad className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7" title='Ventas'>
+              <Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7" title="Productos">
+              <Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link>
+            </li>
+            <li className="mb-7" title='Cafeteria'><Link to="/admin/profile">
+              <MdFoodBank className='text-white text-2xl ' /></Link></li>
+            <li className="mb-7" title='Pedidos'><Link to="/admin/delivmode">
+              <BiSolidNotepad className='text-white text-2xl ' />
+            </Link>
+            </li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
-            <li className='fixed bottom-0 mb-4'><Link to="/homepage" className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl' /></Link></li>
+            <li className='fixed bottom-0 mb-4'>
+              <button onClick={logout} className='bg-[#00000086] p-5 px-7 rounded-md'><BiLogOut className='text-white text-2xl' /></button>
+            </li>
           </ul>
         </div>
       </div>
 
-    </div>
+    </aside>
   )
 }
 

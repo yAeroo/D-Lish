@@ -84,6 +84,13 @@ export const useAuth = ({ middleware, url }) => {
         if (middleware === 'guest' && url && user) {
             navigate(url);
         }
+        // Redireccion para admin
+        if (middleware === 'guest' && user && user.type == 'owner') {
+            navigate('/admin')
+        }
+        if (middleware === 'admin' && user && user.type !== 'owner') {
+            navigate('/')
+        }
         // Condicional que válida la sesión
         if (middleware === 'auth' && error) {
             navigate('/homepage')

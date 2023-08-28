@@ -26,7 +26,6 @@ const CafeteriasProvider = ({ children }) => {
             const cafeteria = data.data[0];
 
             // Guardar en localStorage
-            localStorage.setItem('contenidoCafeteria', JSON.stringify(cafeteria));
             setContenidoCafeteria(cafeteria);
         } catch (error) {
             console.log(error);

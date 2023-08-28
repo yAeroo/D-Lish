@@ -1,6 +1,3 @@
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
 // Componentes
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 import ProfileSetttings from "../../components/Profile/ProfileSetttings";
@@ -12,15 +9,13 @@ import { useAuth } from "../../hooks/useAuth";
 
 // Icons
 import { BiSave } from "react-icons/bi";
-import { IoChevronBackSharp } from "react-icons/io5";
 
 // Helper
 import Notificacion from "../../helper/Notify";
 import RegresarProfile from "../../components/Profile/RegresarProfile";
 
 export default function Settings() {
-
-    const { user } = useAuth({ middleware: 'auth' })
+    const { user } = useAuth();
 
     // Se define el Toast
     const toastSuccesId = "success-noti";

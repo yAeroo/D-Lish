@@ -5,7 +5,7 @@ import Footer from "../components/Footer"
 import { useAuth } from "../hooks/useAuth";
 
 export default function ProfileLayout() {
-    const { user, error } = useAuth({ middleware: 'auth' });
+    useAuth({ middleware: 'auth' });
 
     return (
         <>
