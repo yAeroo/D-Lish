@@ -1,0 +1,12 @@
+{
+    "profile":{
+        "go-back": "Go back",
+        "log-off": "Log off",
+        "settings": "Settings"
+    },
+    "settings":{
+        "lang": "Change language",
+        "lang-es": "Spanish",
+        "lang-en": "English"
+    }
+}

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 // Router
 import router from './router'
+//Translate
+import "./lang/i18n"
 // Context
 import { RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
