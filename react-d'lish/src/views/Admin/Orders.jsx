@@ -24,9 +24,6 @@ function ProductAdmin() {
 
 			<div className="flex items-center w-[95%] justify-center">
 
-
-
-
 				<div class="container">
 					<table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
 						<thead class="text-white">
@@ -50,9 +47,10 @@ function ProductAdmin() {
 						</thead>
 						<tbody class="flex-1 sm:flex-none text-[#414141]">
 
-							{almuerzodesayuno.map((product) => (
+							{almuerzodesayuno.map((product, id) => (
 								<ProductRow
-									key={product.id}
+									key={id}
+									id={product.id}
 									ProductNum={product.id}
 									ProductItem={product.name}
 									ProductIMG={product.img}

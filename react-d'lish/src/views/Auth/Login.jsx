@@ -87,28 +87,28 @@ export default function Login() {
                         >
                             {/* Input */}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="email">
                                     <span className="label-text">{t("credentials.student-email")}</span>
                                 </label>
                                 <input
                                     type="email"
                                     placeholder={t("credentials.student-email-placeholder")}
                                     className="input input-bordered w-full text-white bg-base-100"
-                                    name="email"
+                                    id="email"
                                     ref={emailRef}
                                 />
                             </div>
 
                             {/* Input contraseña */}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="password">
                                     <span className="label-text">{t("credentials.password")}</span>
                                 </label>
                                 <input
                                     type="password"
                                     placeholder="••••••••"
                                     className="input input-bordered w-full text-white bg-base-100"
-                                    name="password"
+                                    id="password"
                                     ref={passwordRef}
                                 />
                             </div>

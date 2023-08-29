@@ -5,7 +5,7 @@ import UsersProps from '../../components/Admin/UsersProps';
 import Almuerzo from "../../assets/homepage/Almuerzos.png"
 //chart LINE imports 
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend , ArcElement, Tooltip,} from "chart.js";
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, ArcElement, Tooltip, } from "chart.js";
 //chart Doughnut imports 
 import { Pie } from "react-chartjs-2";
 
@@ -13,18 +13,18 @@ import { Link } from 'react-router-dom';
 
 export default function Admin() {
 
-  ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend );
+  ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
   const data = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri' ],
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
     datasets: [
       {
         label: 'Ventas Semanales',
         data: [12, 15, 10, 17, 14],
         backgroundColor: ['green'],
         borderColor: 'lightblue',
-        pointBorderColor: 'green' ,
+        pointBorderColor: 'green',
         borderWidth: 2,
-        fill: true ,
+        fill: true,
         tension: 0.4
       },
     ],
@@ -35,27 +35,27 @@ export default function Admin() {
       legend: true
     },
     scales: {
-      y:{
-        
+      y: {
+
 
       }
     }
   }
 
 
-  ChartJS.register( ArcElement, Tooltip, Legend );
+  ChartJS.register(ArcElement, Tooltip, Legend);
   const data1 = {
     labels: ['Pupusas', 'Pollo', 'Carne'],
     datasets: [
       {
-      label: 'Platillo más vendido',
-      data: [25, 50, 35],
-      backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
-      ],
-    }]
+        label: 'Platillo más vendido',
+        data: [25, 50, 35],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+      }]
   }
 
 
@@ -77,7 +77,7 @@ export default function Admin() {
               <div className="flex flex-wrap items-start justify-end -mb-3 mt-6">
                 <button className="inline-flex px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md mb-3">
                   <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                   </svg>
                   <Link to="/admin/profile">Editar Local</Link>
                 </button>
@@ -92,8 +92,8 @@ export default function Admin() {
                 <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Ventas semanales</div>
                 <div className="p-4 flex-grow">
                   <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold border-2 border-gray-200 border-dashed rounded-md">
-                  {/* Grafico espacio 1 */}
-                 <Line data={data} options={options}  />
+                    {/* Grafico espacio 1 */}
+                    <Line data={data} options={options} />
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Admin() {
                   <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
                     <path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
                     <path fill="#fff" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                   </svg>
                 </div>
                 <div>
@@ -121,7 +121,7 @@ export default function Admin() {
               <div className="flex items-center p-8 bg-neutral shadow rounded-lg">
                 <div className="inline-flex flex-shrink-0 items-center justify-center h-16 w-16 text-teal-600 bg-teal-100 rounded-full mr-6">
                   <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
@@ -137,10 +137,10 @@ export default function Admin() {
                   <span>Usuarios Frencuentes</span>
                 </div>
                 {/* Tablero de usuarios */}
-                <UsersProps  name="Mordecai"/>
-                <UsersProps  name="Rigby"/>
-                <UsersProps  name="Finn"/>
-                <UsersProps  name="Jake"/>
+                <UsersProps name="Mordecai" />
+                <UsersProps name="Rigby" />
+                <UsersProps name="Finn" />
+                <UsersProps name="Jake" />
               </div>
 
 
@@ -150,8 +150,8 @@ export default function Admin() {
                 <div className="p-4 flex-grow">
                   <div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold border-2  border-gray-200 border-dashed rounded-md">
                     {/* Espacio exacto para grafica */}
-                    <Pie  data={data1}  />
-                    </div>
+                    <Pie data={data1} />
+                  </div>
                 </div>
               </div>
             </section>

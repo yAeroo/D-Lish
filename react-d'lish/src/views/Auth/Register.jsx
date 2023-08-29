@@ -90,40 +90,40 @@ export default function Registro() {
 
                             {/* Input nombre*/}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="name">
                                     <span className="label-text">{t("credentials.complete-name")}</span>
                                 </label>
                                 <input
                                     type="text"
                                     placeholder={t("credentials.name-placeholder")}
                                     className="input input-bordered w-full bg-base-100"
-                                    name="name"
+                                    id="name"
                                     ref={nameRef}
                                 />
                             </div>
 
                             {/* Input correo */}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="email">
                                     <span className="label-text">{t("credentials.student-email")}</span>
                                 </label>
                                 <input
                                     type="email"
                                     placeholder={t("credentials.student-email-placeholder")}
                                     className="input input-bordered w-full bg-base-100"
-                                    name="email"
+                                    id="email"
                                     ref={emailRef}
                                 />
                             </div>
 
                             {/* Input Genero */}
                             <div className="form-control w-full ">
-                                <label className="label">
+                                <label className="label" htmlFor="gender">
                                     <span className="label-text">{t("credentials.gender")}</span>
                                 </label>
                                 <select className="select select-bordered w-full text-gray-300"
                                     defaultValue=""
-                                    name="gender"
+                                    id="gender"
                                     ref={genderRef}
                                 >
                                     <option disabled value="">{t("credentials.select-gender")}</option>
@@ -135,28 +135,28 @@ export default function Registro() {
 
                             {/* Input contraseña */}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="password">
                                     <span className="label-text">{t("credentials.password")}</span>
                                 </label>
                                 <input
                                     type="password"
                                     placeholder="••••••"
                                     className="input input-bordered w-full bg-base-100"
-                                    name="password"
+                                    id="password"
                                     ref={passwordRef}
                                 />
                             </div>
 
                             {/* Repetir contraseña */}
                             <div className="form-control w-full">
-                                <label className="label">
+                                <label className="label" htmlFor="password_confirmation">
                                     <span className="label-text">{t("credentials.repeat-pw")}</span>
                                 </label>
                                 <input
                                     type="password"
                                     placeholder="••••••"
                                     className="input input-bordered w-full bg-base-100"
-                                    name="password_confirmation"
+                                    id="password_confirmation"
                                     ref={passwordConfirmationRef}
                                 />
                             </div>
