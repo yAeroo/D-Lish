@@ -20,6 +20,7 @@ class MainDishSeeder extends Seeder
         $registros = [
             [
                 'name' => 'Pollo a la parrilla',
+                // 'img' => 'Pollo_a_parrilla.jpg',
                 'cafeteria_id' => 1,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -27,6 +28,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Relleno de papa',
+                // 'img' => 'rellenos_de_papa.jpg',
                 'cafeteria_id' => 1,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -34,6 +36,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Filete de Pollo',
+                // 'img' => 'filete_pollo.jpg',
                 'cafeteria_id' => 1,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -41,6 +44,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Burritos',
+                // 'img' => 'burrito.jpg',
                 'cafeteria_id' => 1,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -48,6 +52,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Pasta con queso',
+                // 'img' => 'pasta_queso.jpg',
                 'cafeteria_id' => 1,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -57,6 +62,7 @@ class MainDishSeeder extends Seeder
             // Cafeteria2
             [
                 'name' => 'Pollo Guisado',
+                // 'img' => 'pollo_guisado.jpg',
                 'cafeteria_id' => 2,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -64,6 +70,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Tacos de Carne Asada',
+                // 'img' => 'tacos.jpg',
                 'cafeteria_id' => 2,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -71,6 +78,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Burrito Vegetariano',
+                // 'img' => 'burrito.jpg',
                 'cafeteria_id' => 2,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -78,6 +86,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Filete de pollo',
+                // 'img' => 'filete_pollo.jpg',
                 'cafeteria_id' => 2,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -85,6 +94,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Chow mein',
+                // 'img' => 'chow_mein.jpg',
                 'cafeteria_id' => 2,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -94,6 +104,7 @@ class MainDishSeeder extends Seeder
             // Cafeteria3
             [
                 'name' => 'Filete de pollo',
+                // 'img' => 'filete_pollo.jpg',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -101,6 +112,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Costilla en BBQ',
+                // 'img' => 'costilla_bbq.jpg',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -108,6 +120,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Lonja de pescado',
+                // 'img' => 'lonja_pescado.jpg',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -115,6 +128,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'lasagna',
+                // 'img' => 'lasagna.jpg',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
@@ -122,6 +136,7 @@ class MainDishSeeder extends Seeder
             ],
             [
                 'name' => 'Rellenos de papa',
+                // 'img' => 'rellenos_de_papa.jpg',
                 'cafeteria_id' => 3,
                 'price' => 1.50,
                 'created_at' => Carbon::now(),
