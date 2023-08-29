@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id(); // Columna 'Id' - Llave primaria, único, autoincrement
             $table->string('email', 50)->unique(); // Columna 'Email - String, único
             $table->string('name', 50); // Columna 'Name' - String
-            $table->string('saldo_disp')->default(0); // Campo de saldo a ser encriptado
-            $table->string('saldo_off')->default(0); // Campo de saldo a ser encriptado
+            $table->string('saldo_disp')->nullable()->default(0); // Campo de saldo a ser encriptado
+            $table->string('saldo_off')->nullable()->default(0); // Campo de saldo a ser encriptado
             $table->string('password', 60); // Columna 'Password' - String
             $table->enum('type', ['user', 'admin', 'owner'])->default('user'); // Columna 'type' - Rol de usuario, admin y propietario
             $table->enum('gender', ['M', 'F']); // Columna 'gender' - Femenino y masculino

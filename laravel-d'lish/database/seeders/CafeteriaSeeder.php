@@ -19,8 +19,8 @@ class CafeteriaSeeder extends Seeder
         DB::table('cafeterias')->insert([
             'name' => 'Don Bosco',
             'user_id' => '1',
-            'img' => 'db_pfp',
-            'img_wall' => 'db_wall',
+            'img' => 'db_pfp.jpg',
+            'img_wall' => 'db_wall.jpg',
             'likes' => 100,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -29,8 +29,8 @@ class CafeteriaSeeder extends Seeder
         DB::table('cafeterias')->insert([
             'name' => 'Domingo Savio',
             'user_id' => '1',
-            'img' => 'ds_pfp',
-            'img_wall' => 'ds_wall',
+            'img' => 'ds_pfp.jpg',
+            'img_wall' => 'ds_wall.jpg',
             'likes' => 75,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -39,8 +39,8 @@ class CafeteriaSeeder extends Seeder
         DB::table('cafeterias')->insert([
             'name' => 'María Auxiliadora',
             'user_id' => '1',
-            'img' => 'ma_pfp',
-            'img_wall' => 'ma_wall',
+            'img' => 'ma_pfp.jpg',
+            'img_wall' => 'ma_wall.jpg',
             'likes' => 125,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

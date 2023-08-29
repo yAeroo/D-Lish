@@ -19,10 +19,21 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'email' => 'oscar@email.com',
             'name' => 'Óscar',
+            'saldo_disp' => null,
+            'saldo_off' => null,
+            'password' => Hash::make('con123'),
+            'type' => 'owner',
+            'gender' => 'M',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        DB::table('users')->insert([
+            'email' => 'mateo@email.com',
+            'name' => 'Mateo',
             'saldo_disp' => 200,
             'saldo_off' => 175,
             'password' => Hash::make('con123'),
-            'type' => 'owner',
+            'type' => 'user',
             'gender' => 'M',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

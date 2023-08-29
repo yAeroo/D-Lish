@@ -15,6 +15,8 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 export default function Carrousel() {
     // Extraemos datos del ccontext
     const { cafeterias } = useCafeterias();
+    console.log(cafeterias);
+
 
     return (
         <>
@@ -28,7 +30,7 @@ export default function Carrousel() {
 
                 {cafeterias ? cafeterias.map((cafe, i) => (
                     <SwiperSlide key={i}
-                        style={{ backgroundImage: `url(src/assets/cafeterias/${cafe.cafe_wallp}.jpg)` }}
+                        style={{ backgroundImage: `url(/assets/cafeterias/${cafe.cafe_wallp})` }}
                         className={`bg-cover bg-center`}>
 
                         <div className="h-full flex md:justify-start md:items-end justify-center items-center bg-black/50 px-24 md:pb-20 pt-20 pb-0 md:pt-0">
