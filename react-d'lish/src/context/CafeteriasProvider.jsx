@@ -24,8 +24,6 @@ const CafeteriasProvider = ({ children }) => {
         try {
             const { data } = await clienteAxios(`/api/cafeterias/${cafeteriaId}`);
             const cafeteria = data.data[0];
-            console.log(cafeteria);
-            // Guardar en localStorage
             setContenidoCafeteria(cafeteria);
         } catch (error) {
             console.log(error);
