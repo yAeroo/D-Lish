@@ -1,5 +1,5 @@
 import React from 'react'
-import DeliveryProducts from './DeliveryProducts';
+import Pupusas from "../../assets/index/pupusas.jpg"; 
 
 function OrderProps(props) {
   const {nameuser, platillo, content1, content2 } = props;
@@ -77,25 +77,36 @@ function OrderProps(props) {
             <thead className="text-white">
 
                 <tr className="bg-secondary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                  <th className="p-3 text-left">Id</th>
-                  <th className="p-3 text-left">Nombre</th>
-                  <th className="p-3 text-left h-[242px] sm:h-[49px]">
-                    Imagen
-                  </th>
+                  <th className="p-3 text-left">Realizado por</th>
+                  <th className="p-3 text-left">Complemento 1</th>
                   <th className="p-3 text-left" width="110px">
-                    Precio
+                    Complemento 2
                   </th>
                   <th className="p-3 text-left" width="110px">
                     Acciones
                   </th>
                 </tr>
-
             </thead>
-            <tbody className="flex-1 sm:flex-none text-[#414141]">
-                <DeliveryProducts />
+            
+          <tbody className="flex-1 sm:flex-none text-[#414141]">
+          <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+					<td className="border-grey-light border hover:bg-gray-100 p-3">{nameuser}</td>
+					<td className="border-grey-light border hover:bg-gray-100 p-3 truncate">{content1}</td>
+                    <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                    {content1}
+                    </td>
 
 
-            </tbody>
+           {/*Botones*/}
+					  <td className="border-grey-light border p-3  hover:font-medium ">
+              <div className='flex sm:justify-center gap-3'>
+					  	<td className="font-medium text-center text-primary "><button className="btn btn-outline btn-success">Aceptar</button></td>
+              <td className="font-medium text-center text-primary "><button className="btn btn-outline btn-error">Denegar</button></td>
+              </div>
+            </td>
+                      
+				  </tr>
+          </tbody>
           </table>
         </div>
       </div>
