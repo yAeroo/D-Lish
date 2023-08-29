@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password', 60); // Columna 'Password' - String
             $table->enum('type', ['user', 'admin', 'owner'])->default('user'); // Columna 'type' - Rol de usuario, admin y propietario
             $table->enum('gender', ['M', 'F']); // Columna 'gender' - Femenino y masculino
-            $table->string('profile_pic', 40)->default("default-pfp.png"); // Columna 'profile_pic' - string con valor por default "default-pfp.png" para nuevos usuarios
+            $table->string('profile_pic', 41)->default("default-pfp.png"); // Columna 'profile_pic' - string con valor por default "default-pfp.png" para nuevos usuarios
             $table->timestamps();
         });
     }

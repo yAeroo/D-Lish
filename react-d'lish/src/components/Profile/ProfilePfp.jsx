@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
 
 // Función imagenes
 import FileUpload from "../ImgFunction";
@@ -24,10 +22,10 @@ export default function ProfilePfp() {
             <dialog id="pfp_modal" className="modal">
                 <form method="dialog" className="modal-box !bg-neutral">
                     <h3 className="font-bold font-title text-xl text-center text-white">Actualiza tu foto de perfil</h3>
-
+                    
                     {/* Componente label para subida de imagenes + botones de accion */}
                     <FileUpload />
-                </form>
+                </form> 
             </dialog>
         </>
     )
