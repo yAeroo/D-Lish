@@ -17,7 +17,7 @@ function DeliveryModeAdmin() {
   console.log(data, error, isLoading);
 
   return (
-    <div className='lg:ml-[10rem] sm:ml-[5rem] ml-[2rem] h-[100%] animate-fade animate-duration-500'>
+    <div className='lg:ml-[10rem] sm:ml-[5rem] ml-[1/2rem] h-[100%] animate-fade animate-duration-500'>
 
 
       {/* Mensaje de Arriba */}
@@ -31,7 +31,14 @@ function DeliveryModeAdmin() {
       </div>
 
       {/* Content */}
-      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusas" content2="Fresco $0.25" />
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
+
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
+
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
+
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
+      
 
 
       <br />
