@@ -9,7 +9,6 @@ import useCafeterias from "../hooks/useCafeterias";
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
 import FoodCard from "../components/Cafeteria/FoodCard";
-import NavCafetin from "../components/Nav/NavCafetin";
 
 export default function CafetinView() {
   // Extraer parametro
