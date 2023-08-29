@@ -4,7 +4,7 @@ import SideBar from '../components/Admin/SideBar.jsx'
 import { useAuth } from "../hooks/useAuth";
 
 function AdminLayout() {
-  useAuth({ middleware: 'owner' })
+  useAuth({ middleware: 'owner' });
 
   return (
     <div className="bg-neutral-100 ">

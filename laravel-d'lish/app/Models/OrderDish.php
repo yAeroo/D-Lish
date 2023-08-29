@@ -22,9 +22,14 @@ class OrderDish extends Model
         'final_price'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function mainDish()
     {
-        return $this->hasMany(MainDish::class);
+        return $this->belongsTo(MainDish::class);
     }
 
     public function sideDish1()

@@ -11,7 +11,7 @@ export default function Pedidos() {
     })
 
     const { data, error, isLoading } = useSWR('/api/cafeteria/1/ordenes', fetcher);
-    console.log(data);
+    console.log(data?.data);
 
     return (
         <div >
