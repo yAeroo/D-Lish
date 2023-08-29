@@ -1,5 +1,6 @@
 import React from 'react'
 import OrderProps from '../../components/Admin/OrderProps'
+import HeaderOrder from '../../components/Admin/HeaderOrder';
 
 // COMPONENTES DE CONTENIDO VARIABLE
 import useSWR from 'swr';
@@ -21,28 +22,32 @@ function DeliveryModeAdmin() {
 
 
       {/* Mensaje de Arriba */}
-      <div className="flex items-center justify-between py-7 px-10 ">
-        <div>
-          <h1 className="text-2xl font-semibold leading-relaxed text-primary">Ordenes</h1>
-          <p className="text-sm font-medium text-gray-800">
-            Acepta o niega pedidos de tu local
-          </p>
-        </div>
-      </div>
+      <HeaderOrder platillo='Carne' />
 
       {/* Content */}
-      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
-
-      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
-
-      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
-
-      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Pupusa" content2="Fresco $0.25" />
-      
-
-
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+      <OrderProps nameuser="José Cea" platillo="Desayuno" content1="Casamiento" content2="Chimol" />
+      <OrderProps nameuser="Oscar Arce" platillo="Desayuno" content1="Arroz" content2="Ensalada" />
       <br />
+
+            {/* Platillo2 */}
+      <HeaderOrder platillo='Pollo' />
+
+      {/* Content */}
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+      <br />
+
+
+            {/* Platillo  */}
+      <HeaderOrder platillo='Lasagna' />
+
+      {/* Content */}
+      <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+      <br />
+
+      
     </div>
+    
   )
 }
 
