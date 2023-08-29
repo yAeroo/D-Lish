@@ -48,7 +48,7 @@ const OrdersProvider = ({ children }) => {
             // Redirigir
             redirigir();
         } catch (error) {
-            let Errores = Object.values(error.response.data.errors);
+            let Errores = Object.values(error?.response?.data?.errors);
             setErrores(Errores);
             // Evalua si hay errores o no para notificar
             Errores ? notiError() : null;

@@ -1,5 +1,9 @@
 import { useTranslation } from "react-i18next";
 
+// Icon
+import "../../css/spinner.css";
+import { ImSpinner } from "react-icons/im";
+
 import { createRef, useState } from 'react';
 // Habilitando archivo para router link
 import { Link } from "react-router-dom";
@@ -24,11 +28,17 @@ export default function Registro() {
     const passwordRef = createRef();
     const passwordConfirmationRef = createRef();
 
+    const [registrar, setRegistrar] = useState(t("actions.to-register"));
     const [errores, setErrores] = useState([]);
     const { registro } = useAuth({ middleware: 'guest', url: '/profile' })
 
     const handleSubmit = async e => {
         e.preventDefault();
+        setRegistrar(<ImSpinner className="loading-icon" />)
+
+        setTimeout(() => {
+            setRegistrar(t("actions.to-login"));
+        }, 750);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -39,7 +49,7 @@ export default function Registro() {
             password_confirmation: passwordConfirmationRef.current.value
         }
 
-        registro(datos, setErrores, NotiError);
+        registro(datos, setErrores, NotiError, load);
     }
 
     // Toastify
@@ -51,13 +61,17 @@ export default function Registro() {
         "!bg-[#191E2B] !font-body !py-2"
     );
 
+    const load = () => {
+        setIniciar(<ImSpinner className="loading-icon" />)
+    }
+
     // HTML
     return (
         <>
             <div className="content-form-center">
                 {/* Imagen de Logo */}
                 <a href="#" className="flex items-center mb-8  ">
-                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={ LogoImg } alt="logo" />
+                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={LogoImg} alt="logo" />
                 </a>
 
                 {/* Formulario e Inputs */}
@@ -157,7 +171,7 @@ export default function Registro() {
                                 <button
                                     className="btn no-animation w-full btn-info text-white font-plane"
                                     type="submit">
-                                    {t("actions.to-register")}
+                                    {registrar}
                                 </button>
                             </div>
 

@@ -24,19 +24,19 @@ export const useAuth = ({ middleware, url }) => {
     );
 
     // Función async await
-    const login = async (datos, setErrores, notiError) => {
-
+    const login = async (datos, setErrores, notiError, load) => {
         try {
             const { data } = await clienteAxios.post('/api/login', datos);
             // Guardar token de auth en localstorage
             localStorage.setItem('AUTH_TOKEN', data.token);
             // Si todo esta bien
+            load();
             setErrores([]);
             // Función para forzar revalidación
             await mutate();
         } catch (error) {
             // Errores dados por Axios
-            let Errores = Object.values(error.response.data.errors);
+            let Errores = Object.values(error?.response?.data?.errors);
             // Define errores para el frontend
             setErrores(Errores);
             // Evalua si hay errores o no para notificar
@@ -44,17 +44,18 @@ export const useAuth = ({ middleware, url }) => {
         }
     }
 
-    const registro = async (datos, setErrores, notiError) => {
+    const registro = async (datos, setErrores, notiError, load) => {
         try {
             const { data } = await clienteAxios.post('/api/registro', datos);
             localStorage.setItem('AUTH_TOKEN', data.token)
             // Limpiar State
             setErrores([]);
+            load();
             // Revalidar token de usuario
             await mutate();
         } catch (error) {
             // Errores dados por Axios
-            let Errores = Object.values(error.response.data.errors);
+            let Errores = Object.values(error?.response?.data?.errors);
             // Define errores para el frontend
             setErrores(Errores);
             // Evalua si hay errores o no para notificar

@@ -1,5 +1,9 @@
 import { useTranslation } from "react-i18next";
 
+// Icon
+import "../../css/spinner.css";
+import { ImSpinner } from "react-icons/im";
+
 import { createRef, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 // Habilitando archivo para router link
@@ -19,6 +23,7 @@ export default function Login() {
     const passwordRef = createRef();
 
     const [errores, setErrores] = useState([]);
+    const [iniciar, setIniciar] = useState(t("actions.to-login"));
 
     // Simulamos parametros de laravel para el hook
     const { login } = useAuth({
@@ -36,7 +41,11 @@ export default function Login() {
         }
 
         // Pasamos los datos necesarios a la función
-        await login(datos, setErrores, NotiError);
+        await login(datos, setErrores, NotiError, load);
+    }
+
+    const load = () => {
+        setIniciar(<ImSpinner className="loading-icon" />)
     }
 
     // Toastify
@@ -55,7 +64,7 @@ export default function Login() {
 
                 {/* Imagen de Logo */}
                 <a href="#" className="flex items-center mb-8  ">
-                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={ LogoImg } alt="logo" />
+                    <img className="w-auto h-2/5 sm:max-h-[12rem]" src={LogoImg} alt="logo" />
                 </a>
 
                 {/* Formulario e Inputs */}
@@ -108,7 +117,7 @@ export default function Login() {
                                 <button
                                     className="btn no-animation w-full btn-success text-white font-plane"
                                     type="submit">
-                                    {t("actions.to-login")}
+                                    {iniciar}
                                 </button>
                             </div>
 
