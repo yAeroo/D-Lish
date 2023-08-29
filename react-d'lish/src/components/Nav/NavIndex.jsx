@@ -25,12 +25,9 @@ export default function NavIndex() {
   return (
     <section className="py-4 md:px-24 px-4 drop-shadow-2xl">
       <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none hidden md:flex">
-        <Link to="/">
-          <img
-            src={Icon}
-            alt="Logo"
-            className="h-10 md:h-12 cursor-pointer my-auto"
-          />
+      <Link to="/">
+          <img src={Icon} className="block lg:hidden h-12 cursor-pointer my-auto" />
+          <img src={IconWide} className="hidden lg:block h-12 cursor-pointer my-auto" />
         </Link>
         <div className="form-control relative">
           <div className="input-group">
