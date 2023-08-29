@@ -31,18 +31,19 @@ export default function Search() {
     <>
     <NavMobileIndex />
 
-    <div className='absolute w-full z-10'>
-    <section className="py-4 md:px-24 px-4 drop-shadow-2xl">
-      <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none">
-      <Link to="/">
-          <img src={Icon} className="block lg:hidden h-12 cursor-pointer my-auto" />
-        </Link>
+    <section className="flex justify-start">
+      <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7">¡Bienvenido Lucas Ríos!</h1>
+    </section>
+
+    <div className='absolute w-full items-center z-10'>
+    <section className="py-3 md:px-24 px-2 drop-shadow-2xl">
+      <nav className="flex justify-center items-center rounded-2xl bg-neutral drop-shadow-md py-5 list-none">
         <div className="form-control relative">
           <div className="input-group">
             <input
               type="text"
               placeholder="¿Qué estas buscando el dia de hoy?"
-              className="input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] focus:outline-none"
+              className="input bg-slate-900 w-[18rem] xl:text-md md:text-[0.9rem] text-sm focus:outline-none"
               autoComplete="off"
               value={searchText}
               onChange={handleSearchInput}
@@ -67,7 +68,7 @@ export default function Search() {
           {showFloatingContainer && (
 
             /* Contenido del contenedor flotante */
-            <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+            <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
               <div className="h-auto">
 
                 <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
@@ -75,8 +76,6 @@ export default function Search() {
                 <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
 
                 <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
-
-                <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
 
               </div>
             </div>
