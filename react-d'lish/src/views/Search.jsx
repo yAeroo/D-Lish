@@ -10,6 +10,7 @@ import { FaUserCircle } from "react-icons/fa";
 //Imagenes
 import Burrito from "/src/assets/index/burrito.jpg";
 import Pupusas from "/src/assets/index/pupusas.jpg";
+import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png"
 //Componentes
 import FoodCardSearch from "../components/FoodCardSearch";
 
@@ -35,7 +36,7 @@ export default function Search() {
       <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7">¡Bienvenido Lucas Ríos!</h1>
     </section>
 
-    <div className='absolute w-full items-center z-10'>
+    <div className='w-full items-center z-10'>
     <section className="py-3 md:px-24 px-2 drop-shadow-2xl">
       <nav className="flex justify-center items-center rounded-2xl bg-neutral drop-shadow-md py-5 list-none">
         <div className="form-control relative">
@@ -85,6 +86,31 @@ export default function Search() {
     </section>
     </div>
 
+    <div className="grid grid-cols-2 gap-4 p-4">
+      {/* Contenedor de Desayunos */}
+      <div
+        className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
+        style={{ backgroundImage: `url(${DesayunoBanner})` }}
+      >
+        <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">Desayunos</div>
+      </div>
+
+      {/* Contenedor de Otros */}
+      <div
+        className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
+        style={{ backgroundImage: `url(${DesayunoBanner})` }}
+      >
+        <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">Otros</div>
+      </div>
+
+      {/* Contenedor de Almuerzos */}
+      <div
+        className="bg-cover bg-center h-[12rem] relative col-span-2 rounded-md"
+        style={{ backgroundImage: `url(${DesayunoBanner})` }}
+      >
+        <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">Almuerzos</div>
+      </div>
+    </div>
     
     </>
   )
