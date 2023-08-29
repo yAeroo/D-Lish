@@ -22,6 +22,10 @@ class OrderDish extends Model
         'final_price'
     ];
 
+    // Definición de propiedades del JSON mediante las relaciones de los métodos del modelo
+    protected $with = ['user', 'mainDish', 'sideDish1', 'sideDish2', 'accompaniment', 'drink'];
+
+    // Relaciones con otros modelos de la DB
     public function user()
     {
         return $this->belongsTo(User::class);
