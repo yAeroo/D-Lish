@@ -34,11 +34,6 @@ export default function Registro() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        setRegistrar(<ImSpinner className="loading-icon" />)
-
-        setTimeout(() => {
-            setRegistrar(t("actions.to-login"));
-        }, 750);
 
         // Propiedades del objeto, según como los espera Laravel
         const datos = {
@@ -62,7 +57,7 @@ export default function Registro() {
     );
 
     const load = () => {
-        setIniciar(<ImSpinner className="loading-icon" />)
+        setRegistrar(<ImSpinner className="loading-icon" />)
     }
 
     // HTML
