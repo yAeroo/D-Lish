@@ -8,6 +8,9 @@ import Burrito from "/src/assets/index/burrito.jpg";
 import Pupusas from "/src/assets/index/pupusas.jpg";
 //Componentes
 import FoodCardSearch from "../FoodCardSearch";
+//Iconos
+import Icon from "../../../src/assets/logo/icon_bw.png"
+import IconWide from "../../../src/assets/logo/wide_white.png";
 
 export default function NavIndex() {
 
