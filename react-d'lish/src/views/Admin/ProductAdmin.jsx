@@ -2,6 +2,7 @@ import React from "react";
 import { AiFillDelete } from "react-icons/ai";
 import ProductRow from "../../components/Admin/ProductRow";
 import ProductModal from "../../components/Admin/ProductModal";
+import ProductHeader from "../../components/Admin/ProductHeader";
 
 // Css
 import "../../css/productsTable.css";
@@ -15,17 +16,23 @@ function ProductAdmin() {
     // ... aquí es de agregar mas productos ...
   ];
 
-  const side_dish1 = [];
+  const side_dish1 = [
+    
+  ];
 
   const side_dish2 = [];
 
-  const accompaniement = [];
+  const accompaniement = [
+    { id: 4, name: "Producto 4", img: "image4.jpg", price: 10.99 },
+  ];
 
-  const drink = [];
+  const drink = [
+    
+  ];
 
   return (
     <div className="lg:ml-[10rem] mb-10 sm:ml-[2rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500">
-      {/* ------- Open the modal using ID.showModal() method ----------*/}
+      {/* ------- El modal se abre con el metodo ID.showModal() ----------*/}
       <button
         className="btn btn-primary mt-[48px] sm:ml-[36px] sm:mt-[150px]"
         onClick={() => window.product_modal_1.showModal()}
@@ -40,30 +47,24 @@ function ProductAdmin() {
 
       {/* ------------- FIN DEL MODAL ------------ */}
 
+
+      {/************************************************/}
+      {/* ------------Almuerzos/Desayunos------------- */}
+      {/************************************************/}
+
       <h3 className="my-7 text-center text-terc font-bold text-2xl">
         {" "}
         Almuerzos/Desayunos{" "}
       </h3>
 
+      <div id="MainDishCont" className={accompaniement.length === 0 ? "hidden" : ""}>
       <div className="flex items-center w-[95%] justify-center">
         <div className="container">
           <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
             <thead className="text-white">
               {main_dish.map((main_dish) => (
                 // Encabezado de la tabla para cada producto
-                <tr className="bg-terc flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-                  <th className="p-3 text-left">Id</th>
-                  <th className="p-3 text-left">Nombre</th>
-                  <th className="p-3 text-left h-[242px] sm:h-[49px]">
-                    Imagen
-                  </th>
-                  <th className="p-3 text-left" width="110px">
-                    Precio
-                  </th>
-                  <th className="p-3 text-left" width="110px">
-                    Acciones
-                  </th>
-                </tr>
+               <ProductHeader/>
               ))}
             </thead>
             <tbody className="flex-1 sm:flex-none text-[#414141]">
@@ -87,21 +88,169 @@ function ProductAdmin() {
           </table>
         </div>
       </div>
+      </div>
 
-      <div className="hidden">
+      {/************************************************/}
+      {/* ---------------Acompañamientos-------------- */}
+      {/************************************************/}
+
+      <div id="AcompCont" className={accompaniement.length === 0 ? "hidden" : ""}>
         <h3 className="my-7 text-center text-terc font-bold text-2xl ">
           {" "}
           Acompañamientos{" "}
         </h3>
+
+        <div className="flex items-center w-[95%] justify-center">
+        <div className="container">
+          <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead className="text-white">
+              {accompaniement.map((accompaniement) => (
+                // Encabezado de la tabla para cada producto
+                <ProductHeader/>
+              ))}
+            </thead>
+            <tbody className="flex-1 sm:flex-none text-[#414141]">
+              {accompaniement.map((accompaniement) => (
+                <ProductRow
+                  key={accompaniement.id}
+                  ProductNum={accompaniement.id}
+                  ProductItem={accompaniement.name}
+                  ProductIMG={accompaniement.img}
+                  ProductPrice={accompaniement.price}
+                />
+              ))}
+
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div className="hidden">
-        <h3 className="my-7 text-center text-terc font-bold text-2xl hidden">
+      </div>
+      
+      {/************************************************/}
+      {/* ------------------BEBIDAS------------------- */}
+      {/************************************************/}
+      
+
+      <div id="DrinkCont" className={drink.length === 0 ? "hidden" : ""}>
+
+        <h3 className="my-7 text-center text-terc font-bold text-2xl">
           {" "}
           Bebidas{" "}
         </h3>
+
+        <div className="flex items-center w-[95%] justify-center">
+        <div className="container">
+          <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead className="text-white">
+              {drink.map((drink) => (
+                // Encabezado de la tabla para cada producto
+                <ProductHeader/>
+              ))}
+            </thead>
+            <tbody className="flex-1 sm:flex-none text-[#414141]">
+              {drink.map((drink) => (
+                <ProductRow
+                  key={drink.id}
+                  ProductNum={drink.id}
+                  ProductItem={drink.name}
+                  ProductIMG={drink.img}
+                  ProductPrice={drink.price}
+                />
+              ))}
+
+            </tbody>
+          </table>
+        </div>
       </div>
+      </div>
+
+
+      {/************************************************/}
+      {/* ----------------SIDE DISH1------------------ */}
+      {/************************************************/}
+      
+
+
+      <div id="SideDish1Cont" className={side_dish1.length === 0 ? "hidden" : ""}>
+
+        <h3 className="my-7 text-center text-terc font-bold text-2xl">
+          {" "}
+          Complemento 1{" "}
+        </h3>
+
+        <div className="flex items-center w-[95%] justify-center">
+        <div className="container">
+          <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead className="text-white">
+              {side_dish1.map(() => (
+                // Encabezado de la tabla para cada producto
+                <ProductHeader/>
+              ))}
+            </thead>
+            <tbody className="flex-1 sm:flex-none text-[#414141]">
+              {side_dish1.map((side_dish1) => (
+                <ProductRow
+                  key={side_dish1.id}
+                  ProductNum={side_dish1.id}
+                  ProductItem={side_dish1.name}
+                  ProductIMG={side_dish1.img}
+                  ProductPrice={side_dish1.price}
+                />
+              ))}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+
+      {/************************************************/}
+      {/* ----------------SIDE DISH2------------------ */}
+      {/************************************************/}
+      
+
+
+      <div id="SideDish2Cont" className={side_dish2.length === 0 ? "hidden" : ""}>
+
+        <h3 className="my-7 text-center text-terc font-bold text-2xl">
+          {" "}
+          Complemento 2{" "}
+        </h3>
+
+        <div className="flex items-center w-[95%] justify-center">
+        <div className="container">
+          <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead className="text-white">
+              {side_dish2.map(() => (
+                // Encabezado de la tabla para cada producto
+                <ProductHeader/>
+              ))}
+            </thead>
+            <tbody className="flex-1 sm:flex-none text-[#414141]">
+              {side_dish2.map((side_dish2) => (
+                <ProductRow
+                  key={side_dish2.id}
+                  ProductNum={side_dish2.id}
+                  ProductItem={side_dish2.name}
+                  ProductIMG={side_dish2.img}
+                  ProductPrice={side_dish2.price}
+                />
+              ))}
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+
+
+
+     {/* FIN DE ESTA COSA */}
     </div>
+
+
+
   );
 }
 
