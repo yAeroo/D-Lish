@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CafeteriaController;
 
 /*
@@ -29,6 +30,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);
+
+    // SUBIDA DE IMAGEN ==============
+    Route::post('/user/{id}/upload-image', [ImageController::class, 'store']);
 });
 
 // AUTENTICACIÓN ================ 
