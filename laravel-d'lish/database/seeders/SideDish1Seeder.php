@@ -30,6 +30,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Arroz',
                 'cafeteria_id' => 1,
+                // 'img' => 'arroz.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -37,6 +38,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Casamiento',
                 'cafeteria_id' => 1,
+                // 'img' => 'casamiento.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -45,6 +47,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Arroz',
                 'cafeteria_id' => 2,
+                // 'img' => 'arroz.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -52,6 +55,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Casamiento',
                 'cafeteria_id' => 2,
+                // 'img' => 'casamiento.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -60,6 +64,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Arroz',
                 'cafeteria_id' => 3,
+                // 'img' => 'arroz.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -67,6 +72,7 @@ class SideDish1Seeder extends Seeder
             [
                 'name' => 'Casamiento',
                 'cafeteria_id' => 3,
+                // 'img' => 'casamiento.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

@@ -22,6 +22,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Ensalada',
                 'cafeteria_id' => 1,
+                // 'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -29,6 +30,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 1,
+                // 'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -37,6 +39,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Ensalada',
                 'cafeteria_id' => 2,
+                // 'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -44,6 +47,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 2,
+                // 'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -51,6 +55,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Coditos',
                 'cafeteria_id' => 2,
+                // 'img' => 'coditos.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -59,6 +64,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Ensalada',
                 'cafeteria_id' => 3,
+                // 'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -66,6 +72,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 3,
+                // 'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
