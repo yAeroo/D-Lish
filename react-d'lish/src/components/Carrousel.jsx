@@ -17,7 +17,6 @@ export default function Carrousel() {
     const { cafeterias } = useCafeterias();
     console.log(cafeterias);
 
-
     return (
         <>
             <Swiper
@@ -31,7 +30,7 @@ export default function Carrousel() {
                 {cafeterias ? cafeterias.map((cafe, i) => (
                     <SwiperSlide key={i}
                         style={{ backgroundImage: `url(/assets/cafeterias/${cafe.cafe_wallp})` }}
-                        className={`bg-cover bg-center`}>
+                        className={`bg-cover bg-center img`}>
 
                         <div className="h-full flex md:justify-start md:items-end justify-center items-center bg-black/50 px-24 md:pb-20 pt-20 pb-0 md:pt-0">
                             <div className="max-w-md md:text-start text-center">

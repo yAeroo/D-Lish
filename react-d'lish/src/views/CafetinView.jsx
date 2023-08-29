@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 //Componentes
 import WiggleAlert from "../components/WiggleAlert";
-import db_wall from "../assets/cafeterias/db_wall.jpg";
 
 // CONTENIDO VARIABLE
 import useCafeterias from "../hooks/useCafeterias";

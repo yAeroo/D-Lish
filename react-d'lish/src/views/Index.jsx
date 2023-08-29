@@ -28,7 +28,7 @@ export default function Index() {
 
       {/* NavBar Flotante */}
       <div className='absolute w-full z-10'>
-        <NavIndex />
+        {/* <NavIndex /> */}
       </div>
 
       <NavMobileIndex />

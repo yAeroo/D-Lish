@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie', 'https://64edf746be44021f00e546e1--dlish-test.netlify.app/*'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'https://dlish-test.net/*'],
 
     'allowed_methods' => ['*'],
 
