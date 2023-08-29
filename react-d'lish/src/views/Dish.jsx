@@ -47,7 +47,7 @@ export default function Dish() {
       main_dish: +dishId,
       side_dish1: null,
       side_dish2: null,
-      accompaniement: null,
+      accompaniement: 0,
       drink: 0,
     })
   }, [user,]);
@@ -91,7 +91,7 @@ export default function Dish() {
             <div className="flex flex-col w-full border-opacity-50">
               <br />
               <form className='text-white'>
-                <div className=" font-bold mb-1">Platillo Principal</div>
+                <div className=" font-bold mb-1">Platillo Principal | Obligatorio</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -104,7 +104,7 @@ export default function Dish() {
                 </div>
 
                 <br />
-                <div className=" font-bold mb-1">Complemento 1</div>
+                <div className=" font-bold mb-1">Complemento 1 | Obligatorio</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -119,7 +119,7 @@ export default function Dish() {
                 </div>
                 <br />
 
-                <div className=" font-bold mb-1">Complemento 2</div>
+                <div className=" font-bold mb-1">Complemento 2 | Obligatorio</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
