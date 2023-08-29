@@ -1,21 +1,21 @@
 {
     "actions" : {
-        "login"    : "Iniciar sesión",
-        "to-login"  : "Ingresar",
-        "register" : "Registrarse",
-        "to-register" : "Regístrate",
-        "go-back"  : "Regresar",
-        "log-off"  : "Cerrar sesión"
+        "login"    : "Login",
+        "to-login"  : "Sign in",
+        "register" : "Sign up",
+        "to-register" : "Sign up",
+        "go-back"  : "Go back",
+        "log-off"  : "Log off"
     },
     "homepage" : {
-        "hero-title" : "Ordena tu comida de manera rápida y sencilla.",
-        "hero-desc"  : "¿Cansado de filas de espera? Ingresa y ordena tu comida con nosotros.",
-        "features-title"  : "Descubre la nueva forma de hacer pedidos en línea.",
-        "feature-1-title" : "Fácil de usar",
-        "feature-1-desc"  : "Interfaz amigable e intuitiva que se adapta a todas tus necesidades.",
-        "feature-2-title" : "Para todos",
-        "feature-2-desc"  : "Plataforma adaptada para estudiantes, maestros, y propietarios de cafeterías.",
-        "feature-3-title" : "Multiplataforma",
+        "hero-title" : "Order your food on an easy and a fast way.",
+        "hero-desc"  : "Tired of long queues? Sign up and order our food with us.",
+        "features-title"  : "Discover the new way to order online.",
+        "feature-1-title" : "Easy to use",
+        "feature-1-desc"  : "Friendly and intuitive interface that adapts to all your needs.",
+        "feature-2-title" : "For All",
+        "feature-2-desc"  : "Platform design for students, teachers and cafeterias owners.",
+        "feature-3-title" : "Crossplatform",
         "feature-3-desc"  : "Interfaz adaptable y visualización adecuada a todos los dispositivos.",
         "who-title" : "¿Quiénes somos?",
         "who-desc"  : "En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una aplicación web apasionada por brindar un servicio compra conveniente y eficiente.",
@@ -38,19 +38,19 @@
         "complete-name" : "Full name",
         "name-placeholder" : "Name & last name",
 
-        "student-email" : "Institutional Mail",
+        "student-email" : "Institutional mail",
         "student-email-placeholder" : "estudiante@cdb.edu.sv",
 
-        "gender" : "Género",
-        "select-gender" : "Seleccionar género",
-        "gender-M" : "Masculino",
-        "gender-F" : "Femenino",
+        "gender" : "Gender",
+        "select-gender" : "Select a gender",
+        "gender-M" : "Male",
+        "gender-F" : "Female",
 
-        "password" : "Contraseña",
-        "repeat-pw" : "Repetir contraseña"
+        "password" : "Password",
+        "repeat-pw" : "Repeat password"
     },
     "footer" : {
-        "project-desc" : "Proyecto Crea-J 2023",
-        "copyright"    : "Copyright ©  - Todos los derechos reservados"
+        "project-desc" : "Crea-J project 2023",
+        "copyright"    : "Copyright ©  - All rights reserved"
     }
 }
