@@ -35,8 +35,6 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-// CONTENIDOS ===================
-Route::apiResource('/cafeterias', CafeteriaController::class);
-
 // CONTENIDO CAFETERIA ==========
+Route::apiResource('/cafeterias', CafeteriaController::class);
 Route::apiResource('/cafeterias/{id}', CafeteriaController::class);

@@ -1,5 +1,5 @@
 import ProfileInfo from "../../components/Profile/ProfileInfo";
-import { formatearDinero } from "../../helper";
+import { formatearDinero } from "../../helper/Money";
 
 // Icons
 import { TbPigMoney } from "react-icons/tb";

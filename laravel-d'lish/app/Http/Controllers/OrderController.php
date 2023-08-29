@@ -5,6 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\OrderDish;
 use Illuminate\Http\Request;
 use App\Http\Requests\OrderDishRequest;
+use App\Http\Resources\AccompanimentResource;
+use App\Http\Resources\CafeteriaResource;
+use App\Http\Resources\DrinkResource;
+use App\Http\Resources\MainDishResource;
+use App\Http\Resources\SideDish1Resource;
+use App\Http\Resources\SideDish2Resource;
+use App\Models\Accompaniment;
+use App\Models\Cafeteria;
+use App\Models\Drink;
+use App\Models\MainDish;
+use App\Models\SideDish1;
+use App\Models\SideDish2;
 
 class OrderController extends Controller
 {
@@ -28,22 +40,28 @@ class OrderController extends Controller
     {
         // Validamos ID's
         $data = $request->validated();
-
-        // Evaluamos si incluyo bebida ó acompañantes
+        // Evaluamos Valores posiblemente nulos
         $precioFinal = 2.50;
 
         if ($data['drink'] != 0) {
             $precioFinal = 2.75;
+            $bebida = new DrinkResource(Drink::findOrFail($data['drink']));
+            $bebida = $bebida->name;
         } else {
+            $bebida = null;
             $data['drink'] = null;
         }
 
         if ($data['accompaniement'] == 0) {
-            $data['accompaniement'] = null;
+            $acompant = null;
+            $data['accompaniement'] = $acompant;
+        } else {
+            $acompant = new AccompanimentResource(Accompaniment::findOrFail($data['accompaniement']));
+            $acompant = $acompant->name;
         }
 
         // Creamos el registro
-        $orden = OrderDish::create([
+        OrderDish::create([
             'user_id' => $data['userId'],
             'cafeteria_id' => $data['cafeteriaId'],
             'category' => 'almuerzo',
@@ -57,10 +75,22 @@ class OrderController extends Controller
             'final_price' => $precioFinal,
         ]);
 
+        // Concatenamos respuesta de nombres
+        $cafeteria = new CafeteriaResource(Cafeteria::findOrFail($data['cafeteriaId']));
+        $mainDish = new MainDishResource(MainDish::findOrFail($data['main_dish']));
+        $sideDish1 = new SideDish1Resource(SideDish1::findOrFail($data['side_dish1']));
+        $sideDish2 = new SideDish2Resource(SideDish2::findOrFail($data['main_dish']));
+
         // Retornar una respuesta
-        return [
-            'orden' => $orden
-        ];
+        return response([
+            'cafeteria' => $cafeteria->name,
+            'principal' => $mainDish->name,
+            'complement1' => $sideDish1->name,
+            'complement2' => $sideDish2->name,
+            'bebida' => $bebida,
+            'acompanante' => $acompant,
+            'precio' => $precioFinal
+        ], 200);
     }
 
     /**

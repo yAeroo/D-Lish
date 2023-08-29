@@ -2,8 +2,8 @@ import '../../css/cutoff-border.css';
 import '../../css/dishSelection.css';
 import "../../css/buttons.css";
 
-import logoDlish from '../../assets/logo/icon_rounded.png';
-import fontDlish from '../../assets/logo/dlish_font_n.png';
+import logoDlish from '../../assets/logo/icon_bw.png';
+import fontDlish from '../../assets/logo/title_bw.png';
 
 import Footer from '../../components/Footer';
 
@@ -13,15 +13,13 @@ import { useEffect } from 'react';
 import useFechaActual from '../../hooks/useFecha';
 import TableRow from '../../components/TableRow';
 import useOrders from '../../hooks/useOrders';
-import useCafeterias from '../../hooks/useCafeterias';
 
 function Order() {
   const { orden } = useOrders();
-  const { cafeterias, contenidoCafeteria } = useCafeterias();
-  const { cafeteriaId, drink, main_dish, side_dish1, side_dish2, accompaniement } = orden;
-
+  console.log(orden);
+  const { cafeteria } = orden;
   const fechaActual = useFechaActual();
-  const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == cafeteriaId);
+  const finalOrden = Object.keys(orden).filter(propiedad => orden[propiedad] !== null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,22 +34,22 @@ function Order() {
         <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow">
           {/* lo que centra y maneja la posicion del cuadro  */}
           <div className="col-start-2  place-self-center items-center  md:px-1 ">
-            <h2 className='text-center text-3xl font-bold '>¡ORDEN REALIZADA!</h2>
+            <h2 className='text-center text-3xl font-bold text-white'>¡ORDEN REALIZADA!</h2>
             {/* Cuerpo del La card */}
-            <div id="box" className="box lg:px-4 bg-[#fffde7]">
+            <div id="box" className="box lg:px-4 bg-[#ffffff27] text-white">
               {/* contenido carta */}
               <div className='pt-7 px-4 flex'>
-                <img src={logoDlish} className='w-1/5 cursor-pointer my-auto px-2 rotate-[-20deg] contrast-[.20]' alt="LogoType" />
-                <img src={fontDlish} className='w-1/5 cursor-pointer my-auto contrast-[.20]' alt="FontType" />
-                <p className="text-center text-sm px-24 contrast-[.20] pt-[1.5rem] text-black pt- pb-6 tracking-normal font-title font-extrabold">
+                <img src={logoDlish} className='w-1/5 cursor-pointer my-auto px-2 rotate-[-20deg]  ' alt="LogoType" />
+                <img src={fontDlish} className='w-1/5 cursor-pointer my-auto' alt="FontType" />
+                <p className="text-center text-md px-24 pt-[1.5rem] text-white pb-6 tracking-normal font-title font-extrabold">
                   {fechaActual}
                 </p>
               </div>
-              <h1 className="text-2xl px-2 text-base-100  contrast-[.20] pt-[0.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
+              <h1 className="text-2xl px-2  pt-[0.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
               <div className="grid grid-cols-1 ">
-                <p className="text-center text-sm contrast-[.20] text-black pt-2 tracking-normal font-title font-extrabold pb-2">
+                <p className="text-center text-sm pt-2 tracking-normal font-title font-extrabold pb-2">
                   Pedido Realizado en
-                  <br />Cafeteria "{cafeteria?.nombre}"
+                  <br />Cafeteria "{cafeteria ? cafeteria : ''}"
                 </p>
               </div>
               {/* Listado */}
@@ -59,22 +57,26 @@ function Order() {
                 <table className="table font-bold  border-slate-400">
                   {/* head */}
                   <thead>
-                    <tr className='border-dashed border-slate-500  font-title font-extrabold contrast-[.20] text-accent '>
+                    <tr className='border-dashed border-slate-500 font-title font-extrabold text-white  '>
                       <th></th>
-                      <th>#</th>
+                      <th>N°</th>
                       <th>Producto</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <TableRow compontent={main_dish ? main_dish : ''} cafeteria={contenidoCafeteria} />
-                    <TableRow compontent={side_dish1 ? side_dish1 : ''} cafeteria={contenidoCafeteria} />
-                    <TableRow compontent={side_dish2 ? side_dish2 : ''} cafeteria={contenidoCafeteria} />
-                    <TableRow compontent={accompaniement ? accompaniement : ''} cafeteria={contenidoCafeteria} />
-                    {drink != 0 ? <TableRow compontent={drink} cafeteria={contenidoCafeteria} /> : ''}
+
+                    {/* Iterar en los valores del objeto */}
+                    {finalOrden.map((propiedad, index) => {
+                      if (index !== finalOrden.length - 1) {
+                        return <TableRow key={propiedad} index={index + 1} component={orden[propiedad]} />;
+                      }
+                      return <TableRow key={propiedad} index="Precio" component={orden[propiedad]} />;
+                    })}
+
                   </tbody>
                 </table>
               </div>
-              <div className="mt-7">
+              <div className="pb-4">
                 <Link to="/" className="btn font-plane buttonActive">
                   Ir al Inicio
                 </Link>

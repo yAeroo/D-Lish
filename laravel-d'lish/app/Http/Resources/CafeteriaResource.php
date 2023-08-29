@@ -17,9 +17,9 @@ class CafeteriaResource extends JsonResource
         // Datos enviados de cafeteria
         return [
             'id' => $this->id,
-            'nombre' => $this->cafeteria_name,
-            'cafe_pfp' => $this->cafeteria_img,
-            'cafe_wallp' => $this->cafeteria_wallpaper,
+            'nombre' => $this->name,
+            'cafe_pfp' => $this->img,
+            'cafe_wallp' => $this->img_wall,
             'likes' => $this->likes,
         ];
     }

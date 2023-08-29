@@ -9,7 +9,6 @@ const OrdersProvider = ({ children }) => {
 
     // State - contenido a variar
     const [ordenComplete, setOrdenComplete] = useState(false);
-    const [producto, setProducto] = useState({});
     const [orden, setOrden] = useState({});
 
 
@@ -40,11 +39,14 @@ const OrdersProvider = ({ children }) => {
         // Try Catch en donde se intenta mandar los datos a la API con el Tonken
         try {
             setErrores([]);
-            const { res } = await clienteAxios.post('/api/orden', data, {
+
+            const response = await clienteAxios.post('/api/orden', data, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
+
+            setOrden(response.data);
             // Redirigir
             redirigir();
         } catch (error) {
@@ -58,7 +60,6 @@ const OrdersProvider = ({ children }) => {
     return (
         <OrdersContext.Provider
             value={{
-                producto,
                 orden,
                 setOrden,
                 handleAgregarOrden,

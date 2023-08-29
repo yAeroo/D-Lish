@@ -16,9 +16,9 @@ class Cafeteria extends Model
 
     // Datos a variar
     protected $fillable = [
-        'cafeteria_name',
-        'cafeteria_img',
-        'cafeteria_wallpaper',
+        'name',
+        'img',
+        'img_wall',
     ];
 
     public function mainDishes()
