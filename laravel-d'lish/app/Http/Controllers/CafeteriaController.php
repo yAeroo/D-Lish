@@ -15,7 +15,7 @@ class CafeteriaController extends Controller
         return new CafeteriaCollection(Cafeteria::all());
     }
 
-    public function content($id)
+    public function show($id)
     {
         // Buscamos según ID
         $cafeteria = Cafeteria::where('id', $id)->get();
