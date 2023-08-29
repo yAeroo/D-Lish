@@ -27,7 +27,7 @@ export default function NavIndex() {
       <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none hidden md:flex">
         <Link to="/">
           <img
-            src="../src/assets/logo/icon_bw.png"
+            src={Icon}
             alt="Logo"
             className="h-10 md:h-12 cursor-pointer my-auto"
           />
