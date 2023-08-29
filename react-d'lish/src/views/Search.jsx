@@ -86,7 +86,7 @@ export default function Search() {
     </section>
     </div>
 
-    <div className="grid grid-cols-2 gap-4 p-4">
+    <div className="relative grid grid-cols-2 gap-4 p-4">
       {/* Contenedor de Desayunos */}
       <div
         className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
