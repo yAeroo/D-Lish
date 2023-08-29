@@ -22,9 +22,9 @@ const CafeteriasProvider = ({ children }) => {
     // Función asincrona que llama los datos
     const obtenerContenidoCafeteria = async (cafeteriaId) => {
         try {
-            const { data } = await clienteAxios(`/api/cafeteria/${cafeteriaId}/content`);
+            const { data } = await clienteAxios(`/api/cafeterias/${cafeteriaId}`);
             const cafeteria = data.data[0];
-
+            console.log(cafeteria);
             // Guardar en localStorage
             setContenidoCafeteria(cafeteria);
         } catch (error) {
