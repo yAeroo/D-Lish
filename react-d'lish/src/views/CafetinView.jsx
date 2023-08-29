@@ -30,7 +30,7 @@ export default function CafetinView() {
     <>
       <section className="mb-[0em] md:mb-[0rem] animate-fade animate-ease-in-out animate-once animate-duration-[1000ms]">
         <div className="flex w-full h-[15rem] z-0 md:mb-[9rem]">
-          <img src={db_wall} className="bg-cover w-full md:min-h-screen filter brightness-50" />
+          <img src={`../assets/cafeterias/${cafeteria?.cafe_wallp}`} className="bg-cover w-full md:min-h-screen filter brightness-50" />
         </div>
         <div className="flex justify-between items-center bg-green-600 mt-[-1rem] md:px-7 md:pt-1 rounded-t-2xl drop-shadow-md animate-fade animate-ease-in-out animate-once animate-duration-[1000ms]">
           <h1 className="text-4xl md:text-6xl font-bold my-10 pb-[1rem] ml-10 md:px-1 text-white animate-fade-left animate-ease-in-out animate-once animate-duration-[1000ms]">
