@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\PedidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // SUBIDA DE IMAGEN ==============
     Route::post('/user/{id}/upload-image', [ImageController::class, 'store']);
+
+    // PEDIDOS OWNER ================
+    Route::get('/owner/{id}/pedidos', [PedidoController::class, 'index']);
 });
 
 // AUTENTICACIÓN ================ 

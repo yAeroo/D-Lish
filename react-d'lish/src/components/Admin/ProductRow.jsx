@@ -8,7 +8,7 @@ function ProductRow(props) {
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
             <td className="border-grey-light border hover:bg-gray-100 p-3">{props.ProductNum}</td>
             <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">{props.ProductItem}</td>
-            <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
+            <td className="border-grey-light border hover:bg-gray-100 p-3 truncate h-[234px] sm:h-auto">
                 {/* <img src={props.ProductIMG} className='w-[13rem] h-[13rem]' /> */}
             </td>
             <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">{props.ProductPrice}</td>

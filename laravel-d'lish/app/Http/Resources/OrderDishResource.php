@@ -16,7 +16,7 @@ class OrderDishResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'categoria' => $this->category,
             'description' => $this->description,
             'img' => $this->img,
             //  Respues API Consistente utilizando Cafeteria Resource
