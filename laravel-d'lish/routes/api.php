@@ -28,15 +28,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     // ORDENES  ===================
-    // Route::apiResource('/orden', [OrderController::class, 'index']);
+    Route::apiResource('/orden', OrderController::class);
 });
 
-// AUTENTICACIÓN ================
+// AUTENTICACIÓN ================ 
 Route::post('/registro', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 // CONTENIDOS ===================
-Route::get('/cafeterias', [CafeteriaController::class, 'index']);
+Route::apiResource('/cafeterias', CafeteriaController::class);
 
 // CONTENIDO CAFETERIA ==========
-Route::get('/cafeteria/{id}/ordenes', [CafeteriaController::class, 'show']);
+Route::apiResource('/cafeterias/{id}', CafeteriaController::class);
