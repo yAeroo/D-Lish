@@ -11,7 +11,7 @@ import "../../css/productsTable.css";
 import useOwner from '../../hooks/useOwner';
 
 function DeliveryModeAdmin() {
-      const { platillos } = useOwner();
+      const { obtenerPedidos, platillos } = useOwner();
 
       return (
             <div className='lg:ml-[10rem] mb-10 sm:ml-[1rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500"'>

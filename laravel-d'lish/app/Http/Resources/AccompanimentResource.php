@@ -14,6 +14,12 @@ class AccompanimentResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'type' => "accompaniment",
+            'id' => $this->id,
+            'name' => $this->name,
+            'active' => $this->active,
+            'img' => $this->img,
+        ];
     }
 }

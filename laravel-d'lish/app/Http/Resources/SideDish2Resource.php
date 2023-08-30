@@ -15,8 +15,11 @@ class SideDish2Resource extends JsonResource
     public function toArray($request)
     {
         return [
+            'type' => "sideDish2",
             'id' => $this->id,
-            'name' => $this->name
+            'name' => $this->name,
+            'active' => $this->active,
+            'img' => $this->img,
         ];
     }
 }

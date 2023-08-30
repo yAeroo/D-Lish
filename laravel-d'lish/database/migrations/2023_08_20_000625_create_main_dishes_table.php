@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 40);
             $table->boolean('active')->default(1);
             $table->string('img', 40)->nullable();
-            $table->decimal('price', 8, 2)->nullable();
+            // $table->decimal('price', 8, 2)->nullable();
             $table->foreign('cafeteria_id')->references('id')->on('cafeterias')->onDelete('cascade');
             $table->timestamps();
         });

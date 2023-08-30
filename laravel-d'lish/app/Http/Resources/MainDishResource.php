@@ -19,7 +19,6 @@ class MainDishResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'active' => $this->active,
-            'description' => $this->description,
             'img' => $this->img,
         ];
     }

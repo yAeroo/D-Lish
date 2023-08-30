@@ -1,18 +1,18 @@
 <?php
 
-use App\Models\OrderDish;
+use App\Http\Controllers\AccompanimentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\OwnerController;
-use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\MainDishController;
 use App\Http\Controllers\SideDish1Controller;
+use App\Http\Controllers\SideDish2Controller;
 use App\Http\Controllers\UserSettingsController;
-use App\Models\SideDish1;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +43,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // COMPONENTES DISH ===========
     Route::apiResource('/mainDish', MainDishController::class);
     Route::apiResource('/sideDish1', SideDish1Controller::class);
+    Route::apiResource('/sideDish2', SideDish2Controller::class);
+    Route::apiResource('/drink', DrinkController::class);
+    Route::apiResource('/accompaniment', AccompanimentController::class);
 
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);

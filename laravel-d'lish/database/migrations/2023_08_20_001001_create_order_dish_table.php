@@ -25,7 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('side_dish2_id')->nullable();
             $table->unsignedBigInteger('accompaniment_id')->nullable();
             $table->unsignedBigInteger('drink_id')->nullable(); // Agregamos el campo para bebida
-            $table->boolean('estado')->default(true);
+            $table->boolean('pendiente')->default(1);
             $table->decimal('final_price', 8, 2);
 
             $table->timestamps();

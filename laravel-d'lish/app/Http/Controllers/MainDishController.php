@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\MainDish;
 use Illuminate\Http\Request;
+use App\Http\Requests\MainDishRequest;
+use App\Models\Cafeteria;
 
 class MainDishController extends Controller
 {
@@ -23,10 +25,19 @@ class MainDishController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainDishRequest $request)
     {
-        //
+        // Validar el registro, accede directamente a Rules()
+        $data = $request->validated();
+
+        // Crear el usuario
+        $mainDish = MainDish::create([
+            'name' => $data['name'],
+            'cafeteria_id' => $data['idOwner'],
+            'price' => 1.50,
+        ]);
     }
+
 
     /**
      * Display the specified resource.
@@ -48,7 +59,13 @@ class MainDishController extends Controller
      */
     public function update(Request $request, MainDish $mainDish)
     {
-        $mainDish->active = 0;
+        // Activa o desactiva
+        if ($mainDish->active == 1) {
+            $mainDish->active = 0;
+        } else {
+            $mainDish->active = 1;
+        }
+
         $mainDish->save();
         return [
             'mainDish' => $mainDish

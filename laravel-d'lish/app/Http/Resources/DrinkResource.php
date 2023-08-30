@@ -15,9 +15,11 @@ class DrinkResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'type' => "drink",
             'id' => $this->id,
             'name' => $this->name,
-            'price' => $this->price
+            'active' => $this->active,
+            'img' => $this->img,
         ];
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MainDishRequest;
+use App\Models\MainDish;
 use App\Models\SideDish1;
 use Illuminate\Http\Request;
 
@@ -27,7 +29,6 @@ class SideDish1Controller extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -48,7 +49,17 @@ class SideDish1Controller extends Controller
      */
     public function update(Request $request, SideDish1 $sideDish1)
     {
-        //
+        // Activa o desactiva
+        if ($sideDish1->active == 1) {
+            $sideDish1->active = 0;
+        } else {
+            $sideDish1->active = 1;
+        }
+
+        $sideDish1->save();
+        return [
+            'sideDish1' => $sideDish1
+        ];
     }
 
     /**

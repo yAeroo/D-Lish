@@ -4,10 +4,17 @@ import { AiFillEyeInvisible } from "react-icons/ai"
 // CSSSS
 import "../../css/tables.css";
 import useOwner from "../../hooks/useOwner";
+import { useState } from "react";
 
 function ProductRow(props) {
-    const { ProductNum, ProductItem, id, type } = props;
-    const { hadleClickOcultar } = useOwner();
+    const { ProductNum, ProductItem, id, type, active } = props;
+    const { hadleClickVisibility } = useOwner();
+    const [visible, setVisible] = useState(active);
+
+    const handleClick = (type, id) => {
+        hadleClickVisibility(type, id)
+        setVisible(!visible);
+    }
 
     return (
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
@@ -18,7 +25,12 @@ function ProductRow(props) {
             </td>
             {/* <td className="tableRow">{props.ProductPrice}</td> */}
             <td className="border-grey-light border p-3  hover:font-medium flex sm:justify-center gap-3 ">
-                <AiFillEyeInvisible className='cursor-pointer text-2xl sm:text-2xl text-gray-400 hover:text-gray-600' onClick={() => hadleClickOcultar(type, id)}></AiFillEyeInvisible>
+                <AiFillEyeInvisible
+                    className={`cursor-pointer text-2xl sm:text-2xl text-gray-400 hover:text-gray-600'
+                    ${!visible ? 'text-gray-600' : 'text-gray-400 hover:text-gray-600'}`}
+                    onClick={() => handleClick(type, id)}>
+                </AiFillEyeInvisible>
+
 
                 <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal()}></RiEdit2Fill>
 

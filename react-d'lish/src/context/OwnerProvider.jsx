@@ -16,7 +16,7 @@ const OwnerProvider = ({ children }) => {
     const [boolean, setBoolean] = useState(false);
     const [pedidos, setPedidos] = useState([]);
 
-    // Función asincrona que llama los datos
+    // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}`, {
@@ -31,6 +31,7 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
+    // Obtener todos los pedidos de los usuarios a la cafetería
     const obtenerPedidos = async () => {
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}/ordenes`, {
@@ -44,6 +45,7 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
+    // Obtener todos los platillos 
     const obtenerPlatillos = async () => {
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}/pedidos`, {
@@ -57,7 +59,48 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
-    const hadleClickOcultar = async (type, id) => {
+    // Registrar o añadir componentes de platillos
+    const addProduct = async (type, datos, NotiError) => {
+        const datas = { ...datos, idOwner };
+        console.log(datas);
+
+        try {
+            const { data } = await clienteAxios.post(`/api/${type}`, datas, {
+                headers: {
+                    Authorization: `Bearer ${token}` // Token obligatorio para validación de datos
+                }
+            });
+            console.log('Exito', data);
+            resetState();
+            NotiExito();
+        } catch (error) {
+            NotiError();
+            // setError(""); setAErrors([]);
+            if (error?.response?.data?.errors && Object.keys(error.response.data.errors).length > 0) {
+                let Errores = Object.values(error?.response?.data?.errors);
+                setAErrors(Errores);
+            } else {
+                setError(error.response.data.message);
+            }
+            console.error('Error', error);
+        }
+    }
+
+    // Función para resetear todo
+    const resetState = () => {
+        setError(""); setAErrors([]);
+        const pwInput = {
+            oldPassword: document.getElementById('oldPassword'),
+            newPassword: document.getElementById('newPassword'),
+            newPassswordConfirmation: document.getElementById('newPassswordConfirmation')
+        }
+
+        // Limpiando inputs
+        pwInput.oldPassword.value = ''; pwInput.newPassword.value = ''; pwInput.newPassswordConfirmation.value = '';
+    }
+
+    // Cambiar estado de disponibilidad de un componente/producto
+    const hadleClickVisibility = async (type, id) => {
         try {
             await clienteAxios.put(`/api/${type}/${id}`, null, {
                 headers: {
@@ -84,10 +127,12 @@ const OwnerProvider = ({ children }) => {
     return (
         // Se pasan los datos al global
         <OwnerContext.Provider value={{
+            obtenerPedidos,
             contenido,
             pedidos,
             platillos,
-            hadleClickOcultar
+            hadleClickVisibility,
+            addProduct
         }}>
             {children}
         </OwnerContext.Provider>

@@ -72,6 +72,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.mainDishes.map((mainDish) => (
                   <ProductRow
+                    active={mainDish.active}
                     type={mainDish.type}
                     key={mainDish.id}
                     id={mainDish.id}
@@ -114,6 +115,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.sideDishes1.map((side_dish1) => (
                   <ProductRow
+                    active={side_dish1.active}
                     type={side_dish1.type}
                     key={side_dish1.id}
                     id={side_dish1.id}
@@ -151,6 +153,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.sideDishes2.map((side_dish2) => (
                   <ProductRow
+                    active={side_dish2.active}
                     type={side_dish2.type}
                     key={side_dish2.id}
                     ProductNum={side_dish2.id}
@@ -186,6 +189,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.accompaniments.map((accompaniment) => (
                   <ProductRow
+                    active={accompaniment.active}
                     key={accompaniment.id}
                     id={accompaniment.id}
                     ProductNum={accompaniment.id}
@@ -224,6 +228,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.drinks.map((drink) => (
                   <ProductRow
+                    active={drink.active}
                     key={drink.id}
                     id={drink.id}
                     ProductNum={drink.id}

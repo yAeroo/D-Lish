@@ -1,9 +1,65 @@
-import React from "react";
+import React, { createRef } from "react";
+import { useState } from "react";
+// Notificación de error
+import Notificacion from "../../helper/Notify";
+//
+import useOwner from "../../hooks/useOwner";
 
 function ProductModal(props) {
+  const { addProduct } = useOwner();
+  // Se define el Toast
+  const toastSuccesId = "success-noti";
+  // Se instancia con referencia al ID Definido
+  const toastErrorId = "error-noti";
+  const NotiExito = Notificacion(
+    "success",
+    toastSuccesId,
+    '¡Cambios guardados con exito!',
+    "!bg-[#191E2B] !font-body !py-2"
+  );
+  const NotiError = Notificacion(
+    "error",
+    toastErrorId,
+    '¡Oops! Ha ocurrido un error...',
+    "!bg-[#191E2B] !font-body !py-2"
+  );
+
+  // Creando referencias
+  const nameRef = createRef();
+  const imgRef = createRef();
+  // Creando States
+  const categorias = {
+    'mainDish': 'Almuerzo',
+    'sideDish1': 'Complemento 1',
+    'sideDish2': 'Complemento 2',
+    'accompaniment': 'Acomapañamiento',
+    'drink': 'Bebida'
+  }
+  const [category, setSelectedCategory] = useState('');
+  const [error, setError] = useState(''); // <- Error 
+  const [aErrors, setAErrors] = useState([])
+
+  // Obteniendo la categoria del producto añadido
+  const setCategory = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const datos = {
+      name: nameRef.current.value,
+      // img: imgRef.current.value,
+    }
+    if (category) {
+      await addProduct(category, datos, NotiError);
+    } else {
+      return NotiError();
+    }
+  }
+
   return (
     <dialog id={props.ModalId} className="modal">
-      <form method="dialog" className="modal-box bg-white text-[#222222]">
+      <form method="dialog" className="modal-box bg-white text-[#222222]" onSubmit={handleSubmit}>
         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
           ✕
         </button>
@@ -22,6 +78,7 @@ function ProductModal(props) {
               name="producto"
               id="producto"
               placeholder="Pupusas"
+              ref={nameRef}
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6"
             />
           </div>
@@ -70,8 +127,8 @@ function ProductModal(props) {
           </div>
         </div>
 
-        <div className=" items-end grid grid-cols-1 gap-x-6 sm:grid-cols-2">
-          <div className="mt-4 sm:my-4">
+        <div className=" items-end grid grid-cols-1 gap-x-6">
+          {/* <div className="mt-4 sm:my-4">
             <label
               htmlFor="edificio"
               className="block text-sm font-medium leading-6 text-gray-900"
@@ -86,9 +143,9 @@ function ProductModal(props) {
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6"
               />
             </div>
-          </div>
+          </div> */}
 
-          <div className="mt-4 sm:my-4">
+          <div className="mt-4 sm:my-4 w-full">
             <label
               htmlFor="edificio"
               className="block text-sm font-medium leading-6 text-gray-900"
@@ -97,13 +154,19 @@ function ProductModal(props) {
             </label>
             <div className="mt-2">
               <select
-                className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6 "
+                className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6  "
                 name="Category"
                 id="Category"
+                defaultValue="null"
+                onChange={setCategory}
               >
-                <option>Almuerzo/Desayuno</option>
-                <option>Bebida</option>
-                <option>Acompañamiento</option>
+                <option value="null" disabled>Seleccione una opción</option>
+                {/* Opciones de categoria */}
+                {Object.keys(categorias).map((key) => (
+                  <option key={key} value={key}>
+                    {categorias[key]}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -113,7 +176,7 @@ function ProductModal(props) {
 
         <div className="modal-action">
           {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-primary">{props.ModalTypebtn}</button>
+          <button type="submit" className="btn btn-primary">{props.ModalTypebtn}</button>
         </div>
       </form>
     </dialog>
