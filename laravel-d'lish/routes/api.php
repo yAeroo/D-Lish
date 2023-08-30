@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
-use App\Http\Controllers\CafeteriaController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\UserSettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // SUBIDA DE IMAGEN ==============
     Route::post('/user/{id}/upload-image', [ImageController::class, 'store']);
+
+    // CAMBIO DE CONTRASEÑA ==============
+    Route::post('/user/{id}/change-password', [UserSettingsController::class, 'store']);
 });
 
 // AUTENTICACIÓN ================ 
