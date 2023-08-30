@@ -24,19 +24,30 @@ function ProductAdmin() {
   if (isLoading) return <div className="h-full">"Cargando..."</div>;
 
   return (
-    <div className="lg:ml-[10rem] mb-10 sm:ml-[2rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500">
-      {/* ------- El modal se abre con el metodo ID.showModal() ----------*/}
-      <button
-        className="btn btn-primary mt-[48px] sm:ml-[36px] sm:mt-[150px]"
-        onClick={() => window.product_modal_1.showModal()}
-      >
-        Agregar producto
-      </button>
+    <div className="mb-10 sm:ml-[2rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500 ">
+
+      <div className="flex justify-center items-center w-full flex-col gap-6 p-10">
+        <hr className='bg-accent h-1 w-1/2 m-auto' />
+
+        <h1 className="text-4xl font-extrabold text-gray-800 font-title text-center">Añade componentes</h1>
+
+        <p className="text-gray-600 text-lg sm:text-xl text-center md:text-left">¿Aún no tienes tú menú del día?
+          <br className="inline md:hidden " /> Registra lo diponible en tus almuerzos</p>
+        {/* ------- El modal se abre con el metodo ID.showModal() ----------*/}
+        <button
+          className="btn btn-primary w-1/2"
+          onClick={() => window.product_modal_1.showModal()}
+        >
+          Agregar producto
+        </button>
+        <hr className='bg-accent h-1 w-1/2 m-auto' />
+      </div>
       <ProductModal
         ModalId="product_modal_1"
         ModalTypebtn="Subir producto"
         ModalType="Agrega cualquier tipo de producto"
       />
+
 
       {/* ------------- FIN DEL MODAL ------------ */}
 
@@ -45,7 +56,7 @@ function ProductAdmin() {
       {/************************************************/}
 
       <h3 className="my-7 text-center text-terc font-bold text-2xl">
-        {" "}Almuerzos{" "}
+        {" "}ALMUERZO{" "}
       </h3>
 
       <div id="MainDishCont" className={data?.mainDishes ? "flex justify-center" : "hidden"}>
@@ -83,85 +94,11 @@ function ProductAdmin() {
       </div>
 
       {/************************************************/}
-      {/* ---------------Acompañamientos-------------- */}
-      {/************************************************/}
-
-      <h3 className="my-7 text-center text-terc font-bold text-2xl ">
-        {" "}
-        Acompañamientos{" "}
-      </h3>
-      <div id="AcompCont" className={data?.accompaniments ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.accompaniments.map((acc) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={acc.id + "-acc"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.accompaniments.map((accompaniment) => (
-                  <ProductRow
-                    key={accompaniment.id}
-                    id={accompaniment.id}
-                    ProductNum={accompaniment.id}
-                    ProductItem={accompaniment.name}
-                    ProductIMG={accompaniment.img}
-                    ProductPrice={accompaniment.price}
-                  />
-                ))}
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-
-      {/************************************************/}
-      {/* ------------------BEBIDAS------------------- */}
-      {/************************************************/}
-
-      <h3 className="my-7 text-center text-terc font-bold text-2xl">
-        {" "}
-        Bebidas{" "}
-      </h3>
-
-      <div id="DrinkCont" className={data?.drinks ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.drinks.map((dri) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={dri.id + "-drink"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.drinks.map((drink) => (
-                  <ProductRow
-                    key={drink.id}
-                    id={drink.id}
-                    ProductNum={drink.id}
-                    ProductItem={drink.name}
-                    ProductIMG={drink.img}
-                    ProductPrice={drink.price}
-                  />
-                ))}
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      {/************************************************/}
       {/* ----------------SIDE DISH1------------------ */}
       {/************************************************/}
       <h3 className="my-7 text-center text-terc font-bold text-2xl">
         {" "}
-        Complemento 1{" "}
+        COMPLEMENTO 1{" "}
       </h3>
 
       <div id="SideDish1Cont" className={data?.sideDishes1 ? "flex justify-center" : "hidden"}>
@@ -198,7 +135,7 @@ function ProductAdmin() {
       {/************************************************/}
       <h3 className="my-7 text-center text-terc font-bold text-2xl">
         {" "}
-        Complemento 2{" "}
+        COMPLEMENTO 2{" "}
       </h3>
       <div id="SideDish2Cont" className={data?.sideDishes2 ? "flex justify-center" : "hidden"}>
 
@@ -214,6 +151,7 @@ function ProductAdmin() {
               <tbody className="flex-1 sm:flex-none text-[#414141]">
                 {data?.sideDishes2.map((side_dish2) => (
                   <ProductRow
+                    type={side_dish2.type}
                     key={side_dish2.id}
                     ProductNum={side_dish2.id}
                     ProductItem={side_dish2.name}
@@ -226,7 +164,80 @@ function ProductAdmin() {
           </div>
         </div>
       </div>
-      {/* FIN DE ESTA COSA */}
+
+      {/************************************************/}
+      {/* ---------------Acompañamientos-------------- */}
+      {/************************************************/}
+
+      <h3 className="my-7 text-center text-terc font-bold text-2xl ">
+        {" "}
+        ACOMPAÑANTES{" "}
+      </h3>
+      <div id="AcompCont" className={data?.accompaniments ? "flex justify-center" : "hidden"}>
+        <div className="flex items-center w-[80%] justify-center">
+          <div className="container">
+            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+              <thead className="text-white">
+                {data?.accompaniments.map((acc) => (
+                  // Encabezado de la tabla para cada producto
+                  <ProductHeader key={acc.id + "-acc"} />
+                ))}
+              </thead>
+              <tbody className="flex-1 sm:flex-none text-[#414141]">
+                {data?.accompaniments.map((accompaniment) => (
+                  <ProductRow
+                    key={accompaniment.id}
+                    id={accompaniment.id}
+                    ProductNum={accompaniment.id}
+                    ProductItem={accompaniment.name}
+                    ProductIMG={accompaniment.img}
+                    ProductPrice={accompaniment.price}
+                  />
+                ))}
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      {/************************************************/}
+      {/* ------------------BEBIDAS------------------- */}
+      {/************************************************/}
+
+      <h3 className="my-7 text-center text-terc font-bold text-2xl">
+        {" "}
+        BEBIDAS{" "}
+      </h3>
+
+      <div id="DrinkCont" className={data?.drinks ? "flex justify-center" : "hidden"}>
+        <div className="flex items-center w-[80%] justify-center">
+          <div className="container">
+            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+              <thead className="text-white">
+                {data?.drinks.map((dri) => (
+                  // Encabezado de la tabla para cada producto
+                  <ProductHeader key={dri.id + "-drink"} />
+                ))}
+              </thead>
+              <tbody className="flex-1 sm:flex-none text-[#414141]">
+                {data?.drinks.map((drink) => (
+                  <ProductRow
+                    key={drink.id}
+                    id={drink.id}
+                    ProductNum={drink.id}
+                    ProductItem={drink.name}
+                    ProductIMG={drink.img}
+                    ProductPrice={drink.price}
+                  />
+                ))}
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div >
   );
 }

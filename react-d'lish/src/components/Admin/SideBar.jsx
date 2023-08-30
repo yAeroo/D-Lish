@@ -33,7 +33,7 @@ function SideBar() {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
           {/* Lista de elementos del sidebar */}
-          <ul className="menu p-4 w-[7rem] h-full fixed flex flex-col items-center bg-secu text-base-content ">
+          <ul className="menu p-4 w-[7rem] h-full min-h-[465px] fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
             <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
             <li className="mb-7" title='Ventas'>
