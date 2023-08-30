@@ -13,6 +13,7 @@ const OwnerProvider = ({ children }) => {
     // Definición de Ordenes
     const [contenido, setContenido] = useState([]);
     const [platillos, setPlatillos] = useState([]);
+    const [boolean, setBoolean] = useState(false);
     const [pedidos, setPedidos] = useState([]);
 
     // Función asincrona que llama los datos
@@ -24,6 +25,7 @@ const OwnerProvider = ({ children }) => {
                 }
             })
             setContenido(data?.data);
+            setBoolean(true);
         } catch (error) {
             // console.log(error);
         }
@@ -55,17 +57,16 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
-    const hadleClickOcultar = async (id, type) => {
-        console.log(`/owner/${type}/${id}`);
-        // try {
-        //     await clienteAxios.put(`/api/${tipe}/${id}`, null, {
-        //         headers: {
-        //             Authorization: `Bearer ${token}`
-        //         }
-        //     })
-        // } catch (error) {
-        //     console.log(error);
-        // }
+    const hadleClickOcultar = async (type, id) => {
+        try {
+            await clienteAxios.put(`/api/${type}/${id}`, null, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     // Manda a llamar al cargar el componente
@@ -77,7 +78,7 @@ const OwnerProvider = ({ children }) => {
     useEffect(() => {
         obtenerPedidos();
         obtenerPlatillos();
-    }, [contenido])
+    }, [contenido, boolean])
 
 
     return (

@@ -11,7 +11,6 @@ const OrdersProvider = ({ children }) => {
     const [ordenComplete, setOrdenComplete] = useState(false);
     const [orden, setOrden] = useState({});
 
-
     // Saber si el objeto esta nulo o no
     const comprobarOrdenCompleta = (orden) => {
         const valores = Object.values(orden);

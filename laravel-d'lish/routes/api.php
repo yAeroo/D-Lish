@@ -9,7 +9,10 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\MainDishController;
+use App\Http\Controllers\SideDish1Controller;
 use App\Http\Controllers\UserSettingsController;
+use App\Models\SideDish1;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,8 +41,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/owner/{id}/ordenes', [OwnerController::class, 'ordenes']);
 
     // COMPONENTES DISH ===========
-    Route::get('/owner/maindDish/{id}', [OwnerController::class, 'ordenes']);
-    Route::get('/owner/sideDish1/{id}', [OwnerController::class, 'ordenes']);
+    Route::apiResource('/mainDish', MainDishController::class);
+    Route::apiResource('/sideDish1', SideDish1Controller::class);
 
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);

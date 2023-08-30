@@ -48,7 +48,11 @@ class MainDishController extends Controller
      */
     public function update(Request $request, MainDish $mainDish)
     {
-        //
+        $mainDish->active = 0;
+        $mainDish->save();
+        return [
+            'mainDish' => $mainDish
+        ];
     }
 
     /**
