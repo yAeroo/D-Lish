@@ -12,6 +12,7 @@ const OwnerProvider = ({ children }) => {
     const idOwner = localStorage.getItem('USER_ID')
     // Definición de Ordenes
     const [contenido, setContenido] = useState([]);
+    const [platillos, setPlatillos] = useState([]);
     const [pedidos, setPedidos] = useState([]);
 
     // Función asincrona que llama los datos
@@ -41,6 +42,19 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
+    const obtenerPlatillos = async () => {
+        try {
+            const { data } = await clienteAxios(`/api/owner/${idOwner}/platillos`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            setPlatillos(data?.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     // Manda a llamar al cargar el componente
     useEffect(() => {
         obtenerOwner();
@@ -49,6 +63,7 @@ const OwnerProvider = ({ children }) => {
     // Manda a llamar al tener la cafeteria
     useEffect(() => {
         obtenerPedidos();
+        obtenerPlatillos();
     }, [contenido])
 
 
@@ -56,7 +71,8 @@ const OwnerProvider = ({ children }) => {
         // Se pasan los datos al global
         <OwnerContext.Provider value={{
             contenido,
-            pedidos
+            pedidos,
+            platillos
         }}>
             {children}
         </OwnerContext.Provider>

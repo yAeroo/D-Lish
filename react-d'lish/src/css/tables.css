@@ -1,0 +1,3 @@
+.tableRow {
+  @apply border hover:bg-gray-100 p-3 truncate;
+}

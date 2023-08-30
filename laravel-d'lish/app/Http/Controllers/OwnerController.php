@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MainDishResource;
 use App\Models\User;
 use App\Models\OrderDish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Resources\OwnerResource;
 use App\Http\Resources\OrderDishResource;
+use App\Models\MainDish;
 
 class OwnerController extends Controller
 {
@@ -34,5 +36,12 @@ class OwnerController extends Controller
 
         // El Resource `OrderDishResource se crea una colección transformada de los datos en el formato deseado.
         return OrderDishResource::collection($orderDishes);
+    }
+
+    public function platillos($id)
+    {
+        $mainDishes = MainDish::where([['cafeteria_id', $id], ['active', true]])->get();
+
+        return MainDishResource::collection($mainDishes);
     }
 }

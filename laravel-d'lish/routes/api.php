@@ -33,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // OWNER ================
     Route::get('/owner/{id}', [OwnerController::class, 'index']);
     Route::get('/owner/{id}/pedidos', [OwnerController::class, 'pedidos']);
+    Route::get('/owner/{id}/platillos', [OwnerController::class, 'platillos']);
 
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);

@@ -7,8 +7,6 @@ import { BiCalendarWeek } from "react-icons/bi";
 
 function TarjetasAdminIndes() {
   const { pedidos } = useOwner();
-  console.log(pedidos);
-
 
   return (
     <div>
