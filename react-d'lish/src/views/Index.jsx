@@ -28,9 +28,8 @@ import CategoryCard from "../components/CategoryCard";
 export default function Index() {
   return (
     <main>
-
       {/* NavBar Flotante */}
-      <div className='absolute w-full z-10'>
+      <div className="absolute w-full z-10">
         <NavIndex />
       </div>
 
@@ -39,44 +38,44 @@ export default function Index() {
       {/* Slider de cafeterias */}
       <Carrousel />
 
-      <section className="p-6 bg-base-100 w-full space-y-6">
+      <section className="p-0 bg-base-100 w-full space-y-6">
         {/* ----Espacio para diferentes tipos de comidas----  */}
-        <div className="space-y-6 px-1">
-          <h2 className="text-3xl md:text-5xl md:text-center font-semibold text-neutral-100 py-2">
+        <div className="space-y-6 px-0">
+          <h2 className="text-3xl md:text-5xl p-6 my-8 md:text-center font-semibold text-neutral-100 py-2">
             Categorías
           </h2>
 
-          <div className="grid grid-cols-2 relative gap-4 p-4">
-        {/* Contenedor de Desayunos */}
-        <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]" 
-          style={{ backgroundImage: `url(${DesayunoBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
-            Desayunos
-          </div>
-        </div>
+          <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem]">
+            {/* Contenedor de Desayunos */}
+            <div
+              className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+              style={{ backgroundImage: `url(${DesayunoBanner})` }}
+            >
+              <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
+                Desayunos
+              </div>
+            </div>
 
-        {/* Contenedor de Otros */}
-        <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-          style={{ backgroundImage: `url(${OtrosBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-            Otros
-          </div>
-        </div>
+            {/* Contenedor de Otros */}
+            <div
+              className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+              style={{ backgroundImage: `url(${OtrosBanner})` }}
+            >
+              <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+                Otros
+              </div>
+            </div>
 
-        {/* Contenedor de Almuerzos */}
-        <div
-          className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-          style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-            Almuerzos
+            {/* Contenedor de Almuerzos */}
+            <div
+              className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+              style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
+            >
+              <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+                Almuerzos
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
         </div>
       </section>
 
@@ -88,23 +87,55 @@ export default function Index() {
         {/* Props del apartado de comidas  */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
-          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
+          <FoodCard
+            name="Pupusas"
+            photo={Pupusas}
+            cafetin="Don Bosco"
+            precio="1.00"
+            categoria="Desayunos"
+          />
 
-          <FoodCard name="Burrito" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+          <FoodCard
+            name="Burrito"
+            photo={Burrito}
+            cafetin="Maria Auxiliadora"
+            precio="2.50"
+            categoria="Almuerzos"
+          />
 
-          <FoodCard name="Jugos Naturales" photo={JugosNaturales} cafetin="Don Bosco" precio="0.25" categoria="Otros" />
+          <FoodCard
+            name="Jugos Naturales"
+            photo={JugosNaturales}
+            cafetin="Don Bosco"
+            precio="0.25"
+            categoria="Otros"
+          />
 
-          <FoodCard name="Pupusas" photo={Pupusas} cafetin="Miguel Magone" precio="1.00" categoria="Desayunos" />
+          <FoodCard
+            name="Pupusas"
+            photo={Pupusas}
+            cafetin="Miguel Magone"
+            precio="1.00"
+            categoria="Desayunos"
+          />
 
-          <FoodCard name="Pollo Asado" photo={PolloAsado} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
+          <FoodCard
+            name="Pollo Asado"
+            photo={PolloAsado}
+            cafetin="Maria Auxiliadora"
+            precio="2.50"
+            categoria="Almuerzos"
+          />
 
-          <FoodCard name="Tortas" photo={Tortas} cafetin="Don Bosco" precio="2.50" categoria="Almuerzos" />
+          <FoodCard
+            name="Tortas"
+            photo={Tortas}
+            cafetin="Don Bosco"
+            precio="2.50"
+            categoria="Almuerzos"
+          />
         </div>
-
-
-
       </section>
-
     </main>
   );
 }
