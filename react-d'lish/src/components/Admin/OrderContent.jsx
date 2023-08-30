@@ -3,7 +3,7 @@ import React from 'react'
 function OrderContent(props) {
     const {nameuser, content1, content2 } = props;
   return (
-    <div>
+    
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
 					<td className="border-grey-light border hover:bg-gray-100 p-3">{nameuser}</td>
 					<td className="border-grey-light border hover:bg-gray-100 p-3 truncate">{content1}</td>
@@ -20,7 +20,7 @@ function OrderContent(props) {
               </div>
             </td>        
 				  </tr>
-    </div>
+    
   )
 }
 

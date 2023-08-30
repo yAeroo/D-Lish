@@ -1,5 +1,4 @@
 import React from "react";
-import { AiFillDelete } from "react-icons/ai";
 import ProductRow from "../../components/Admin/ProductRow";
 import ProductModal from "../../components/Admin/ProductModal";
 import ProductHeader from "../../components/Admin/ProductHeader";

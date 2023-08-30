@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import Pupusas from "../../assets/index/pupusas.jpg"; 
 import OrderContent from './OrderContent';
 
 function OrderProps() {
 
   return (
-    <div className=''>
+    
 <div className="flex items-center w-[95%] justify-center">
         <div className="container">
           <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
@@ -14,10 +14,10 @@ function OrderProps() {
                 <tr className="bg-secondary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-3 text-left">Realizado por</th>
                   <th className="p-3 text-left">Complemento 1</th>
-                  <th className="p-3 text-left" width="110px">
+                  <th className="p-3 text-left" >
                     Complemento 2
                   </th>
-                  <th className="p-3 text-left" width="110px">
+                  <th className="p-3 text-left" >
                     Acciones
                   </th>
                 </tr>
@@ -32,7 +32,7 @@ function OrderProps() {
         </div>
       </div>
 
-    </div>
+    
   )
 }
 
