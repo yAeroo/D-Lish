@@ -51,7 +51,7 @@ export default function Index() {
               className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
               style={{ backgroundImage: `url(${DesayunoBanner})` }}
             >
-              <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
+              <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
                 Desayunos
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Index() {
               className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
               style={{ backgroundImage: `url(${OtrosBanner})` }}
             >
-              <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+              <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
                 Otros
               </div>
             </div>
@@ -71,7 +71,7 @@ export default function Index() {
               className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
               style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
             >
-              <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+              <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
                 Almuerzos
               </div>
             </div>
