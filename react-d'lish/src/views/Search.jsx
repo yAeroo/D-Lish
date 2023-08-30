@@ -69,7 +69,7 @@ export default function Search() {
           {showFloatingContainer && (
 
             /* Contenido del contenedor flotante */
-            <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+            <div className="absolute z-50 input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
               <div className="h-auto">
 
                 <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
@@ -86,7 +86,7 @@ export default function Search() {
     </section>
     </div>
 
-    <div className="relative grid grid-cols-2 gap-4 p-4">
+    <div className="grid grid-cols-2 relative gap-4 p-4">
       {/* Contenedor de Desayunos */}
       <div
         className="bg-cover bg-center h-32 md:h-48 relative rounded-md"

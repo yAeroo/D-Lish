@@ -16,13 +16,40 @@ export default function NavIndex() {
 
   const [searchText, setSearchText] = useState('');
   const [showFloatingContainer, setShowFloatingContainer] = useState(false);
+  const [searchResults ,setSearchResults] = useState([]);
+
+  const foodData = [
+    {
+      name: "Pupusas",
+      photo: Pupusas,
+      cafetin: "Don Bosco",
+      precio: "1.00",
+      categoria: "Desayunos"
+    },
+    {
+      name: "Burrito de Carne",
+      photo: Burrito,
+      cafetin: "Maria Auxiliadora",
+      precio: "2.50",
+      categoria: "Almuerzos"
+    },
+    // ... más elementos
+  ];
 
   const handleSearchInput = (event) => {
     const inputText = event.target.value;
     setSearchText(inputText);
 
-    // Mostrar el contenedor flotante si hay texto en el campo de búsqueda
+    // Mostrar resultados luego de escribir X cantidad de caracteres
     setShowFloatingContainer(inputText.length > 0);
+    
+      // Filtrar los resultados en función del texto de búsqueda
+      const filteredResults = foodData.filter(item =>
+        item.name.toLowerCase().includes(inputText.toLowerCase())
+      );
+    
+      setSearchResults(filteredResults);
+
   };
 
   return (
@@ -64,15 +91,16 @@ export default function NavIndex() {
             /* Contenido del contenedor flotante */
             <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
               <div className="h-auto">
-
-                <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
-
-                <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
-
-                <FoodCardSearch name="Pupusas" photo={Pupusas} cafetin="Don Bosco" precio="1.00" categoria="Desayunos" />
-
-                <FoodCardSearch name="Burrito de Carne" photo={Burrito} cafetin="Maria Auxiliadora" precio="2.50" categoria="Almuerzos" />
-
+                {searchResults.map((result, index) => (
+                  <FoodCardSearch
+                    key={index}
+                    name={result.name}
+                    photo={result.photo}
+                    cafetin={result.cafetin}
+                    precio={result.precio}
+                    categoria={result.categoria}
+                  />
+                ))}
               </div>
             </div>
           )}
