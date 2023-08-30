@@ -9,14 +9,13 @@ import Pupusas from "/src/assets/index/pupusas.jpg";
 //Componentes
 import FoodCardSearch from "../FoodCardSearch";
 //Iconos
-import Icon from "../../../src/assets/logo/icon_bw.png"
+import Icon from "../../../src/assets/logo/icon_bw.png";
 import IconWide from "../../../src/assets/logo/wide_white.png";
 
 export default function NavIndex() {
-
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [showFloatingContainer, setShowFloatingContainer] = useState(false);
-  const [searchResults ,setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
 
   const foodData = [
     {
@@ -24,14 +23,14 @@ export default function NavIndex() {
       photo: Pupusas,
       cafetin: "Don Bosco",
       precio: "1.00",
-      categoria: "Desayunos"
+      categoria: "Desayunos",
     },
     {
       name: "Burrito de Carne",
       photo: Burrito,
       cafetin: "Maria Auxiliadora",
       precio: "2.50",
-      categoria: "Almuerzos"
+      categoria: "Almuerzos",
     },
     // ... más elementos
   ];
@@ -42,22 +41,27 @@ export default function NavIndex() {
 
     // Mostrar resultados luego de escribir X cantidad de caracteres
     setShowFloatingContainer(inputText.length > 0);
-    
-      // Filtrar los resultados en función del texto de búsqueda
-      const filteredResults = foodData.filter(item =>
-        item.name.toLowerCase().includes(inputText.toLowerCase())
-      );
-    
-      setSearchResults(filteredResults);
 
+    // Filtrar los resultados en función del texto de búsqueda
+    const filteredResults = foodData.filter((item) =>
+      item.name.toLowerCase().includes(inputText.toLowerCase())
+    );
+
+    setSearchResults(filteredResults);
   };
 
   return (
     <section className="py-4 md:px-24 px-4 drop-shadow-2xl">
       <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none hidden md:flex">
-      <Link to="/">
-          <img src={Icon} className="block lg:hidden h-12 cursor-pointer my-auto" />
-          <img src={IconWide} className="hidden lg:block h-12 cursor-pointer my-auto" />
+        <Link to="/">
+          <img
+            src={Icon}
+            className="block lg:hidden h-12 cursor-pointer my-auto"
+          />
+          <img
+            src={IconWide}
+            className="hidden lg:block h-12 cursor-pointer my-auto"
+          />
         </Link>
         <div className="form-control relative">
           <div className="input-group">
@@ -87,20 +91,23 @@ export default function NavIndex() {
             </button>
           </div>
           {showFloatingContainer && (
-
             /* Contenido del contenedor flotante */
             <div className="absolute input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
               <div className="h-auto">
-                {searchResults.map((result, index) => (
-                  <FoodCardSearch
-                    key={index}
-                    name={result.name}
-                    photo={result.photo}
-                    cafetin={result.cafetin}
-                    precio={result.precio}
-                    categoria={result.categoria}
-                  />
-                ))}
+                {searchResults.length === 0 ? (
+                  <h1>No se encontraron resultados.</h1>
+                ) : (
+                  searchResults.map((result, index) => (
+                    <FoodCardSearch
+                      key={index}
+                      name={result.name}
+                      photo={result.photo}
+                      cafetin={result.cafetin}
+                      precio={result.precio}
+                      categoria={result.categoria}
+                    />
+                  ))
+                )}
               </div>
             </div>
           )}
@@ -113,5 +120,4 @@ export default function NavIndex() {
       </nav>
     </section>
   );
-
 }
