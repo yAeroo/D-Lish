@@ -58,21 +58,21 @@ export default function Search() {
     <>
       <NavMobileIndex />
 
-      <section className="flex justify-start">
+      <section className="flex justify-start animate-fade-left animate-once">
         <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7">
           ¡Bienvenido Lucas Ríos!
         </h1>
       </section>
 
-      <div className="w-full items-center relative z-10">
-        <section className="py-3 md:px-24 px-2 drop-shadow-2xl">
-          <nav className="flex justify-center items-center rounded-2xl bg-neutral drop-shadow-md py-5 list-none">
+      <div className="w-full items-center relative z-10 animate-fade-left animate-once animate-delay-[400ms]">
+        <section className="py-3 md:px-24 px-2 xxsm:px-3 drop-shadow-2xl">
+          <nav className="flex justify-center items-center rounded-2xl bg-transparent drop-shadow-md py-2 list-none">
             <div className="form-control relative">
               <div className="input-group">
                 <input
                   type="text"
                   placeholder="¿Qué estas buscando el dia de hoy?"
-                  className="input bg-slate-900 w-[18rem] xl:text-md md:text-[0.9rem] text-sm focus:outline-none"
+                  className="input bg-zinc-900 w-[18rem] xl:text-md md:text-[0.9rem] text-sm focus:outline-none"
                   autoComplete="off"
                   value={searchText}
                   onChange={handleSearchInput}
@@ -96,7 +96,7 @@ export default function Search() {
               </div>
               {showFloatingContainer && (
                 /* Contenido del contenedor flotante */
-                <div className="absolute z-50 input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+                <div className="absolute z-50 input bg-zinc-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
                   <div className="h-auto">
                     {searchResults.length === 0 ? (
                       <h1>No se encontraron resultados.</h1>
@@ -123,7 +123,7 @@ export default function Search() {
       <div className="grid grid-cols-2 relative gap-4 p-4">
         {/* Contenedor de Desayunos */}
         <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
+          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]" 
           style={{ backgroundImage: `url(${DesayunoBanner})` }}
         >
           <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
@@ -133,7 +133,7 @@ export default function Search() {
 
         {/* Contenedor de Otros */}
         <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
+          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
           style={{ backgroundImage: `url(${OtrosBanner})` }}
         >
           <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
@@ -143,7 +143,7 @@ export default function Search() {
 
         {/* Contenedor de Almuerzos */}
         <div
-          className="bg-cover bg-center h-32 relative col-span-2 rounded-md"
+          className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
           style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
         >
           <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">

@@ -12,6 +12,9 @@ import Tortas from "/src/assets/index/Tortas.jpg";
 import PolloAsado from "/src/assets/index/polloAsado.jpg";
 import almuerzoWall from "/src/assets/index/lunchWall.jpg";
 import desayunoWall from "/src/assets/index/desayunoWall.jpg";
+import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
+import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
+import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -43,11 +46,37 @@ export default function Index() {
             Categorías
           </h2>
 
-          <div className="flex gap-4 flex-wrap place-content-between p-0 lg:px-24">
-            {/*  */}
-            <CategoryCard name="Almuerzos" img={almuerzoWall} url="/homepage" />
-            <CategoryCard name="Desayunos" img={desayunoWall} url="/homepage" />
+          <div className="grid grid-cols-2 relative gap-4 p-4">
+        {/* Contenedor de Desayunos */}
+        <div
+          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]" 
+          style={{ backgroundImage: `url(${DesayunoBanner})` }}
+        >
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
+            Desayunos
           </div>
+        </div>
+
+        {/* Contenedor de Otros */}
+        <div
+          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+          style={{ backgroundImage: `url(${OtrosBanner})` }}
+        >
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+            Otros
+          </div>
+        </div>
+
+        {/* Contenedor de Almuerzos */}
+        <div
+          className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+          style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
+        >
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+            Almuerzos
+          </div>
+        </div>
+      </div>
         </div>
       </section>
 
