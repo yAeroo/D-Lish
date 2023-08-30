@@ -15,6 +15,7 @@ class MainDishResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'type' => "mainDish",
             'id' => $this->id,
             'name' => $this->name,
             'active' => $this->active,

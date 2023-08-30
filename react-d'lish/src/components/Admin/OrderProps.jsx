@@ -7,22 +7,22 @@ function OrderProps(props) {
   const { pedidos } = useOwner();
 
   return (
-    <div className="flex items-center w-[95%] justify-center">
+    <div className="flex items-center w-[95%] justify-center text-lg">
       <div className="container">
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
           <thead className="text-white">
             <tr className="bg-secondary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-              <th className="p-3 text-left">Precio $</th>
-              <th className="p-3 text-left">Cliente</th>
-              <th className="p-3 text-left">Complemento 1</th>
-              <th className="p-3 text-left">Complemento 2</th>
-              <th className="p-3 text-left">Bebida</th>
-              <th className="p-3 text-left">Acompañante</th>
+              <th className="border p-3 text-left">Precio $</th>
+              <th className="border p-3 text-left">Cliente</th>
+              <th className="border p-3 text-left">Complemento 1</th>
+              <th className="border p-3 text-left">Complemento 2</th>
+              <th className="border p-3 text-left">Bebida</th>
+              <th className="border p-3 text-left">Acompañante</th>
               {/* <th className="p-3 text-left">Acciones</th> */}
             </tr>
           </thead>
           {/* PEDIDOS */}
-          <tbody className="flex-1 sm:flex-none text-[#414141]">
+          <tbody className="flex-1 sm:flex-none text-[#1f1f1f]  font-semibold">
             {pedidos.map((pedido, id) => {
               // Encabezado de la tabla para cada producto
               if (pedido.mainDish.id == idPlatillo) {

@@ -9,7 +9,7 @@ const OwnerContext = createContext();
 // Proveedor de datos, quien va a servir la información de las cafeterias
 const OwnerProvider = ({ children }) => {
     const token = localStorage.getItem('AUTH_TOKEN');
-    const idOwner = localStorage.getItem('USER_ID')
+    const idOwner = localStorage.getItem('USER_ID');
     // Definición de Ordenes
     const [contenido, setContenido] = useState([]);
     const [platillos, setPlatillos] = useState([]);
@@ -31,7 +31,7 @@ const OwnerProvider = ({ children }) => {
 
     const obtenerPedidos = async () => {
         try {
-            const { data } = await clienteAxios(`/api/owner/${idOwner}/pedidos`, {
+            const { data } = await clienteAxios(`/api/owner/${idOwner}/ordenes`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -44,7 +44,7 @@ const OwnerProvider = ({ children }) => {
 
     const obtenerPlatillos = async () => {
         try {
-            const { data } = await clienteAxios(`/api/owner/${idOwner}/platillos`, {
+            const { data } = await clienteAxios(`/api/owner/${idOwner}/pedidos`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -53,6 +53,19 @@ const OwnerProvider = ({ children }) => {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const hadleClickOcultar = async (id, type) => {
+        console.log(`/owner/${type}/${id}`);
+        // try {
+        //     await clienteAxios.put(`/api/${tipe}/${id}`, null, {
+        //         headers: {
+        //             Authorization: `Bearer ${token}`
+        //         }
+        //     })
+        // } catch (error) {
+        //     console.log(error);
+        // }
     }
 
     // Manda a llamar al cargar el componente
@@ -72,7 +85,8 @@ const OwnerProvider = ({ children }) => {
         <OwnerContext.Provider value={{
             contenido,
             pedidos,
-            platillos
+            platillos,
+            hadleClickOcultar
         }}>
             {children}
         </OwnerContext.Provider>

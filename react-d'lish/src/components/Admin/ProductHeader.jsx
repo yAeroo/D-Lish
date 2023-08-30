@@ -7,9 +7,9 @@ function ProductHeader() {
       <th className="p-3 text-left h-[242px] sm:h-[49px]">
         Imagen
       </th>
-      <th className="p-3 text-left" width="110px">
+      {/* <th className="p-3 text-left" width="110px">
         Precio
-      </th>
+      </th> */}
       <th className="p-3 text-left" width="110px">
         Acciones
       </th>

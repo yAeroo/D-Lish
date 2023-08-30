@@ -26,9 +26,7 @@ import Orders from './views/Admin/Orders';
 import ProductAdmin from './views/Admin/ProductAdmin';
 import DeliveryMode from './views/DeliveryMode';
 import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
-import Pedidos from './components/Admin/Pedidos';
-
-
+import Menu from './views/Admin/Menu';
 
 // Las rutas se manejan mediante un arreglo de objetos
 const router = createBrowserRouter([
@@ -154,7 +152,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/admin/products',
-                element: <ProductAdmin />
+                // element: <ProductAdmin />
+                element: <Menu />
             }
         ]
 

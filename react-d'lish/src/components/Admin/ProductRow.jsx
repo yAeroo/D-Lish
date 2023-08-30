@@ -1,26 +1,29 @@
 import { AiFillDelete } from "react-icons/ai"
 import { RiEdit2Fill } from "react-icons/ri"
-
+import { AiFillEyeInvisible } from "react-icons/ai"
+// CSSSS
 import "../../css/tables.css";
+import useOwner from "../../hooks/useOwner";
 
 function ProductRow(props) {
-    return (
+    const { ProductNum, ProductItem, id, type } = props;
+    const { hadleClickOcultar } = useOwner();
 
+    return (
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-            <td className="border-grey-light border hover:bg-gray-100 p-3">{props.ProductNum}</td>
-            <td className="tableRow">{props.ProductItem}</td>
+            <td className="border-grey-light border hover:bg-gray-100 p-3">{ProductNum}</td>
+            <td className="tableRow">{ProductItem}</td>
             <td className="tableRow h-[234px] sm:h-auto">
                 {/* <img src={props.ProductIMG} className='w-[13rem] h-[13rem]' /> */}
             </td>
-            <td className="tableRow">{props.ProductPrice}</td>
-            <td className="border-grey-light border p-3  hover:font-medium ">
-                <div className='flex sm:justify-center gap-3'>
-                    <AiFillDelete className='cursor-pointer text-2xl sm:text-2xl text-red-400 hover:text-red-600' onClick={() => window.delete_modal.showModal()}>     </AiFillDelete>
+            {/* <td className="tableRow">{props.ProductPrice}</td> */}
+            <td className="border-grey-light border p-3  hover:font-medium flex sm:justify-center gap-3 ">
+                <AiFillEyeInvisible className='cursor-pointer text-2xl sm:text-2xl text-gray-400 hover:text-gray-600' onClick={() => hadleClickOcultar(type, id)}></AiFillEyeInvisible>
 
-                    <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal()}></RiEdit2Fill>
-                </div>
+                <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal()}></RiEdit2Fill>
+
+                <AiFillDelete className='cursor-pointer text-2xl sm:text-2xl text-red-400 hover:text-red-600' onClick={() => window.delete_modal.showModal()}></AiFillDelete>
             </td>
-
         </tr>
 
 

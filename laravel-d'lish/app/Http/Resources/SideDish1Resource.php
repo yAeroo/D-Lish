@@ -16,6 +16,7 @@ class SideDish1Resource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'type' => "sideDish1",
             'name' => $this->name
         ];
     }

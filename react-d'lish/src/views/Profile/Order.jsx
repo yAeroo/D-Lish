@@ -22,8 +22,6 @@ function Order() {
   let finalOrden = Object.keys(orden).filter(propiedad => orden[propiedad] !== null);
   finalOrden = Object.keys(orden).filter(propiedad => orden[propiedad] !== null);
 
-  finalOrden.splice(0, 1);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
