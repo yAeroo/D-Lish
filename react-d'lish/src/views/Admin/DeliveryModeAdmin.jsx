@@ -12,25 +12,7 @@ function DeliveryModeAdmin() {
                   <HeaderOrder platillo='Carne' />
 
                   {/* Content */}
-                  <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-                  <OrderProps nameuser="José Cea" platillo="Desayuno" content1="Casamiento" content2="Chimol" />
-                  <OrderProps nameuser="Oscar Arce" platillo="Desayuno" content1="Arroz" content2="Ensalada" />
-                  <br />
-
-                  {/* Platillo2 */}
-                  <HeaderOrder platillo='Pollo' />
-
-                  {/* Content */}
-                  <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-                  <br />
-
-
-                  {/* Platillo  */}
-                  <HeaderOrder platillo='Lasagna' />
-
-                  {/* Content */}
-                  <OrderProps nameuser="tilin amaya" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-                  <br />
+                  <OrderProps />
 
 
             </div>

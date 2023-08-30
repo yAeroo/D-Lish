@@ -149,8 +149,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/admin/delivmode',
-                // element: <DeliveryModeAdmin />
-                element: <Pedidos />
+                element: <DeliveryModeAdmin />
             },
             {
                 path: '/admin/products',
