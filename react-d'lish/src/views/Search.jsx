@@ -126,7 +126,7 @@ export default function Search() {
           className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
           style={{ backgroundImage: `url(${DesayunoBanner})` }}
         >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
             Desayunos
           </div>
         </div>
