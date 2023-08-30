@@ -1,11 +1,8 @@
-import React from 'react';
-import Pupusas from "../../assets/index/pupusas.jpg"; 
-import OrderContent from './OrderContent';
+import React from 'react'
+import LasangaContent from '../OrderContent/LasagnaContent';
 
-function OrderProps() {
-
+function LasagnaProps() {
   return (
-    
 <div className="flex items-center w-[95%] justify-center">
         <div className="container">
           <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
@@ -25,18 +22,13 @@ function OrderProps() {
             
           <tbody className="flex-1 sm:flex-none text-[#414141]">
 
-            <OrderContent nameuser="Carlos Sandoval" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-            <OrderContent nameuser="Marcela Menjivar" platillo="Desayuno" content1="Casamiento" content2="Ensalada" />
-            <OrderContent nameuser="Daniela Cruz" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+            <LasangaContent  nameuser="José Lasagna" platillo="Desayuno" content1="Arroz" content2="Chimol" />
 
           </tbody>
           </table>
         </div>
       </div>
-
-    
   )
 }
 
-export default OrderProps
- 
+export default LasagnaProps

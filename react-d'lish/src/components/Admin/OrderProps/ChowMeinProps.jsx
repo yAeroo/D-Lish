@@ -1,12 +1,10 @@
-import React from 'react';
-import Pupusas from "../../assets/index/pupusas.jpg"; 
-import OrderContent from './OrderContent';
+import React from 'react'
+import ChowMeinContent from '../OrderContent/ChowMeinContent'
 
-function OrderProps() {
-
+function ChowMeinProps() {
   return (
-    
-<div className="flex items-center w-[95%] justify-center">
+    <div>
+      <div className="flex items-center w-[95%] justify-center">
         <div className="container">
           <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
             <thead className="text-white">
@@ -25,18 +23,14 @@ function OrderProps() {
             
           <tbody className="flex-1 sm:flex-none text-[#414141]">
 
-            <OrderContent nameuser="Carlos Sandoval" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-            <OrderContent nameuser="Marcela Menjivar" platillo="Desayuno" content1="Casamiento" content2="Ensalada" />
-            <OrderContent nameuser="Daniela Cruz" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+            <ChowMeinContent nameuser="Rene Gul" platillo="Desayuno" content1="Casamiento" content2="Ensalada" />
 
           </tbody>
           </table>
         </div>
       </div>
-
-    
+    </div>
   )
 }
 
-export default OrderProps
- 
+export default ChowMeinProps

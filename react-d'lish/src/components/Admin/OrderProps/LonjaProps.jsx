@@ -1,11 +1,7 @@
-import React from 'react';
-import Pupusas from "../../assets/index/pupusas.jpg"; 
-import OrderContent from './OrderContent';
-
-function OrderProps() {
-
+import React from 'react'
+import LonjaContent from '../OrderContent/LonjaContent';
+function LonjaProps() {
   return (
-    
 <div className="flex items-center w-[95%] justify-center">
         <div className="container">
           <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
@@ -25,18 +21,13 @@ function OrderProps() {
             
           <tbody className="flex-1 sm:flex-none text-[#414141]">
 
-            <OrderContent nameuser="Carlos Sandoval" platillo="Desayuno" content1="Arroz" content2="Chimol" />
-            <OrderContent nameuser="Marcela Menjivar" platillo="Desayuno" content1="Casamiento" content2="Ensalada" />
-            <OrderContent nameuser="Daniela Cruz" platillo="Desayuno" content1="Arroz" content2="Chimol" />
+            <LonjaContent  nameuser="José Costillas" platillo="Desayuno" content1="Arroz" content2="Chimol" />
 
           </tbody>
           </table>
         </div>
       </div>
-
-    
   )
 }
 
-export default OrderProps
- 
+export default LonjaProps
