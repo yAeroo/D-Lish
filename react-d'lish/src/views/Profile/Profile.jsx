@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import Preferences from "../../components/Profile/Preferences";
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 import RegresarProfile from "../../components/Profile/RegresarProfile";
+//NavMobileIndex
+import NavMobileIndex from "../../components/Nav/NavMobileIndex";
 // Protección de rutas
 import { useAuth } from "../../hooks/useAuth";
 // Icons
@@ -23,6 +25,8 @@ export default function Profile() {
 
     return (
         <>
+        <NavMobileIndex />
+
             {/* Botones de edición y regresar */}
             <div id="pf-bttns" className="relative">
 

@@ -36,7 +36,7 @@ export default function Search() {
       <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7">¡Bienvenido Lucas Ríos!</h1>
     </section>
 
-    <div className='w-full items-center z-10'>
+    <div className='w-full items-center relative z-10'>
     <section className="py-3 md:px-24 px-2 drop-shadow-2xl">
       <nav className="flex justify-center items-center rounded-2xl bg-neutral drop-shadow-md py-5 list-none">
         <div className="form-control relative">
