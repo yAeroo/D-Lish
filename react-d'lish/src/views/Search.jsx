@@ -11,6 +11,8 @@ import { FaUserCircle } from "react-icons/fa";
 import Burrito from "/src/assets/index/burrito.jpg";
 import Pupusas from "/src/assets/index/pupusas.jpg";
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
+import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
+import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
 //Componentes
 import FoodCardSearch from "../components/FoodCardSearch";
 
@@ -132,19 +134,19 @@ export default function Search() {
         {/* Contenedor de Otros */}
         <div
           className="bg-cover bg-center h-32 md:h-48 relative rounded-md"
-          style={{ backgroundImage: `url(${DesayunoBanner})` }}
+          style={{ backgroundImage: `url(${OtrosBanner})` }}
         >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
             Otros
           </div>
         </div>
 
         {/* Contenedor de Almuerzos */}
         <div
-          className="bg-cover bg-center h-[12rem] relative col-span-2 rounded-md"
-          style={{ backgroundImage: `url(${DesayunoBanner})` }}
+          className="bg-cover bg-center h-32 relative col-span-2 rounded-md"
+          style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
         >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-2xl">
+          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
             Almuerzos
           </div>
         </div>
