@@ -45,7 +45,7 @@ export default function Index() {
             Categorías
           </h2>
 
-          <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem]">
+          <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
             {/* Contenedor de Desayunos */}
             <div
               className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
