@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CafeteriaController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\PedidoController;
 
 /*
@@ -29,14 +30,15 @@ Route::middleware('auth:sanctum')->group(function () {
     // DESLOGUEO ================
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    // OWNER ================
+    Route::get('/owner/{id}', [OwnerController::class, 'index']);
+    Route::get('/owner/{id}/pedidos', [OwnerController::class, 'pedidos']);
+
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);
 
     // SUBIDA DE IMAGEN ==============
     Route::post('/user/{id}/upload-image', [ImageController::class, 'store']);
-
-    // PEDIDOS OWNER ================
-    Route::get('/owner/{id}/pedidos', [PedidoController::class, 'index']);
 });
 
 // AUTENTICACIÓN ================ 

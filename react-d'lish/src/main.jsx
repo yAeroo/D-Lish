@@ -10,14 +10,17 @@ import { RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { CafeteriasProvider } from './context/CafeteriasProvider';
 import { OrdersProvider } from './context/OrdersProvider';
+import { OwnerProvider } from './context/OwnerProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <CafeteriasProvider>
-            <OrdersProvider>
-                <RouterProvider router={router} />
-                <ToastContainer className="z-40" />
-            </OrdersProvider>
+            <OwnerProvider>
+                <OrdersProvider>
+                    <RouterProvider router={router} />
+                    <ToastContainer className="z-40" />
+                </OrdersProvider>
+            </OwnerProvider>
         </CafeteriasProvider>
     </React.StrictMode>
 )

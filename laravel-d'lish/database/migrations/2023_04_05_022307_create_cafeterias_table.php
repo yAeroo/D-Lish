@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id(); // Columna 'Id' - Llave primaria, único, autoincrement
             $table->string('name', 50); // Columna 'name' - String 
             $table->string('public', 50)->nullable(); // 
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Columna 'User_id' - Llave foranea para referenciar al id del propitario de la cafeteria
+            $table->unsignedBigInteger('user_id')->default(null)->nullable(); // Columna 'User_id' - Llave foranea para referenciar al id del propitario de la cafeteria
             $table->string('img'); // Columna 'img' - String
             $table->string('img_wall'); // Columna 'img_wall' - String
             $table->unsignedBigInteger('likes')->nullable();

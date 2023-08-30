@@ -150,6 +150,7 @@ const router = createBrowserRouter([
             {
                 path: '/admin/delivmode',
                 element: <DeliveryModeAdmin />
+
             },
             {
                 path: '/admin/products',

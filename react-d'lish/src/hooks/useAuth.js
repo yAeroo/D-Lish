@@ -29,6 +29,7 @@ export const useAuth = ({ middleware, url }) => {
             const { data } = await clienteAxios.post('/api/login', datos);
             // Guardar token de auth en localstorage
             localStorage.setItem('AUTH_TOKEN', data.token);
+            localStorage.setItem('USER_ID', data.user.id);
             // Si todo esta bien
             load();
             setErrores([]);
@@ -73,6 +74,7 @@ export const useAuth = ({ middleware, url }) => {
                 }
             });
             localStorage.removeItem('AUTH_TOKEN');
+            localStorage.removeItem('USER_ID');
             // Cambiar el valor de la caché de la sesión
             await mutate(undefined);
         } catch (error) {

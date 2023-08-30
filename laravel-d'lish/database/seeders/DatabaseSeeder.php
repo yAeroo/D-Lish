@@ -14,14 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        $this->call(UserSeeder::class);
         $this->call(CafeteriaSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(MainDishSeeder::class);
         $this->call(SideDish1Seeder::class);
         $this->call(SideDish2Seeder::class);

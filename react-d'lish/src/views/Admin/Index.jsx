@@ -2,7 +2,7 @@ import React from 'react'
 import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
 //Comida pic
-import Almuerzo from "../../assets/homepage/Almuerzos.png"
+import useOwner from '../../hooks/useOwner';
 //chart LINE imports 
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, ArcElement, Tooltip, } from "chart.js";
@@ -12,6 +12,8 @@ import { Pie } from "react-chartjs-2";
 import { Link } from 'react-router-dom';
 
 export default function Admin() {
+  const { contenido } = useOwner();
+  const { cafeteria } = contenido;
 
   ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
   const data = {
@@ -69,7 +71,7 @@ export default function Admin() {
           <main className="p-6 sm:p-10 space-y-6">
             <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
               <div className="mr-6">
-                <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín Maria Auxiliadora</h1>
+                <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín {cafeteria?.name}</h1>
                 <h2 className="text-black ml-0.5">Mira las estadisticas de tu local</h2>
               </div>
 
@@ -88,15 +90,14 @@ export default function Admin() {
 
             {/* Espacio para Tarjeta de comida o Grafica  + demas Tarejtas*/}
             <section className="grid justify-center md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-3 xl:grid-flow-col gap-6 ">
-              <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
+              {/* <div className="flex flex-col md:col-span-2 md:row-span-2 bg-neutral shadow rounded-lg">
                 <div className="px-6 py-5 font-semibold border-b border-gray-100 text-white">Ventas semanales</div>
                 <div className="p-4 flex-grow">
                   <div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold border-2 border-gray-200 border-dashed rounded-md">
-                    {/* Grafico espacio 1 */}
                     <Line data={data} options={options} />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
 
               {/* Trajetas de Abajo */}

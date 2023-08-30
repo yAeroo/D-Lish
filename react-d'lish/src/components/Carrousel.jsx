@@ -15,7 +15,6 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 export default function Carrousel() {
     // Extraemos datos del ccontext
     const { cafeterias } = useCafeterias();
-    console.log(cafeterias);
 
     return (
         <>

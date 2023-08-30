@@ -20,7 +20,9 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'saldo',
+        'saldo_disp',
+        'saldo_off',
+        'profile_pic',
         'gender',
         'password',
     ];
@@ -44,8 +46,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Definición de propiedades del JSON mediante las relaciones de los métodos del modelo
+    protected $with = ['cafeteria'];
+
     public function orderDishes()
     {
         return $this->hasMany(OrderDish::class);
+    }
+
+    public function cafeteria()
+    {
+        return $this->hasOne(Cafeteria::class, 'user_id');
     }
 }
