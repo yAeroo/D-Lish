@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useOrders from '../hooks/useOrders';
 
 function FoodCardDish(props) {
-    const { id, name, type, photo, cafetin, principal } = props;
+    const { id, name, type, photo, principal } = props;
     // Funciones para agregar a la orden
     const { orden, handleAgregarOrden, comprobarOrdenCompleta } = useOrders();
 
@@ -21,7 +21,6 @@ function FoodCardDish(props) {
                     <h2 className="text-md font-bold text-neutral-100">
                         {name}
                     </h2>
-                    <h3 className="pt-[0.01rem] text-sm text-neutral-200">{cafetin}</h3>
                 </div>
             </div>
             <label className=" text-primary text-xs px-2 py-1 rounded-md ml-5">

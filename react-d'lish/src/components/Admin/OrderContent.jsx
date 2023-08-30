@@ -14,10 +14,10 @@ function OrderContent(props) {
       <td className="border-grey-light tableRow">{accompaniment ? accompaniment : '---'}</td>
 
       {/*Botones*/}
-      <td className="tableRow border-grey-light hover:font-mediu flex sm:justify-center gap-3 wrap">
+      {/* <td className="tableRow border-grey-light hover:font-mediu flex sm:justify-center gap-3 wrap">
         <button className="btn btn-outline btn-success">Aceptar</button>
         <button className="btn btn-outline btn-error">Denegar</button>
-      </td>
+      </td> */}
     </tr>
 
   )

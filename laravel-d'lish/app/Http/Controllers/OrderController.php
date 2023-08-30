@@ -83,7 +83,6 @@ class OrderController extends Controller
 
         // Retornar una respuesta
         return response([
-            'cafeteria' => $cafeteria->name,
             'principal' => $mainDish->name,
             'complement1' => $sideDish1->name,
             'complement2' => $sideDish2->name,

@@ -24,6 +24,8 @@ export default function CafetinView() {
   // Contenido de la cafeteria
   const cafeteria = cafeterias?.find(cafeteria => cafeteria?.id == cafeteriaId);
   const { platillos } = contenidoCafeteria;
+  // Filtrar platillos desactivos
+  const activePlatillos = platillos?.filter(item => item.active !== 0);
 
   return (
     <>
@@ -107,8 +109,8 @@ export default function CafetinView() {
         <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
 
           {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
-          {platillos?.length ?
-            platillos.map(
+          {activePlatillos?.length ?
+            activePlatillos.map(
               (platillo, id) => (
                 <FoodCard
                   name={platillo.name}

@@ -18,7 +18,7 @@ function OrderProps(props) {
               <th className="p-3 text-left">Complemento 2</th>
               <th className="p-3 text-left">Bebida</th>
               <th className="p-3 text-left">Acompañante</th>
-              <th className="p-3 text-left">Acciones</th>
+              {/* <th className="p-3 text-left">Acciones</th> */}
             </tr>
           </thead>
           {/* PEDIDOS */}
@@ -34,6 +34,14 @@ function OrderProps(props) {
                   drink={pedido.drink?.name}
                   accompaniment={pedido.accompaniment?.name}
                 />
+              } else {
+                return <tr key={id}  >
+                  <td></td>
+                  <td></td>
+                  <td className='text-center w-full text-3xl text-red-800 font-bold'>No hay pedidos</td>
+                  <td></td>
+                  <td></td>
+                </tr>
               }
             })}
           </tbody>

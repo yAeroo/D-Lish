@@ -99,8 +99,7 @@ export default function Dish() {
                     name={platillo?.name}
                     id={dishId}
                     principal={true}
-                    photo={Burrito}
-                    cafetin="Miguel Magone" />
+                    photo={Burrito} />
                 </div>
 
                 <br />
@@ -113,8 +112,7 @@ export default function Dish() {
                       id={complemento.id}
                       type="side_dish1"
                       name={complemento.name}
-                      photo={Burrito}
-                      cafetin="Miguel Magone" />
+                      photo={Burrito} />
                   )) : ''}
                 </div>
                 <br />
@@ -128,8 +126,7 @@ export default function Dish() {
                       id={complemento.id}
                       type="side_dish2"
                       name={complemento.name}
-                      photo={Burrito}
-                      cafetin="Miguel Magone" />
+                      photo={Burrito} />
                   )) : ''}
                 </div>
                 <br />
@@ -143,8 +140,7 @@ export default function Dish() {
                       name={acompanante.name}
                       type="accompaniement"
                       id={acompanante.id}
-                      photo={Burrito}
-                      cafetin="Miguel Magone" />
+                      photo={Burrito} />
                   )) : ''}
                 </div>
                 <br />
@@ -158,8 +154,7 @@ export default function Dish() {
                       name={bebida.name}
                       type="drink"
                       id={bebida.id}
-                      photo={Burrito}
-                      cafetin="Miguel Magone" />
+                      photo={Burrito} />
                   )) : ''}
                 </div>
               </form>
