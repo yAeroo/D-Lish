@@ -5,9 +5,9 @@ function UsersProps(props) {
   const { name } = props;
 
   return (
-    <div>
-      <div className="overflow-y-auto max-height: 24rem" >
-        <ul className="p-6 space-y-6">
+    <div className='bg-accent mx-4 md:mx-1 rounded-md'>
+      <div className="overflow-y-auto max-height:24rem " >
+        <ul className="p-4 space-y-2 w-full">
           <li className="flex items-center">
             <div className="h-10 w-10 mr-3 bg-gray-100 rounded-full overflow-hidden">
               <img src={ExamplePfp} alt="Annette Watson profile picture" />

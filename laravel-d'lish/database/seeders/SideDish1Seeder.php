@@ -17,14 +17,6 @@ class SideDish1Seeder extends Seeder
      */
     public function run()
     {
-        // DB::table('side_dishes1')->insert([
-        //     'name' => 'Arroz',
-        //     'cafeteria_id' => 1,
-        //     'price' => 0.50,
-        //     'created_at' => Carbon::now(),
-        //     'updated_at' => Carbon::now(),
-        // ]);
-
         $registros = [
             //Cafeteria 1
             [

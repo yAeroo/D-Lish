@@ -8,16 +8,14 @@ const OwnerContext = createContext();
 
 // Proveedor de datos, quien va a servir la información de las cafeterias
 const OwnerProvider = ({ children }) => {
-    const token = localStorage.getItem('AUTH_TOKEN');
-    const idOwner = localStorage.getItem('USER_ID');
     // Definición de Ordenes
     const [contenido, setContenido] = useState([]);
     const [platillos, setPlatillos] = useState([]);
-    const [boolean, setBoolean] = useState(false);
     const [pedidos, setPedidos] = useState([]);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}`, {
                 headers: {
@@ -25,7 +23,6 @@ const OwnerProvider = ({ children }) => {
                 }
             })
             setContenido(data?.data);
-            setBoolean(true);
         } catch (error) {
             // console.log(error);
         }
@@ -33,6 +30,8 @@ const OwnerProvider = ({ children }) => {
 
     // Obtener todos los pedidos de los usuarios a la cafetería
     const obtenerPedidos = async () => {
+        const idOwner = localStorage.getItem('CAFE_ID');
+        const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}/ordenes`, {
                 headers: {
@@ -47,12 +46,14 @@ const OwnerProvider = ({ children }) => {
 
     // Obtener todos los platillos 
     const obtenerPlatillos = async () => {
+        const idOwner = localStorage.getItem('CAFE_ID');
+        const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}/pedidos`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            })
+            });
             setPlatillos(data?.data);
         } catch (error) {
             console.log(error);
@@ -61,6 +62,7 @@ const OwnerProvider = ({ children }) => {
 
     // Registrar o añadir componentes de platillos
     const addProduct = async (type, datos, NotiError) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
         const datas = { ...datos, idOwner };
         console.log(datas);
 
@@ -101,6 +103,7 @@ const OwnerProvider = ({ children }) => {
 
     // Cambiar estado de disponibilidad de un componente/producto
     const hadleClickVisibility = async (type, id) => {
+        const token = localStorage.getItem('AUTH_TOKEN');
         try {
             await clienteAxios.put(`/api/${type}/${id}`, null, {
                 headers: {
@@ -115,24 +118,21 @@ const OwnerProvider = ({ children }) => {
     // Manda a llamar al cargar el componente
     useEffect(() => {
         obtenerOwner();
-    }, [])
-
-    // Manda a llamar al tener la cafeteria
-    useEffect(() => {
         obtenerPedidos();
         obtenerPlatillos();
-    }, [contenido, boolean])
-
+    }, [])
 
     return (
         // Se pasan los datos al global
         <OwnerContext.Provider value={{
             obtenerPedidos,
+            obtenerOwner,
             contenido,
             pedidos,
             platillos,
             hadleClickVisibility,
-            addProduct
+            addProduct,
+            obtenerPlatillos
         }}>
             {children}
         </OwnerContext.Provider>

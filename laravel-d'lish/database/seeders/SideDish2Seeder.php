@@ -20,7 +20,7 @@ class SideDish2Seeder extends Seeder
         $registros = [
             //Cafeteria 1
             [
-                'name' => 'Ensalada',
+                'name' => 'Ensalada verde',
                 'cafeteria_id' => 1,
                 // 'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
@@ -62,7 +62,7 @@ class SideDish2Seeder extends Seeder
             ],
             //Cafeteria 3
             [
-                'name' => 'Ensalada',
+                'name' => 'Coditos',
                 'cafeteria_id' => 3,
                 // 'img' => 'ensalada.jpg',
                 // 'price' => 0.50,

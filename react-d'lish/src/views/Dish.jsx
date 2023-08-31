@@ -8,8 +8,9 @@ import OrderComponent from '../components/OrderComponent';
 
 // Importacion de iconos y demas 
 import { FaMoneyCheck } from "react-icons/fa";
-import {GiPayMoney } from "react-icons/gi";
-import {CgDanger} from "react-icons/cg"
+import { GiPayMoney } from "react-icons/gi";
+import { CgDanger } from "react-icons/cg"
+import { ValidURL } from "../helper/ValidURL";
 
 // IMPORTACIÓN DE CONTENIDO VARIABLE
 import { useEffect, useState } from 'react'
@@ -26,6 +27,16 @@ export default function Dish() {
   const { cafeteriaId, dishId } = useParams();
   const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria } = useCafeterias();
   const { setOrden, handleRemoverOrden } = useOrders();
+
+  // Validar URL
+  const { bool, error } = ValidURL(cafeteriaId, dishId);
+  if (bool) return error;
+
+  // Extraer contenido de la cafeteria actual al tener el ID 
+  useEffect(() => {
+    limpiarCafeteria();
+    obtenerContenidoCafeteria(cafeteriaId);
+  }, []);
 
   // Toastify
   const toastErrorId = "error-noti";
@@ -170,70 +181,70 @@ export default function Dish() {
             </div>
 
           </div>
-          <button to="/order" disabled={!ordenComplete} onClick={() => window.payment_modal.showModal()} 
+          <button to="/order" disabled={!ordenComplete} onClick={() => window.payment_modal.showModal()}
             className="btn font-plane buttonActive"
           >
-          
 
-          
 
-{/* onClick={confirmarOrden} */}
+
+
+            {/* onClick={confirmarOrden} */}
             Ordenar
           </button>
 
 
           <div>
-          <dialog id="payment_modal" className="modal">
-            <form method="dialog" className="modal-box bg-[#292929]">
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-              <h3 className="font-bold text-lg text-terc text-center">Tipo de pago</h3>
+            <dialog id="payment_modal" className="modal">
+              <form method="dialog" className="modal-box bg-[#292929]">
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                <h3 className="font-bold text-lg text-terc text-center">Tipo de pago</h3>
 
-              <h4 className="mb-5 py-4 text-lg font-medium text-gray-900 dark:text-white text-center"> Selecciona el tipo de pago a utilizar para continuar con tu compra </h4>
-              <ul className="grid w-full gap-6 md:grid-cols-2">
+                <h4 className="mb-5 py-4 text-lg font-medium text-gray-900 dark:text-white text-center"> Selecciona el tipo de pago a utilizar para continuar con tu compra </h4>
+                <ul className="grid w-full gap-6 md:grid-cols-2">
                   <li>
-                      <input type="radio" id="PaymentFondos" name="Payment" value="PaymentFondos" className="hidden peer" required  onChange={() => setSelectedPayment("PaymentFondos")}/>
-                      <label htmlFor="PaymentFondos" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">                           
-                          <div className="block">
-                              <div className="w-full text-lg font-semibold">Fondos</div>
-                              <div className="w-full ">Paga con los fondos de tu cuenta</div>
-                          </div>
-                          <FaMoneyCheck className="w-[5rem] h-5 ml-3 "/>
-                      </label>
+                    <input type="radio" id="PaymentFondos" name="Payment" value="PaymentFondos" className="hidden peer" required onChange={() => setSelectedPayment("PaymentFondos")} />
+                    <label htmlFor="PaymentFondos" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
+                      <div className="block">
+                        <div className="w-full text-lg font-semibold">Fondos</div>
+                        <div className="w-full ">Paga con los fondos de tu cuenta</div>
+                      </div>
+                      <FaMoneyCheck className="w-[5rem] h-5 ml-3 " />
+                    </label>
                   </li>
                   <li>
-                      <input type="radio" id="PaymentEfectivo" name="Payment" value="PaymentEfectivo" className="hidden peer" required onChange={() => setSelectedPayment("PaymentEfectivo")}/>
-                      <label htmlFor="PaymentEfectivo" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">    
-                          <div className="block">
-                              <div className="w-full text-lg font-semibold">Efectivo</div>
-                              <div className="w-full">Paga dirigiendote a la cafeteria</div>
-                          </div>
-                          <GiPayMoney className="w-[5rem] h-5 ml-3 "/>
-                      </label>
+                    <input type="radio" id="PaymentEfectivo" name="Payment" value="PaymentEfectivo" className="hidden peer" required onChange={() => setSelectedPayment("PaymentEfectivo")} />
+                    <label htmlFor="PaymentEfectivo" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
+                      <div className="block">
+                        <div className="w-full text-lg font-semibold">Efectivo</div>
+                        <div className="w-full">Paga dirigiendote a la cafeteria</div>
+                      </div>
+                      <GiPayMoney className="w-[5rem] h-5 ml-3 " />
+                    </label>
                   </li>
-              </ul>
+                </ul>
 
-              {selectedPayment !== null && showFundsText && (
-                <p className="text-center my-5 text-terc animate-fade animate-duration-500">
-                  Tus fondos actuales son de 25$ <br />
-                  Si deseas proceder dale al botón de abajo
-                </p>
-              )}
+                {selectedPayment !== null && showFundsText && (
+                  <p className="text-center my-5 text-terc animate-fade animate-duration-500">
+                    Tus fondos actuales son de 25$ <br />
+                    Si deseas proceder dale al botón de abajo
+                  </p>
+                )}
 
-              {selectedPayment === "PaymentEfectivo" && (
-                <p className="text-center my-5 text-[#ff922c] animate-fade animate-duration-500">
-                  <CgDanger className="inline text-2xl pb-1" /> Al seleccionar la opción de Efectivo admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido <br /> En caso de que no cumplas con tu responsabilidad, recibirás una penalización.
-                </p>
-              )}
+                {selectedPayment === "PaymentEfectivo" && (
+                  <p className="text-center my-5 text-[#ff922c] animate-fade animate-duration-500">
+                    <CgDanger className="inline text-2xl pb-1" /> Al seleccionar la opción de Efectivo admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido <br /> En caso de que no cumplas con tu responsabilidad, recibirás una penalización.
+                  </p>
+                )}
 
-              <div className="modal-action justify-center">
-              
+                <div className="modal-action justify-center">
 
-                <button className="btn btn-primary" onClick={confirmarOrden}> Realizar pedido</button>
-              </div>
-            </form>
-          </dialog>
+
+                  <button className="btn btn-primary" onClick={confirmarOrden}> Realizar pedido</button>
+                </div>
+              </form>
+            </dialog>
           </div>
-        
+
         </div>
 
       </div>

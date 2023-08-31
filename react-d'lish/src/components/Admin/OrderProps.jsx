@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import OrderContent from './OrderContent';
 import useOwner from '../../hooks/useOwner';
 
 function OrderProps(props) {
   const { idPlatillo } = props;
-  const { pedidos } = useOwner();
-
+  const { pedidos, obtenerPedidos } = useOwner();
+  useEffect(() => {
+    obtenerPedidos();
+  }, []);
   return (
     <div className="flex items-center w-[95%] justify-center text-lg">
       <div className="container">
@@ -23,7 +25,7 @@ function OrderProps(props) {
           </thead>
           {/* PEDIDOS */}
           <tbody className="flex-1 sm:flex-none text-[#1f1f1f]  font-semibold">
-            {pedidos.map((pedido, id) => {
+            {pedidos.length ? pedidos.map((pedido, id) => {
               // Encabezado de la tabla para cada producto
               if (pedido.mainDish.id == idPlatillo) {
                 return <OrderContent key={id}
@@ -43,7 +45,7 @@ function OrderProps(props) {
                   <td></td>
                 </tr>
               }
-            })}
+            }) : <tr><td colSpan="6" className='text-center'>No hay pedidos</td></tr>}
           </tbody>
         </table>
       </div>

@@ -22,8 +22,6 @@ import Settings from './views/Profile/Settings';
 import Page404 from './views/Page404';
 import IndexAdmin from './views/Admin/Index';
 import ProfileAdmin from './views/Admin/ProfileAdmin';
-import Orders from './views/Admin/Orders';
-import ProductAdmin from './views/Admin/ProductAdmin';
 import DeliveryMode from './views/DeliveryMode';
 import DeliveryModeAdmin from './views/Admin/DeliveryModeAdmin';
 import Menu from './views/Admin/Menu';

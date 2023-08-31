@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 //Componentes
+import Page404 from "../views/Page404"
 import WiggleAlert from "../components/WiggleAlert";
 
 // CONTENIDO VARIABLE
@@ -9,11 +10,15 @@ import useCafeterias from "../hooks/useCafeterias";
 //Iconos
 import { FaRegHeart } from "react-icons/fa";
 import FoodCard from "../components/Cafeteria/FoodCard";
+import { ValidURL } from "../helper/ValidURL";
 
 export default function CafetinView() {
   // Extraer parametro
   const { cafeterias, obtenerContenidoCafeteria, contenidoCafeteria, limpiarCafeteria } = useCafeterias();
   const { cafeteriaId } = useParams();
+  // Validar URL
+  const { bool, error } = ValidURL(cafeteriaId);
+  if (bool) return error;
 
   // Extraer contenido de la cafeteria actual al tener el ID 
   useEffect(() => {

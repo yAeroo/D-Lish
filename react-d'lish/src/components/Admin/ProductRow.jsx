@@ -11,7 +11,12 @@ function ProductRow(props) {
     const { hadleClickVisibility } = useOwner();
     const [visible, setVisible] = useState(active);
 
-    const handleClick = (type, id) => {
+    const handleClickVisible = (type, id) => {
+        hadleClickVisibility(type, id)
+        setVisible(!visible);
+    }
+
+    const handleClickDelete = (type, id) => {
         hadleClickVisibility(type, id)
         setVisible(!visible);
     }
@@ -28,7 +33,7 @@ function ProductRow(props) {
                 <AiFillEyeInvisible
                     className={`cursor-pointer text-2xl sm:text-2xl text-gray-400 hover:text-gray-600'
                     ${!visible ? 'text-gray-600' : 'text-gray-400 hover:text-gray-600'}`}
-                    onClick={() => handleClick(type, id)}>
+                    onClick={() => handleClickVisible(type, id)}>
                 </AiFillEyeInvisible>
 
 

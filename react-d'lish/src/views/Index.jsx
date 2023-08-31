@@ -23,7 +23,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import NavMobileIndex from "../components/Nav/NavMobileIndex";
 import FoodCard from "../components/FoodCard";
-import CategoryCard from "../components/CategoryCard";
 
 export default function Index() {
   return (

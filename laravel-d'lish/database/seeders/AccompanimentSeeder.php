@@ -20,17 +20,23 @@ class AccompanimentSeeder extends Seeder
         $Registros = [
             //Cafeteria 1
             [
-                'name' => 'Tortillas',
+                'name' => 'Tortilla de maíz',
                 'cafeteria_id' => 1,
                 // 'price' => 0,
                 // 'img' => 'tortilla.jpg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-
             //Cafeteria 2
             [
-                'name' => 'Tortillas',
+                'name' => 'Tortilla',
+                'cafeteria_id' => 2,
+                // 'price' => 0,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Tortilla Frita',
                 'cafeteria_id' => 2,
                 // 'price' => 0,
                 'created_at' => Carbon::now(),
@@ -38,7 +44,14 @@ class AccompanimentSeeder extends Seeder
             ],
             //Cafeteria 3
             [
-                'name' => 'Tortillas',
+                'name' => 'Tortilla de maíz',
+                'cafeteria_id' => 2,
+                // 'price' => 0,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Tortilla de arroz',
                 'cafeteria_id' => 3,
                 // 'price' => 0,
                 'created_at' => Carbon::now(),

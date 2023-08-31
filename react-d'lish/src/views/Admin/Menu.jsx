@@ -11,7 +11,7 @@ import useSWR from 'swr';
 
 function ProductAdmin() {
   const token = localStorage.getItem('AUTH_TOKEN');
-  const idOwner = localStorage.getItem('USER_ID');
+  const idOwner = localStorage.getItem('CAFE_ID');
 
   const fetcher = () => clienteAxios(`/api/owner/${idOwner}/menu`, {
     headers: {
