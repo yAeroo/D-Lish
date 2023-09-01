@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import clienteAxios from '../config/axios';
+import useSWR from 'swr';
 
 // Definimos nuestro contexto de cafeterias
 const OwnerContext = createContext();
@@ -10,7 +11,7 @@ const OwnerProvider = ({ children }) => {
     const [contenido, setContenido] = useState([]);
     const [platillos, setPlatillos] = useState([]);
     const [pedidos, setPedidos] = useState([]);
-    const [elimino, setElimino] = useState(false);
+    const [element, setElement] = useState(null);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
@@ -104,8 +105,9 @@ const OwnerProvider = ({ children }) => {
     }
 
     // Cambiar estado de disponibilidad de un componente/producto
-    const hadleClickDelete = async (type, id) => {
-        setElimino(false)
+    const hadleClickDeleteConfirm = async () => {
+        const { type, id } = element;
+
         console.log(`/api/${type}/${id}`);
         const token = localStorage.getItem('AUTH_TOKEN');
         try {
@@ -138,9 +140,8 @@ const OwnerProvider = ({ children }) => {
             hadleClickVisibility,
             addProduct,
             obtenerPlatillos,
-            hadleClickDelete,
-            setElimino,
-            elimino
+            hadleClickDeleteConfirm,
+            setElement
         }}>
             {children}
         </OwnerContext.Provider>

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 function ProductRow(props) {
     const { ProductNum, ProductItem, id, type, active } = props;
-    const { hadleClickVisibility, hadleClickDelete, elimino, setElimino } = useOwner();
+    const { hadleClickVisibility, setElement } = useOwner();
     const [visible, setVisible] = useState(active);
 
     const handleClickVisible = (type, id) => {
@@ -16,14 +16,10 @@ function ProductRow(props) {
         setVisible(!visible);
     }
 
-    const handleClickDelete = () => {
+    const handleClickDelete = (type, id) => {
         window.delete_modal.showModal();
-        if (elimino == true) {
-            hadleClickDelete(type, id);
-            setElimino(false);
-        }
+        setElement({ type: type, id: id });
     }
-
 
     return (
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">

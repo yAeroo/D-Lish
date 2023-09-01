@@ -1,10 +1,10 @@
 import useOwner from "../../hooks/useOwner";
 
 function DeleteModal() {
-  const { setElimino } = useOwner();
+  const { hadleClickDeleteConfirm } = useOwner();
 
   function confirmDelete() {
-    setElimino(true);
+    hadleClickDeleteConfirm();
   }
 
   // Función para cancelar modal
