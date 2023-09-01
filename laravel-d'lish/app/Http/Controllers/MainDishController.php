@@ -80,6 +80,14 @@ class MainDishController extends Controller
      */
     public function destroy(MainDish $mainDish)
     {
-        //
+        $mainDish = MainDish::find($mainDish);
+
+        if (!$mainDish) {
+            return response()->json(['error' => 'El elemento no existe'], 404);
+        }
+
+        $mainDish->delete();
+
+        return response()->json(['message' => 'Elemento eliminado con éxito']);
     }
 }

@@ -1,7 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
 import clienteAxios from '../config/axios';
-// COMPONENTES DE CONTENIDO VARIABLE
-import useSWR from 'swr';
 
 // Definimos nuestro contexto de cafeterias
 const OwnerContext = createContext();
@@ -12,10 +10,13 @@ const OwnerProvider = ({ children }) => {
     const [contenido, setContenido] = useState([]);
     const [platillos, setPlatillos] = useState([]);
     const [pedidos, setPedidos] = useState([]);
+    const [elimino, setElimino] = useState(false);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
         const token = localStorage.getItem('AUTH_TOKEN');
+        const idOwner = localStorage.getItem('CAFE_ID');
+
         try {
             const { data } = await clienteAxios(`/api/owner/${idOwner}`, {
                 headers: {
@@ -23,6 +24,7 @@ const OwnerProvider = ({ children }) => {
                 }
             })
             setContenido(data?.data);
+            console.log(data?.data);
         } catch (error) {
             // console.log(error);
         }
@@ -73,7 +75,6 @@ const OwnerProvider = ({ children }) => {
                 }
             });
             console.log('Exito', data);
-            resetState();
             NotiExito();
         } catch (error) {
             NotiError();
@@ -88,19 +89,6 @@ const OwnerProvider = ({ children }) => {
         }
     }
 
-    // Función para resetear todo
-    const resetState = () => {
-        setError(""); setAErrors([]);
-        const pwInput = {
-            oldPassword: document.getElementById('oldPassword'),
-            newPassword: document.getElementById('newPassword'),
-            newPassswordConfirmation: document.getElementById('newPassswordConfirmation')
-        }
-
-        // Limpiando inputs
-        pwInput.oldPassword.value = ''; pwInput.newPassword.value = ''; pwInput.newPassswordConfirmation.value = '';
-    }
-
     // Cambiar estado de disponibilidad de un componente/producto
     const hadleClickVisibility = async (type, id) => {
         const token = localStorage.getItem('AUTH_TOKEN');
@@ -110,6 +98,23 @@ const OwnerProvider = ({ children }) => {
                     Authorization: `Bearer ${token}`
                 }
             })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // Cambiar estado de disponibilidad de un componente/producto
+    const hadleClickDelete = async (type, id) => {
+        setElimino(false)
+        console.log(`/api/${type}/${id}`);
+        const token = localStorage.getItem('AUTH_TOKEN');
+        try {
+            const response = await clienteAxios.delete(`/api/${type}/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            console.log(response.data);
         } catch (error) {
             console.log(error);
         }
@@ -132,7 +137,10 @@ const OwnerProvider = ({ children }) => {
             platillos,
             hadleClickVisibility,
             addProduct,
-            obtenerPlatillos
+            obtenerPlatillos,
+            hadleClickDelete,
+            setElimino,
+            elimino
         }}>
             {children}
         </OwnerContext.Provider>

@@ -4,11 +4,11 @@ import { AiFillEyeInvisible } from "react-icons/ai"
 // CSSSS
 import "../../css/tables.css";
 import useOwner from "../../hooks/useOwner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ProductRow(props) {
     const { ProductNum, ProductItem, id, type, active } = props;
-    const { hadleClickVisibility } = useOwner();
+    const { hadleClickVisibility, hadleClickDelete, elimino, setElimino } = useOwner();
     const [visible, setVisible] = useState(active);
 
     const handleClickVisible = (type, id) => {
@@ -16,10 +16,14 @@ function ProductRow(props) {
         setVisible(!visible);
     }
 
-    const handleClickDelete = (type, id) => {
-        hadleClickVisibility(type, id)
-        setVisible(!visible);
+    const handleClickDelete = () => {
+        window.delete_modal.showModal();
+        if (elimino == true) {
+            hadleClickDelete(type, id);
+            setElimino(false);
+        }
     }
+
 
     return (
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
@@ -36,10 +40,11 @@ function ProductRow(props) {
                     onClick={() => handleClickVisible(type, id)}>
                 </AiFillEyeInvisible>
 
-
-                <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal()}></RiEdit2Fill>
-
-                <AiFillDelete className='cursor-pointer text-2xl sm:text-2xl text-red-400 hover:text-red-600' onClick={() => window.delete_modal.showModal()}></AiFillDelete>
+                {/* Modals */}
+                <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal(id)}></RiEdit2Fill>
+                <AiFillDelete className='cursor-pointer text-2xl sm:text-2xl text-red-400 hover:text-red-600'
+                    onClick={() => handleClickDelete(type, id)}>
+                </AiFillDelete>
             </td>
         </tr>
 

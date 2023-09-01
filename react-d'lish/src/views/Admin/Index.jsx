@@ -13,9 +13,15 @@ import { Link } from 'react-router-dom';
 
 export default function Admin() {
   const { contenido, obtenerOwner } = useOwner();
+
   useEffect(() => {
     obtenerOwner();
   }, [])
+
+  if (!contenido) {
+    return <h1 className='h-[100%] text-black text-4xl'>Cargando</h1>
+  }
+
   const { cafeteria } = contenido;
 
   ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);

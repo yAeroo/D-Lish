@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductRow from "../../components/Admin/ProductRow";
 import ProductModal from "../../components/Admin/ProductModal";
 import ProductHeader from "../../components/Admin/ProductHeader";
@@ -19,9 +19,27 @@ function ProductAdmin() {
     }
   }).then(datos => datos.data);
 
-  const { data, error, isLoading } = useSWR(`/api/owner/${idOwner}/menu`, fetcher, { refreshInterval: 1000 });
+  const { data, error, isLoading } = useSWR(`/api/owner/${idOwner}/menu`, fetcher);
   // CARGANDO ===== 
   if (isLoading) return <div className="h-full">"Cargando..."</div>;
+
+  // const [errors, setError] = useState(''); // <- Error 
+  // const [aErrors, setAErrors] = useState([])
+
+
+  // // Función para resetear todo
+  // const resetState = () => {
+  //   setError(""); setAErrors([]);
+  //   const pwInput = {
+  //     oldPassword: document.getElementById('oldPassword'),
+  //     newPassword: document.getElementById('newPassword'),
+  //     newPassswordConfirmation: document.getElementById('newPassswordConfirmation')
+  //   }
+
+  //   // Limpiando inputs
+  //   pwInput.oldPassword.value = ''; pwInput.newPassword.value = ''; pwInput.newPassswordConfirmation.value = '';
+  // }
+
 
   return (
     <div className="mb-10 sm:ml-[2rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500 ">
@@ -89,7 +107,7 @@ function ProductAdmin() {
               ModalTypebtn="Guardar cambios"
               ModalType="Actualiza un producto ya existente"
             />
-            <DeleteModal />
+            <DeleteModal id="" />
           </div>
         </div>
       </div>
