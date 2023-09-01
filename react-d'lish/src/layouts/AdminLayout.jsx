@@ -2,8 +2,27 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer"
 import SideBar from '../components/Admin/SideBar.jsx'
 import { useAuth } from "../hooks/useAuth";
+// Modal
+import Modal from 'react-modal'
+// import ModalProducto from '../components/ModalProducto'
+import useOwner from "../hooks/useOwner";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+// Definición del elemento al que se agrega
+Modal.setAppElement("#root");
 
 function AdminLayout() {
+  const { modal } = useOwner();
   useAuth({ middleware: 'owner' });
 
   return (
@@ -16,6 +35,11 @@ function AdminLayout() {
 
         <Footer />
       </>
+
+      {/* Cuando se abre el modal */}
+      <Modal isOpen={modal} style={customStyles}>
+        {/* <ModalProducto /> */}
+      </Modal>
     </div>
   )
 }

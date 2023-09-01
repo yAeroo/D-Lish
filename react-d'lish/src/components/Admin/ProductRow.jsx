@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 function ProductRow(props) {
     const { ProductNum, ProductItem, id, type, active } = props;
-    const { hadleClickVisibility, setElement } = useOwner();
+    const { hadleClickVisibility, setElement, setModal } = useOwner();
     const [visible, setVisible] = useState(active);
 
     const handleClickVisible = (type, id) => {
@@ -17,7 +17,8 @@ function ProductRow(props) {
     }
 
     const handleClickDelete = (type, id) => {
-        window.delete_modal.showModal();
+        // window.delete_modal.showModal();
+        setModal(true);
         setElement({ type: type, id: id });
     }
 

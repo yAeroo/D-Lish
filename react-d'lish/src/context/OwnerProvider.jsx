@@ -12,6 +12,7 @@ const OwnerProvider = ({ children }) => {
     const [platillos, setPlatillos] = useState([]);
     const [pedidos, setPedidos] = useState([]);
     const [element, setElement] = useState(null);
+    const [modal, useModal] = useState(false);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
@@ -141,7 +142,7 @@ const OwnerProvider = ({ children }) => {
             addProduct,
             obtenerPlatillos,
             hadleClickDeleteConfirm,
-            setElement
+            setElement, modal
         }}>
             {children}
         </OwnerContext.Provider>
