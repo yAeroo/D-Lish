@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import Spinner from '../components/Spinner';
+
 import Carrousel from "../components/Carrousel";
 import "../css/IndexPage.css";
 import "../components/Nav/NavMobileIndex";
@@ -25,9 +28,23 @@ import NavMobileIndex from "../components/Nav/NavMobileIndex";
 import FoodCard from "../components/FoodCard";
 
 export default function Index() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula una carga ficticia
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Tiempo que se mostrara el spinner  
+  }, []);
+
   return (
-    <main>
-      {/* NavBar Flotante */}
+    <div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <main>
+      {/* Navbar Flotante */}
       <div className="absolute w-full z-10">
         <NavIndex />
       </div>
@@ -136,5 +153,7 @@ export default function Index() {
         </div>
       </section>
     </main>
+      )}
+    </div>
   );
 }
