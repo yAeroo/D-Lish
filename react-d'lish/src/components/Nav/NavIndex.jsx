@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+//Spinner
+import Spinner from '../Spinner';
 //Iconos
 import { FaUserCircle } from "react-icons/fa";
 //Link
@@ -50,8 +52,21 @@ export default function NavIndex() {
     setSearchResults(filteredResults);
   };
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula una carga ficticia
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Puedes cambiar el tiempo según tus necesidades
+  }, []);
+
   return (
-    <section className="py-4 md:px-24 px-4 drop-shadow-2xl">
+    <div>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <section className="py-4 md:px-24 px-4 drop-shadow-2xl">
       <nav className="justify-between items-center rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none hidden md:flex">
         <Link to="/">
           <img
@@ -119,5 +134,7 @@ export default function NavIndex() {
         </div>
       </nav>
     </section>
+      )}
+    </div>
   );
 }
