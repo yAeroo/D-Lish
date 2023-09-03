@@ -32,6 +32,15 @@ export default function CafetinView() {
   // Filtrar platillos desactivos
   const activePlatillos = platillos?.filter(item => item.active !== 0);
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula una carga ficticia
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Tiempo que se mostrara el spinner  
+  }, []);
+
   return (
     <>
       <section className="mb-[0em] md:mb-[0rem] animate-fade animate-ease-in-out animate-once animate-duration-[1000ms]">

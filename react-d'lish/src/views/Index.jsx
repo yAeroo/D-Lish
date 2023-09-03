@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
+//Spinner
 import Spinner from '../components/Spinner';
 
+//Componentes
 import Carrousel from "../components/Carrousel";
-import "../css/IndexPage.css";
-import "../components/Nav/NavMobileIndex";
 import NavIndex from "../components/Nav/NavIndex";
-import Search from "../views/Search";
+import NavMobileIndex from "../components/Nav/NavMobileIndex";
+import FoodCard from "../components/FoodCard";
+
+//Estilos CSS
+import "../css/IndexPage.css";
 
 //Imagenes
 import Burrito from "/src/assets/index/burrito.jpg";
@@ -24,8 +29,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import NavMobileIndex from "../components/Nav/NavMobileIndex";
-import FoodCard from "../components/FoodCard";
+
+
 
 export default function Index() {
 
@@ -35,7 +40,7 @@ export default function Index() {
     // Simula una carga ficticia
     setTimeout(() => {
       setLoading(false);
-    }, 2000); // Tiempo que se mostrara el spinner  
+    }, 1000); // Tiempo que se mostrara el spinner  
   }, []);
 
   return (
