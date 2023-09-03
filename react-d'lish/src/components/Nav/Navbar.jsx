@@ -19,8 +19,9 @@ const Navbar = () => {
       {/* Eliminar "rounded-2xl" para lograr el Navbar cuadrado (y hacer los respectivos cambios en el componente que se requiera)  */}
       <nav className='flex justify-between rounded-2xl bg-neutral drop-shadow-md px-9 py-5 list-none '>
         {/* Link a Homepage */}
-        <Link to='/'>
-          <img src={Icon} className='h-12 cursor-pointer my-auto' />
+        <Link to="/">
+          <img src={Icon} className="block md:hidden h-12 cursor-pointer my-auto" />
+          <img src={IconWide} className="hidden md:block h-12 cursor-pointer my-auto" />
         </Link>
         <div className="md:flex hidden items-center gap-10 text-white md:my-0 my-7">
           <NavLinks />
