@@ -13,9 +13,9 @@ const Spinner = () => {
         <img
           src="../../src/assets/logo/title_green.png" // Ruta correcta a tu imagen estática
           alt="Logo"
-          className="mt-8 h-16 md:h-24 justify-center"
+          className="mt-0 h-16 md:h-24 justify-center"
         />
-        <h1 className="absolute ml-3 md:mt-[17rem] mt-[13rem] text-md md:text-xl font-bold justify-center text-center text-white/25">
+        <h1 className="absolute ml-3 md:mt-[16rem] mt-[11rem] text-md md:text-xl font-bold justify-center text-center text-white/25">
             Consejo: No se metan al Consejo
         </h1>
 
