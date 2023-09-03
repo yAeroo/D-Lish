@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function FoodCard(props) {
-    const { photo, name, cafetin, precio, categoria } = props;
+    const { photo, name, cafetin, precio, categoria } = props; // Props usados para los platillos
 
     return (
         <div className="flex items-center justify-center mx-0 md:mx-1 h-[7rem] w-[100%] md:hover:bg-base-100 px-1 rounded-lg md:px-4 py-0 mb-2">
@@ -18,9 +18,9 @@ export default function FoodCard(props) {
                 </div>
             </div>
 
-            {/* <button className="border-primary border-2 text-primary text-xs lg:text-lg px-2 py-1 rounded-md ml-3 md:ml-3 font-bold hover:bg-primary hover:text-black hover:font-bold">
+            <button className="border-primary border-2 text-primary text-xs lg:text-lg px-2 py-1 rounded-md ml-3 md:ml-3 font-bold hover:bg-primary hover:text-black hover:font-bold">
                 + Agregar
-            </button> */}
+            </button>
         </div>
     )
 }
