@@ -31,10 +31,10 @@ class AccompanimentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Accompaniment  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniment
      * @return \Illuminate\Http\Response
      */
-    public function show(Accompaniment $accompaniments)
+    public function show(Accompaniment $accompaniment)
     {
         //
     }
@@ -43,10 +43,10 @@ class AccompanimentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Accompaniment  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accompaniment $accompaniments)
+    public function update(Request $request, Accompaniment $accompaniment)
     {
         //
     }
@@ -54,11 +54,17 @@ class AccompanimentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Accompaniment  $accompaniments
+     * @param  \App\Models\Accompaniment  $accompaniment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accompaniment $accompaniments)
+    public function destroy(Accompaniment $accompaniment)
     {
-        //
+        if (!$accompaniment) {
+            return response()->json(['error' => 'El elemento no existe'], 404);
+        }
+
+        $accompaniment->delete();
+
+        return response()->json(['message' => 'Elemento eliminado con exito']);
     }
 }

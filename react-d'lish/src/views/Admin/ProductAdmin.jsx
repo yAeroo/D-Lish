@@ -1,11 +1,9 @@
 import React from "react";
 import ProductRow from "../../components/Admin/ProductRow";
-import ProductModal from "../../components/Admin/ProductModal";
 import ProductHeader from "../../components/Admin/ProductHeader";
 
 // Css
 import "../../css/productsTable.css";
-import DeleteModal from "../../components/Admin/ProductDeleteModal";
 
 function ProductAdmin() {
   const main_dish = [
@@ -38,11 +36,7 @@ function ProductAdmin() {
       >
         Agregar producto
       </button>
-      <ProductModal
-        ModalId="product_modal_1"
-        ModalTypebtn="Subir producto"
-        ModalType="Agrega cualquier tipo de producto"
-      />
+
 
       {/* ------------- FIN DEL MODAL ------------ */}
 
@@ -78,12 +72,7 @@ function ProductAdmin() {
                   />
                 ))}
 
-                <ProductModal
-                  ModalId="product_modal_2"
-                  ModalTypebtn="Guardar cambios"
-                  ModalType="Actualiza un producto ya existente"
-                />
-                <DeleteModal />
+
               </tbody>
             </table>
           </div>

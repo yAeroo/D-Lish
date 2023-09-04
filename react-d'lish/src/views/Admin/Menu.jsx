@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+// Componentes
 import ProductRow from "../../components/Admin/ProductRow";
-import ProductModal from "../../components/Admin/ProductModal";
 import ProductHeader from "../../components/Admin/ProductHeader";
+import Spinner from "../../components/Spinner";
+import EmptyMenu from "../../components/Admin/EmptyMenu";
 // CSS =======
 import "../../css/productsTable.css";
-import DeleteModal from "../../components/Admin/ProductDeleteModal";
 // CONTENIDO VARIABLE ====
 import clienteAxios from "../../config/axios";
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
+import useOwner from "../../hooks/useOwner";
 
 function ProductAdmin() {
+  const { actuCache } = useOwner();
   const token = localStorage.getItem('AUTH_TOKEN');
   const idOwner = localStorage.getItem('CAFE_ID');
 
@@ -20,26 +23,14 @@ function ProductAdmin() {
   }).then(datos => datos.data);
 
   const { data, error, isLoading } = useSWR(`/api/owner/${idOwner}/menu`, fetcher);
+
+  useEffect(() => {
+    console.log('actualizando we');
+    mutate(`/api/owner/${idOwner}/menu`);
+  }, [actuCache])
+
   // CARGANDO ===== 
-  if (isLoading) return <div className="h-full">"Cargando..."</div>;
-
-  // const [errors, setError] = useState(''); // <- Error 
-  // const [aErrors, setAErrors] = useState([])
-
-
-  // // Función para resetear todo
-  // const resetState = () => {
-  //   setError(""); setAErrors([]);
-  //   const pwInput = {
-  //     oldPassword: document.getElementById('oldPassword'),
-  //     newPassword: document.getElementById('newPassword'),
-  //     newPassswordConfirmation: document.getElementById('newPassswordConfirmation')
-  //   }
-
-  //   // Limpiando inputs
-  //   pwInput.oldPassword.value = ''; pwInput.newPassword.value = ''; pwInput.newPassswordConfirmation.value = '';
-  // }
-
+  if (isLoading) return <Spinner />
 
   return (
     <div className="mb-10 sm:ml-[2rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500 ">
@@ -60,11 +51,6 @@ function ProductAdmin() {
         </button>
         <hr className='bg-accent h-1 w-1/2 m-auto' />
       </div>
-      <ProductModal
-        ModalId="product_modal_1"
-        ModalTypebtn="Subir producto"
-        ModalType="Agrega cualquier tipo de producto"
-      />
 
 
       {/* ------------- FIN DEL MODAL ------------ */}
@@ -76,41 +62,41 @@ function ProductAdmin() {
       <h3 className="my-7 text-center text-terc font-bold text-2xl">
         {" "}ALMUERZO{" "}
       </h3>
+      <div id="MainDishCont" className="flex justify-center">
+        {data?.mainDishes?.length ? (
+          <div className="flex items-center w-[80%] justify-center">
+            <div className="container">
+              <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                  {data?.mainDishes.map((main) => (
+                    // Encabezado de la tabla para cada producto
+                    <ProductHeader key={main.id + "-main"} />
+                  ))}
+                </thead>
+                <tbody className="flex-1 sm:flex-none text-[#414141]">
+                  {data?.mainDishes.map((mainDish, id) => (
+                    <ProductRow
+                      active={mainDish.active}
+                      type={mainDish.type}
+                      key={mainDish.id}
+                      id={mainDish.id}
+                      ProductNum={id}
+                      ProductItem={mainDish.name}
+                      ProductIMG={mainDish.img}
+                    />
+                  ))}
+                </tbody>
+              </table>
 
-      <div id="MainDishCont" className={data?.mainDishes ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.mainDishes.map((main) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={main.id + "-main"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.mainDishes.map((mainDish) => (
-                  <ProductRow
-                    active={mainDish.active}
-                    type={mainDish.type}
-                    key={mainDish.id}
-                    id={mainDish.id}
-                    ProductNum={mainDish.id}
-                    ProductItem={mainDish.name}
-                    ProductIMG={mainDish.img}
-                  />
-                ))}
-              </tbody>
-            </table>
-
-            <ProductModal
-              ModalId="product_modal_2"
-              ModalTypebtn="Guardar cambios"
-              ModalType="Actualiza un producto ya existente"
-            />
-            <DeleteModal id="" />
+            </div>
           </div>
-        </div>
+        ) : (
+          <EmptyMenu />
+        )}
       </div>
+
+
+
 
       {/************************************************/}
       {/* ----------------SIDE DISH1------------------ */}
@@ -120,35 +106,40 @@ function ProductAdmin() {
         COMPLEMENTO 1{" "}
       </h3>
 
-      <div id="SideDish1Cont" className={data?.sideDishes1 ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.sideDishes1.map((sid1) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={sid1.id + "-side1"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.sideDishes1.map((side_dish1) => (
-                  <ProductRow
-                    active={side_dish1.active}
-                    type={side_dish1.type}
-                    key={side_dish1.id}
-                    id={side_dish1.id}
-                    ProductNum={side_dish1.id}
-                    ProductItem={side_dish1.name}
-                    ProductIMG={side_dish1.img}
-                    ProductPrice={side_dish1.price}
-                  />
-                ))}
+      <div id="SideDish1Cont" className="flex justify-center">
+        {data?.sideDishes1?.length ? (
+          <div className="flex items-center w-[80%] justify-center">
+            <div className="container">
+              <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                  {data?.sideDishes1.map((sid1) => (
+                    // Encabezado de la tabla para cada producto
+                    <ProductHeader key={sid1.id + "-side1"} />
+                  ))}
+                </thead>
+                <tbody className="flex-1 sm:flex-none text-[#414141]">
+                  {data?.sideDishes1.map((side_dish1, id) => (
+                    <ProductRow
+                      active={side_dish1.active}
+                      type={side_dish1.type}
+                      key={side_dish1.id}
+                      id={side_dish1.id}
+                      ProductNum={id}
+                      ProductItem={side_dish1.name}
+                      ProductIMG={side_dish1.img}
+                      ProductPrice={side_dish1.price}
+                    />
+                  ))}
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          <EmptyMenu />
+        )}
       </div>
+
 
       {/************************************************/}
       {/* ----------------SIDE DISH2------------------ */}
@@ -157,33 +148,37 @@ function ProductAdmin() {
         {" "}
         COMPLEMENTO 2{" "}
       </h3>
-      <div id="SideDish2Cont" className={data?.sideDishes2 ? "flex justify-center" : "hidden"}>
-
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.sideDishes2.map((sid2) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={sid2.id + "-side2"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.sideDishes2.map((side_dish2) => (
-                  <ProductRow
-                    active={side_dish2.active}
-                    type={side_dish2.type}
-                    key={side_dish2.id}
-                    ProductNum={side_dish2.id}
-                    ProductItem={side_dish2.name}
-                    ProductIMG={side_dish2.img}
-                    ProductPrice={side_dish2.price}
-                  />
-                ))}
-              </tbody>
-            </table>
+      <div id="SideDish2Cont" className="flex justify-center">
+        {data?.sideDishes2?.length ? (
+          <div className="flex items-center w-[80%] justify-center">
+            <div className="container">
+              <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                  {data?.sideDishes2.map((sid2) => (
+                    // Encabezado de la tabla para cada producto
+                    <ProductHeader key={sid2.id + "-side2"} />
+                  ))}
+                </thead>
+                <tbody className="flex-1 sm:flex-none text-[#414141]">
+                  {data?.sideDishes2.map((side_dish2, id) => (
+                    <ProductRow
+                      active={side_dish2.active}
+                      type={side_dish2.type}
+                      key={side_dish2.id}
+                      ProductNum={id}
+                      id={side_dish2.id}
+                      ProductItem={side_dish2.name}
+                      ProductIMG={side_dish2.img}
+                      ProductPrice={side_dish2.price}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          <EmptyMenu />
+        )}
       </div>
 
       {/************************************************/}
@@ -194,34 +189,38 @@ function ProductAdmin() {
         {" "}
         ACOMPAÑANTES{" "}
       </h3>
-      <div id="AcompCont" className={data?.accompaniments ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.accompaniments.map((acc) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={acc.id + "-acc"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.accompaniments.map((accompaniment) => (
-                  <ProductRow
-                    active={accompaniment.active}
-                    key={accompaniment.id}
-                    id={accompaniment.id}
-                    ProductNum={accompaniment.id}
-                    ProductItem={accompaniment.name}
-                    ProductIMG={accompaniment.img}
-                    ProductPrice={accompaniment.price}
-                  />
-                ))}
+      <div id="AcompCont" className="flex justify-center">
+        {data?.accompaniments?.length ? (
+          <div className="flex items-center w-[80%] justify-center">
+            <div className="container">
+              <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                  {data?.accompaniments.map((acc) => (
+                    // Encabezado de la tabla para cada producto
+                    <ProductHeader key={acc.id + "-acc"} />
+                  ))}
+                </thead>
+                <tbody className="flex-1 sm:flex-none text-[#414141]">
+                  {data?.accompaniments.map((accompaniment, id) => (
+                    <ProductRow
+                      active={accompaniment.active}
+                      key={accompaniment.id}
+                      type={accompaniment.type}
+                      id={accompaniment.id}
+                      ProductNum={id}
+                      ProductItem={accompaniment.name}
+                      ProductIMG={accompaniment.img}
+                      ProductPrice={accompaniment.price}
+                    />
+                  ))}
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-
+        ) : (
+          <EmptyMenu />
+        )}
       </div>
 
       {/************************************************/}
@@ -233,33 +232,37 @@ function ProductAdmin() {
         BEBIDAS{" "}
       </h3>
 
-      <div id="DrinkCont" className={data?.drinks ? "flex justify-center" : "hidden"}>
-        <div className="flex items-center w-[80%] justify-center">
-          <div className="container">
-            <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
-              <thead className="text-white">
-                {data?.drinks.map((dri) => (
-                  // Encabezado de la tabla para cada producto
-                  <ProductHeader key={dri.id + "-drink"} />
-                ))}
-              </thead>
-              <tbody className="flex-1 sm:flex-none text-[#414141]">
-                {data?.drinks.map((drink) => (
-                  <ProductRow
-                    active={drink.active}
-                    key={drink.id}
-                    id={drink.id}
-                    ProductNum={drink.id}
-                    ProductItem={drink.name}
-                    ProductIMG={drink.img}
-                    ProductPrice={drink.price}
-                  />
-                ))}
-
-              </tbody>
-            </table>
+      <div id="DrinkCont" className="flex justify-center">
+        {data?.drinks?.length ? (
+          <div className="flex items-center w-[80%] justify-center">
+            <div className="container">
+              <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+                <thead className="text-white">
+                  {data?.drinks.map((dri) => (
+                    // Encabezado de la tabla para cada producto
+                    <ProductHeader key={dri.id + "-drink"} />
+                  ))}
+                </thead>
+                <tbody className="flex-1 sm:flex-none text-[#414141]">
+                  {data?.drinks.map((drink, id) => (
+                    <ProductRow
+                      active={drink.active}
+                      key={drink.id}
+                      type={drink.type}
+                      id={drink.id}
+                      ProductNum={id}
+                      ProductItem={drink.name}
+                      ProductIMG={drink.img}
+                      ProductPrice={drink.price}
+                    />
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          <EmptyMenu />
+        )}
       </div>
     </div >
   );

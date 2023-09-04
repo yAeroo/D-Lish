@@ -59,6 +59,12 @@ class DrinkController extends Controller
      */
     public function destroy(Drink $drink)
     {
-        //
+        if (!$drink) {
+            return response()->json(['error' => 'El elemento no existe'], 404);
+        }
+
+        $drink->delete();
+
+        return response()->json(['message' => 'Elemento eliminado con exito']);
     }
 }

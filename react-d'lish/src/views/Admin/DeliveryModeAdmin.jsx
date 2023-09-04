@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import HeaderOrder from '../../components/Admin/HeaderOrder';
 
 //Importaciones de props platillos
+import Spinner from '../../components/Spinner';
 import OrderProps from '../../components/Admin/OrderProps';
 
 //
@@ -12,15 +13,12 @@ import useOwner from '../../hooks/useOwner';
 
 function DeliveryModeAdmin() {
       const { platillos, obtenerPlatillos } = useOwner();
+
       useEffect(() => {
             obtenerPlatillos();
       }, [])
 
       console.log(platillos);
-
-      if (platillos.length == 0) {
-            return <h1 className='h-[100%] text-black text-4xl'>Cargando</h1>
-      }
 
       return (
             <div className='lg:ml-[10rem] mb-10 sm:ml-[1rem] md:ml-[5rem] ml-[1rem] h-[100%] animate-fade animate-duration-500"'>

@@ -4,7 +4,7 @@ import SideBar from '../components/Admin/SideBar.jsx'
 import { useAuth } from "../hooks/useAuth";
 // Modal
 import Modal from 'react-modal'
-// import ModalProducto from '../components/ModalProducto'
+import ModalMenu from "../components/Admin/ModalMenu";
 import useOwner from "../hooks/useOwner";
 
 const customStyles = {
@@ -37,8 +37,8 @@ function AdminLayout() {
       </>
 
       {/* Cuando se abre el modal */}
-      <Modal isOpen={modal} style={customStyles}>
-        {/* <ModalProducto /> */}
+      <Modal isOpen={modal} style={customStyles} >
+        <ModalMenu />
       </Modal>
     </div>
   )

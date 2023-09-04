@@ -5,9 +5,11 @@ import useOwner from '../../hooks/useOwner';
 function OrderProps(props) {
   const { idPlatillo } = props;
   const { pedidos, obtenerPedidos } = useOwner();
+
   useEffect(() => {
     obtenerPedidos();
   }, []);
+
   return (
     <div className="flex items-center w-[95%] justify-center text-lg">
       <div className="container">

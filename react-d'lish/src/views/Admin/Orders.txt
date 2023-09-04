@@ -60,7 +60,7 @@ function ProductAdmin() {
 
 							))}
 
-							<ProductModal ModalId="product_modal_2" ModalTypebtn="Guardar cambios" ModalType="Actualiza un producto ya existente" />
+							<ProductModal ModalId="product_modal_2" btn="Guardar cambios" ModalType="Actualiza un producto ya existente" />
 							<DeleteModal />
 						</tbody>
 					</table>

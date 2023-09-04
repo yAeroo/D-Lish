@@ -7,8 +7,8 @@ import useOwner from "../../hooks/useOwner";
 import { useEffect, useState } from "react";
 
 function ProductRow(props) {
-    const { ProductNum, ProductItem, id, type, active } = props;
-    const { hadleClickVisibility, setElement, setModal } = useOwner();
+    const { ProductNum, ProductItem, id, type, active, action } = props;
+    const { hadleClickVisibility, setElement, handleAction, handleClickModal } = useOwner();
     const [visible, setVisible] = useState(active);
 
     const handleClickVisible = (type, id) => {
@@ -16,15 +16,22 @@ function ProductRow(props) {
         setVisible(!visible);
     }
 
+    const handleClickEdit = (type, id) => {
+        handleAction("uppdating");
+        handleClickModal();
+        setElement({ type: type, id: id, name: ProductItem });
+        // window.product_modal_2.showModal(id)
+    }
+
     const handleClickDelete = (type, id) => {
-        // window.delete_modal.showModal();
-        setModal(true);
+        handleAction("deleting");
+        handleClickModal();
         setElement({ type: type, id: id });
     }
 
     return (
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-            <td className="border-grey-light border hover:bg-gray-100 p-3">{ProductNum}</td>
+            <td className="border-grey-light border hover:bg-gray-100 p-3">{ProductNum + 1}</td>
             <td className="tableRow">{ProductItem}</td>
             <td className="tableRow h-[234px] sm:h-auto">
                 {/* <img src={props.ProductIMG} className='w-[13rem] h-[13rem]' /> */}
@@ -38,7 +45,9 @@ function ProductRow(props) {
                 </AiFillEyeInvisible>
 
                 {/* Modals */}
-                <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]' onClick={() => window.product_modal_2.showModal(id)}></RiEdit2Fill>
+                <RiEdit2Fill className='cursor-pointer text-2xl sm:text-2xl text-terc hover:text-[#6dcfa1]'
+                    onClick={() => handleClickEdit(type, id)}>
+                </RiEdit2Fill>
                 <AiFillDelete className='cursor-pointer text-2xl sm:text-2xl text-red-400 hover:text-red-600'
                     onClick={() => handleClickDelete(type, id)}>
                 </AiFillDelete>

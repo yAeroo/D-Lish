@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
 //Comida pic
+import Spinner from '../../components/Spinner';
 import useOwner from '../../hooks/useOwner';
 //chart LINE imports 
 import { Line } from 'react-chartjs-2';
@@ -18,11 +19,8 @@ export default function Admin() {
     obtenerOwner();
   }, [])
 
-  if (!contenido) {
-    return <h1 className='h-[100%] text-black text-4xl'>Cargando</h1>
-  }
-
   const { cafeteria } = contenido;
+  if (!cafeteria) return <Spinner />
 
   ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
   const data = {

@@ -12,7 +12,9 @@ const OwnerProvider = ({ children }) => {
     const [platillos, setPlatillos] = useState([]);
     const [pedidos, setPedidos] = useState([]);
     const [element, setElement] = useState(null);
-    const [modal, useModal] = useState(false);
+    const [action, setAction] = useState(null)
+    const [modal, setModal] = useState(false);
+    const [actuCache, setActuCahe] = useState(null);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
     const obtenerOwner = async () => {
@@ -28,7 +30,7 @@ const OwnerProvider = ({ children }) => {
             setContenido(data?.data);
             console.log(data?.data);
         } catch (error) {
-            // console.log(error);
+            console.log(error);
         }
     }
 
@@ -109,7 +111,6 @@ const OwnerProvider = ({ children }) => {
     const hadleClickDeleteConfirm = async () => {
         const { type, id } = element;
 
-        console.log(`/api/${type}/${id}`);
         const token = localStorage.getItem('AUTH_TOKEN');
         try {
             const response = await clienteAxios.delete(`/api/${type}/${id}`, {
@@ -117,11 +118,25 @@ const OwnerProvider = ({ children }) => {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(response.data);
+
+            setActuCahe(response);
         } catch (error) {
             console.log(error);
         }
     }
+
+    // Modal
+    const handleAction = (accion) => {
+        // Toggle de boleano        
+        setAction(accion);
+    };
+
+
+    // Modal
+    const handleClickModal = () => {
+        // Toggle de boleano
+        setModal(!modal);
+    };
 
     // Manda a llamar al cargar el componente
     useEffect(() => {
@@ -142,7 +157,13 @@ const OwnerProvider = ({ children }) => {
             addProduct,
             obtenerPlatillos,
             hadleClickDeleteConfirm,
-            setElement, modal
+            setElement,
+            element,
+            handleAction,
+            action,
+            handleClickModal,
+            modal,
+            actuCache
         }}>
             {children}
         </OwnerContext.Provider>
