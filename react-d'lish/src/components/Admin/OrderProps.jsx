@@ -27,7 +27,7 @@ function OrderProps(props) {
           </thead>
           {/* PEDIDOS */}
           <tbody className="flex-1 sm:flex-none text-[#1f1f1f]  font-semibold">
-            {pedidos.length ? pedidos.map((pedido, id) => {
+            {pedidos ? pedidos.map((pedido, id) => {
               // Encabezado de la tabla para cada producto
               if (pedido.mainDish.id == idPlatillo) {
                 return <OrderContent key={id}
@@ -38,16 +38,8 @@ function OrderProps(props) {
                   drink={pedido.drink?.name}
                   accompaniment={pedido.accompaniment?.name}
                 />
-              } else {
-                return <tr key={id}  >
-                  <td></td>
-                  <td></td>
-                  <td className='text-center w-full text-3xl text-red-800 font-bold'>No hay pedidos</td>
-                  <td></td>
-                  <td></td>
-                </tr>
               }
-            }) : <tr><td colSpan="6" className='text-center'>No hay pedidos</td></tr>}
+            }) : ""}
           </tbody>
         </table>
       </div>

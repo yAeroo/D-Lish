@@ -37,7 +37,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // OWNER ================
     Route::get('/owner/{id}', [OwnerController::class, 'index']);
     Route::get('/owner/{id}/menu', [OwnerController::class, 'menu']);
+    // Usuario
     Route::get('/owner/{id}/pedidos', [OwnerController::class, 'pedidos']);
+    // Vendedor
     Route::get('/owner/{id}/ordenes', [OwnerController::class, 'ordenes']);
 
     // COMPONENTES DISH ===========

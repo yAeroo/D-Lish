@@ -76,10 +76,10 @@ class OrderController extends Controller
         ]);
 
         // Concatenamos respuesta de nombres
-        $cafeteria = new CafeteriaResource(Cafeteria::findOrFail($data['cafeteriaId']));
+        // $cafeteria = new CafeteriaResource(Cafeteria::findOrFail($data['cafeteriaId']));
         $mainDish = new MainDishResource(MainDish::findOrFail($data['main_dish']));
         $sideDish1 = new SideDish1Resource(SideDish1::findOrFail($data['side_dish1']));
-        $sideDish2 = new SideDish2Resource(SideDish2::findOrFail($data['main_dish']));
+        $sideDish2 = new SideDish2Resource(SideDish2::findOrFail($data['side_dish2']));
 
         // Retornar una respuesta
         return response([

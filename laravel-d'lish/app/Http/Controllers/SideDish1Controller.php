@@ -27,7 +27,21 @@ class SideDish1Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validar el registro, accede directamente a Rules()
+        $data = $request->validated();
+
+        // Crear el usuario
+        $sideDish1 = SideDish1::create([
+            'name' => $data['name'],
+            'cafeteria_id' => $data['idOwner'],
+        ]);
+
+        $responseData = [
+            'message' => 'Agregado con éxito a tu menú',
+            'data' => $sideDish1, // Aquí puedes incluir cualquier dato adicional que quieras devolver
+        ];
+
+        return response()->json($responseData, 200);
     }
     /**
      * Display the specified resource.
@@ -47,7 +61,7 @@ class SideDish1Controller extends Controller
      * @param  \App\Models\SideDish1  $sideDish1
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SideDish1 $sideDish1)
+    public function update(SideDish1 $sideDish1)
     {
         // Activa o desactiva
         if ($sideDish1->active == 1) {
@@ -70,6 +84,12 @@ class SideDish1Controller extends Controller
      */
     public function destroy(SideDish1 $sideDish1)
     {
-        //
+        if (!$sideDish1) {
+            return response()->json(['error' => 'El elemento no existe'], 404);
+        }
+
+        $sideDish1->delete();
+
+        return response()->json(['message' => 'Elemento eliminado con éxito']);
     }
 }

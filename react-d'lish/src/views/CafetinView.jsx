@@ -49,7 +49,7 @@ export default function CafetinView() {
     // Simula una carga ficticia
     setTimeout(() => {
       setLoading(false);
-    }, 1000); // Tiempo que se mostrara el spinner
+    }, 300); // Tiempo que se mostrara el spinner
   }, []);
 
   return (
@@ -146,14 +146,14 @@ export default function CafetinView() {
                 {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
                 {activePlatillos?.length
                   ? activePlatillos.map((platillo, id) => (
-                      <FoodCard
-                        name={platillo.name}
-                        key={id}
-                        id={platillo.id}
-                        description={platillo.description}
-                        cafeteriaId={cafeteriaId}
-                      />
-                    ))
+                    <FoodCard
+                      name={platillo.name}
+                      key={id}
+                      id={platillo.id}
+                      description={platillo.description}
+                      cafeteriaId={cafeteriaId}
+                    />
+                  ))
                   : "No hay nada"}
               </div>
               <br />

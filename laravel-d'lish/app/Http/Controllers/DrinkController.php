@@ -25,7 +25,21 @@ class DrinkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validar el registro, accede directamente a Rules()
+        $data = $request->validated();
+
+        // Crear el usuario
+        $sideDish2 = Drink::create([
+            'name' => $data['name'],
+            'cafeteria_id' => $data['idOwner'],
+        ]);
+
+        $responseData = [
+            'message' => 'Agregado con éxito a tu menú',
+            'data' => $sideDish2, // Aquí puedes incluir cualquier dato adicional que quieras devolver
+        ];
+
+        return response()->json($responseData, 200);
     }
 
     /**
@@ -48,7 +62,17 @@ class DrinkController extends Controller
      */
     public function update(Request $request, Drink $drink)
     {
-        //
+        // Activa o desactiva
+        if ($drink->active == 1) {
+            $drink->active = 0;
+        } else {
+            $drink->active = 1;
+        }
+
+        $drink->save();
+        return [
+            'drink' => $drink
+        ];
     }
 
     /**

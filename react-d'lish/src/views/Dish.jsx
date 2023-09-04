@@ -76,6 +76,7 @@ export default function Dish() {
   const { orden, ordenComplete, registrarOrden } = useOrders();
 
   const navigate = useNavigate();
+
   const confirmarOrden = async () => {
     await registrarOrden(orden, setErrores, NotiError, redirigir);
   };
@@ -237,7 +238,6 @@ export default function Dish() {
                 )}
 
                 <div className="modal-action justify-center">
-
 
                   <button className="btn btn-primary" onClick={confirmarOrden}> Realizar pedido</button>
                 </div>

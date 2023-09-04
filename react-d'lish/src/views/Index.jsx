@@ -32,131 +32,121 @@ import "swiper/css/scrollbar";
 
 export default function Index() {
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simula una carga ficticia
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000); // Tiempo que se mostrara el spinner  
-  }, []);
 
   return (
     <div>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <main>
-          {/* Navbar Flotante */}
-          <div className="absolute w-full z-10">
-            <NavIndex />
-          </div>
 
-          <NavMobileIndex />
+      <main>
+        {/* Navbar Flotante */}
+        <div className="absolute w-full z-10">
+          <NavIndex />
+        </div>
 
-          {/* Slider de cafeterias */}
-          <Carrousel />
+        <NavMobileIndex />
 
-          <section className="p-0 bg-base-100 w-full space-y-6">
-            {/* ----Espacio para diferentes tipos de comidas----  */}
-            <div className="space-y-6 px-0">
-              <h2 className="text-3xl md:text-5xl p-6 my-8 md:text-center font-semibold text-neutral-100 py-2">
-                Categorías
-              </h2>
+        {/* Slider de cafeterias */}
+        <Carrousel />
 
-              <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
-                {/* Contenedor de Desayunos */}
-                <div
-                  className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                  style={{ backgroundImage: `url(${DesayunoBanner})` }}
-                >
-                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Desayunos
-                  </div>
+        <section className="p-0 bg-base-100 w-full space-y-6">
+          {/* ----Espacio para diferentes tipos de comidas----  */}
+          <div className="space-y-6 px-0">
+            <h2 className="text-3xl md:text-5xl p-6 my-8 md:text-center font-semibold text-neutral-100 py-2">
+              Categorías
+            </h2>
+
+            <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
+              {/* Contenedor de Desayunos */}
+              <div
+                className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                style={{ backgroundImage: `url(${DesayunoBanner})` }}
+              >
+                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+                  Desayunos
                 </div>
+              </div>
 
-                {/* Contenedor de Otros */}
-                <div
-                  className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                  style={{ backgroundImage: `url(${OtrosBanner})` }}
-                >
-                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Otros
-                  </div>
+              {/* Contenedor de Otros */}
+              <div
+                className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                style={{ backgroundImage: `url(${OtrosBanner})` }}
+              >
+                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+                  Otros
                 </div>
+              </div>
 
-                {/* Contenedor de Almuerzos */}
-                <div
-                  className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                  style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
-                >
-                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Almuerzos
-                  </div>
+              {/* Contenedor de Almuerzos */}
+              <div
+                className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
+              >
+                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+                  Almuerzos
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="lg:rounded-2xl 2xl:px-[12rem] bg-base-200 pb-10 my-[4rem]">
-            <h2 className="text-3xl md:text-5xl font-bold drop-shadow-2xl py-8 px-8 md:text-center">
-              Lo más vendido
-            </h2>
+        <section className="lg:rounded-2xl 2xl:px-[12rem] bg-base-200 pb-10 my-[4rem]">
+          <h2 className="text-3xl md:text-5xl font-bold drop-shadow-2xl py-8 px-8 md:text-center">
+            Lo más vendido
+          </h2>
 
-            {/* Props del apartado de comidas  */}
+          {/* Props del apartado de comidas  */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
-              <FoodCard
-                name="Pupusas"
-                photo={Pupusas}
-                cafetin="Don Bosco"
-                precio="1.00"
-                categoria="Desayunos"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
+            <FoodCard
+              name="Pupusas"
+              photo={Pupusas}
+              cafetin="Don Bosco"
+              precio="1.00"
+              categoria="Desayunos"
+            />
 
-              <FoodCard
-                name="Burrito"
-                photo={Burrito}
-                cafetin="Maria Auxiliadora"
-                precio="2.50"
-                categoria="Almuerzos"
-              />
+            <FoodCard
+              name="Burrito"
+              photo={Burrito}
+              cafetin="Maria Auxiliadora"
+              precio="2.50"
+              categoria="Almuerzos"
+            />
 
-              <FoodCard
-                name="Jugos Naturales"
-                photo={JugosNaturales}
-                cafetin="Don Bosco"
-                precio="0.25"
-                categoria="Otros"
-              />
+            <FoodCard
+              name="Jugos Naturales"
+              photo={JugosNaturales}
+              cafetin="Don Bosco"
+              precio="0.25"
+              categoria="Otros"
+            />
 
-              <FoodCard
-                name="Pupusas"
-                photo={Pupusas}
-                cafetin="Miguel Magone"
-                precio="1.00"
-                categoria="Desayunos"
-              />
+            <FoodCard
+              name="Pupusas"
+              photo={Pupusas}
+              cafetin="Miguel Magone"
+              precio="1.00"
+              categoria="Desayunos"
+            />
 
-              <FoodCard
-                name="Pollo Asado"
-                photo={PolloAsado}
-                cafetin="Maria Auxiliadora"
-                precio="2.50"
-                categoria="Almuerzos"
-              />
+            <FoodCard
+              name="Pollo Asado"
+              photo={PolloAsado}
+              cafetin="Maria Auxiliadora"
+              precio="2.50"
+              categoria="Almuerzos"
+            />
 
-              <FoodCard
-                name="Tortas"
-                photo={Tortas}
-                cafetin="Don Bosco"
-                precio="2.50"
-                categoria="Almuerzos"
-              />
-            </div>
-          </section>
-        </main>
-      )}
+            <FoodCard
+              name="Tortas"
+              photo={Tortas}
+              cafetin="Don Bosco"
+              precio="2.50"
+              categoria="Almuerzos"
+            />
+          </div>
+        </section>
+      </main>
+      )
     </div>
   );
 }
