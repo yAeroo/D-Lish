@@ -150,7 +150,6 @@ export default function Index() {
           </div>
         </section>
       </main>
-      )
     </div>
   );
 }
