@@ -90,12 +90,31 @@ const OwnerProvider = ({ children }) => {
     // Cambiar estado de disponibilidad de un componente/producto
     const hadleClickVisibility = async (type, id) => {
         const token = localStorage.getItem('AUTH_TOKEN');
+        element.editando = false;
+
         try {
-            await clienteAxios.put(`/api/${type}/${id}`, null, {
+            const { data } = await clienteAxios.put(`/api/${type}/${id}`, element, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const hadleClickEdit = async () => {
+        const token = localStorage.getItem('AUTH_TOKEN');
+        element.editando = true;
+
+        try {
+            const { data } = await clienteAxios.put(`/api/${type}/${id}`, element, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            console.log(data);
         } catch (error) {
             console.log(error);
         }
@@ -141,6 +160,7 @@ const OwnerProvider = ({ children }) => {
     return (
         // Se pasan los datos al global
         <OwnerContext.Provider value={{
+            hadleClickEdit,
             setAgregando,
             agregando,
             obtenerPedidos,

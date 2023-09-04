@@ -66,11 +66,18 @@ class MainDishController extends Controller
      */
     public function update(Request $request, MainDish $mainDish)
     {
-        // Activa o desactiva
-        if ($mainDish->active == 1) {
-            $mainDish->active = 0;
+        return $request['editando'];
+
+        if ($request['name'] !== null) {
+            return "editando";
         } else {
-            $mainDish->active = 1;
+            return "visibilidad";
+            // Activa o desactiva
+            if ($mainDish->active == 1) {
+                $mainDish->active = 0;
+            } else {
+                $mainDish->active = 1;
+            }
         }
 
         $mainDish->save();

@@ -19,7 +19,7 @@ function ProductRow(props) {
     const handleClickEdit = (type, id) => {
         handleAction("uppdating");
         handleClickModal();
-        setElement({ type: type, id: id, name: ProductItem });
+        setElement({ type: type, id: id, name: ProductItem, editando: null });
         // window.product_modal_2.showModal(id)
     }
 

@@ -9,7 +9,7 @@ import { PiWarningDiamondDuotone } from "react-icons/pi"
 import { FaImage } from "react-icons/fa";
 
 export default function ModalMenu() {
-    const { handleClickModal, hadleClickDeleteConfirm, action, setElement, element, agregando } = useOwner();
+    const { handleClickModal, hadleClickDeleteConfirm, action, setElement, element, hadleClickEdit } = useOwner();
     const [category, setSelectedCategory] = useState('');
     const [edicion, setEdicion] = useState(false);
     const [aElement, setaElement] = useState(element)
@@ -51,7 +51,7 @@ export default function ModalMenu() {
         setSelectedCategory(e.target.value);
     };
 
-    const handleSubmit = async e => {
+    const handleSubmitAgregar = async e => {
         e.preventDefault();
         const datos = {
             name: nameRef.current.value,
@@ -76,6 +76,10 @@ export default function ModalMenu() {
             setEdicion(true)
         }
     }, [])
+
+    const handleSubmitEditar = () => {
+        hadleClickEdit()
+    }
 
     if (action == "deleting") {
         return (
@@ -102,7 +106,7 @@ export default function ModalMenu() {
 
 
     return (
-        <form className="bg-white text-[#222222] font-body" onSubmit={handleSubmit} >
+        <div className="bg-white text-[#222222] font-body" >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => handleClickCierre()}>
                 ✕
             </button>
@@ -216,11 +220,13 @@ export default function ModalMenu() {
 
             <div className="modal-action">
                 {/* if there is a button in div, it will close the modal */}
-                <button type="submit" className="btn btn-primary w-full text-white">
+                <button type="submit" className="btn btn-primary w-full text-white"
+                    onClick={edicion ? handleSubmitEditar : handleSubmitAgregar}
+                >
                     {edicion ? "Guardar cambios" : "Añadir al menú"}
                 </button>
             </div>
-        </form >
+        </div >
     );
 }
 
