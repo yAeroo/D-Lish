@@ -12,8 +12,6 @@ export default function ModalMenu() {
     const { handleClickModal, hadleClickDeleteConfirm, action, setElement, element, hadleClickEdit } = useOwner();
     const [category, setSelectedCategory] = useState('');
     const [edicion, setEdicion] = useState(false);
-    const [aElement, setaElement] = useState(element)
-    const [error, setError] = useState(''); // <- Error 
     const { addProduct } = useOwner();
 
     // Se define el Toast
@@ -77,8 +75,14 @@ export default function ModalMenu() {
         }
     }, [])
 
-    const handleSubmitEditar = () => {
-        hadleClickEdit()
+    const handleSubmitEditar = e => {
+        e.preventDefault();
+        const datos = {
+            nameNew: nameRef.current.value,
+            typeNew: typeRef.current.value,
+        }
+
+        hadleClickEdit(datos, NotiError, NotiExito)
     }
 
     if (action == "deleting") {

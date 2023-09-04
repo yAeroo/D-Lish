@@ -12,6 +12,7 @@ function ProductRow(props) {
     const [visible, setVisible] = useState(active);
 
     const handleClickVisible = (type, id) => {
+        // setElement({ type: type, id: id, name: ProductItem, editando: false });
         hadleClickVisibility(type, id)
         setVisible(!visible);
     }
@@ -19,7 +20,7 @@ function ProductRow(props) {
     const handleClickEdit = (type, id) => {
         handleAction("uppdating");
         handleClickModal();
-        setElement({ type: type, id: id, name: ProductItem, editando: null });
+        setElement({ type: type, id: id, name: ProductItem, editando: true });
         // window.product_modal_2.showModal(id)
     }
 

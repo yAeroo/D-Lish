@@ -90,32 +90,34 @@ const OwnerProvider = ({ children }) => {
     // Cambiar estado de disponibilidad de un componente/producto
     const hadleClickVisibility = async (type, id) => {
         const token = localStorage.getItem('AUTH_TOKEN');
-        element.editando = false;
-
         try {
-            const { data } = await clienteAxios.put(`/api/${type}/${id}`, element, {
+            const response = await clienteAxios.put(`/api/${type}/${id}`, { editando: 0 }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(data);
+            console.log(response);
         } catch (error) {
             console.log(error);
         }
     }
 
-    const hadleClickEdit = async () => {
+    const hadleClickEdit = async (datos, NotiError, NotiExito) => {
         const token = localStorage.getItem('AUTH_TOKEN');
-        element.editando = true;
+        const { type, id } = element;
+        // Nueva copia de atributos
+        const { nameNew, typeNew } = datos;
 
         try {
-            const { data } = await clienteAxios.put(`/api/${type}/${id}`, element, {
+            const { data } = await clienteAxios.put(`/api/${type}/${id}`, { nameNew: nameNew, typeNew, editando: 1 }, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
             });
-            console.log(data);
+            setActuCahe(data);
+            NotiExito();
         } catch (error) {
+            NotiError();
             console.log(error);
         }
     }

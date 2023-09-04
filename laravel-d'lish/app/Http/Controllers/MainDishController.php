@@ -66,12 +66,10 @@ class MainDishController extends Controller
      */
     public function update(Request $request, MainDish $mainDish)
     {
-        return $request['editando'];
-
-        if ($request['name'] !== null) {
-            return "editando";
+        // Condicional, update de visibilidad o de atributos
+        if ($request['editando'] == 1) {
+            $mainDish->name = $request['nameNew'];
         } else {
-            return "visibilidad";
             // Activa o desactiva
             if ($mainDish->active == 1) {
                 $mainDish->active = 0;
@@ -80,7 +78,10 @@ class MainDishController extends Controller
             }
         }
 
+        // Guardar cambios en la DB
         $mainDish->save();
+
+        // Retornar respuesta de confirmación
         return [
             'mainDish' => $mainDish
         ];
