@@ -7,7 +7,7 @@ import useOwner from "../../hooks/useOwner";
 import { useEffect, useState } from "react";
 
 function ProductRow(props) {
-    const { ProductNum, ProductItem, id, type, active, action } = props;
+    const { ProductNum, ProductItem, id, type, active } = props;
     const { hadleClickVisibility, setElement, handleAction, handleClickModal } = useOwner();
     const [visible, setVisible] = useState(active);
 

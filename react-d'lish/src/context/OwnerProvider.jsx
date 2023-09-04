@@ -14,6 +14,7 @@ const OwnerProvider = ({ children }) => {
     const [element, setElement] = useState(null);
     const [action, setAction] = useState(null)
     const [modal, setModal] = useState(false);
+    const [agregando, setAgregando] = useState(null)
     const [actuCache, setActuCahe] = useState(null);
 
     // Función asincrona que llama los datos de la cafetería en base al ID del Usuario
@@ -28,7 +29,6 @@ const OwnerProvider = ({ children }) => {
                 }
             })
             setContenido(data?.data);
-            console.log(data?.data);
         } catch (error) {
             console.log(error);
         }
@@ -67,10 +67,10 @@ const OwnerProvider = ({ children }) => {
     }
 
     // Registrar o añadir componentes de platillos
-    const addProduct = async (type, datos, NotiError) => {
+    const addProduct = async (type, datos, NotiError, NotiExito) => {
+        const idOwner = localStorage.getItem('CAFE_ID');
         const token = localStorage.getItem('AUTH_TOKEN');
         const datas = { ...datos, idOwner };
-        console.log(datas);
 
         try {
             const { data } = await clienteAxios.post(`/api/${type}`, datas, {
@@ -78,18 +78,12 @@ const OwnerProvider = ({ children }) => {
                     Authorization: `Bearer ${token}` // Token obligatorio para validación de datos
                 }
             });
-            console.log('Exito', data);
+            setActuCahe(data);
+            handleClickModal();
             NotiExito();
         } catch (error) {
+            console.log(error);
             NotiError();
-            // setError(""); setAErrors([]);
-            if (error?.response?.data?.errors && Object.keys(error.response.data.errors).length > 0) {
-                let Errores = Object.values(error?.response?.data?.errors);
-                setAErrors(Errores);
-            } else {
-                setError(error.response.data.message);
-            }
-            console.error('Error', error);
         }
     }
 
@@ -118,7 +112,6 @@ const OwnerProvider = ({ children }) => {
                     Authorization: `Bearer ${token}`
                 }
             })
-
             setActuCahe(response);
         } catch (error) {
             console.log(error);
@@ -148,6 +141,8 @@ const OwnerProvider = ({ children }) => {
     return (
         // Se pasan los datos al global
         <OwnerContext.Provider value={{
+            setAgregando,
+            agregando,
             obtenerPedidos,
             obtenerOwner,
             contenido,

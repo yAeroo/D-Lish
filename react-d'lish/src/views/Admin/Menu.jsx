@@ -12,7 +12,7 @@ import useSWR, { mutate } from 'swr';
 import useOwner from "../../hooks/useOwner";
 
 function ProductAdmin() {
-  const { actuCache } = useOwner();
+  const { actuCache, handleClickModal, setAgregando, handleAction } = useOwner();
   const token = localStorage.getItem('AUTH_TOKEN');
   const idOwner = localStorage.getItem('CAFE_ID');
 
@@ -25,9 +25,14 @@ function ProductAdmin() {
   const { data, error, isLoading } = useSWR(`/api/owner/${idOwner}/menu`, fetcher);
 
   useEffect(() => {
-    console.log('actualizando we');
     mutate(`/api/owner/${idOwner}/menu`);
   }, [actuCache])
+
+  const handleAgregar = () => {
+    setAgregando(true)
+    handleAction("creating");
+    handleClickModal();
+  }
 
   // CARGANDO ===== 
   if (isLoading) return <Spinner />
@@ -45,15 +50,12 @@ function ProductAdmin() {
         {/* ------- El modal se abre con el metodo ID.showModal() ----------*/}
         <button
           className="btn btn-primary w-1/2"
-          onClick={() => window.product_modal_1.showModal()}
+          onClick={() => handleAgregar()}
         >
           Agregar producto
         </button>
         <hr className='bg-accent h-1 w-1/2 m-auto' />
       </div>
-
-
-      {/* ------------- FIN DEL MODAL ------------ */}
 
       {/************************************************/}
       {/* ------------Almuerzos------------- */}
@@ -94,9 +96,6 @@ function ProductAdmin() {
           <EmptyMenu />
         )}
       </div>
-
-
-
 
       {/************************************************/}
       {/* ----------------SIDE DISH1------------------ */}

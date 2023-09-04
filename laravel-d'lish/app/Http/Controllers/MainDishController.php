@@ -36,6 +36,13 @@ class MainDishController extends Controller
             'cafeteria_id' => $data['idOwner'],
             'price' => 1.50,
         ]);
+
+        $responseData = [
+            'message' => 'Agregado con éxito a tu menú',
+            'data' => $mainDish, // Aquí puedes incluir cualquier dato adicional que quieras devolver
+        ];
+
+        return response()->json($responseData, 200);
     }
 
 

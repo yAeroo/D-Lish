@@ -1,17 +1,18 @@
 // Hooks
-import { useState, createRef } from "react";
+import { useState, createRef, useEffect } from "react";
 // Helper
 import Notificacion from "../../helper/Notify";
 // Context
 import useOwner from "../../hooks/useOwner";
 // Icon
 import { PiWarningDiamondDuotone } from "react-icons/pi"
+import { FaImage } from "react-icons/fa";
 
 export default function ModalMenu() {
-    const { handleClickModal, hadleClickDeleteConfirm, action, element } = useOwner();
+    const { handleClickModal, hadleClickDeleteConfirm, action, setElement, element, agregando } = useOwner();
     const [category, setSelectedCategory] = useState('');
     const [edicion, setEdicion] = useState(false);
-    const [aErrors, setAErrors] = useState([])
+    const [aElement, setaElement] = useState(element)
     const [error, setError] = useState(''); // <- Error 
     const { addProduct } = useOwner();
 
@@ -22,18 +23,19 @@ export default function ModalMenu() {
     const NotiExito = Notificacion(
         "success",
         toastSuccesId,
-        '¡Cambios guardados con exito!',
+        '¡Agregado con éxito  a tu menú!',
         "!bg-[#191E2B] !font-body !py-2"
     );
     const NotiError = Notificacion(
         "error",
         toastErrorId,
-        '¡Oops! Ha ocurrido un error...',
+        'Rellena todos los campos',
         "!bg-[#191E2B] !font-body !py-2"
     );
 
     // Creando referencias
     const nameRef = createRef();
+    const typeRef = createRef();
     const imgRef = createRef();
     // Creando States
     const categorias = {
@@ -53,113 +55,118 @@ export default function ModalMenu() {
         e.preventDefault();
         const datos = {
             name: nameRef.current.value,
+            type: typeRef.current.value,
             // img: imgRef.current.value,
         }
-        if (category) {
-            await addProduct(category, datos, NotiError);
+
+        if (datos.name && datos.type) {
+            await addProduct(category, datos, NotiError, NotiExito);
         } else {
-            return NotiError();
+            NotiError()
         }
     }
 
-    switch (action) {
-        case "deleting":
-            return (
-                <div className="bg-white flex flex-col items-center gap-3 justify-center font-body" onClick={handleClickModal}>
-                    <button type="button" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-700 "
-                    >
-                        ✕
-                    </button>
-                    <div className="font-bold text-[#ee2121] text-xl ">
-                        <h3 className="font-black uppercase">Advertencia</h3>
-                        <PiWarningDiamondDuotone className="mx-auto mt-4 text-4xl" />
-                    </div>
-                    <p className="py-1 text-center text-gray-700">¿Quieres eliminar este producto?<br /> Esto eliminará las órdenes relacionadas</p>
-                    <div className=" justify-center">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button type="button" className="btn btn-primary text-white bg-[#e95252] hover:bg-[#ff2727] hover:border-[#ff2727] border-[#e95252]"
-                            onClick={() => hadleClickDeleteConfirm()}
-                        >
-                            Eliminar
-                        </button>
-                    </div>
+    const handleClickCierre = () => {
+        handleClickModal();
+        setElement(null);
+    }
+
+    useEffect(() => {
+        if (element) {
+            setEdicion(true)
+        }
+    }, [])
+
+    if (action == "deleting") {
+        return (
+            <div className="bg-white flex flex-col items-center gap-3 justify-center font-body" onClick={handleClickCierre}>
+                <button type="button" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-700">
+                    ✕
+                </button>
+                <div className="font-bold text-[#ee2121] text-xl ">
+                    <h3 className="font-black uppercase">Advertencia</h3>
+                    <PiWarningDiamondDuotone className="mx-auto mt-4 text-4xl" />
                 </div>
-            );
-            break;
-        default:
-            return (
-                < div className="bg-white text-[#222222]" onSubmit={handleSubmit} >
-                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={handleClickModal}>
-                        ✕
-                    </button>
-                    <h3 className="font-bold text-lg">
-                        {edicion ? "Actualiza un producto ya existente" : "Agrega cualquier tipo de producto"}
-                    </h3>
-                    <div className="my-4">
-                        <label
-                            htmlFor="productoName"
-                            className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                            Nombre del producto
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                type="text"
-                                name="producto"
-                                id="producto"
-                                placeholder="Pupusas"
-                                defaultValue={element.name}
-                                ref={nameRef}
-                                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6"
-                            />
-                        </div>
-                    </div>
-
-                    {/* CUADRO DE IMAGEN */}
-                    <label
-                        htmlFor="productoImagen"
-                        className="block text-sm font-medium leading-6 text-gray-900"
+                <p className="py-1 text-center text-gray-700">¿Quieres eliminar este producto?<br /> Esto eliminará las órdenes relacionadas</p>
+                <div className=" justify-center">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button type="button" className="btn btn-primary text-white bg-[#e95252] hover:bg-[#ff2727] hover:border-[#ff2727] border-[#e95252]"
+                        onClick={() => hadleClickDeleteConfirm()}
                     >
-                        Imagen del producto
-                    </label>
+                        Eliminar
+                    </button>
+                </div>
+            </div >
+        );
+    }
 
-                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                        <div className="text-center">
-                            <svg
-                                className="mx-auto h-12 w-12 text-gray-300"
-                                viewBox="0 0 24 24"
-                                fill="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <div className="mt-4 flex text-sm leading-6 text-gray-600 flex-col">
-                                <label
-                                    htmlFor="file-upload"
-                                    className="relative cursor-pointer rounded-md bg-white font-semibold text-terc focus-within:outline-none focus-within:ring-2 focus-within:ring-terc focus-within:ring-offset-2 hover:text-terc"
-                                >
-                                    <span>Sube tu imagen</span>
-                                    <input
-                                        id="file-upload"
-                                        name="file-upload"
-                                        type="file"
-                                        className="sr-only"
-                                    />
-                                </label>
-                                <p className="pl-1 hidden sm:block">o arrastra o sueltala aqui</p>
-                            </div>
-                            <p className="text-xs leading-5 text-gray-600">
-                                PNG, JPG, GIF de alrededor de 10MB
-                            </p>
-                        </div>
+
+    return (
+        <form className="bg-white text-[#222222] font-body" onSubmit={handleSubmit} >
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => handleClickCierre()}>
+                ✕
+            </button>
+            <h3 className="font-bold text-lg pt-6">
+                {edicion ? "Actualiza un producto ya existente" : "Agrega cualquier tipo de producto"}
+            </h3>
+            <div className="my-4">
+                <label
+                    htmlFor="productoName"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                    Nombre del producto
+                </label>
+                <div className="mt-2">
+                    <input
+                        type="text"
+                        name="producto"
+                        id="producto"
+                        placeholder="Pupusas"
+                        defaultValue={element?.name}
+                        ref={nameRef}
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6"
+                    />
+                </div>
+            </div>
+
+            {/* CUADRO DE IMAGEN */}
+            <label
+                htmlFor="productoImagen"
+                className="block text-sm font-medium leading-6 text-gray-900"
+            >
+                Imagen del producto
+            </label>
+
+            <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                <div className="text-center">
+                    <FaImage
+                        className="mx-auto h-12 w-12 text-gray-300"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    />
+                    <div className="mt-4 flex text-sm leading-6 text-gray-600 flex-col">
+                        <label
+                            htmlFor="file-upload"
+                            className="relative cursor-pointer rounded-md bg-white font-semibold text-terc focus-within:outline-none focus-within:ring-2 focus-within:ring-terc focus-within:ring-offset-2 hover:text-terc"
+                        >
+                            <span>Sube tu imagen</span>
+                            <input
+                                id="file-upload"
+                                name="file-upload"
+                                type="file"
+                                className="sr-only"
+                            />
+                        </label>
+                        <p className="pl-1 hidden sm:block">o arrastra o sueltala aqui</p>
                     </div>
+                    <p className="text-xs leading-5 text-gray-600">
+                        PNG, JPG, GIF de alrededor de 10MB
+                    </p>
+                </div>
+            </div>
 
-                    <div className=" items-end grid grid-cols-1 gap-x-6">
-                        {/* <div className="mt-4 sm:my-4">
+            <div className=" items-end grid grid-cols-1 gap-x-6">
+                {/* <div className="mt-4 sm:my-4">
                       <label
                         htmlFor="edificio"
                         className="block text-sm font-medium leading-6 text-gray-900"
@@ -176,45 +183,44 @@ export default function ModalMenu() {
                       </div>
                     </div> */}
 
-                        <div className="mt-4 sm:my-4 w-full">
-                            <label
-                                htmlFor="edificio"
-                                className="block text-sm font-medium leading-6 text-gray-900"
-                            >
-                                Categoria
-                            </label>
-                            <div className="mt-2">
-                                <select
-                                    className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6  "
-                                    name="Category"
-                                    id="Category"
-                                    defaultValue={edicion ? "null" : element.type}
-                                    onChange={setCategory}
-                                >
+                <div className="mt-4 sm:my-4 w-full">
+                    <label
+                        htmlFor="edificio"
+                        className="block text-sm font-medium leading-6 text-gray-900"
+                    >
+                        Categoria
+                    </label>
+                    <div className="mt-2">
+                        <select
+                            className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6  "
+                            name="Category"
+                            id="Category"
+                            defaultValue={element ? element.type : "null"}
+                            onChange={setCategory}
+                            ref={typeRef}
+                        >
+                            <option value="null" disabled>Seleccione una opción</option>
 
-                                    <option value="null" disabled>Seleccione una opción</option>
-                                    {/* Opciones de categoria */}
-                                    {Object.keys(categorias).map((key) => (
-                                        <option key={key} value={key}>
-                                            {categorias[key]}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                        </div>
-
-                        {/* <input type="number" name="edificio" id="edificio"  className="block w-[50%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" /> */}
+                            {/* Opciones de categoria */}
+                            {Object.keys(categorias).map((key) => (
+                                <option key={key} value={key}>
+                                    {categorias[key]}
+                                </option>
+                            ))}
+                        </select>
                     </div>
+                </div>
 
-                    <div className="modal-action">
-                        {/* if there is a button in div, it will close the modal */}
-                        <button type="submit" className="btn btn-primary">
-                            {true ? "Guardar cambios" : "Añadir al pedido"}
-                        </button>
-                    </div>
-                </div >
-            );
-            break;
-    }
+                {/* <input type="number" name="edificio" id="edificio"  className="block w-[50%] rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6" /> */}
+            </div>
 
+            <div className="modal-action">
+                {/* if there is a button in div, it will close the modal */}
+                <button type="submit" className="btn btn-primary w-full text-white">
+                    {edicion ? "Guardar cambios" : "Añadir al menú"}
+                </button>
+            </div>
+        </form >
+    );
 }
+
