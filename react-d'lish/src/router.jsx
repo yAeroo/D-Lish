@@ -10,6 +10,7 @@ import AdminLayout from './layouts/AdminLayout';
 import Index from './views/Index';
 import Search from "./views/Search";
 import AuthSelection from './views/Auth/AuthSelection';
+import CategoryView from "./views/CategoryView";
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
 import Homepage from './views/Homepage';
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
         // Página Search Mobile
         path: '/search',
         element: <Search />
+    },
+    {
+        // Página CategoryView
+        path: '/CategoryView',
+        element: <CategoryView />
     },
     {
         path: '/auth',

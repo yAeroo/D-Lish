@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 //Spinner
 import Spinner from '../components/Spinner';
@@ -56,14 +57,17 @@ export default function Index() {
 
             <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
               {/* Contenedor de Desayunos */}
-              <div
-                className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                style={{ backgroundImage: `url(${DesayunoBanner})` }}
-              >
-                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+              <Link to={`/CategoryView`} >
+                <div
+                  className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                  style={{ backgroundImage: `url(${DesayunoBanner})` }}
+                >
+                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
                   Desayunos
+                  </div>
                 </div>
-              </div>
+              </Link>
+              
 
               {/* Contenedor de Otros */}
               <div
