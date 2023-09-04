@@ -52,7 +52,7 @@ export default function Registro() {
     const NotiError = Notify(
         "error",
         toastErrorId,
-        '¡Oops! Visualiza los errores arriba 👆🏻',
+        t("info.errors.general-error"),
         "!bg-[#191E2B] !font-body !py-2"
     );
 
@@ -109,7 +109,7 @@ export default function Registro() {
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder={t("credentials.student-email-placeholder")}
+                                    placeholder="estudiante@cdb.edu.sv"
                                     className="input input-bordered w-full bg-base-100"
                                     id="email"
                                     ref={emailRef}

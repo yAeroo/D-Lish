@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Icons
 import { MdOutlineAlternateEmail, MdLockOutline } from "react-icons/md";
 import { HiOutlineWallet } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
-import { TbPigMoney } from "react-icons/tb";
 
 export default function Preferences(props) {
     const { user } = props;
+    const { t } = useTranslation();
 
     return (
         <>
@@ -28,7 +29,7 @@ export default function Preferences(props) {
                         <li className="li-elem !mb-4">
                             <MdLockOutline size={"25"} />
                             <div className="flex justify-between w-full">
-                                <span className="px-2">Cambiar contraseña</span>
+                                <span className="px-2"> {t("actions.change-pw")} </span>
                                 <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
                             </div>
                         </li>
@@ -38,24 +39,12 @@ export default function Preferences(props) {
                         <li className="li-elem">
                             <HiOutlineWallet size={"25"} />
                             <div className="flex justify-between w-full">
-                                <span className="px-2">Fondos & Registros</span>
+                                <span className="px-2"> {t("info.funds-logs")} </span>
                                 <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
                             </div>
                         </li>
                     </Link>
-
-                    {/* <Link to="/profile/logs/">
-                        <li className="li-elem">
-                            <TbPigMoney size={"25"} />
-                            <div className="flex justify-between w-full">
-                                <span className="px-2">Fondos</span>
-                                <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
-                            </div>
-                        </li>
-                    </Link> */}
                 </ul>
-
-                {/* Boton cerrar sesión */}
             </div>
         </>
 

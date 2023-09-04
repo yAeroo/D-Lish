@@ -30,7 +30,7 @@ export default function ProfileSetttings() {
     const NotiExito = Notificacion(
         "success",
         toastSuccesId,
-        '¡Cambios guardados con exito!',
+        t('info.notis.success-save'),
         "!bg-[#191E2B] !font-body !py-2"
     );
 
@@ -38,14 +38,12 @@ export default function ProfileSetttings() {
     const NotiError = Notificacion(
         "error",
         toastErrorId,
-        '¡Oops! Ha ocurrido un error...',
+        t("info.errors.general-error"),
         "!bg-[#191E2B] !font-body !py-2"
     );
 
     // Obtener token de usuario y Id
     const { user } = useAuth({ middleware: 'auth' }); const id = user?.id; const token = localStorage.getItem('AUTH_TOKEN');
-
-    const [saveBttn, setSaveBttn] = useState("Guardar cambios");
 
     // Creando referencias
     const oldPasswordRef = createRef(); const newPasswordRef = createRef(); const newPasswordConfirmationRef = createRef();
@@ -110,7 +108,7 @@ export default function ProfileSetttings() {
                         <MdLockOutline size={"25"} />
                         <div className="flex justify-between w-full">
                             <span className="px-2 overflow-ellipsis w-[13.5rem] sm:w-full overflow-hidden font-bold">
-                                Cambiar contraseña
+                                {t("actions.change-pw")}
                             </span>
                         </div>
                     </li>
@@ -130,21 +128,21 @@ export default function ProfileSetttings() {
                         <div className="flex justify-center items-center flex-col">
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
-                                    <span className="label-text">Coloca tu contraseña actual</span>
+                                    <span className="label-text">{t("credentials.old-pw")}</span>
                                 </label>
                                 <input id="oldPassword" ref={oldPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
                             </div>
 
                             <div className="form-control w-full max-w-xs mt-5">
                                 <label className="label">
-                                    <span className="label-text">Coloca tu nueva contraseña</span>
+                                    <span className="label-text">{t("credentials.new-pw")}</span>
                                 </label>
                                 <input id="newPassword" ref={newPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
                             </div>
 
                             <div className="form-control w-full max-w-xs mt-5">
                                 <label className="label">
-                                    <span className="label-text">Confirma tu nueva contraseña</span>
+                                    <span className="label-text">{t("credentials.repeat-new-pw")}</span>
                                 </label>
                                 <input id="newPassswordConfirmation" ref={newPasswordConfirmationRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
                             </div>
@@ -156,7 +154,7 @@ export default function ProfileSetttings() {
                                 <div className="flex bg-secondary rounded-full p-2 md:px-5 ">
                                     <span> <BiSave size={"25"} color={"white"} /> </span>
                                     <span className="mx-2 profile-bttn-text !block">
-                                        Guardar cambios
+                                        {t("actions.save-changes")}
                                     </span>
                                 </div>
                             </button>
@@ -172,19 +170,19 @@ export default function ProfileSetttings() {
                             <IoLanguageSharp size={"25"} />
                             <div className="flex justify-between w-full">
                                 <span className="px-2 overflow-ellipsis w-[13.5rem] sm:w-full overflow-hidden font-bold">
-                                    {t("settings.lang")}
+                                    {t("actions.change-lang")}
                                 </span>
                             </div>
                         </li>
 
                         <div className="md:mx-24">
                             <label className="flex justify-between my-3" htmlFor="radio-ES">
-                                <span>{t("settings.lang-es")}</span>
+                                <span>{t("lang.es")}</span>
                                 <input type="radio" id="radio-ES" className="radio radio-success" checked={radioState} onChange={() => { handleButtonClick(true); i18n.changeLanguage("es") }} />
                             </label>
 
                             <label className="flex justify-between my-3" htmlFor="radio-EN">
-                                <span>{t("settings.lang-en")}</span>
+                                <span>{t("lang.en")}</span>
                                 <input type="radio" id="radio-EN" className="radio radio-success" checked={!radioState} onChange={() => { handleButtonClick(false); i18n.changeLanguage("en") }} />
                             </label>
                         </div>

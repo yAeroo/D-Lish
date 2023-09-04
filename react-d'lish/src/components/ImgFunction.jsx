@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import clienteAxios from "../config/axios";
+import { useTranslation } from 'react-i18next';
 
 // Icons
 import { PiImageBold } from "react-icons/pi";
@@ -12,6 +13,7 @@ import Notificacion from "../../src/helper/Notify";
 import "react-toastify/dist/ReactToastify.css";
 
 const FileUpload = () => {
+	const { t } = useTranslation();
 
 	// Se define el Toast
     const toastSuccesId = "success-noti";
@@ -19,7 +21,7 @@ const FileUpload = () => {
     const NotiExito = Notificacion(
         "success",
         toastSuccesId,
-        '¡Cambios guardados con exito!',
+        t("info.notis.success-save"),
         "!bg-[#191E2B] !font-body !py-2"
     );
 
@@ -48,7 +50,7 @@ const FileUpload = () => {
 				setIsFileSelected(true); // Coloca la bandera - isFileSelected en True
 				setError('');
 			} else { // Sino...
-				setError('Archivo incompatible');  // Colocar mensaje de error
+				setError(t("info.errors.incompatible-file"));  // Colocar mensaje de error
 			}
 		}
 	};
@@ -78,7 +80,7 @@ const FileUpload = () => {
 				resetState(); // Reiniando todo
 			})
 			.catch(error => { // Si la solicitud falla entonces...
-				setError('Ha ocurrido un error.'); // Coloca mensaje de error
+				setError(t("info.errors.general-error")); // Coloca mensaje de error
 				console.error('Error uploading image', error);
 			})
 		}
@@ -132,7 +134,7 @@ const FileUpload = () => {
 							<PiImageBold color={"white"} size={"48"} className={isFileSelected && "hidden"}/>
 						</div>
 
-						<h3 id="original-text" className="text-white font-semibold">Sube tu imagen aquí</h3>
+						<h3 id="original-text" className="text-white font-semibold">{t("info.upload-img")}</h3>
 
 						<h3 id="file-upload-filename" className="text-ellipsis text-center hidden overflow-hidden text-white font-semibold whitespace-nowrap w-full">
 							{filename} {/* < Texto del archivo subido */}
@@ -148,12 +150,12 @@ const FileUpload = () => {
 					<span className="mr-2"> 
 						<TbCameraCancel size={"25"} color={"white"} /> 
 					</span>
-					<p className='self-center'>Cancelar</p>
+					<p className='self-center'>{t("actions.cancel")}</p>
 				</button>
 
 				{/* Botón aceptar DESHABILITADO */}
 				<div id='disable-bttn' className="flex rounded-full text-gray-400 p-2 md:px-5 cursor-not-allowed border-dashed border-2 bg-[#377c49] border-[#60b977]">
-					Aceptar
+					{t("actions.accept")}
 					<span className="ml-2"> 
 						<TbCameraCheck size={"25"} color={"rgb(156 163 175 / var(--tw-text-opacity))"} /> 
 					</span>
@@ -161,7 +163,7 @@ const FileUpload = () => {
 
 				{isFileSelected && 
 					<section className="cursor-pointer flex rounded-full bg-primary hover:bg-base-100 transition-all text-white p-2 md:px-5 animate-jump" onClick={handleAccept}>
-						Aceptar
+						{t("actions.accept")}
 						<span className="ml-2"> 
 							<TbCameraCheck size={"25"} color={"white"} /> 
 						</span>

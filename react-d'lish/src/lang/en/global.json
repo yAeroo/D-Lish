@@ -3,9 +3,46 @@
         "login"    : "Login",
         "to-login"  : "Sign in",
         "register" : "Sign up",
-        "to-register" : "Sign up",
+        "to-register" : "Register",
         "go-back"  : "Go back",
-        "log-off"  : "Log off"
+        "log-off"  : "Log off",
+
+        "accept" : "Accept", "cancel" : "Cancel",
+        "save-changes" : "Save changes",
+
+        "change-pw" : "Change password", "settings" : "Configuration", 
+        "change-lang" : "Change lang", "change-img" : "Change photo"
+
+    },
+    "credentials" : {
+        "complete-name" : "Full name",
+        "name-placeholder" : "Name & last name",
+
+        "student-email" : "Student email",
+
+        "gender" : "Gender",
+        "select-gender" : "Select a gender",
+        "gender-M" : "Male",
+        "gender-F" : "Female",
+
+        "password" : "Password",
+        "repeat-pw" : "Repeat password",        
+        "old-pw" : "Coloca tu contraseña actual",
+        "new-pw" : "Coloca una nueva contraseña", "repeat-new-pw" : "Confirmar nueva contraseña"
+    },
+    "info" : {
+        "funds-logs" : "Funds & logs",
+        "upload-img" : "Upload your image here", "update-pfp" : "Actualiza tu foto de perfil",
+
+        "errors" : {
+            "general-error" : "Something went wrong...",
+            "bad-credentials" : "Las credenciales son incorrectas...",
+            "incompatible-file" : "Incompatible file"
+        },
+
+        "notis" : {
+            "success-save" : "Changes saved succesfully!"
+        }
     },
     "homepage" : {
         "hero-title" : "Order your food on an easy and a fast way.",
@@ -19,9 +56,9 @@
         "feature-3-desc"  : "Interfaz adaptable y visualización adecuada a todos los dispositivos.",
         "who-title" : "¿Quiénes somos?",
         "who-desc"  : "En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una aplicación web apasionada por brindar un servicio compra conveniente y eficiente.",
-        "mission-title"   : "Misión",
+        "mission-title"   : "Mission",
         "mission-desc"    : "En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra aplicación web conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!",
-        "vission-title" : "Visión",
+        "vission-title" : "Vission",
         "vission-desc"  : "En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra."
     },
     "auth" : {
@@ -34,23 +71,18 @@
         "exist-acc-msg" : "¿Ya tienes una cuenta?",
         "login-acc" : "Ingresa ahora"
     },
-    "credentials" : {
-        "complete-name" : "Full name",
-        "name-placeholder" : "Name & last name",
+    "logs" : {
+        "funds-summ" : "Resumen de fondos",
+        "available-funds" : "Fondos disponibles",
+        "spent-funds" : "Gastos totales",
+        "fund-analysis" : "Análisis de fondos",
+        "order-history" : "Historial de fondos",
 
-        "student-email" : "Institutional mail",
-        "student-email-placeholder" : "estudiante@cdb.edu.sv",
-
-        "gender" : "Gender",
-        "select-gender" : "Select a gender",
-        "gender-M" : "Male",
-        "gender-F" : "Female",
-
-        "password" : "Password",
-        "repeat-pw" : "Repeat password"
+        "cafeteria" : "Cafetín"
     },
+    "lang" : { "es" : "Spanish", "en" : "English" },
     "footer" : {
-        "project-desc" : "Crea-J project 2023",
-        "copyright"    : "Copyright ©  - All rights reserved"
+        "project-desc" : "Crea-J Project 2023",
+        "copyright"    : "Copyright ©  - All right reserved"
     }
 }

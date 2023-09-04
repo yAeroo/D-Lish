@@ -35,7 +35,7 @@ export default function Profile() {
                 <div id="edit-bttn" className="fu-custom animate-fade-left absolute top-5 right-[5%] md:right-[3%] lg:right-[10%]">
                     <Link to="/profile/settings" className="flex bg-secondary hover:bg-base-100 transition-all rounded-full p-2 md:px-5 ">
                         <span className="mr-2 profile-bttn-text">
-                            {t("profile.settings")}
+                            {t("actions.settings")}
                         </span>
                         <span> <MdSettings size={"25"} color={"white"} /> </span>
                     </Link>
@@ -49,13 +49,13 @@ export default function Profile() {
                 {/* Perefencias */}
                 <Preferences user={user} />
 
-                {/* Botón para cerrar sesión que no cierra sesión jaja */}
+                {/* Botón para cerrar sesión */}
                 <div className="flex justify-center h-full pb-12 fa-custom animate-fade">
                     <button onClick={logout}>
                         <div className="flex bg-secondary rounded-full p-2 px-14">
                             <span> <BiLogOut size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">
-                            {t("profile.log-off")}
+                            {t("actions.log-off")}
                             </span>
                         </div>
                     </button>

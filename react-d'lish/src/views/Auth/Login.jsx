@@ -53,7 +53,7 @@ export default function Login() {
     const NotiError = Notify(
         "error",
         toastErrorId,
-        '¡Oops! Credenciales incorrectas...',
+        t("info.errors.bad-credentials"),
         "!bg-[#191E2B] !font-body !py-2"
     );
 
@@ -92,7 +92,7 @@ export default function Login() {
                                 </label>
                                 <input
                                     type="email"
-                                    placeholder={t("credentials.student-email-placeholder")}
+                                    placeholder="estudiante@cdb.edu.sv"
                                     className="input input-bordered w-full text-white bg-base-100"
                                     id="email"
                                     ref={emailRef}

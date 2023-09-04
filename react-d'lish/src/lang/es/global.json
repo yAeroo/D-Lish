@@ -5,7 +5,44 @@
         "register" : "Registrarse",
         "to-register" : "Regístrate",
         "go-back"  : "Regresar",
-        "log-off"  : "Cerrar sesión"
+        "log-off"  : "Cerrar sesión",
+
+        "accept" : "Aceptar", "cancel" : "Cancelar",
+        "save-changes" : "Guardar cambios",
+
+        "change-pw" : "Cambiar contraseña", "settings" : "Configuración", 
+        "change-lang" : "Cambiar idioma", "change-img" : "Cambiar foto"
+
+    },
+    "credentials" : {
+        "complete-name" : "Nombre completo",
+        "name-placeholder" : "Nombre & apellido",
+
+        "student-email" : "Correo institucional",
+
+        "gender" : "Género",
+        "select-gender" : "Seleccionar género",
+        "gender-M" : "Masculino",
+        "gender-F" : "Femenino",
+
+        "password" : "Contraseña",
+        "repeat-pw" : "Repetir contraseña",
+        "old-pw" : "Coloca tu contraseña actual",
+        "new-pw" : "Coloca una nueva contraseña", "repeat-new-pw" : "Confirmar nueva contraseña"
+    },
+    "info" : {
+        "funds-logs" : "Fondos & registros",
+        "upload-img" : "Sube tu imagen aquí", "update-pfp" : "Actualiza tu foto de perfil",
+
+        "errors" : {
+            "general-error" : "Ha ocurrido un error...",
+            "bad-credentials" : "Las credenciales son incorrectas...",
+            "incompatible-file" : "Archivo incompatible"
+        },
+
+        "notis" : {
+            "success-save" : "¡Cambios guardados con exito!"
+        }
     },
     "homepage" : {
         "hero-title" : "Ordena tu comida de manera rápida y sencilla.",
@@ -34,20 +71,18 @@
         "exist-acc-msg" : "¿Ya tienes una cuenta?",
         "login-acc" : "Ingresa ahora"
     },
-    "credentials" : {
-        "complete-name" : "Nombre completo",
-        "name-placeholder" : "Nombre & apellido",
+    "logs" : {
+        "funds-summ" : "Resumen de fondos",
+        "available-funds" : "Fondos disponibles",
+        "spent-funds" : "Gastos totales",
+        "fund-analysis" : "Análisis de fondos",
+        "order-history" : "Historial de fondos",
 
-        "student-email" : "Correo institucional",
-        "student-email-placeholder" : "estudiante@cdb.edu.sv",
-
-        "gender" : "Género",
-        "select-gender" : "Seleccionar género",
-        "gender-M" : "Masculino",
-        "gender-F" : "Femenino",
-
-        "password" : "Contraseña",
-        "repeat-pw" : "Repetir contraseña"
+        "cafeteria" : "Cafetín"
+    },
+    "lang" : { "es" : "Español", "en" : "Inglés" },
+    "status" : {
+        "complete" : "Completado"
     },
     "footer" : {
         "project-desc" : "Proyecto Crea-J 2023",
