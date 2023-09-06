@@ -25,6 +25,8 @@ class OwnerResource extends JsonResource
                 'id' => $this->cafeteria->id,
                 'name' => $this->cafeteria->name,
                 'img' => $this->cafeteria->img,
+                'contactEmail' => $this->cafeteria->contactEmail,
+                'mainPublic' => $this->cafeteria->mainPublic,
             ]
         ];
     }
