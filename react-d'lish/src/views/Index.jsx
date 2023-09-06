@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams  } from 'react-router-dom';
-
-//Spinner
-import Spinner from '../components/Spinner';
+import { Link, useParams } from 'react-router-dom';
 
 //Componentes
 import Carrousel from "../components/Carrousel";
@@ -16,7 +13,6 @@ import "../css/IndexPage.css";
 //Imagenes
 import RellenosPapa from "/src/assets/Dishes/MainDish/rellenos_de_papa.jpg";
 import ChowMein from "/src/assets/Dishes/MainDish/chow_mein.jpg";
-import PolloAsado from "/src/assets/index/polloAsado.jpg";
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
 import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
 import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
@@ -26,14 +22,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-
+import useCafeterias from '../hooks/useCafeterias';
 
 
 export default function Index() {
-
+  const { obtenerCafeterias } = useCafeterias()
   // Obtén cafeteriaId desde useParams()
   const { cafeteriaId, dishId } = useParams();
 
+  useEffect(() => {
+    obtenerCafeterias();
+  }, [])
 
   return (
     <div>
@@ -65,37 +64,37 @@ export default function Index() {
                   style={{ backgroundImage: `url(${DesayunoBanner})` }}
                 >
                   <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                  Desayunos
+                    Desayunos
                   </div>
                 </div>
               </Link>
-              
+
 
               {/* Contenedor de Otros */}
               <Link to={`/otros`} >
-              <div
-                className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                style={{ backgroundImage: `url(${OtrosBanner})` }}
-              >
-                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                  Otros
+                <div
+                  className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                  style={{ backgroundImage: `url(${OtrosBanner})` }}
+                >
+                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+                    Otros
+                  </div>
                 </div>
-              </div>
               </Link>
-              
+
 
               {/* Contenedor de Almuerzos */}
               <Link to={`/almuerzos`} className="col-span-2">
-              <div
-                className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-                style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
-              >
-                <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                  Almuerzos
+                <div
+                  className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+                  style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
+                >
+                  <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
+                    Almuerzos
+                  </div>
                 </div>
-              </div>
               </Link>
-              
+
             </div>
           </div>
 
@@ -129,7 +128,7 @@ export default function Index() {
               dishId={2}
             />
 
-            
+
           </div>
         </section>
       </main>

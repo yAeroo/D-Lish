@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import clienteAxios from '../config/axios';
+import { useAuth } from '../hooks/useAuth';
 
 // Definimos nuestro contexto de cafeterias
 const CafeteriasContext = createContext();
@@ -45,7 +46,8 @@ const CafeteriasProvider = ({ children }) => {
             cafeterias,
             obtenerContenidoCafeteria,
             contenidoCafeteria,
-            limpiarCafeteria
+            limpiarCafeteria,
+            obtenerCafeterias
         }}>
             {children}
         </CafeteriasContext.Provider>
