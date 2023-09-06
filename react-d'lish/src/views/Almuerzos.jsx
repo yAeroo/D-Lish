@@ -3,21 +3,17 @@ import React, { useEffect } from "react";
 //Componentes
 import NavCafetin from "../components/Nav/NavCafetin";
 import NavMobileIndex from "../components/Nav/NavMobileIndex";
-import WiggleAlert from "../components/WiggleAlert";
 import FoodCard from "../components/FoodCard";
 
 //Banners
-import DesayunoPng from "/src/assets/Dishes/desayunosPng.png";
-import OtrosPng from "/src/assets/Dishes/otrosPng.png";
 import AlmuerzoPng from "/src/assets/Dishes/almuerzosPng.png";
 
 //Imagenes
 import Burrito from "/src/assets/index/burrito.jpg";
-import JugosNaturales from "/src/assets/index/jugosNaturales.jpg";
-import Pupusas from "/src/assets/index/pupusas.jpg";
+
 import Tortas from "/src/assets/index/Tortas.jpg";
 import PolloAsado from "/src/assets/index/polloAsado.jpg";
-import Licuado from "/src/assets/index/licuado.jpg";
+
 
 export default function Desayunos() {
   useEffect(() => {
