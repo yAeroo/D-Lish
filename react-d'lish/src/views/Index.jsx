@@ -50,6 +50,7 @@ export default function Index() {
 
         <section className="p-0 bg-base-100 w-full space-y-6">
           {/* ----Espacio para diferentes tipos de comidas----  */}
+
           <div className="space-y-6 px-0">
             <h2 className="text-3xl md:text-5xl p-6 my-8 md:text-center font-semibold text-neutral-100 py-2">
               Categorías
@@ -57,7 +58,7 @@ export default function Index() {
 
             <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
               {/* Contenedor de Desayunos */}
-              <Link to={`/CategoryView`} >
+              <Link to={`/desayunos`} >
                 <div
                   className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${DesayunoBanner})` }}
@@ -70,6 +71,7 @@ export default function Index() {
               
 
               {/* Contenedor de Otros */}
+              <Link to={`/otros`} >
               <div
                 className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                 style={{ backgroundImage: `url(${OtrosBanner})` }}
@@ -78,8 +80,11 @@ export default function Index() {
                   Otros
                 </div>
               </div>
+              </Link>
+              
 
               {/* Contenedor de Almuerzos */}
+              <Link to={`/almuerzos`} className="col-span-2">
               <div
                 className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                 style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
@@ -88,8 +93,11 @@ export default function Index() {
                   Almuerzos
                 </div>
               </div>
+              </Link>
+              
             </div>
           </div>
+
         </section>
 
         <section className="lg:rounded-2xl 2xl:px-[12rem] bg-base-200 pb-10 my-[4rem]">

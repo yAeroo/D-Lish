@@ -10,7 +10,9 @@ import AdminLayout from './layouts/AdminLayout';
 import Index from './views/Index';
 import Search from "./views/Search";
 import AuthSelection from './views/Auth/AuthSelection';
-import CategoryView from "./views/CategoryView";
+import Desayunos from "./views/Desayunos";
+import Otros from "./views/Otros";
+import Almuerzos from "./views/Almuerzos";
 import Login from './views/Auth/Login.jsx';
 import Register from './views/Auth/Register';
 import Homepage from './views/Homepage';
@@ -76,9 +78,19 @@ const router = createBrowserRouter([
         element: <Search />
     },
     {
-        // Página CategoryView
-        path: '/CategoryView',
-        element: <CategoryView />
+        // Página Desayunos
+        path: '/desayunos',
+        element: <Desayunos />
+    },
+    {
+        // Página Otros
+        path: '/otros',
+        element: <Otros />
+    },
+    {
+        // Página Almuerzos
+        path: '/almuerzos',
+        element: <Almuerzos />
     },
     {
         path: '/auth',

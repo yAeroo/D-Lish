@@ -3,7 +3,7 @@ import FaviconGreen from "../../src/assets/logo/icon_green.png";
 
 const Spinner = () => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-60 bg-base-300">
+    <div className="fixed inset-0 flex items-center justify-center z-60 bg-base-100">
       <div className="flex flex-col items-center">
         <img
           src={FaviconGreen} // Reemplaza con la ruta correcta a tu imagen de spinner
