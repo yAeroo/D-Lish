@@ -84,17 +84,23 @@ export const useAuth = ({ middleware, url }) => {
 
     // UseEffect atento a User ó Error
     useEffect(() => {
+        // Acceso para usuarios normales
         if (middleware === 'guest' && url && user) {
             navigate(url);
         }
-        // Redireccion para admin
+        // Acceso para admin autenticados
         if (middleware === 'guest' && user && user.type == 'owner') {
             navigate('/admin')
         }
+        // Redirecciónr para usuario que intente acceder a vista admin
         if (middleware === 'owner' && user && user.type !== 'owner') {
             navigate('/')
         }
-        // Condicional que válida la sesión
+        // Redirección para admin que intente acceder a vista de usuario
+        if (middleware === 'auth' && user && user.type !== 'user') {
+            navigate('/admin')
+        }
+        // Condicional que válida la sesión, si no retorna a hompeage
         if (middleware === 'auth' && error) {
             navigate('/homepage')
         }
