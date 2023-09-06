@@ -29,7 +29,8 @@ export const useAuth = ({ middleware, url }) => {
             const { data } = await clienteAxios.post('/api/login', datos);
             // Guardar token de auth en localstorage
             localStorage.setItem('AUTH_TOKEN', data.token);
-            localStorage.setItem('CAFE_ID', data.user.id);
+            // Si es Admin asignamos el ID de su cafeteria
+            if (data.user.type === "owner") localStorage.setItem('CAFE_ID', data.user.id);
             // Si todo esta bien
             load();
             setErrores([]);

@@ -4,28 +4,38 @@ import "../../css/buttons.css";
 
 import logoDlish from '../../assets/logo/icon_bw.png';
 import fontDlish from '../../assets/logo/title_bw.png';
-
+//Componente
 import Footer from '../../components/Footer';
 
 // Contenido variables
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
-import useFechaActual from '../../hooks/useFecha';
 import TableRow from '../../components/TableRow';
+
+// hooks
+import { useNavigate } from 'react-router-dom';
+import useFechaActual from '../../hooks/useFecha';
 import useOrders from '../../hooks/useOrders';
+// Helper
+import { isEmpty } from '../../helper/Vacio';
 
 function Order() {
+  const navigate = useNavigate();
   const { orden } = useOrders();
-  console.log(orden);
-  const { cafeteria } = orden;
+  const { cafeteria, ...Order } = orden;
+
+  console.log(orden.length);
   const fechaActual = useFechaActual();
-  let finalOrden = Object.keys(orden).filter(propiedad => orden[propiedad] !== null);
-  finalOrden = Object.keys(orden).filter(propiedad => orden[propiedad] !== null);
+  let finalOrden = Object.keys(Order).filter(propiedad => Order[propiedad] !== null);
+  finalOrden = Object.keys(Order).filter(propiedad => Order[propiedad] !== null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
 
+  if (isEmpty(orden)) {
+    navigate("/")
+  }
 
   return (
     <>
@@ -69,7 +79,7 @@ function Order() {
                     {/* Iterar en los valores del objeto */}
                     {finalOrden.map((propiedad, index) => {
                       if (index !== finalOrden.length - 1) {
-                        return <TableRow key={propiedad} index={index + 1} component={orden[propiedad]} />;
+                        if (propiedad != cafeteria) return <TableRow key={propiedad} index={index + 1} component={orden[propiedad]} />;
                       }
                       return <TableRow key={propiedad} index="Precio" component={orden[propiedad]} />;
                     })}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class OrderDishResource extends JsonResource
@@ -18,6 +19,10 @@ class OrderDishResource extends JsonResource
         return [
             // Campo ID de la tabla ordenes
             'id' => $this->id,
+            'fecha' => Carbon::parse($this->created_at)->format('d/m/Y'),
+            'cafeteria' => [
+                'name' => $this->cafeteria->name,
+            ],
             // Propiedades relacionadas de otros modelos
             'user' => [
                 'id' => $this->user->id,

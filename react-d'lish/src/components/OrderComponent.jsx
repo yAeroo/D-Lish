@@ -30,7 +30,7 @@ function FoodCardDish(props) {
                             checked readOnly
                         />
                         :
-                        <input type="radio" className="checkbox checkbox-success"
+                        <input type="radio" className="checkbox checked:checkbox-success not-checked:text-white"
                             name={type}
                             onChange={() => { handleCheckboxClick(id, type) }}
                         />

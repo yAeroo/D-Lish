@@ -50,17 +50,6 @@ class SideDish2Controller extends Controller
      */
     public function show(SideDish2 $sideDish2)
     {
-        // Activa o desactiva
-        if ($sideDish2->active == 1) {
-            $sideDish2->active = 0;
-        } else {
-            $sideDish2->active = 1;
-        }
-
-        $sideDish2->save();
-        return [
-            'sideDish2' => $sideDish2
-        ];
     }
 
     /**

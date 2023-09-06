@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OrderDish;
-use Illuminate\Http\Request;
-use App\Http\Requests\OrderDishRequest;
-use App\Http\Resources\AccompanimentResource;
-use App\Http\Resources\CafeteriaResource;
-use App\Http\Resources\DrinkResource;
-use App\Http\Resources\MainDishResource;
-use App\Http\Resources\SideDish1Resource;
-use App\Http\Resources\SideDish2Resource;
-use App\Models\Accompaniment;
-use App\Models\Cafeteria;
+use App\Models\User;
 use App\Models\Drink;
 use App\Models\MainDish;
+use App\Models\Cafeteria;
+use App\Models\OrderDish;
 use App\Models\SideDish1;
 use App\Models\SideDish2;
+use Illuminate\Http\Request;
+use App\Models\Accompaniment;
+use App\Http\Resources\DrinkResource;
+use App\Http\Requests\OrderDishRequest;
+use App\Http\Resources\MainDishResource;
+use App\Http\Resources\CafeteriaResource;
+use App\Http\Resources\OrderDishResource;
+use App\Http\Resources\SideDish1Resource;
+use App\Http\Resources\SideDish2Resource;
+use App\Http\Resources\AccompanimentResource;
 
 class OrderController extends Controller
 {
@@ -27,7 +29,6 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return "Correcto...";
     }
 
     /**
@@ -76,13 +77,14 @@ class OrderController extends Controller
         ]);
 
         // Concatenamos respuesta de nombres
-        // $cafeteria = new CafeteriaResource(Cafeteria::findOrFail($data['cafeteriaId']));
+        $cafeteria = new CafeteriaResource(Cafeteria::findOrFail($data['cafeteriaId']));
         $mainDish = new MainDishResource(MainDish::findOrFail($data['main_dish']));
         $sideDish1 = new SideDish1Resource(SideDish1::findOrFail($data['side_dish1']));
         $sideDish2 = new SideDish2Resource(SideDish2::findOrFail($data['side_dish2']));
 
         // Retornar una respuesta
         return response([
+            'cafeteria' => $cafeteria->name,
             'principal' => $mainDish->name,
             'complement1' => $sideDish1->name,
             'complement2' => $sideDish2->name,
@@ -100,7 +102,12 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        // Obtenemos usuario
+        $user = User::where('id', $id)->first();
+        // Obtén todas las órdenes de comida del usuario
+        $ordenes = OrderDish::where('user_id', $user->id)->get();
+        // Devuelve las órdenes como una colección
+        return OrderDishResource::collection($ordenes);
     }
 
     /**

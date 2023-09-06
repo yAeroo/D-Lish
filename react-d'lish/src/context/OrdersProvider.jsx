@@ -10,6 +10,7 @@ const OrdersProvider = ({ children }) => {
     // State - contenido a variar
     const [ordenComplete, setOrdenComplete] = useState(false);
     const [orden, setOrden] = useState({});
+    const [ordenes, setOrdenes] = useState([]);
 
     // Saber si el objeto esta nulo o no
     const comprobarOrdenCompleta = (orden) => {
@@ -44,7 +45,6 @@ const OrdersProvider = ({ children }) => {
                     Authorization: `Bearer ${token}`
                 }
             });
-
             setOrden(response.data);
             // Redirigir
             redirigir();
@@ -53,6 +53,24 @@ const OrdersProvider = ({ children }) => {
             setErrores(Errores);
             // Evalua si hay errores o no para notificar
             Errores ? notiError() : null;
+        }
+    }
+
+    const obtenerOrdenesUser = async (userId) => {
+        // Obtenemos token del localStorage
+        const token = localStorage.getItem('AUTH_TOKEN');
+        if (userId) {
+            try {
+                const { data } = await clienteAxios(`/api/orden/${userId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                setOrdenes(data.data);
+            }
+            catch (error) {
+                console.log(error);
+            }
         }
     }
 
@@ -66,6 +84,8 @@ const OrdersProvider = ({ children }) => {
                 comprobarOrdenCompleta,
                 handleRemoverOrden,
                 registrarOrden,
+                obtenerOrdenesUser,
+                ordenes
             }}
         >
             {children}

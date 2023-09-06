@@ -6,9 +6,10 @@ import { BiCalendar } from "react-icons/bi";
 import { MdOutlineShoppingCart, MdOutlineShoppingCartCheckout, MdOutlineRemoveShoppingCart } from "react-icons/md";
 // Imgs
 import Img from "../../assets/Dishes/pupusas_meal.jpg"
-import Img2 from "../../assets/Dishes/tortas_lunch.jpg"
+import { formatearDinero } from '../../helper/Money';
 
-export default function LogCard() {
+export default function LogCard({ orden }) {
+    const { cafeteria, mainDish, price, fecha } = orden;
     const { t } = useTranslation();
 
     return (
@@ -25,18 +26,21 @@ export default function LogCard() {
                             </article>
 
                             <article id="price-cont" className='font-bold text-white'>
-                                $1.00
+                                {formatearDinero(+price)}
                             </article>
                         </div>
 
                         <article id="info-dish" className='mt-2'>
-                            <p className='font-title text-xl font-bold text-center text-white'>Pupusas</p>
+                            <p className='font-title text-xl font-bold text-center text-white'>
+                                {mainDish.name}
+                            </p>
                             <article className='flex flex-col items-center'>
                                 <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
-                                    <AiOutlineShop color={"#afafaf"} size={"15"} className='mr-1 self-center' />{t("logs.cafeteria")} · Don Bosco
+                                    <AiOutlineShop color={"#afafaf"} size={"15"} className='mr-1 self-center' />{t("logs.cafeteria")} · {cafeteria.name}
                                 </p>
                                 <p className='font-title text-sm font-bold text-center text-[#afafaf] inline-flex'>
-                                    <BiCalendar color={"#afafaf"} size={"15"} className='mr-1 self-center' />20/08/2023
+                                    <BiCalendar color={"#afafaf"} size={"15"} className='mr-1 self-center' />
+                                    {fecha}
                                 </p>
                             </article>
                         </article>

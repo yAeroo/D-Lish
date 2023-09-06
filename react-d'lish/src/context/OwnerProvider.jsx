@@ -22,15 +22,17 @@ const OwnerProvider = ({ children }) => {
         const token = localStorage.getItem('AUTH_TOKEN');
         const idOwner = localStorage.getItem('CAFE_ID');
 
-        try {
-            const { data } = await clienteAxios(`/api/owner/${idOwner}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            })
-            setContenido(data?.data);
-        } catch (error) {
-            console.log(error);
+        if (idOwner) {
+            try {
+                const { data } = await clienteAxios(`/api/owner/${idOwner}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                setContenido(data?.data);
+            } catch (error) {
+                console.log(error);
+            }
         }
     }
 
