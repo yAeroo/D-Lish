@@ -32,6 +32,7 @@ class OrderDishSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ],
+        //Datos Cafeteria 2
         [
             'user_id' => 6 ,
             'cafeteria_id' => 2,
@@ -44,6 +45,7 @@ class OrderDishSeeder extends Seeder
             'created_at' => $fechaEspecifica,
             'updated_at' => $fechaEspecifica,
         ],
+        //Datos Cafeteria 3
         [
             'user_id' => 7 ,
             'cafeteria_id' => 3,
