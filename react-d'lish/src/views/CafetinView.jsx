@@ -40,6 +40,7 @@ export default function CafetinView() {
     (cafeteria) => cafeteria?.id == cafeteriaId
   );
   const { platillos } = contenidoCafeteria;
+  
   // Filtrar platillos desactivos
   const activePlatillos = platillos?.filter((item) => item.active !== 0);
 

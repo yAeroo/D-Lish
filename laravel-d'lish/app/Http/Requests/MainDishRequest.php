@@ -24,7 +24,7 @@ class MainDishRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required'],
+            'name' => ['required', 'regex:/^[\pL\s]+$/u'],
             'img' => ['nullable'],
             'idOwner' => ['exists:cafeterias,id']
         ];

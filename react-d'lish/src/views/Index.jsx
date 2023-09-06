@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams  } from 'react-router-dom';
 
 //Spinner
 import Spinner from '../components/Spinner';
@@ -14,10 +14,8 @@ import FoodCard from "../components/FoodCard";
 import "../css/IndexPage.css";
 
 //Imagenes
-import Burrito from "/src/assets/index/burrito.jpg";
-import JugosNaturales from "/src/assets/index/jugosNaturales.jpg";
-import Pupusas from "/src/assets/index/pupusas.jpg";
-import Tortas from "/src/assets/index/Tortas.jpg";
+import RellenosPapa from "/src/assets/Dishes/MainDish/rellenos_de_papa.jpg";
+import ChowMein from "/src/assets/Dishes/MainDish/chow_mein.jpg";
 import PolloAsado from "/src/assets/index/polloAsado.jpg";
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
 import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
@@ -32,6 +30,9 @@ import "swiper/css/scrollbar";
 
 
 export default function Index() {
+
+  // Obtén cafeteriaId desde useParams()
+  const { cafeteriaId, dishId } = useParams();
 
 
   return (
@@ -109,52 +110,26 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
             <FoodCard
-              name="Pupusas"
-              photo={Pupusas}
-              cafetin="Don Bosco"
-              precio="1.00"
-              categoria="Desayunos"
-            />
-
-            <FoodCard
-              name="Burrito"
-              photo={Burrito}
-              cafetin="Maria Auxiliadora"
-              precio="2.50"
-              categoria="Almuerzos"
-            />
-
-            <FoodCard
-              name="Jugos Naturales"
-              photo={JugosNaturales}
-              cafetin="Don Bosco"
-              precio="0.25"
-              categoria="Otros"
-            />
-
-            <FoodCard
-              name="Pupusas"
-              photo={Pupusas}
-              cafetin="Miguel Magone"
-              precio="1.00"
-              categoria="Desayunos"
-            />
-
-            <FoodCard
-              name="Pollo Asado"
-              photo={PolloAsado}
-              cafetin="Maria Auxiliadora"
-              precio="2.50"
-              categoria="Almuerzos"
-            />
-
-            <FoodCard
-              name="Tortas"
-              photo={Tortas}
+              name="Chow Mein"
+              photo={ChowMein}
               cafetin="Don Bosco"
               precio="2.50"
               categoria="Almuerzos"
+              cafeteriaId={1}
+              dishId={1}
             />
+
+            <FoodCard
+              name="Relleno de Papa"
+              photo={RellenosPapa}
+              cafetin="Don Bosco"
+              precio="2.50"
+              categoria="Almuerzos"
+              cafeteriaId={1}
+              dishId={2}
+            />
+
+            
           </div>
         </section>
       </main>

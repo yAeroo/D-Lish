@@ -17,6 +17,11 @@ export default function FoodCard(props) {
                     <p className="pt-[0.01rem] text-[0.80rem] text-neutral-200">${precio} | {categoria}</p>
                 </div>
             </div>
+            <Link to={`/cafeteria/${cafeteriaId}/dish/${dishId}`}>
+        <button className="border-primary border-2 text-primary text-xs lg:text-lg px-2 py-1 rounded-md ml-3 md:ml-3 font-bold hover:bg-primary hover:text-black hover:font-bold">
+          + Agregar
+        </button>
+      </Link>
         </div>
     )
 }

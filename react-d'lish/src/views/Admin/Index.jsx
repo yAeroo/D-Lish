@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
 //Comida pic
@@ -18,6 +18,15 @@ export default function Admin() {
   useEffect(() => {
     obtenerOwner();
   }, [])
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simula una carga ficticia
+    setTimeout(() => {
+      setLoading(false);
+    }, 300); // Tiempo que se mostrara el spinner
+  }, []);
 
   const { cafeteria } = contenido;
   if (!cafeteria) return <Spinner />

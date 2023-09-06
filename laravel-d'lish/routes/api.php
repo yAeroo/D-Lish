@@ -13,6 +13,7 @@ use App\Http\Controllers\MainDishController;
 use App\Http\Controllers\SideDish1Controller;
 use App\Http\Controllers\SideDish2Controller;
 use App\Http\Controllers\UserSettingsController;
+use App\Http\Controllers\CafeteriaSettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,12 +53,17 @@ Route::middleware('auth:sanctum')->group(function () {
     // ORDENES  ===================
     Route::apiResource('/orden', OrderController::class);
 
+    
     // SUBIDA DE IMAGEN ==============
     Route::post('/user/{id}/upload-image', [ImageController::class, 'store']);
-
+    
     // CAMBIO DE CONTRASEÑA ==============
     Route::post('/user/{id}/change-password', [UserSettingsController::class, 'store']);
+    
+Route::post('/owner/{id}/settings', [CafeteriaSettingsController::class, 'store']);
+
 });
+// CONFIGURACIÓN DE CAFETÍN ==========
 
 // AUTENTICACIÓN ================ 
 Route::post('/registro', [AuthController::class, 'register']);
