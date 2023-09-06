@@ -122,6 +122,7 @@ export default function Search() {
 
       <div className="grid grid-cols-2 relative gap-4 p-4">
         {/* Contenedor de Desayunos */}
+        <Link to={`/desayunos`}>
         <div
           className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]" 
           style={{ backgroundImage: `url(${DesayunoBanner})` }}
@@ -130,8 +131,10 @@ export default function Search() {
             Desayunos
           </div>
         </div>
+        </Link>
 
         {/* Contenedor de Otros */}
+        <Link to={`/otros`}>
         <div
           className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
           style={{ backgroundImage: `url(${OtrosBanner})` }}
@@ -140,8 +143,10 @@ export default function Search() {
             Otros
           </div>
         </div>
+        </Link>
 
         {/* Contenedor de Almuerzos */}
+        <Link to={`/almuerzos`} className="col-span-2">
         <div
           className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
           style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
@@ -150,6 +155,8 @@ export default function Search() {
             Almuerzos
           </div>
         </div>
+        </Link>
+        
       </div>
     </>
   );
