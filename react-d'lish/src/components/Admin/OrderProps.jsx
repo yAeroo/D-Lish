@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import OrderContent from './OrderContent';
 import useOwner from '../../hooks/useOwner';
+import OrderHeader from './orderHeader';
 
 function OrderProps(props) {
   const { idPlatillo } = props;
@@ -15,15 +16,11 @@ function OrderProps(props) {
       <div className="container">
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
           <thead className="text-white">
-            <tr className="bg-secondary flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-              <th className="border p-3 text-left">Precio $</th>
-              <th className="border p-3 text-left">Cliente</th>
-              <th className="border p-3 text-left">Complemento 1</th>
-              <th className="border p-3 text-left">Complemento 2</th>
-              <th className="border p-3 text-left">Bebida</th>
-              <th className="border p-3 text-left">Acompañante</th>
-              {/* <th className="p-3 text-left">Acciones</th> */}
-            </tr>
+            {pedidos ? pedidos.map((pedido, id) => {
+              if (pedido.mainDish.id == idPlatillo) {
+                return <OrderHeader key={pedido.id + "-main"} />
+              }
+            }) : ""}
           </thead>
           {/* PEDIDOS */}
           <tbody className="flex-1 sm:flex-none text-[#1f1f1f]  font-semibold">

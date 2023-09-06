@@ -23,6 +23,7 @@ Modal.setAppElement("#root");
 
 function AdminLayout() {
   const { modal } = useOwner();
+
   useAuth({ middleware: 'owner' });
 
   return (
