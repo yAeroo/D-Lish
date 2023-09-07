@@ -30,6 +30,7 @@ class OrderDishRequest extends FormRequest
             'side_dish1' => ['required', 'numeric', 'exists:side_dishes1,id'],
             'side_dish2' => ['required', 'numeric', 'exists:side_dishes2,id'],
             'accompaniement' => ['nullable', 'numeric'],
+            'typePay' => ['nullable'],
             'drink' => ['nullable', 'numeric'],
         ];
     }

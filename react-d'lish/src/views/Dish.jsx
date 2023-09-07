@@ -19,10 +19,13 @@ import { useAuth } from '../hooks/useAuth';
 import useCafeterias from "../hooks/useCafeterias";
 import useOrders from '../hooks/useOrders';
 import Notify from '../helper/Notify';
+import { formatearDinero } from "../helper/Money";
 
 export default function Dish() {
   // Extraer parametro
   const [errores, setErrores] = useState([]);
+  const [precio, setPrecio] = useState(2.50);
+  const [typePay, setTipoPago] = useState(null);
   const { user } = useAuth({ middleware: 'auth' })
   const { cafeteriaId, dishId } = useParams();
   const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria } = useCafeterias();
@@ -51,7 +54,6 @@ export default function Dish() {
     window.scrollTo(0, 0);
     limpiarCafeteria();
     handleRemoverOrden()
-
   }, [])
 
   useEffect(() => {
@@ -65,8 +67,10 @@ export default function Dish() {
       side_dish2: null,
       accompaniement: 0,
       drink: 0,
+      typePay: "null",
     })
-  }, [user,]);
+    console.log(user);
+  }, [user]);
 
   const { platillos } = contenidoCafeteria;
   const cafeteria = cafeterias?.find(cafeteria => cafeteria.id == contenidoCafeteria.id);
@@ -74,15 +78,36 @@ export default function Dish() {
   const platillo = platillos?.find(platillo => platillo.id == dishId);
   const { acompanantes, complementos1, complementos2, bebidas } = contenidoCafeteria;
   const { orden, ordenComplete, registrarOrden } = useOrders();
+  const [pagar, setPagar] = useState(false);
 
   const navigate = useNavigate();
 
   const confirmarOrden = async () => {
-    await registrarOrden(orden, setErrores, NotiError, redirigir);
+    if (pagar) {
+      await registrarOrden(orden, setErrores, NotiError, redirigir, typePay);
+    }
   };
 
   const redirigir = () => {
     navigate(`/confirmed-order`);
+  }
+
+  const handleAgregar25 = () => {
+    setPrecio(2.75);
+  }
+
+  // Condicionales según tipo de pago
+  const pagarEfectivo = async () => {
+    setTipoPago('efectivo');
+    setPagar(true)
+  }
+
+  const pagarFondos = async () => {
+    setTipoPago('fondos');
+    setPagar(false)
+    if (user?.saldo_disp >= precio) {
+      setPagar(true)
+    }
   }
 
   // Parte del Modal
@@ -171,11 +196,14 @@ export default function Dish() {
                 <br />
                 <div className="componentsDish">
                   {bebidas ? bebidas.map((bebida) => (
-                    <OrderComponent key={bebida.id}
+                    <OrderComponent
+                      key={bebida.id}
                       name={bebida.name}
                       type="drink"
                       id={bebida.id}
-                      photo={Burrito} />
+                      photo={Burrito}
+                      add25={handleAgregar25}
+                    />
                   )) : ''}
                 </div>
               </form>
@@ -185,14 +213,8 @@ export default function Dish() {
           <button to="/order" disabled={!ordenComplete} onClick={() => window.payment_modal.showModal()}
             className="btn font-plane buttonActive"
           >
-
-
-
-
-            {/* onClick={confirmarOrden} */}
             Ordenar
           </button>
-
 
           <div>
             <dialog id="payment_modal" className="modal">
@@ -203,7 +225,9 @@ export default function Dish() {
                 <h4 className="mb-5 py-4 text-lg font-medium text-gray-900 dark:text-white text-center"> Selecciona el tipo de pago a utilizar para continuar con tu compra </h4>
                 <ul className="grid w-full gap-6 md:grid-cols-2">
                   <li>
-                    <input type="radio" id="PaymentFondos" name="Payment" value="PaymentFondos" className="hidden peer" required onChange={() => setSelectedPayment("PaymentFondos")} />
+                    <input type="radio" id="PaymentFondos" name="Payment" value="PaymentFondos" className="hidden peer" required onChange={() => setSelectedPayment("PaymentFondos")}
+                      onClick={pagarFondos}
+                    />
                     <label htmlFor="PaymentFondos" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
                       <div className="block">
                         <div className="w-full text-lg font-semibold">Fondos</div>
@@ -213,7 +237,7 @@ export default function Dish() {
                     </label>
                   </li>
                   <li>
-                    <input type="radio" id="PaymentEfectivo" name="Payment" value="PaymentEfectivo" className="hidden peer" required onChange={() => setSelectedPayment("PaymentEfectivo")} />
+                    <input type="radio" id="PaymentEfectivo" name="Payment" value="PaymentEfectivo" className="hidden peer" required onChange={() => setSelectedPayment("PaymentEfectivo")} onClick={pagarEfectivo} />
                     <label htmlFor="PaymentEfectivo" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
                       <div className="block">
                         <div className="w-full text-lg font-semibold">Efectivo</div>
@@ -225,21 +249,22 @@ export default function Dish() {
                 </ul>
 
                 {selectedPayment !== null && showFundsText && (
-                  <p className="text-center my-5 text-terc animate-fade animate-duration-500">
-                    Tus fondos actuales son de 25$ <br />
-                    Si deseas proceder dale al botón de abajo
+                  <p className={`text-center my-5 
+                  ${+(user?.saldo_disp) >= precio ? "text-terc" : "text-[#ff4c2c]"}
+                   animate-fade animate-duration-500`}>
+                    {`Tus fondos actuales son de ${formatearDinero(+(user?.saldo_disp))} `}<br />
+                    {+(user?.saldo_disp) >= precio ? "Confirma el pago con tus fondos abajo" : `Fondos insuficientes para pagar ${formatearDinero(precio)}`}
                   </p>
                 )}
 
                 {selectedPayment === "PaymentEfectivo" && (
                   <p className="text-center my-5 text-[#ff922c] animate-fade animate-duration-500">
-                    <CgDanger className="inline text-2xl pb-1" /> Al seleccionar la opción de Efectivo admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido <br /> En caso de que no cumplas con tu responsabilidad, recibirás una penalización.
+                    <CgDanger className="inline text-2xl pb-1" /> Admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido. <br /> En caso contrario, recibirás una penalización.
                   </p>
                 )}
 
                 <div className="modal-action justify-center">
-
-                  <button className="btn btn-primary" onClick={confirmarOrden}> Realizar pedido</button>
+                  <button className="btn btn-primary" onClick={confirmarOrden} disabled={!pagar}> Realizar pedido</button>
                 </div>
               </form>
             </dialog>

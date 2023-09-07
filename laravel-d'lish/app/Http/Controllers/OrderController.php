@@ -43,6 +43,12 @@ class OrderController extends Controller
         $data = $request->validated();
         // Evaluamos Valores posiblemente nulos
         $precioFinal = 2.50;
+        $pagado = false;
+
+        return $data['typePay'];
+
+        // Traemos usuario
+        $user = User::where('id', $data['userId'])->first();
 
         if ($data['drink'] != 0) {
             $precioFinal = 2.75;
@@ -51,6 +57,22 @@ class OrderController extends Controller
         } else {
             $bebida = null;
             $data['drink'] = null;
+        }
+
+        // Comprobamos fondos suficientes
+        if ($data['typePay'] == 'fondos') {
+            if ($user->saldo_disp < $precioFinal) {
+                // Retornar una respuesta
+                return response([
+                    'errors' => 'Fondos insufientes',
+                ], 422);
+            }
+            // Descontamos dinero de los fondos
+            $user->saldo_disp = $user->saldo_disp - $precioFinal;
+            $user->saldo_off = $user->saldo_off + $precioFinal;
+            // Guardar registro en usuario
+            $user->save();
+            $pagado = true;
         }
 
         if ($data['accompaniement'] == 0) {
@@ -66,6 +88,8 @@ class OrderController extends Controller
             'user_id' => $data['userId'],
             'cafeteria_id' => $data['cafeteriaId'],
             'category' => 'almuerzo',
+            'typePay' => $data['typePay'],
+            'pagado' => $pagado,
             //
             'main_dish_id' => $data['main_dish'],
             'side_dish1_id' => $data['side_dish1'],

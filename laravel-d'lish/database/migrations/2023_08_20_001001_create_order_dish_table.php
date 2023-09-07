@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('img', 40)->nullable();
             $table->enum('category', ['desayuno', 'almuerzo'])->nullable();
             // $table->foreignId('caferia_id')->constrained()->onDelete('cascade');
+            $table->enum('typePay', ['efectivo', 'fondos']);
             $table->unsignedBigInteger('cafeteria_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('main_dish_id');
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->unsignedBigInteger('side_dish2_id')->nullable();
             $table->unsignedBigInteger('accompaniment_id')->nullable();
             $table->unsignedBigInteger('drink_id')->nullable(); // Agregamos el campo para bebida
-            $table->boolean('pendiente')->default(1);
+            $table->boolean('pagado')->default(false);
             $table->decimal('final_price', 8, 2);
 
             $table->timestamps();

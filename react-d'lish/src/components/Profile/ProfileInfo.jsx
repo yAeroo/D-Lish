@@ -2,6 +2,8 @@
 export default function ProfileInfo(props) {
   const { user } = props;
 
+  console.log(user);
+
   return (
     <>
       <section id="pfp-cont" className="w-full flex justify-center rounded-full border-8 border-solid border-base-100 bg-base-100">

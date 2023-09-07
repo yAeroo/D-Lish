@@ -15,6 +15,8 @@ import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
 import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
 //Componentes
 import FoodCardSearch from "../components/FoodCardSearch";
+import { useAuth } from "../hooks/useAuth";
+import RegresarProfile from "../components/Profile/RegresarProfile";
 
 export default function Search() {
   const [searchText, setSearchText] = useState("");
@@ -54,14 +56,22 @@ export default function Search() {
     setSearchResults(filteredResults);
   };
 
+  const { user } = useAuth({ middleware: 'auth' });
+
   return (
+
     <>
       <NavMobileIndex />
 
-      <section className="flex justify-start animate-fade-left animate-once">
-        <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7">
+
+
+      <section className="flex justify-end animate-fade-left animate-once">
+        <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7 text-rigth">
           ¡Bienvenido Lucas Ríos!
         </h1>
+
+        <RegresarProfile />
+
       </section>
 
       <div className="w-full items-center relative z-10 animate-fade-left animate-once animate-delay-[400ms]">
@@ -120,44 +130,49 @@ export default function Search() {
         </section>
       </div>
 
+
+
       <div className="grid grid-cols-2 relative gap-4 p-4">
         {/* Contenedor de Desayunos */}
         <Link to={`/desayunos`}>
-        <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]" 
-          style={{ backgroundImage: `url(${DesayunoBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
-            Desayunos
+          <div
+            className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+            style={{ backgroundImage: `url(${DesayunoBanner})` }}
+          >
+            <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
+              Desayunos
+            </div>
           </div>
-        </div>
         </Link>
 
         {/* Contenedor de Otros */}
         <Link to={`/otros`}>
-        <div
-          className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-          style={{ backgroundImage: `url(${OtrosBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-            Otros
+          <div
+            className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+            style={{ backgroundImage: `url(${OtrosBanner})` }}
+          >
+            <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+              Otros
+            </div>
           </div>
-        </div>
         </Link>
 
         {/* Contenedor de Almuerzos */}
         <Link to={`/almuerzos`} className="col-span-2">
-        <div
-          className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-          style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
-        >
-          <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-            Almuerzos
+          <div
+            className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
+            style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
+          >
+            <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
+              Almuerzos
+            </div>
           </div>
-        </div>
         </Link>
-        
+
+
       </div>
+
+
     </>
   );
 }

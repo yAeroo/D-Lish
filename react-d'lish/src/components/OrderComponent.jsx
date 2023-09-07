@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import useOrders from '../hooks/useOrders';
 
 function FoodCardDish(props) {
-    const { id, name, type, photo, principal } = props;
+    const { id, name, type, photo, principal, add25 } = props;
     // Funciones para agregar a la orden
     const { orden, handleAgregarOrden, comprobarOrdenCompleta } = useOrders();
 
     const handleCheckboxClick = (id, tipo) => {
+        // Condicional de precio extra por bebida
+        if (tipo == "drink") add25();
         handleAgregarOrden(id, tipo);
         comprobarOrdenCompleta(orden);
     };
