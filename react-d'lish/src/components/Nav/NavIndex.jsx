@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //Iconos
 import { FaUserCircle } from "react-icons/fa";
 //Link
 import { Link } from "react-router-dom";
+// Protección de rutas
+import { useAuth } from "../../hooks/useAuth";
 //Imagenes
 import Burrito from "/src/assets/index/burrito.jpg";
 import Pupusas from "/src/assets/index/pupusas.jpg";
 //Componentes
 import FoodCardSearch from "../FoodCardSearch";
+import UserProfile from "../UserProfile";
+import ProfileInfo from "../../components/Profile/ProfileInfo";
 //Iconos
 import Icon from "../../../src/assets/logo/icon_bw.png";
 import IconWide from "../../../src/assets/logo/wide_white.png";
 
-export default function NavIndex() {
+export default function NavIndex(props) {
+  const { user } = useAuth({ middleware: 'auth' });
   const [searchText, setSearchText] = useState("");
   const [showFloatingContainer, setShowFloatingContainer] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -112,9 +117,9 @@ export default function NavIndex() {
             </div>
           )}
         </div>
-        <div className="flex self-center gap-2">
-          <Link to="/profile" className="text-slate-300">
-            <FaUserCircle className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10" />
+        <div id="pfp-cont" className="flex self-center gap-2">
+          <Link to="/profile" className="text-slate-300" >
+          <img src={`/assets/pfp/${user?.profile_pic}`} id="profile-pic" className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full" alt="." />
           </Link>
         </div>
       </nav>
