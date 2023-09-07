@@ -10,6 +10,12 @@ class SideDish1 extends Model
     use HasFactory;
     protected $table = 'side_dishes1';
 
+    protected $fillable = [
+        'name',
+        'cafeteria_id',
+        'img'
+    ];
+
     public function orderDishes()
     {
         return $this->belongsTo(OrderDish::class);

@@ -60,10 +60,11 @@ Route::middleware('auth:sanctum')->group(function () {
     // CAMBIO DE CONTRASEÑA ==============
     Route::post('/user/{id}/change-password', [UserSettingsController::class, 'store']);
     
-Route::post('/owner/{id}/settings', [CafeteriaSettingsController::class, 'store']);
+    // CONFIGURACIÓN DE CAFETÍN ==========
+    Route::post('/owner/{id}/settings', [CafeteriaSettingsController::class, 'store']);
 
 });
-// CONFIGURACIÓN DE CAFETÍN ==========
+
 
 // AUTENTICACIÓN ================ 
 Route::post('/registro', [AuthController::class, 'register']);

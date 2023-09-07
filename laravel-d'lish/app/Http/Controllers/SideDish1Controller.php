@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\MainDishRequest;
 use App\Models\MainDish;
 use App\Models\SideDish1;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use App\Http\Requests\MainDishRequest;
 
 class SideDish1Controller extends Controller
 {
@@ -25,14 +27,26 @@ class SideDish1Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainDishRequest $request)
     {
         // Validar el registro, accede directamente a Rules()
         $data = $request->validated();
 
-        // Crear el usuario
+        $image = $request->file('img');
+        $imageName = Str::uuid() . '.jpg';
+        $destinationPath = "../../react-d'lish/public/assets/products/sideDish1";
+        $image->move($destinationPath, $imageName);
+    
+        // Abre la imagen usando Intervention Image
+        $imagen = Image::make($destinationPath . '/' . $imageName);
+        $imagenRecortada = $imagen->fit(500, 500);
+        $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+        $imagenRecortada->save($rutaDestinoRecorte);
+
+        // Crear platillo
         $sideDish1 = SideDish1::create([
             'name' => $data['name'],
+            'img' => $imageName,
             'cafeteria_id' => $data['idOwner'],
         ]);
 
@@ -61,13 +75,34 @@ class SideDish1Controller extends Controller
      * @param  \App\Models\SideDish1  $sideDish1
      * @return \Illuminate\Http\Response
      */
-    public function update(SideDish1 $sideDish1)
+    public function update(Request $request, SideDish1 $sideDish1)
     {
-        // Activa o desactiva
-        if ($sideDish1->active == 1) {
-            $sideDish1->active = 0;
-        } else {
-            $sideDish1->active = 1;
+        if ($request['editando'] == 1) {
+
+            if($request->hasFile('imgNew')){
+                $image = $request->file('imgNew');
+                $imageName = Str::uuid() . '.jpg';
+                $destinationPath = "../../react-d'lish/public/assets/products/sideDish1";
+                $image->move($destinationPath, $imageName);
+            
+                // Abre la imagen usando Intervention Image
+                $imagen = Image::make($destinationPath . '/' . $imageName);
+                $imagenRecortada = $imagen->fit(500, 500);
+                $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+                $imagenRecortada->save($rutaDestinoRecorte);
+
+                $sideDish1->img = $imageName;
+            }
+
+            $sideDish1->name = $request['nameNew'];
+
+        } else{
+            // Activa o desactiva
+            if ($sideDish1->active == 1) {
+                $sideDish1->active = 0;
+            } else {
+                $sideDish1->active = 1;
+            }
         }
 
         $sideDish1->save();

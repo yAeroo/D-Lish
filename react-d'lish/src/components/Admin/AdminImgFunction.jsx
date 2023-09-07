@@ -12,8 +12,6 @@ function AdminImgFunction(props) {
 	const [isFileSelected, setIsFileSelected] = useState(false);
 	const [error, setError] = useState('');
 
-    const img = createRef();
-
     // Extensiones de imagenes permitidas
 	const allowedImageTypes = ['image/jpeg', 'image/png'];
 
@@ -21,12 +19,12 @@ function AdminImgFunction(props) {
 
 		const selectedFile = event.target.files[0];
 		if (selectedFile) { 
-			if (allowedImageTypes.includes(selectedFile.type)) {  
-                console.log(selectedFile);
+			if (allowedImageTypes.includes(selectedFile.type)) {
 				setFile(selectedFile); 
 				setFilename(selectedFile.name); 
 				setIsFileSelected(true); 
 				setError('');
+				props.sendImg(selectedFile);
 			} else { 
 				setError(t("info.errors.incompatible-file")); 
 			}
@@ -45,16 +43,15 @@ function AdminImgFunction(props) {
 		}
 	}, [isFileSelected]);
 
-
     return (
         <>
             <label htmlFor="image" id="div-file" className="text-gray-600 max-w-xs min-w-sm px-5 py-12 my-5 cursor-pointer flex justify-center items-center rounded-lg border-dashed border-2 !bg-[#e6e6e6] border-[#4c4c4c]">    
-                <input type="file" name="img_wall" accept="image/*" id="image" onChange={handleFileChange} ref={imgWallRef} />
+                <input type="file" name="img_wall" accept="image/*" id="image" onChange={handleFileChange} />
                 <div className="flex justify-center flex-col items-center w-full">
 
-                <div id="img-cont" className='h-24 flex items-center justify-center mb-3' style={{width: props.wImg}}>
+                <div id="img-cont" className='h-24 w-24 flex items-center justify-center mb-3' style={{width: props.wImg}}>
 							{/* Imagen preview a mostrar */}
-							{isFileSelected && <img src={URL.createObjectURL(file)} alt="Preview" className='h-24 object-cover rounded-lg' style={{width: props.wImg}} />}
+							{isFileSelected && <img src={URL.createObjectURL(file)} alt="Preview" className='h-24 w-24 object-cover rounded-lg' style={{width: props.wImg}} />}
 							<PiImageBold size={"48"} className={isFileSelected && "hidden"}/>
 						</div>
 

@@ -77,7 +77,8 @@ const OwnerProvider = ({ children }) => {
         try {
             const { data } = await clienteAxios.post(`/api/${type}`, datas, {
                 headers: {
-                    Authorization: `Bearer ${token}` // Token obligatorio para validación de datos
+                    Authorization: `Bearer ${token}`, // Token obligatorio para validación de datos
+                    'Content-Type': 'multipart/form-data',
                 }
             });
             setActuCahe(data);
@@ -108,11 +109,19 @@ const OwnerProvider = ({ children }) => {
         const token = localStorage.getItem('AUTH_TOKEN');
         const { type, id } = element;
         // Nueva copia de atributos
-        const { nameNew, typeNew } = datos;
+        const { nameNew, typeNew, imgNew } = datos;
+
+        const formData = new FormData();
+        formData.append('_method', 'put');
+        formData.append('nameNew', nameNew);
+        formData.append('typeNew', typeNew);
+        formData.append('imgNew', imgNew);
+        formData.append('editando', 1);
 
         try {
-            const { data } = await clienteAxios.put(`/api/${type}/${id}`, { nameNew: nameNew, typeNew, editando: 1 }, {
+            const { data } = await clienteAxios.post(`/api/${type}/${id}`, formData, {
                 headers: {
+                    'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}`
                 }
             });
@@ -182,7 +191,8 @@ const OwnerProvider = ({ children }) => {
             action,
             handleClickModal,
             modal,
-            actuCache
+            actuCache,
+
         }}>
             {children}
         </OwnerContext.Provider>

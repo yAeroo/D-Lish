@@ -75,7 +75,7 @@ class CafeteriaSettingsController extends Controller
             // Abre la imagen usando Intervention Image
             $imagen = Image::make($destinationPath . '/' . $imageName);
             
-            // Realiza el recorte a 500x500
+            // Realiza el recorte a 1000x563
             $imagenRecortada = $imagen->fit(1000, 563);
 
             $rutaDestinoRecorte = $destinationPath . '/' . $imageName;

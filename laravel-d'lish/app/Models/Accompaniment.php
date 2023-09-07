@@ -9,6 +9,14 @@ class Accompaniment extends Model
 {
     use HasFactory;
 
+    protected $table = 'accompaniments';
+
+    protected $fillable = [
+        'name',
+        'cafeteria_id',
+        'img'
+    ];
+
     public function orderDishes()
     {
         return $this->belongsTo(OrderDish::class);

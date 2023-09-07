@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\MainDish;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 use App\Http\Requests\MainDishRequest;
-use App\Models\Cafeteria;
 
 class MainDishController extends Controller
 {
@@ -30,9 +31,21 @@ class MainDishController extends Controller
         // Validar el registro, accede directamente a Rules()
         $data = $request->validated();
 
+        $image = $request->file('img');
+        $imageName = Str::uuid() . '.jpg';
+        $destinationPath = "../../react-d'lish/public/assets/products/mainDish";
+        $image->move($destinationPath, $imageName);
+    
+        // Abre la imagen usando Intervention Image
+        $imagen = Image::make($destinationPath . '/' . $imageName);
+        $imagenRecortada = $imagen->fit(500, 500);
+        $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+        $imagenRecortada->save($rutaDestinoRecorte);
+
         // Crear el usuario
         $mainDish = MainDish::create([
             'name' => $data['name'],
+            'img' => $imageName,
             'cafeteria_id' => $data['idOwner'],
             'price' => 1.50,
         ]);
@@ -66,8 +79,25 @@ class MainDishController extends Controller
      */
     public function update(Request $request, MainDish $mainDish)
     {
+        
         // Condicional, update de visibilidad o de atributos
         if ($request['editando'] == 1) {
+
+            if($request->hasFile('imgNew')){
+                $image = $request->file('imgNew');
+                $imageName = Str::uuid() . '.jpg';
+                $destinationPath = "../../react-d'lish/public/assets/products/mainDish";
+                $image->move($destinationPath, $imageName);
+            
+                // Abre la imagen usando Intervention Image
+                $imagen = Image::make($destinationPath . '/' . $imageName);
+                $imagenRecortada = $imagen->fit(500, 500);
+                $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+                $imagenRecortada->save($rutaDestinoRecorte);
+
+                $mainDish->img = $imageName;
+            }
+
             $mainDish->name = $request['nameNew'];
         } else {
             // Activa o desactiva

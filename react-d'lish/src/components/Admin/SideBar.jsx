@@ -41,13 +41,13 @@ function SideBar() {
             <li className="mb-7" title="Productos">
               <Link to="/admin/products"><IoFastFoodSharp className='text-white text-2xl ' /></Link>
             </li>
-            <li className="mb-7" title='Cafeteria'><Link to="/admin/profile">
-              <MdFoodBank className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title='Pedidos'>
               <Link to="/admin/delivmode">
                 <BiSolidNotepad className='text-white text-2xl ' />
               </Link>
             </li>
+            <li className="mb-7" title='Cafeteria'><Link to="/admin/profile">
+              <MdFoodBank className='text-white text-2xl ' /></Link></li>
 
             {/* Elemento del sidebar fijo en la parte inferior */}
             <li className='fixed bottom-0 mb-4'>
