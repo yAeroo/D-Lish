@@ -120,7 +120,7 @@ export default function CafetinView() {
                 <WiggleAlert />
               </section>
 
-              <section className="flex items-center justify-center ">
+              <section className="flex items-center justify-center hidden ">
                 <div className="join">
                   <input
                     className="join-item btn bg-base-300"
