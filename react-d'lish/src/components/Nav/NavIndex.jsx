@@ -10,7 +10,6 @@ import Burrito from "/src/assets/index/burrito.jpg";
 import Pupusas from "/src/assets/index/pupusas.jpg";
 //Componentes
 import FoodCardSearch from "../FoodCardSearch";
-import UserProfile from "../UserProfile";
 import ProfileInfo from "../../components/Profile/ProfileInfo";
 //Iconos
 import Icon from "../../../src/assets/logo/icon_bw.png";
