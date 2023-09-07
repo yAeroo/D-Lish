@@ -14,7 +14,7 @@ class ImageController extends Controller
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imageName = Str::uuid() . '.' . $image->getClientOriginalExtension();
+            $imageName = Str::uuid() . '.jpg';
         
             // Ruta de destino fuera del proyecto Laravel
             $destinationPath = "../../react-d'lish/public/assets/pfp";

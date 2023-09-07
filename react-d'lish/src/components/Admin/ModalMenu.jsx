@@ -7,8 +7,11 @@ import useOwner from "../../hooks/useOwner";
 // Icon
 import { PiWarningDiamondDuotone } from "react-icons/pi"
 import { FaImage } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function ModalMenu() {
+    const { t } = useTranslation();
+
     const { handleClickModal, hadleClickDeleteConfirm, action, setElement, element, hadleClickEdit } = useOwner();
     const [category, setSelectedCategory] = useState('');
     const [edicion, setEdicion] = useState(false);
