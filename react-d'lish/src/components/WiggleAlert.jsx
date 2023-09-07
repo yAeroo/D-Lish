@@ -31,7 +31,7 @@ function AnimatedSection() {
 
         <div>
           <h3 className="font-bold">¡Tienes un Pedido Pendiente!</h3>
-          <div className="text-xs">Se te va el tren araña</div>
+          <div className="text-xs">No puedes hacer mas pedidos</div>
         </div>
         <button className="btn btn-sm bg-info">Ver Pedido</button>
       </div>

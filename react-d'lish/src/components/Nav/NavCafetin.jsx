@@ -4,7 +4,11 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
+// Protección de rutas
+import { useAuth } from "../../hooks/useAuth";
+
 const NavCafetin = () => {
+  const { user } = useAuth({ middleware: 'auth' });
   const [showMenu, setShowMenu] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
@@ -35,9 +39,11 @@ const NavCafetin = () => {
           </div>
         </Link>
 
-        <Link to="/profile" >
-          <FaUserCircle className="w-12 h-12 ml-auto" />
-        </Link>
+        <div id="pfp-cont">
+          <Link to="/profile" className="text-slate-300" >
+          <img src={`/assets/pfp/${user?.profile_pic}`} id="profile-pic" className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full" alt="." />
+          </Link>
+        </div>
 
 
       </nav>
