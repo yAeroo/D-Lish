@@ -191,7 +191,7 @@ export default function Dish() {
                 </div>
                 <br />
 
-                <div className=" font-bold mb-1">Bebidas | +$0.25</div>
+                <div className=" font-bold mb-1 text-green-500 border-sky-100">Bebidas | +$0.25</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">

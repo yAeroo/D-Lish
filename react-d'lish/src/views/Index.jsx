@@ -14,6 +14,7 @@ import "../css/IndexPage.css";
 import RellenosPapa from "/src/assets/Dishes/MainDish/rellenos_de_papa.jpg";
 import ChowMein from "/src/assets/Dishes/MainDish/chow_mein.jpg";
 import Filete from "/src/assets/Dishes/MainDish/fileteCarne.jpg";
+import Burrito from "/src/assets/Dishes/MainDish/burrito.jpg";
 
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
 import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
@@ -135,13 +136,13 @@ export default function Index() {
             />
 
             <FoodCard
-              name="Relleno de Papa"
-              photo={RellenosPapa}
+              name="Burrito"
+              photo={Burrito}
               cafetin="Don Bosco"
               precio="2.50"
               categoria="Almuerzos"
               cafeteriaId={1}
-              dishId={2}
+              dishId={10}
             />
           </div>
         </section>
