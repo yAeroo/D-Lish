@@ -45,8 +45,6 @@ class OrderController extends Controller
         $precioFinal = 2.50;
         $pagado = false;
 
-        return $data['typePay'];
-
         // Traemos usuario
         $user = User::where('id', $data['userId'])->first();
 
