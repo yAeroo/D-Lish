@@ -16,7 +16,7 @@ const Spinner = () => {
           className="mt-0 h-16 md:h-24 justify-center"
         />
         <h1 className="absolute ml-3 md:mt-[16rem] mt-[11rem] text-md md:text-xl font-bold justify-center text-center text-white/25">
-            Consejo: No se metan al Consejo
+            Cargando...
         </h1>
 
       </div>
