@@ -23,7 +23,7 @@ export default function ProfilePfp() {
 
             {/* Contenedor del modal */}
             <dialog id="pfp_modal" className="modal">
-                <form method="dialog" className="modal-box !bg-neutral">
+                <form method="dialog" className="modal-box !bg-base-100">
                     <h3 className="font-bold font-title text-xl text-center text-white">{t("info.update-pfp")}</h3>
                     
                     {/* Componente label para subida de imagenes + botones de accion */}

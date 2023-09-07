@@ -130,21 +130,21 @@ export default function ProfileSetttings() {
                                 <label className="label">
                                     <span className="label-text">{t("credentials.old-pw")}</span>
                                 </label>
-                                <input id="oldPassword" ref={oldPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
+                                <input id="oldPassword" ref={oldPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-base-200" />
                             </div>
 
                             <div className="form-control w-full max-w-xs mt-5">
                                 <label className="label">
                                     <span className="label-text">{t("credentials.new-pw")}</span>
                                 </label>
-                                <input id="newPassword" ref={newPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
+                                <input id="newPassword" ref={newPasswordRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-base-200" />
                             </div>
 
                             <div className="form-control w-full max-w-xs mt-5">
                                 <label className="label">
                                     <span className="label-text">{t("credentials.repeat-new-pw")}</span>
                                 </label>
-                                <input id="newPassswordConfirmation" ref={newPasswordConfirmationRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-neutral" />
+                                <input id="newPassswordConfirmation" ref={newPasswordConfirmationRef} type="password" placeholder="●●●●●●●●●●●●" className="input input-bordered w-full max-w-xs text-ellipsis !bg-base-200" />
                             </div>
                         </div>
 

@@ -4,8 +4,8 @@ export default function ProfileInfo(props) {
 
   return (
     <>
-      <section id="pfp-cont" className="w-full flex justify-center rounded-full border-8 border-solid border-[#202949] bg-[#202949]">
-        <div className="-mt-28 w-48 h-48 lg:w-56 lg:h-56 rounded-full border-8 border-solid border-[#202949] bg-[#202949] overflow-hidden">
+      <section id="pfp-cont" className="w-full flex justify-center rounded-full border-8 border-solid border-base-100 bg-base-100">
+        <div className="-mt-28 w-48 h-48 lg:w-56 lg:h-56 rounded-full border-8 border-solid border-base-100 bg-base-100 overflow-hidden">
           <img src={`/assets/pfp/${user?.profile_pic}`} id="profile-pic" className="transition-all object-cover !w-full !h-full" alt="." />
         </div>
       </section>

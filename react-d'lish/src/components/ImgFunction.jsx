@@ -124,7 +124,7 @@ const FileUpload = () => {
 	return (
 		<>
 		
-			<label htmlFor="image" id="div-file" className="px-5 py-12 m-5 md:m-10 cursor-pointer flex justify-center items-center rounded-lg border-dashed border-2 border-[#242F5B]">    
+			<label htmlFor="image" id="div-file" className="px-5 py-12 m-5 md:m-10 cursor-pointer flex justify-center items-center rounded-lg border-dashed border-2 border-base-300 !bg-stone-950">    
 				<input type="file" name="image" accept="image/*" id="image"  onChange={handleFileChange}  />
 				<div className="flex justify-center flex-col items-center w-full">
 

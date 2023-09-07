@@ -9,9 +9,9 @@ export default function ProfileLayout() {
 
     return (
         <>
-            <section id="profile" className="min-h-screen profile-banner bg-cover flex items-end justify-center pt-32 md:pt-60">
+            <section id="profile" className="min-h-screen bg-gradient-to-b from-orange-600 to-violet-900 flex items-end justify-center pt-32 md:pt-60">
 
-                <article id="profile-info" className="bg-[#202949] min-h-[70vh] max-w-[65rem] sm:w-10/12 w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile">
+                <article id="profile-info" className="bg-base-100 min-h-[70vh] max-w-full sm:w-full md:px-[1rem] lg:px-[3rem] xl:px-[8rem] 2xl:px-[11rem] w-full sm:rounded-t-3xl p-5 transition-all flex flex-col shadow-profile">
                     <div className="w-full">
 
                         {/* Impresión del componente correspondiente */}
