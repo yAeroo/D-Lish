@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MainDishRequest;
 use App\Models\Accompaniment;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class AccompanimentController extends Controller
 {
@@ -23,20 +26,32 @@ class AccompanimentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainDishRequest $request)
     {
         // Validar el registro, accede directamente a Rules()
         $data = $request->validated();
 
-        // Crear el usuario
-        $sideDish2 = Accompaniment::create([
+        $image = $request->file('img');
+        $imageName = Str::uuid() . '.jpg';
+        $destinationPath = "../../react-d'lish/public/assets/products/accompaniment";
+        $image->move($destinationPath, $imageName);
+    
+        // Abre la imagen usando Intervention Image
+        $imagen = Image::make($destinationPath . '/' . $imageName);
+        $imagenRecortada = $imagen->fit(500, 500);
+        $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+        $imagenRecortada->save($rutaDestinoRecorte);
+
+        // Crear platillo
+        $accompaniment = Accompaniment::create([
             'name' => $data['name'],
+            'img' => $imageName,
             'cafeteria_id' => $data['idOwner'],
         ]);
 
         $responseData = [
             'message' => 'Agregado con éxito a tu menú',
-            'data' => $sideDish2, // Aquí puedes incluir cualquier dato adicional que quieras devolver
+            'data' => $accompaniment, // Aquí puedes incluir cualquier dato adicional que quieras devolver
         ];
 
         return response()->json($responseData, 200);
@@ -60,13 +75,34 @@ class AccompanimentController extends Controller
      * @param  \App\Models\Accompaniment  $accompaniment
      * @return \Illuminate\Http\Response
      */
-    public function update(Accompaniment $accompaniment)
+    public function update(Request $request, Accompaniment $accompaniment)
     {
-        // Activa o desactiva
-        if ($accompaniment->active == 1) {
-            $accompaniment->active = 0;
-        } else {
-            $accompaniment->active = 1;
+        if ($request['editando'] == 1) {
+
+            if($request->hasFile('imgNew')){
+                $image = $request->file('imgNew');
+                $imageName = Str::uuid() . '.jpg';
+                $destinationPath = "../../react-d'lish/public/assets/products/accompaniment";
+                $image->move($destinationPath, $imageName);
+            
+                // Abre la imagen usando Intervention Image
+                $imagen = Image::make($destinationPath . '/' . $imageName);
+                $imagenRecortada = $imagen->fit(500, 500);
+                $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+                $imagenRecortada->save($rutaDestinoRecorte);
+
+                $accompaniment->img = $imageName;
+            }
+
+            $accompaniment->name = $request['nameNew'];
+
+        } else{
+            // Activa o desactiva
+            if ($accompaniment->active == 1) {
+                $accompaniment->active = 0;
+            } else {
+                $accompaniment->active = 1;
+            }
         }
 
         $accompaniment->save();

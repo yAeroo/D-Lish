@@ -42,7 +42,7 @@ class SideDish2Controller extends Controller
         $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
         $imagenRecortada->save($rutaDestinoRecorte);
 
-        // Crear el usuario
+        // Crear platillo
         $sideDish2 = SideDish2::create([
             'name' => $data['name'],
             'img' => $imageName,
