@@ -88,21 +88,21 @@
     "auth" : {
         "header-title" : "Access D'Lish and enjoy unique flavors.",
         "login-card-desc"    : "Don't wait to book, enter your credentials and start ordering.",
-        "register-card-desc" : "Reserva, disfruta, repite. Únete a D'Lish hoy mismo.",
+        "register-card-desc" : "Reserve, enjoy, repeat. Join D'Lish today.",
 
-        "not-acc-msg"    : "¿No tienes una cuenta?",
-        "create-acc" : "Crea una cuenta",
-        "exist-acc-msg" : "¿Ya tienes una cuenta?",
-        "login-acc" : "Ingresa ahora"
+        "not-acc-msg"    : "Don't have an account?",
+        "create-acc" : "Create an account",
+        "exist-acc-msg" : "Already have an account?",
+        "login-acc" : "Login now"
     },
     "logs" : {
-        "funds-summ" : "Resumen de fondos",
-        "available-funds" : "Fondos disponibles",
-        "spent-funds" : "Gastos totales",
-        "fund-analysis" : "Análisis de fondos",
-        "order-history" : "Historial de fondos",
+        "funds-summ" : "Summary of funds",
+        "available-funds" : "Available funds",
+        "spent-funds" : "Total expenses",
+        "fund-analysis" : "Fund analysis",
+        "order-history" : "Fund history",
 
-        "cafeteria" : "Cafetín"
+        "cafeteria" : "Cafeteria"
     },
     "lang" : { "es" : "Spanish", "en" : "English" },
     "footer" : {

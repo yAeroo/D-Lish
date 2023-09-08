@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TarjetasAdminIndex from '../../components/TarjetasAdminIndex'
 import UsersProps from '../../components/Admin/UsersProps';
+
 //Comida pic
 import Spinner from '../../components/Spinner';
 import useOwner from '../../hooks/useOwner';
@@ -12,8 +13,15 @@ import { Pie } from "react-chartjs-2";
 
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from "react-i18next";
+
 export default function Admin() {
+  
   const { contenido, obtenerOwner } = useOwner();
+
+  const { t } = useTranslation();
+
+
 
   useEffect(() => {
     obtenerOwner();
@@ -77,6 +85,7 @@ export default function Admin() {
 
 
   return (
+    
     <>
       <div className='lg:ml-[10rem] h-[100%] animate-fade animate-duration-500'>
 
@@ -86,7 +95,7 @@ export default function Admin() {
           <main className="p-6 sm:p-10 space-y-6">
             <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
               <div className="mr-6">
-                <h1 className="text-4xl font-semibold mb-2 text-primary">Cafetín {cafeteria?.name}</h1>
+                <h1 className="text-4xl font-semibold mb-2 text-primary">{t("logs.cafeteria")} {cafeteria?.name}</h1>
                 <h2 className="text-black ml-0.5">Mira las estadisticas de tu local</h2>
               </div>
 

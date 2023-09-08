@@ -103,6 +103,30 @@
 
         "cafeteria" : "Cafetín"
     },
+    "admin" : {
+        "statistics-title" : "Mira las estadisticas de tu local",
+        "edit-cafeteria" : "Editar local",
+        "frecuent-users" : "Usuarios frecuentes",
+        "most-sold-title" : "Platillos más vendidos",
+        "most-sold" : "Platillo más vendido",
+        "today's-orders" : "Pedidos hoy",
+        "weekly-orders" : "Pedidos esta semana",
+
+        "add-product-title": "",
+        "add-product-desc": "",
+        "add-product": "",
+        "tb-name": "",
+        "tb-img": "",
+        "tb-actions": "",
+        "add-menu": "",
+
+        "modal-title-add": "",
+        "modal-tittle-update" : ""
+
+
+
+
+    },
     "lang" : { "es" : "Español", "en" : "Inglés" },
     "status" : {
         "complete" : "Completado"
