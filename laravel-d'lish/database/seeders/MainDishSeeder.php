@@ -20,7 +20,7 @@ class MainDishSeeder extends Seeder
         $registros = [
             [
                 'name' => 'Chow Mein',
-                'img' => 'chow_mein.jpg',
+                'img' => 'chaow_mein.jpg',
                 'cafeteria_id' => 1,
                 // 'price' => 1.50,
                 'created_at' => Carbon::now(),
