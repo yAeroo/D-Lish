@@ -89,6 +89,18 @@
 
 
     },
+    "desayuno" : {
+        "breakfast-title" : "Breakfast",
+        "popular-title" : "Popular among students"
+    },
+    "otros" : {
+        "other-title" : "Other",
+        "popular-title" : "Popular among students"
+    },
+    "almuerzo" : {
+        "lunch-title" : "Lunch",
+        "popular-title" : "Popular among students"
+    },
     "auth" : {
         "header-title" : "Access D'Lish and enjoy unique flavors.",
         "login-card-desc"    : "Don't wait to book, enter your credentials and start ordering.",
