@@ -32,6 +32,7 @@ class OrderDishResource extends JsonResource
             'mainDish' => [
                 'id' => $this->mainDish->id,
                 'name' => $this->mainDish->name,
+                'img' => $this->mainDish->img
             ],
             'sideDish1' => [
                 'id' => $this->sideDish1->id,

@@ -3,9 +3,8 @@ import { useTranslation } from 'react-i18next';
 // Icons
 import { AiOutlineShop } from "react-icons/ai";
 import { BiCalendar } from "react-icons/bi";
-import { MdOutlineShoppingCart, MdOutlineShoppingCartCheckout, MdOutlineRemoveShoppingCart } from "react-icons/md";
+import { MdOutlineShoppingCart } from "react-icons/md";
 // Imgs
-import Img from "../../assets/Dishes/pupusas_meal.jpg"
 import { formatearDinero } from '../../helper/Money';
 
 export default function LogCard({ orden }) {
@@ -16,7 +15,7 @@ export default function LogCard({ orden }) {
         <>
             <div className="py-3 flex justify-center">
                 <div className="flex-grow flex max-w-md bg-[#101525] shadow-lg rounded-lg overflow-hidden self-center">
-                    <div className="w-1/3 bg-cover" style={{ background: `url(${Img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover' }}>
+                    <div className="w-1/3 bg-cover" style={{ background: `url(../../../assets/products/mainDish/${mainDish.img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover' }}>
                     </div>
 
                     <div className="w-2/3 p-4">

@@ -105,7 +105,7 @@ export default function Logs() {
 
                     {/* Chart */}
                     <div className="flex justify-center -mt-12 -mb-12 relative">
-                        <p className='absolute text-white font-title font-semibold text-2xl top-36 w-1/5 text-center'>{t("logs.fund-analysis")}</p>
+                        <p className='absolute text-white font-title font-semibold text-2xl top-36 w-1/6 text-center'>{t("logs.fund-analysis")}</p>
                         <div className="chart-cont relative inline-block text-center">
                             <Doughnut data={data} options={options} />
                         </div>
