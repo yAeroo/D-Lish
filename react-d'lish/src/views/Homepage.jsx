@@ -94,7 +94,7 @@ export default function Homepage() {
 
       <div className="flex flex-col items-center justify-center h-25 mt-[6rem] xl:mt-2 mb-[15rem] xl:mb-[10rem] md:mx-[10rem]">
         <div className="flex flex-col xl:flex-row items-center justify-center w-full md:mt-[6rem]">
-          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
             <figure className="px-5 pt-10 bg-base-100 flex items-center justify-center">
               <IoFastFoodOutline className="text-6xl" />
             </figure>
@@ -109,7 +109,7 @@ export default function Homepage() {
 
           <div className="divider lg:divider-horizontal"></div>
 
-          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="600">
+          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
             <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
               <CgCoffee className="text-6xl" />
             </figure>
@@ -124,7 +124,7 @@ export default function Homepage() {
 
           <div className="divider lg:divider-horizontal"></div>
 
-          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="900">
+          <div className="w-96 bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="100">
             <figure className="px-10 pt-10 bg-base-100 flex items-center justify-center ">
               <MdOutlineScreenshot className="text-6xl" />
             </figure>

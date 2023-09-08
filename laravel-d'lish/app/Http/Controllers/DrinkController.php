@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MainDishRequest;
 use App\Models\Drink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class DrinkController extends Controller
 {
@@ -23,20 +26,32 @@ class DrinkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainDishRequest $request)
     {
         // Validar el registro, accede directamente a Rules()
         $data = $request->validated();
 
-        // Crear el usuario
-        $sideDish2 = Drink::create([
+        $image = $request->file('img');
+        $imageName = Str::uuid() . '.jpg';
+        $destinationPath = "../../react-d'lish/public/assets/products/drinks";
+        $image->move($destinationPath, $imageName);
+    
+        // Abre la imagen usando Intervention Image
+        $imagen = Image::make($destinationPath . '/' . $imageName);
+        $imagenRecortada = $imagen->fit(500, 500);
+        $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+        $imagenRecortada->save($rutaDestinoRecorte);
+
+        // Crear platillo
+        $drinks = Drink::create([
             'name' => $data['name'],
+            'img' => $imageName,
             'cafeteria_id' => $data['idOwner'],
         ]);
 
         $responseData = [
             'message' => 'Agregado con éxito a tu menú',
-            'data' => $sideDish2, // Aquí puedes incluir cualquier dato adicional que quieras devolver
+            'data' => $drinks, // Aquí puedes incluir cualquier dato adicional que quieras devolver
         ];
 
         return response()->json($responseData, 200);
@@ -62,11 +77,32 @@ class DrinkController extends Controller
      */
     public function update(Request $request, Drink $drink)
     {
-        // Activa o desactiva
-        if ($drink->active == 1) {
-            $drink->active = 0;
-        } else {
-            $drink->active = 1;
+        if ($request['editando'] == 1) {
+
+            if($request->hasFile('imgNew')){
+                $image = $request->file('imgNew');
+                $imageName = Str::uuid() . '.jpg';
+                $destinationPath = "../../react-d'lish/public/assets/products/drinks";
+                $image->move($destinationPath, $imageName);
+            
+                // Abre la imagen usando Intervention Image
+                $imagen = Image::make($destinationPath . '/' . $imageName);
+                $imagenRecortada = $imagen->fit(500, 500);
+                $rutaDestinoRecorte = $destinationPath . '/' . $imageName;
+                $imagenRecortada->save($rutaDestinoRecorte);
+
+                $drink->img = $imageName;
+            }
+
+            $drink->name = $request['nameNew'];
+
+        } else{
+            // Activa o desactiva
+            if ($drink->active == 1) {
+                $drink->active = 0;
+            } else {
+                $drink->active = 1;
+            }
         }
 
         $drink->save();

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 //Componentes
 import Carrousel from "../components/Carrousel";
@@ -13,6 +13,9 @@ import "../css/IndexPage.css";
 //Imagenes
 import RellenosPapa from "/src/assets/Dishes/MainDish/rellenos_de_papa.jpg";
 import ChowMein from "/src/assets/Dishes/MainDish/chow_mein.jpg";
+import Filete from "/src/assets/Dishes/MainDish/fileteCarne.jpg";
+import Burrito from "/src/assets/Dishes/MainDish/burrito.jpg";
+
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
 import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
 import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
@@ -22,21 +25,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import useCafeterias from '../hooks/useCafeterias';
-
+import useCafeterias from "../hooks/useCafeterias";
 
 export default function Index() {
-  const { obtenerCafeterias } = useCafeterias()
+  const { obtenerCafeterias } = useCafeterias();
   // Obtén cafeteriaId desde useParams()
   const { cafeteriaId, dishId } = useParams();
 
   useEffect(() => {
     obtenerCafeterias();
-  }, [])
+  }, []);
 
   return (
     <div>
-
       <main>
         {/* Navbar Flotante */}
         <div className="absolute w-full z-10">
@@ -58,7 +59,7 @@ export default function Index() {
 
             <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
               {/* Contenedor de Desayunos */}
-              <Link to={`/desayunos`} >
+              <Link to={`/desayunos`}>
                 <div
                   className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${DesayunoBanner})` }}
@@ -69,9 +70,8 @@ export default function Index() {
                 </div>
               </Link>
 
-
               {/* Contenedor de Otros */}
-              <Link to={`/otros`} >
+              <Link to={`/otros`}>
                 <div
                   className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${OtrosBanner})` }}
@@ -81,7 +81,6 @@ export default function Index() {
                   </div>
                 </div>
               </Link>
-
 
               {/* Contenedor de Almuerzos */}
               <Link to={`/almuerzos`} className="col-span-2">
@@ -94,10 +93,8 @@ export default function Index() {
                   </div>
                 </div>
               </Link>
-
             </div>
           </div>
-
         </section>
 
         <section className="lg:rounded-2xl 2xl:px-[12rem] bg-base-200 pb-10 my-[4rem]">
@@ -128,7 +125,25 @@ export default function Index() {
               dishId={2}
             />
 
+            <FoodCard
+              name="Filete de Carne"
+              photo={Filete}
+              cafetin="Don Bosco"
+              precio="2.50"
+              categoria="Almuerzos"
+              cafeteriaId={1}
+              dishId={3}
+            />
 
+            <FoodCard
+              name="Burrito"
+              photo={Burrito}
+              cafetin="Don Bosco"
+              precio="2.50"
+              categoria="Almuerzos"
+              cafeteriaId={1}
+              dishId={10}
+            />
           </div>
         </section>
       </main>

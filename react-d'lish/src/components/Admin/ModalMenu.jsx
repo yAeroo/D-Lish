@@ -48,7 +48,7 @@ export default function ModalMenu() {
         'mainDish': 'Almuerzo',
         'sideDish1': 'Complemento 1',
         'sideDish2': 'Complemento 2',
-        'accompaniment': 'Acomapañamiento',
+        'accompaniment': 'Acompañamiento',
         'drink': 'Bebida'
     }
 
@@ -170,6 +170,7 @@ export default function ModalMenu() {
                             className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm  px-1 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-terc sm:text-sm sm:leading-6  "
                             name="Category"
                             id="Category"
+                            disabled={edicion}
                             defaultValue={element ? element.type : "null"}
                             onChange={setCategory}
                             ref={typeRef}

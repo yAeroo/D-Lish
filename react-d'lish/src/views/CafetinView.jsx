@@ -71,7 +71,7 @@ export default function CafetinView() {
                 <h1 className="text-4xl md:text-6xl font-bold my-10 pb-[1rem] ml-10 md:px-1 text-white">
                   {cafeteria?.nombre}
                 </h1>
-                <div className="stat flex flex-col items-end">
+                <div className="stat flex flex-col items-end hidden">
                   <div className="stat-title text-xs md:text-lg text-white">
                     Recomendado por
                   </div>
@@ -91,7 +91,7 @@ export default function CafetinView() {
                         ></path>
                       </svg>
                     </div>
-                    <div className="stat-value text-sm md:text-3xl ml-1 text-white">
+                    <div className="stat-value text-sm md:text-3xl ml-1 text-white hidden">
                       {cafeteria?.likes}
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export default function CafetinView() {
                     ● Abierto
                   </h2>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center hidden">
                   <h2 className="text-2xl px-1 ml-6 md:ml-[3rem] mt-6 text-red-500">
                     171
                   </h2>
@@ -116,11 +116,11 @@ export default function CafetinView() {
                 </div>
               </div>
 
-              <section className="mb-10 animate-fade-down animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[900ms]">
+              <section className="hidden mb-10 animate-fade-down animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[900ms]">
                 <WiggleAlert />
               </section>
 
-              <section className="flex items-center justify-center ">
+              <section className="items-center justify-center hidden ">
                 <div className="join">
                   <input
                     className="join-item btn bg-base-300"
@@ -142,6 +142,8 @@ export default function CafetinView() {
                   />
                 </div>
               </section>
+
+              <h1 className="flex justify-center font-bold text-4xl pb-8 xxsm:mt-[6rem]">Menú Disponible</h1>
 
               <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
                 {/* CONDICIONAL - ARREGLO DE PLATILLOS */}

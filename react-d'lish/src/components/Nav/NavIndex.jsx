@@ -68,11 +68,11 @@ export default function NavIndex(props) {
           />
         </Link>
         <div className="form-control relative">
-          <div className="input-group">
+          <div className="input-group hidden">
             <input
               type="text"
               placeholder="¿Qué estas buscando el dia de hoy?"
-              className="input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] focus:outline-none"
+              className="input bg-slate-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] xl:text-md md:text-[0.9rem] focus:outline-none "
               autoComplete="off"
               value={searchText}
               onChange={handleSearchInput}
