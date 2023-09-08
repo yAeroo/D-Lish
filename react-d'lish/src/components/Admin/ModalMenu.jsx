@@ -101,16 +101,16 @@ export default function ModalMenu() {
                     ✕
                 </button>
                 <div className="font-bold text-[#ee2121] text-xl ">
-                    <h3 className="font-black uppercase">Advertencia</h3>
+                    <h3 className="font-black uppercase">{t("admin.warning-title")}</h3>
                     <PiWarningDiamondDuotone className="mx-auto mt-4 text-4xl" />
                 </div>
-                <p className="py-1 text-center text-gray-700">¿Quieres eliminar este producto?<br /> Esto eliminará las órdenes relacionadas</p>
+                <p className="py-1 text-center text-gray-700">{t("admin.warning-description")}<br /> {t("admin.warning-description-2")}</p>
                 <div className=" justify-center">
                     {/* if there is a button in form, it will close the modal */}
                     <button type="button" className="btn btn-primary text-white bg-[#e95252] hover:bg-[#ff2727] hover:border-[#ff2727] border-[#e95252]"
                         onClick={() => hadleClickDeleteConfirm()}
                     >
-                        Eliminar
+                        {t("admin.warning-btn")}
                     </button>
                 </div>
             </div >
@@ -124,14 +124,14 @@ export default function ModalMenu() {
                 ✕
             </button>
             <h3 className="font-bold text-lg pt-6">
-                {edicion ? "Actualiza un producto ya existente" : "Agrega cualquier tipo de producto"}
+                {edicion ? t("admin.modal-title-update") : t("admin.modal-title-add")}
             </h3>
             <div className="my-4">
                 <label
                     htmlFor="productoName"
                     className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                    Nombre del producto
+                   {t("admin.modal-name")}
                 </label>
                 <div className="mt-2">
                     <input
@@ -151,7 +151,7 @@ export default function ModalMenu() {
                 htmlFor="productoImagen"
                 className="block text-sm font-medium leading-6 text-gray-900"
             >
-                Imagen del producto
+                {t("admin.modal-img")}
             </label>
 
             <AdminImgFunction sendImg={getImg} />
@@ -163,7 +163,7 @@ export default function ModalMenu() {
                         htmlFor="."
                         className="block text-sm font-medium leading-6 text-gray-900"
                     >
-                        Categoria
+                        {t("admin.modal-category")}
                     </label>
                     <div className="mt-2">
                         <select
@@ -193,7 +193,7 @@ export default function ModalMenu() {
             <div className="modal-action">
                 {/* if there is a button in div, it will close the modal */}
                 <button type="submit" className="btn btn-primary w-full text-white">
-                    {edicion ? "Guardar cambios" : "Añadir al menú"}
+                    {edicion ? t("actions.save-changes") : t("admin.add-menu")}
                 </button>
             </div>
         </form >

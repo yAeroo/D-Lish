@@ -11,10 +11,14 @@ import clienteAxios from "../../config/axios";
 import useSWR, { mutate } from 'swr';
 import useOwner from "../../hooks/useOwner";
 
+import { useTranslation } from "react-i18next";
+
+
 function ProductAdmin() {
   const { actuCache, handleClickModal, setAgregando, handleAction } = useOwner();
   const token = localStorage.getItem('AUTH_TOKEN');
   const idOwner = localStorage.getItem('CAFE_ID');
+  const { t } = useTranslation();
 
   const fetcher = () => clienteAxios(`/api/owner/${idOwner}/menu`, {
     headers: {
@@ -43,16 +47,16 @@ function ProductAdmin() {
       <div className="flex justify-center items-center w-full flex-col gap-6 p-10">
         <hr className='bg-accent h-1 w-1/2 m-auto' />
 
-        <h1 className="text-4xl font-extrabold text-gray-800 font-title text-center">Añade componentes</h1>
+        <h1 className="text-4xl font-extrabold text-gray-800 font-title text-center">{t("admin.add-product-title")}</h1>
 
-        <p className="text-gray-600 text-lg sm:text-xl text-center md:text-left">¿Aún no tienes tú menú del día?
-          <br className="inline md:hidden " /> Registra lo diponible en tus almuerzos</p>
+        <p className="text-gray-600 text-lg sm:text-xl text-center md:text-left">{t("admin.add-product-desc")}
+          <br className="inline md:hidden " /> {t("admin.add-product-desc2")}</p>
         {/* ------- El modal se abre con el metodo ID.showModal() ----------*/}
         <button
           className="btn btn-primary w-1/2"
           onClick={() => handleAgregar()}
         >
-          Agregar producto
+          {t("admin.add-product")}
         </button>
         <hr className='bg-accent h-1 w-1/2 m-auto' />
       </div>
@@ -61,8 +65,8 @@ function ProductAdmin() {
       {/* ------------Almuerzos------------- */}
       {/************************************************/}
 
-      <h3 className="my-7 text-center text-terc font-bold text-2xl">
-        {" "}ALMUERZO{" "}
+      <h3 className="my-7 text-center text-terc font-bold text-2xl uppercase">
+        {" "}{t("index.category-lunch")}{" "}
       </h3>
       <div id="MainDishCont" className="flex justify-center">
         {data?.mainDishes?.length ? (
@@ -100,9 +104,9 @@ function ProductAdmin() {
       {/************************************************/}
       {/* ----------------SIDE DISH1------------------ */}
       {/************************************************/}
-      <h3 className="my-7 text-center text-terc font-bold text-2xl">
+      <h3 className="my-7 text-center text-terc font-bold text-2xl uppercase">
         {" "}
-        COMPLEMENTO 1{" "}
+        {t("index.category-complement-1")}{" "}
       </h3>
 
       <div id="SideDish1Cont" className="flex justify-center">
@@ -143,9 +147,9 @@ function ProductAdmin() {
       {/************************************************/}
       {/* ----------------SIDE DISH2------------------ */}
       {/************************************************/}
-      <h3 className="my-7 text-center text-terc font-bold text-2xl">
+      <h3 className="my-7 text-center text-terc font-bold text-2xl uppercase">
         {" "}
-        COMPLEMENTO 2{" "}
+        {t("index.category-complement-2")}{" "}
       </h3>
       <div id="SideDish2Cont" className="flex justify-center">
         {data?.sideDishes2?.length ? (
@@ -184,9 +188,9 @@ function ProductAdmin() {
       {/* ---------------Acompañamientos-------------- */}
       {/************************************************/}
 
-      <h3 className="my-7 text-center text-terc font-bold text-2xl ">
+      <h3 className="my-7 text-center text-terc font-bold text-2xl uppercase">
         {" "}
-        ACOMPAÑANTES{" "}
+        {t("index.category-accompaniment")}{" "}
       </h3>
       <div id="AcompCont" className="flex justify-center">
         {data?.accompaniments?.length ? (
@@ -226,9 +230,9 @@ function ProductAdmin() {
       {/* ------------------BEBIDAS------------------- */}
       {/************************************************/}
 
-      <h3 className="my-7 text-center text-terc font-bold text-2xl">
+      <h3 className="my-7 text-center text-terc font-bold text-2xl uppercase">
         {" "}
-        BEBIDAS{" "}
+        {t("index.category-drink")}{" "}
       </h3>
 
       <div id="DrinkCont" className="flex justify-center">

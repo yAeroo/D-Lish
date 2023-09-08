@@ -66,6 +66,9 @@
         "category-breakfast" : "Desayunos",
         "category-other" : "Otros",
         "category-lunch" : "Almuerzos",
+        "category-complement-1" : "Complementos 1",
+        "category-complement-2" : "Complementos 2",
+        "category-drink" : "Bebidas",
         "best-dishes-title" : "Lo mas vendido"
     },
     "cafetin" : {
@@ -104,7 +107,7 @@
         "cafeteria" : "Cafetín"
     },
     "admin" : {
-        "statistics-title" : "See the statistics of your cafeteria",
+        "statistics-title" : "Mira las estadisticas de tu local ",
         "edit-cafeteria" : "Editar local",
         "frecuent-users" : "Usuarios frecuentes",
         "most-sold-title" : "Platillos más vendidos",
@@ -113,7 +116,8 @@
         "weekly-orders" : "Pedidos esta semana",
 
         "add-product-title": "Añade componentes",
-        "add-product-desc": "¿Aún no tienes tú menú del día? Registra lo diponible en tus almuerzos",
+        "add-product-desc": "¿Aún no tienes tú menú del día? ",
+        "add-product-desc2" : "Registra lo diponible en tus almuerzos",
         "add-product": "Agregar producto",
         "tb-name": "Nombre",
         "tb-img": "Imagen",
@@ -123,7 +127,15 @@
         "modal-title-add": "Agrega cualquier tipo de producto",
         "modal-name" : "Nombre del producto",
         "modal-img" : "Imagen del producto",
+        "modal-category" : "Categoria",
         "modal-title-update" : "Actualiza un producto ya existente",
+
+        "warning-title" : "ADVERTENCIA",
+        "warning-description" : "¿Quieres eliminar este producto?", 
+        "warning-description-2" : "Esto eliminará las órdenes relacionadas",
+        "warning-btn" : "Eliminar",
+
+        "empty-menu" : "Agrega opciones en tu menú",
 
         "cafe-conf" : "Configuración de cafetín",
         "cafe-conf-description" : "Modifica la visualización de tu cafetería",
@@ -134,7 +146,9 @@
         "cafe-coverpage-desc" : "Actualiza la foto de portada de tu cafeteria",
 
         "deliv-title" : "Pedidos del día",
-        "deliv-desc" : "Platillos a preparar"
+        "deliv-desc" : "Platillos a preparar",
+
+        "loading" : "Cargando..."
 
 
     },

@@ -12,11 +12,14 @@ import useSWR from 'swr';
 import "../../css/productsTable.css";
 import { Link } from 'react-router-dom';
 
+import { useTranslation } from "react-i18next";
+
 
 function DeliveryModeAdmin() {
       // Obtener todos los pedidos de los usuarios a la cafetería
       const idOwner = localStorage.getItem('CAFE_ID');
       const token = localStorage.getItem('AUTH_TOKEN');
+      const { t } = useTranslation();
 
       const fetcher = () => clienteAxios(`/api/owner/${idOwner}/pedidos`, {
             headers: {
@@ -35,7 +38,7 @@ function DeliveryModeAdmin() {
 
       return (
             <div className=' mb-10 md:ml-[10rem] ml-[1rem] min-h-[calc(100vh-200px)] animate-fade animate-duration-500"'>
-                  <h1 className='text-5xl md:text-6xl pt-14 text-center font-bold text-primary'>Pedidos del día</h1>
+                  <h1 className='text-5xl md:text-6xl pt-14 text-center font-bold text-primary'>{t("admin.deliv-title")}</h1>
                   {data?.data.length ?
                         data?.data.map((platillo, id) => {
                               // Encabezado de la tabla para cada producto

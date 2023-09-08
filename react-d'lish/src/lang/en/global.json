@@ -66,6 +66,10 @@
         "category-breakfast" : "Breakfast",
         "category-other" : "Other",
         "category-lunch" : "Lunch",
+        "category-complement-1" : "Complements 1",
+        "category-complement-2" : "Complements 2",
+        "category-accompaniment" : "Accompaniments",
+        "category-drink" : "Drinks",
         "best-dishes-title" : "The Best Selling Dishes"
     },
     "cafetin" : {
@@ -105,37 +109,50 @@
         "cafeteria" : "Cafeteria"
     },
     "admin" : {
-        "statistics-title" : "Mira las estadisticas de tu local",
-        "edit-cafeteria" : "Editar local",
-        "frecuent-users" : "Usuarios frecuentes",
-        "most-sold-title" : "Platillos más vendidos",
-        "most-sold" : "Platillo más vendido",
-        "today's-orders" : "Pedidos hoy",
-        "weekly-orders" : "Pedidos esta semana",
+        "statistics-title" : "See the statistics of your local",
+        "edit-cafeteria" : "Edit local",
+        "frecuent-users" : "Frequent users",
+        "most-sold-title" : "Best-selling dishes",
+        "most-sold" : "Best-selling dish",
+        "today's-orders" : "Ordered today",
+        "weekly-orders" : "Ordered this week",
 
-        "add-product-title": "Añade componentes",
-        "add-product-desc": "¿Aún no tienes tú menú del día? Registra lo diponible en tus almuerzos",
-        "add-product": "Agregar producto",
-        "tb-name": "Nombre",
-        "tb-img": "Imagen",
-        "tb-actions": "Acciones",
-        "add-menu": "Añadir al menu",
+        "add-product-title": "Add components",
+        "add-product-desc": "Don't have your daily menu yet? ",
+        "add-product-desc2" : "Register what's available in your dishes.",
+        "add-product": "Add product",
+        "tb-name": "Name",
+        "tb-img": "Image",
+        "tb-actions": "Actions",
+        "add-menu": "Add to menu",
 
-        "modal-title-add": "Agrega cualquier tipo de producto",
-        "modal-name" : "Nombre del producto",
-        "modal-img" : "Imagen del producto",
-        "modal-title-update" : "Actualiza un producto ya existente",
+        "modal-title-add": "Add any kind of product",
+        "modal-name" : "Name of the product",
+        "modal-img" : "Image of the product",
+        "modal-category" : "Category",
+        "modal-title-update" : "Update an already existing product",
 
-        "cafe-conf" : "Configuración de cafetín",
-        "cafe-conf-description" : "Modifica la visualización de tu cafetería",
-        "cafe-name" : "Nombre de la cafeteria",
-        "main public" : "Público principal",
-        "contac-email" : "Correo de contacto",
-        "cafe-coverpage-title" : "Foto de portada",
-        "cafe-coverpage-desc" : "Actualiza la foto de portada de tu cafeteria",
+        "warning-title" : "WARNING",
+        "warning-description" : "Do you want to delete this product?", 
+        "warning-description-2" :"This will delete the related orders",
+        "warning-btn" : "Delete",
 
-        "deliv-title" : "Pedidos del día",
-        "deliv-desc" : "Platillos a preparar"
+        "empty-menu" : "Add options of dishes to your menu",
+        
+
+
+        "cafe-conf" : "Cafeteria configuration",
+        "cafe-conf-description" : "Modify the visual aspect of your cafeteria ",
+        "cafe-name" : "Name of the cafeteria",
+        "main public" : "Main target",
+        "contac-email" : "Contact e-mail",
+        "cafe-coverpage-title" : "Cover photo",
+        "cafe-coverpage-desc" : "Update your cafeteria's cover photo",
+
+        "deliv-title" : "Orders of the day",
+        "deliv-desc" : "Dishes to prepare",
+
+        "loading" : "Loading..."
 
 
     },

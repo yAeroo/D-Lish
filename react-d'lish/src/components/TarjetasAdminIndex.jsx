@@ -5,8 +5,15 @@ import { useEffect } from "react";
 // Icons
 import { BiDish } from "react-icons/bi";
 import { BiCalendarWeek } from "react-icons/bi";
+import { useTranslation } from "react-i18next";
+
+
 
 function TarjetasAdminIndes() {
+
+  
+  const { t } = useTranslation();
+
   const { pedidos, obtenerPedidos } = useOwner();
   useEffect(() => {
     obtenerPedidos();
@@ -17,13 +24,13 @@ function TarjetasAdminIndes() {
       {/* Tarjetas */}
 
       <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 ">
-        <DataCard spanIcon={<BiDish className="text-3xl" />} text="Pedidos hoy" color={'teal'} number={pedidos?.length} />
+        <DataCard spanIcon={<BiDish className="text-3xl" />} text={t("admin.today's-orders")} color={'teal'} number={pedidos?.length} />
 
-        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text="Pedidos esta semana" color={'teal'} number={pedidos?.length} />
+        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text={t("admin.weekly-orders")} color={'teal'} number={pedidos?.length} />
 
-        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text="Pedidos esta semana" color={'teal'} number={pedidos?.length} />
+        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text={t("admin.weekly-orders")} color={'teal'} number={pedidos?.length} />
 
-        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text="Pedidos esta semana" color={'teal'} number={pedidos?.length} />
+        <DataCard spanIcon={<BiCalendarWeek className="text-3xl" />} text={t("admin.weekly-orders")} color={'teal'} number={pedidos?.length} />
 
       </section>
 
