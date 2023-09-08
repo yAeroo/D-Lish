@@ -118,7 +118,7 @@ export default function NavIndex(props) {
         </div>
         <div id="pfp-cont" className="flex self-center gap-2">
           <Link to="/profile" className="text-slate-300" >
-          <img src={`/assets/pfp/${user?.profile_pic}`} id="profile-pic" className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full" alt="." />
+            <img src={ user?.profile_pic ? `/assets/pfp/${user?.profile_pic}` : '/assets/pfp/default-pfp.png'} id="profile-pic" className="w-8 h-8 md:w-10 md:h-10 lg:w-10 lg:h-10 rounded-full" alt="." />
           </Link>
         </div>
       </nav>
