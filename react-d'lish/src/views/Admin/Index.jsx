@@ -96,7 +96,7 @@ export default function Admin() {
             <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row justify-between ">
               <div className="mr-6">
                 <h1 className="text-4xl font-semibold mb-2 text-primary">{t("logs.cafeteria")} {cafeteria?.name}</h1>
-                <h2 className="text-black ml-0.5">Mira las estadisticas de tu local</h2>
+                <h2 className="text-black ml-0.5">{t("admin.statistics-title")}</h2>
               </div>
 
               {/* Boton de Edit Local */}

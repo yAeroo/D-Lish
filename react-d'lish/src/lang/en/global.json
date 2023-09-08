@@ -104,6 +104,41 @@
 
         "cafeteria" : "Cafeteria"
     },
+    "admin" : {
+        "statistics-title" : "Mira las estadisticas de tu local",
+        "edit-cafeteria" : "Editar local",
+        "frecuent-users" : "Usuarios frecuentes",
+        "most-sold-title" : "Platillos más vendidos",
+        "most-sold" : "Platillo más vendido",
+        "today's-orders" : "Pedidos hoy",
+        "weekly-orders" : "Pedidos esta semana",
+
+        "add-product-title": "Añade componentes",
+        "add-product-desc": "¿Aún no tienes tú menú del día? Registra lo diponible en tus almuerzos",
+        "add-product": "Agregar producto",
+        "tb-name": "Nombre",
+        "tb-img": "Imagen",
+        "tb-actions": "Acciones",
+        "add-menu": "Añadir al menu",
+
+        "modal-title-add": "Agrega cualquier tipo de producto",
+        "modal-name" : "Nombre del producto",
+        "modal-img" : "Imagen del producto",
+        "modal-title-update" : "Actualiza un producto ya existente",
+
+        "cafe-conf" : "Configuración de cafetín",
+        "cafe-conf-description" : "Modifica la visualización de tu cafetería",
+        "cafe-name" : "Nombre de la cafeteria",
+        "main public" : "Público principal",
+        "contac-email" : "Correo de contacto",
+        "cafe-coverpage-title" : "Foto de portada",
+        "cafe-coverpage-desc" : "Actualiza la foto de portada de tu cafeteria",
+
+        "deliv-title" : "Pedidos del día",
+        "deliv-desc" : "Platillos a preparar"
+
+
+    },
     "lang" : { "es" : "Spanish", "en" : "English" },
     "footer" : {
         "project-desc" : "Crea-J Project 2023",
