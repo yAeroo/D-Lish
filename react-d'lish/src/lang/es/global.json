@@ -80,8 +80,9 @@
         "see-cafeteria" : "Ver Cafetin"
     },
     "dish" : {
-        "area-title" : "Bachillerato y Tercer Ciclo",
-        "see-cafeteria" : "Ver Cafetin"
+        "define-side-title" : "Define the side dishes for your Lunch",
+        "lunch" : "Lunch",
+        "define-lunch-title" : "You must select at least 1 option for each one."
     },
     "auth" : {
         "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",

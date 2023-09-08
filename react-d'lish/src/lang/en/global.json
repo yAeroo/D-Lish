@@ -81,7 +81,8 @@
     "dish" : {
         "define-side-title" : "Define the side dishes for your Lunch",
         "lunch" : "Lunch",
-        "define-lunch-title" : "You must select at least 1 option for each one.",
+        "define-lunch-title" : "You must select at least 1 option for each one."
+
 
     },
     "auth" : {
