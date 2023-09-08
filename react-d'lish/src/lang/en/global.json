@@ -27,16 +27,16 @@
 
         "password" : "Password",
         "repeat-pw" : "Repeat password",        
-        "old-pw" : "Coloca tu contraseña actual",
-        "new-pw" : "Coloca una nueva contraseña", "repeat-new-pw" : "Confirmar nueva contraseña"
+        "old-pw" : "Enter your current password",
+        "new-pw" : "Enter a new password", "repeat-new-pw" : "Confirm your new password"
     },
     "info" : {
         "funds-logs" : "Funds & logs",
-        "upload-img" : "Upload your image here", "update-pfp" : "Actualiza tu foto de perfil",
+        "upload-img" : "Upload your image here", "update-pfp" : "Update your profile picture",
 
         "errors" : {
             "general-error" : "Something went wrong...",
-            "bad-credentials" : "Las credenciales son incorrectas...",
+            "bad-credentials" : "The credentials are incorrect...",
             "incompatible-file" : "Incompatible file"
         },
 
@@ -53,17 +53,17 @@
         "feature-2-title" : "For All",
         "feature-2-desc"  : "Platform design for students, teachers and cafeterias owners.",
         "feature-3-title" : "Crossplatform",
-        "feature-3-desc"  : "Interfaz adaptable y visualización adecuada a todos los dispositivos.",
-        "who-title" : "¿Quiénes somos?",
-        "who-desc"  : "En D'lish, revolucionamos el acceso de estudiantes a alimentos en cafeterías escolares. Eliminamos largas filas y esperas con una aplicación web apasionada por brindar un servicio compra conveniente y eficiente.",
+        "feature-3-desc"  : "Adaptable interface and display suitable for all devices.",
+        "who-title" : "¿Who are we?",
+        "who-desc"  : "At D'lish, we revolutionized student access to food in school cafeterias. We eliminated long lines and waits with a web application passionate about providing convenient and efficient purchasing service.",
         "mission-title"   : "Mission",
-        "mission-desc"    : "En D'lish, revolucionamos cómo los estudiantes obtienen comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra aplicación web conveniente y eficiente. ¡Comer en el colegio nunca ha sido tan fácil!",
+        "mission-desc"    : "At D'lish, we revolutionized how students get food in cafeterias. We eliminate lines and wait time with our convenient and efficient web app. Eating at school has never been easier!",
         "vission-title" : "Vission",
-        "vission-desc"  : "En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra."
+        "vission-desc"  : "At D'lish, we transform how students order food in cafeterias. We eliminate lines and wait time with our efficient app, providing convenience and a passion for a better shopping experience."
     },
     "auth" : {
-        "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",
-        "login-card-desc"    : "No esperes para reservar, ingresa tus credenciales y comienza a pedir.",
+        "header-title" : "Access D'Lish and enjoy unique flavors.",
+        "login-card-desc"    : "Don't wait to book, enter your credentials and start ordering.",
         "register-card-desc" : "Reserva, disfruta, repite. Únete a D'Lish hoy mismo.",
 
         "not-acc-msg"    : "¿No tienes una cuenta?",
