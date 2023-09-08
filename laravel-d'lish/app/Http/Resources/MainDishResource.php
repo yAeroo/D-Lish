@@ -17,6 +17,10 @@ class MainDishResource extends JsonResource
         return [
             'type' => "mainDish",
             'id' => $this->id,
+            'cafeteria' => [
+                'id' => $this->cafeteria->id,
+                'name' => $this->cafeteria->name,
+            ],
             'name' => $this->name,
             'active' => $this->active,
             'img' => $this->img,

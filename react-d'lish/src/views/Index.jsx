@@ -1,22 +1,19 @@
 import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import clienteAxios from "../config/axios";
 
 //Componentes
 import Carrousel from "../components/Carrousel";
 import NavIndex from "../components/Nav/NavIndex";
 import NavMobileIndex from "../components/Nav/NavMobileIndex";
 import FoodCard from "../components/FoodCard";
+import { CgSpinner } from "react-icons/cg";
 
 //Estilos CSS
 import "../css/IndexPage.css";
 
 //Imagenes
-import RellenosPapa from "/src/assets/Dishes/MainDish/rellenos_de_papa.jpg";
-import ChowMein from "/src/assets/Dishes/MainDish/chow_mein.jpg";
-import Filete from "/src/assets/Dishes/MainDish/fileteCarne.jpg";
-import Burrito from "/src/assets/Dishes/MainDish/burrito.jpg";
-
 import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
 import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
 import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
@@ -31,12 +28,38 @@ import useCafeterias from "../hooks/useCafeterias";
 export default function Index() {
   const { t } = useTranslation();
   const { obtenerCafeterias } = useCafeterias();
+  const [sugerencias, setSugerencias] = useState(null);
+  const [ flagSuggestions, setFlagSuggestions ] = useState();
+  const [ showSuggestions, setShowSuggestions ] = useState(false);
+
   // Obtén cafeteriaId desde useParams()
   const { cafeteriaId, dishId } = useParams();
 
   useEffect(() => {
     obtenerCafeterias();
+    obtenerSugerencias();
   }, []);
+
+  const obtenerSugerencias = async () => {
+    try {
+      const { data } = await clienteAxios(`/api/suggestions/mainDish`);
+      const contSugerencias = data?.data;
+      setSugerencias(contSugerencias);
+      setFlagSuggestions(true);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() =>{
+    if (flagSuggestions === true) {
+        setShowSuggestions(true);
+    }
+  }, [flagSuggestions])
+
+    console.log(sugerencias);
+  console.log('flag', flagSuggestions);
+  console.log('show', showSuggestions);
 
   return (
     <div>
@@ -110,45 +133,19 @@ export default function Index() {
           {/* Props del apartado de comidas  */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
-            <FoodCard
-              name="Chow Mein"
-              photo={ChowMein}
-              cafetin="Don Bosco"
-              precio="2.50"
-              categoria="Almuerzos"
-              cafeteriaId={1}
-              dishId={1}
-            />
-
-            <FoodCard
-              name="Relleno de Papa"
-              photo={RellenosPapa}
-              cafetin="Don Bosco"
-              precio="2.50"
-              categoria="Almuerzos"
-              cafeteriaId={1}
-              dishId={2}
-            />
-
-            <FoodCard
-              name="Filete de Carne"
-              photo={Filete}
-              cafetin="Don Bosco"
-              precio="2.50"
-              categoria="Almuerzos"
-              cafeteriaId={1}
-              dishId={3}
-            />
-
-            <FoodCard
-              name="Burrito"
-              photo={Burrito}
-              cafetin="Don Bosco"
-              precio="2.50"
-              categoria="Almuerzos"
-              cafeteriaId={1}
-              dishId={10}
-            />
+          {showSuggestions ? sugerencias.map((sugerencia, id) => ( 
+              <FoodCard
+                key={id}
+                name={sugerencia.name}
+                photo={sugerencia.img}
+                dishId={sugerencia.id}
+                cafeteriaId={sugerencia.cafeteria.id}
+                cafeteriaName={sugerencia.cafeteria.name}
+              /> )):
+                <div className="flex items-center justify-center col-span-2">
+                  <CgSpinner className="loading-icon mr-2" /> Preparando sugerencias...
+                </div>
+              }
           </div>
         </section>
       </main>

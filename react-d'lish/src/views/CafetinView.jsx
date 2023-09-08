@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { CgSpinner } from "react-icons/cg";
 
 //Spinner
 import Spinner from "../components/Spinner";
@@ -151,19 +152,21 @@ export default function CafetinView() {
               <h1 className="flex justify-center font-bold text-4xl pb-8 xxsm:mt-[6rem]">{/* Menu del dia*/}
               {t("cafetin.daily-specials")}</h1>
 
-              <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">
                 {/* CONDICIONAL - ARREGLO DE PLATILLOS */}
                 {activePlatillos?.length
                   ? activePlatillos.map((platillo, id) => (
                     <FoodCard
-                      name={platillo.name}
                       key={id}
-                      id={platillo.id}
-                      description={platillo.description}
+                      name={platillo.name}
+                      photo={platillo.img}
+                      dishId={platillo.id}
                       cafeteriaId={cafeteriaId}
                     />
-                  ))
-                  : "No hay nada"}
+                  )): 
+                  <div className="flex items-center justify-center col-span-2">
+                    <CgSpinner className="loading-icon mr-2" /> Cargando menú...
+                  </div>}
               </div>
               <br />
             </section>

@@ -72,3 +72,4 @@ Route::post('/login', [AuthController::class, 'login']);
 
 // CONTENIDO CAFETERIA ==========
 Route::apiResource('/cafeterias', CafeteriaController::class);
+Route::get('suggestions/mainDish', [OwnerController::class, 'suggestions']);

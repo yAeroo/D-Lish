@@ -4,9 +4,11 @@ import useCafeterias from '../hooks/useCafeterias';
 //Traduccion
 import { useTranslation } from "react-i18next";
 
-// Import Swiper React components
+// Components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
+import { CgSpinner } from "react-icons/cg";
+
 // Importacion de estilos de swiper
 import "swiper/css";
 import "swiper/css/pagination";
@@ -30,7 +32,7 @@ export default function Carrousel() {
                 className="w-full h-[26rem] lg:h-[40rem] md:h-[32rem] text-white"
             >
 
-                {cafeterias ? cafeterias.map((cafe, i) => (
+                {cafeterias?.length ? cafeterias.map((cafe, i) => (
                     <SwiperSlide key={i}
                         style={{ backgroundImage: `url(/assets/cafeterias/${cafe.cafe_wallp})` }}
                         className={`bg-cover bg-center img`}>
@@ -48,7 +50,11 @@ export default function Carrousel() {
                             </div>
                         </div>
                     </SwiperSlide>
-                )) : ''}
+                )) : <SwiperSlide>
+                        <div className='h-full flex justify-center items-center bg-black/50'>
+                            <CgSpinner className="loading-icon mr-2" size={100} />
+                        </div>
+                    </SwiperSlide>}
             </Swiper >
         </>
     )

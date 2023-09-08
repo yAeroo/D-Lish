@@ -53,6 +53,13 @@ class OwnerController extends Controller
         return MainDishResource::collection($mainDishes);
     }
 
+    public function suggestions()
+    {
+        $suggestions = MainDish::inRandomOrder()->limit(6)->get();
+
+        return MainDishResource::collection($suggestions);
+    }
+
     public function menu($id)
     {
         $mainDishes = MainDish::where('cafeteria_id', $id)->get();

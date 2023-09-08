@@ -47,7 +47,7 @@ const CafeteriasProvider = ({ children }) => {
             obtenerContenidoCafeteria,
             contenidoCafeteria,
             limpiarCafeteria,
-            obtenerCafeterias
+            obtenerCafeterias,
         }}>
             {children}
         </CafeteriasContext.Provider>
