@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -28,6 +29,7 @@ import "swiper/css/scrollbar";
 import useCafeterias from "../hooks/useCafeterias";
 
 export default function Index() {
+  const { t } = useTranslation();
   const { obtenerCafeterias } = useCafeterias();
   // Obtén cafeteriaId desde useParams()
   const { cafeteriaId, dishId } = useParams();
@@ -54,7 +56,8 @@ export default function Index() {
 
           <div className="space-y-6 px-0">
             <h2 className="text-3xl md:text-5xl p-6 my-8 md:text-center font-semibold text-neutral-100 py-2">
-              Categorías
+              {/* Título */}
+              {t("index.category-title")}
             </h2>
 
             <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
@@ -65,7 +68,8 @@ export default function Index() {
                   style={{ backgroundImage: `url(${DesayunoBanner})` }}
                 >
                   <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Desayunos
+                    {/* Desayunos */}
+              {t("index.category-breakfast")}
                   </div>
                 </div>
               </Link>
@@ -77,7 +81,8 @@ export default function Index() {
                   style={{ backgroundImage: `url(${OtrosBanner})` }}
                 >
                   <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Otros
+                     {/* Otros */}
+              {t("index.category-other")}
                   </div>
                 </div>
               </Link>
@@ -89,7 +94,8 @@ export default function Index() {
                   style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
                 >
                   <div className="absolute top-0 left-0 p-2 md:pl-4 md:pt-3 text-white font-bold 2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl text-[1.7rem] leading-[2.25rem]">
-                    Almuerzos
+                     {/* Almuerzos */}
+              {t("index.category-lunch")}
                   </div>
                 </div>
               </Link>
@@ -99,9 +105,8 @@ export default function Index() {
 
         <section className="lg:rounded-2xl 2xl:px-[12rem] bg-base-200 pb-10 my-[4rem]">
           <h2 className="text-3xl md:text-5xl font-bold drop-shadow-2xl py-8 px-8 md:text-center">
-            Lo más vendido
-          </h2>
-
+              {/* Los mas vendidos */}
+              {t("index.best-dishes-title")}          </h2>
           {/* Props del apartado de comidas  */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 xl:mx-[6rem] gap-4 md:gap-8 xl:gap-12 px-8 mb-12">

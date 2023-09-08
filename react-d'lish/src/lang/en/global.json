@@ -45,8 +45,8 @@
         }
     },
     "homepage" : {
-        "hero-title" : "Order your food on an easy and a fast way.",
-        "hero-desc"  : "Tired of long queues? Sign up and order our food with us.",
+        "hero-title" : "Order your food in an easy and a fast way.",
+        "hero-desc"  : "Tired of long queues? Sign up and order your food with us.",
         "features-title"  : "Discover the new way to order online.",
         "feature-1-title" : "Easy to use",
         "feature-1-desc"  : "Friendly and intuitive interface that adapts to all your needs.",
@@ -54,12 +54,35 @@
         "feature-2-desc"  : "Platform design for students, teachers and cafeterias owners.",
         "feature-3-title" : "Crossplatform",
         "feature-3-desc"  : "Adaptable interface and display suitable for all devices.",
-        "who-title" : "¿Who are we?",
+        "who-title" : "Who are we?",
         "who-desc"  : "At D'lish, we revolutionized student access to food in school cafeterias. We eliminated long lines and waits with a web application passionate about providing convenient and efficient purchasing service.",
         "mission-title"   : "Mission",
         "mission-desc"    : "At D'lish, we revolutionized how students get food in cafeterias. We eliminate lines and wait time with our convenient and efficient web app. Eating at school has never been easier!",
         "vission-title" : "Vission",
         "vission-desc"  : "At D'lish, we transform how students order food in cafeterias. We eliminate lines and wait time with our efficient app, providing convenience and a passion for a better shopping experience."
+    },
+    "index" : {
+        "category-title" : "Categories",
+        "category-breakfast" : "Breakfast",
+        "category-other" : "Other",
+        "category-lunch" : "Lunch",
+        "best-dishes-title" : "The Best Selling Dishes"
+    },
+    "cafetin" : {
+        "recommended-title" : "Recommended by",
+        "students" : "students",
+        "cafeteria-status" : "● Open",
+        "daily-specials" : "Daily Specials"
+    },
+    "carrousel" : {
+        "area-title" : "High School & Upper Secondary",
+        "see-cafeteria" : "See Cafeteria"
+    },
+    "dish" : {
+        "define-side-title" : "Define the side dishes for your Lunch",
+        "lunch" : "Lunch",
+        "define-lunch-title" : "You must select at least 1 option for each one.",
+
     },
     "auth" : {
         "header-title" : "Access D'Lish and enjoy unique flavors.",

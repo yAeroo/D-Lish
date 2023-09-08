@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from "react-i18next";
 import { IoChevronBack } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -8,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from "../../hooks/useAuth";
 
 const NavCafetin = () => {
+  const { t } = useTranslation();
   const { user } = useAuth({ middleware: 'auth' });
   const [showMenu, setShowMenu] = useState(false);
   const [scrolling, setScrolling] = useState(false);
@@ -34,8 +36,10 @@ const NavCafetin = () => {
         <Link onClick={() => window.history.back()}>
           <div className='flex items-center'>
             <IoChevronBack className="w-10 h-12 mr-5 font-bold" />
-            <h1 className="title text-[1.5rem] hidden md:block">Regresar</h1>
-            <h1 className="title hidden">Regresar</h1>
+            <h1 className="title text-[1.5rem] hidden md:block">{/* Regresar*/}
+              {t("actions.go-back")}</h1>
+            <h1 className="title hidden">{/* Regresar*/}
+              {t("actions.go-back")}</h1>
           </div>
         </Link>
 

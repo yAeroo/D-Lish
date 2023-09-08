@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -17,6 +18,7 @@ import FoodCard from "../components/Cafeteria/FoodCard";
 import { ValidURL } from "../helper/ValidURL";
 
 export default function CafetinView() {
+  const { t } = useTranslation();
   // Extraer parametro
   const {
     cafeterias,
@@ -73,7 +75,8 @@ export default function CafetinView() {
                 </h1>
                 <div className="stat flex flex-col items-end hidden">
                   <div className="stat-title text-xs md:text-lg text-white">
-                    Recomendado por
+                    {/* Recomendado por */}
+              {t("cafetin.recommended-title")}
                   </div>
                   <div className="flex items-center">
                     <div className="stat-figure text-white text-xs font-bold">
@@ -96,7 +99,8 @@ export default function CafetinView() {
                     </div>
                   </div>
                   <div className="stat-desc text-sm md:text-lg text-white">
-                    Estudiantes
+                    {/* Estudiantes*/}
+              {t("cafetin.students")}
                   </div>
                 </div>
               </div>
@@ -105,7 +109,8 @@ export default function CafetinView() {
               <div className="flex items-center justify-between mb-10 animate-fade-down animate-ease-in-out animate-once animate-duration-[1000ms] animate-delay-[300ms]">
                 <div>
                   <h2 className="text-2xl font-bold px-2 ml-6 md:ml-[3rem] mt-6 text-terc">
-                    ● Abierto
+                    {/* ● Abierto*/}
+              {t("cafetin.cafeteria-status")}
                   </h2>
                 </div>
                 <div className="flex items-center hidden">
@@ -143,7 +148,8 @@ export default function CafetinView() {
                 </div>
               </section>
 
-              <h1 className="flex justify-center font-bold text-4xl pb-8 xxsm:mt-[6rem]">Menú Disponible</h1>
+              <h1 className="flex justify-center font-bold text-4xl pb-8 xxsm:mt-[6rem]">{/* Menu del dia*/}
+              {t("cafetin.daily-specials")}</h1>
 
               <div className="flex flex-col lg:flex-row items-center justify-center mt-[3rem] px-[3rem] md:px-[8rem] lg:px-[3rem] gap-8">
                 {/* CONDICIONAL - ARREGLO DE PLATILLOS */}

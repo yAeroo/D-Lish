@@ -61,6 +61,28 @@
         "vission-title" : "Visión",
         "vission-desc"  : "En D'lish, transformamos cómo los estudiantes piden comida en las cafeterías. Eliminamos las filas y el tiempo de espera con nuestra app eficiente, brindando conveniencia y pasión por una mejor experiencia de compra."
     },
+    "index" : {
+        "category-title" : "Categorias",
+        "category-breakfast" : "Desayunos",
+        "category-other" : "Otros",
+        "category-lunch" : "Almuerzos",
+        "best-dishes-title" : "Lo mas vendido"
+    },
+    "cafetin" : {
+        "recommended-title" : "Recomendado por",
+        "students" : "estudiantes",
+        "cafeteria-status" : "● Abierto",
+        "daily-specials" : "Menú del día"
+
+    },
+    "carrousel" : {
+        "area-title" : "Bachillerato y Tercer Ciclo",
+        "see-cafeteria" : "Ver Cafetin"
+    },
+    "dish" : {
+        "area-title" : "Bachillerato y Tercer Ciclo",
+        "see-cafeteria" : "Ver Cafetin"
+    },
     "auth" : {
         "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",
         "login-card-desc"    : "No esperes para reservar, ingresa tus credenciales y comienza a pedir.",

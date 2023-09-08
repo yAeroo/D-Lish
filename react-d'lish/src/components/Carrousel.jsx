@@ -1,6 +1,9 @@
 // Importamos datos
 import useCafeterias from '../hooks/useCafeterias';
 
+//Traduccion
+import { useTranslation } from "react-i18next";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
@@ -15,6 +18,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 export default function Carrousel() {
     // Extraemos datos del ccontext
     const { cafeterias } = useCafeterias();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -34,10 +38,12 @@ export default function Carrousel() {
                         <div className="h-full flex md:justify-start md:items-end justify-center items-center bg-black/50 px-24 md:pb-20 pt-20 pb-0 md:pt-0">
                             <div className="max-w-md md:text-start text-center">
                                 <h1 className="mb-5 text-5xl md:text-7xl font-bold">{cafe.nombre}</h1>
-                                <p className="mb-5 text-xl md:text-2xl">Bachillerato & Tercer Ciclo.</p>
+                                <p className="mb-5 text-xl md:text-2xl">{/* Bachillerato y Tercer Ciclo*/}
+                                                                            {t("carrousel.area-title")}</p>
 
                                 <Link to={`/cafeteria/${cafe.id}`} className="btn btn-primary" >
-                                    Ver Cafetín
+                                    {/* Ver Cafetin */}
+                                {t("carrousel.see-cafeteria")}
                                 </Link>
                             </div>
                         </div>

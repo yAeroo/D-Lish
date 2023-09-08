@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 // Multimedia
 import "../css/dishSelection.css"
 import "../css/buttons.css"
@@ -22,6 +23,7 @@ import Notify from '../helper/Notify';
 import { formatearDinero } from "../helper/Money";
 
 export default function Dish() {
+  const { t } = useTranslation();
   // Extraer parametro
   const [errores, setErrores] = useState([]);
   const [precio, setPrecio] = useState(2.50);
@@ -127,13 +129,16 @@ export default function Dish() {
             >
               Cafetín {cafeteria?.nombre}
               <br className="hidden lg:inline" />
-              <span className="text-primary"> Almuerzo</span>
+              <span className="text-primary"> {/* Almuerzo*/}
+              {t("dish.lunch")}</span>
             </h1>
             <p className="mt-2 sm:mt-4 sm:text-xl text-white-900">
-              Define los complementos de tú almuerzo
+              {/* Define los complementos de tu almuerzo*/}
+              {t("dish.define-side-title")}
             </p>
             <p className="mt-2 text-sm italic font-bold text-gray">
-              Debes seleccionar al menos 1 opción por cada uno</p>
+              {/* Define the lunch side dishes.*/}
+              {t("dish.define-lunch-title")}</p>
             <div className="flex flex-col w-full border-opacity-50">
               <br />
               <form className='text-white'>
