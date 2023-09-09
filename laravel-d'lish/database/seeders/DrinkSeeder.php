@@ -22,7 +22,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Tamarindo',
                 'cafeteria_id' => 1,
-                // 'img' => 'tamarindo.jpg',
+                'img' => 'tamarindo.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -30,15 +30,15 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Jamaica',
                 'cafeteria_id' => 1,
-                // 'img' => 'jamaica.jpg',
+                'img' => 'jamaica.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'name' => 'Freco Té',
+                'name' => 'Fresco Té',
                 'cafeteria_id' => 1,
-                // 'img' => 'te.jpg',
+                'img' => 'te.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -48,7 +48,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Limonada',
                 'cafeteria_id' => 2,
-                // 'img' => 'tamarindo.jpg',
+                'img' => 'limonada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -56,7 +56,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Chan',
                 'cafeteria_id' => 2,
-                // 'img' => 'jamaica.jpg',
+                'img' => 'chan.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -64,7 +64,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Jamaica',
                 'cafeteria_id' => 2,
-                // 'img' => 'te.jpg',
+                'img' => 'jamaica.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -74,7 +74,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Mango',
                 'cafeteria_id' => 3,
-                // 'img' => 'tamarindo.jpg',
+                'img' => 'mango.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -82,7 +82,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Horchata',
                 'cafeteria_id' => 3,
-                // 'img' => 'jamaica.jpg',
+                'img' => 'horchata.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -90,7 +90,7 @@ class DrinkSeeder extends Seeder
             [
                 'name' => 'Fresco Té',
                 'cafeteria_id' => 3,
-                // 'img' => 'te.jpg',
+                'img' => 'te.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),

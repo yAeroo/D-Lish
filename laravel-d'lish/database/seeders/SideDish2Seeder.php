@@ -22,7 +22,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Ensalada verde',
                 'cafeteria_id' => 1,
-                // 'img' => 'ensalada.jpg',
+                'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -30,16 +30,16 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 1,
-                // 'img' => 'chimol.jpg',
+                'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             //Cafeteria 2
             [
-                'name' => 'Ensalada',
+                'name' => 'Ensalada verde',
                 'cafeteria_id' => 2,
-                // 'img' => 'ensalada.jpg',
+                'img' => 'ensalada.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -47,7 +47,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 2,
-                // 'img' => 'chimol.jpg',
+                'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -55,7 +55,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Coditos',
                 'cafeteria_id' => 2,
-                // 'img' => 'coditos.jpg',
+                'img' => 'coditos.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -64,7 +64,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Coditos',
                 'cafeteria_id' => 3,
-                // 'img' => 'ensalada.jpg',
+                'img' => 'coditos.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -72,7 +72,7 @@ class SideDish2Seeder extends Seeder
             [
                 'name' => 'Chimol',
                 'cafeteria_id' => 3,
-                // 'img' => 'chimol.jpg',
+                'img' => 'chimol.jpg',
                 // 'price' => 0.50,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
