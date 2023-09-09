@@ -156,7 +156,8 @@ export default function Dish() {
             <div className="flex flex-col w-full border-opacity-50">
               <br />
               <form className='text-white'>
-                <div className=" font-bold mb-1">Platillo Principal | Obligatorio</div>
+                <div className=" font-bold mb-1">{/* Platillo Principal | Obligatorio*/}
+              {t("dish.main-dish-required")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -170,7 +171,7 @@ export default function Dish() {
                 </div>
 
                 <br />
-                <div className=" font-bold mb-1">Complemento 1 | Obligatorio</div>
+                <div className=" font-bold mb-1">{t("dish.side-dish-1-required")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -184,7 +185,7 @@ export default function Dish() {
                 </div>
                 <br />
 
-                <div className=" font-bold mb-1">Complemento 2 | Obligatorio</div>
+                <div className=" font-bold mb-1">{t("dish.side-dish-2-required")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -198,7 +199,7 @@ export default function Dish() {
                 </div>
                 <br />
 
-                <div className=" font-bold mb-1">Acompañantes</div>
+                <div className=" font-bold mb-1">{t("dish.side-dish-3-notrequired")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -212,7 +213,7 @@ export default function Dish() {
                 </div>
                 <br />
 
-                <div className=" font-bold mb-1 text-green-500 border-sky-100">Bebidas | +$0.25</div>
+                <div className=" font-bold mb-1 text-green-500 border-sky-100">{t("dish.drink")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
@@ -234,16 +235,16 @@ export default function Dish() {
           <button to="/order" disabled={!ordenComplete} onClick={() => window.payment_modal.showModal()}
             className="btn font-plane buttonActive"
           >
-            Ordenar
+            {t("dish.order-button")}
           </button>
 
           <div>
             <dialog id="payment_modal" className="modal">
               <form method="dialog" className="modal-box bg-[#292929]">
                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                <h3 className="font-bold text-lg text-terc text-center">Tipo de pago</h3>
+                <h3 className="font-bold text-lg text-terc text-center">{t("dish.payment-method")}</h3>
 
-                <h4 className="mb-5 py-4 text-lg font-medium text-gray-900 dark:text-white text-center"> Selecciona el tipo de pago a utilizar para continuar con tu compra </h4>
+                <h4 className="mb-5 py-4 text-lg font-medium text-gray-900 dark:text-white text-center"> {t("dish.select-payment-method")} </h4>
                 <ul className="grid w-full gap-6 md:grid-cols-2">
                   <li>
                     <input type="radio" id="PaymentFondos" name="Payment" value="PaymentFondos" className="hidden peer" required onChange={() => setSelectedPayment("PaymentFondos")}
@@ -251,8 +252,8 @@ export default function Dish() {
                     />
                     <label htmlFor="PaymentFondos" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
                       <div className="block">
-                        <div className="w-full text-lg font-semibold">Fondos</div>
-                        <div className="w-full ">Paga con los fondos de tu cuenta</div>
+                        <div className="w-full text-lg font-semibold">{t("dish.funds-title")}</div>
+                        <div className="w-full ">{t("dish.funds-subtitle")}</div>
                       </div>
                       <FaMoneyCheck className="w-[5rem] h-5 ml-3 " />
                     </label>
@@ -261,8 +262,8 @@ export default function Dish() {
                     <input type="radio" id="PaymentEfectivo" name="Payment" value="PaymentEfectivo" className="hidden peer" required onChange={() => setSelectedPayment("PaymentEfectivo")} onClick={pagarEfectivo} />
                     <label htmlFor="PaymentEfectivo" className="inline-flex items-center justify-between w-full p-5  border border-dashed rounded-lg cursor-pointer hover:text-gray-100 border-gray-300 peer-checked:text-terc peer-checked:border-terc text-gray-200 peer-checked:bg-[#35a5643b] hover:bg-[#6aa785a2]">
                       <div className="block">
-                        <div className="w-full text-lg font-semibold">Efectivo</div>
-                        <div className="w-full">Paga dirigiendote a la cafeteria</div>
+                        <div className="w-full text-lg font-semibold">{t("dish.cash-title")}</div>
+                        <div className="w-full">{t("dish.cash-subtitle")}</div>
                       </div>
                       <GiPayMoney className="w-[5rem] h-5 ml-3 " />
                     </label>
@@ -280,12 +281,12 @@ export default function Dish() {
 
                 {selectedPayment === "PaymentEfectivo" && (
                   <p className="text-center my-5 text-[#ff922c] animate-fade animate-duration-500">
-                    <CgDanger className="inline text-2xl pb-1" /> Admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido. <br /> En caso contrario, recibirás una penalización.
+                    <CgDanger className="inline text-2xl pb-1" /> {t("dish.advice-cash-title")} <br /> {t("dish.advice-cash-subtitle")}
                   </p>
                 )}
 
                 <div className="modal-action justify-center">
-                  <button className="btn btn-primary" onClick={confirmarOrden} disabled={!pagar}> Realizar pedido</button>
+                  <button className="btn btn-primary" onClick={confirmarOrden} disabled={!pagar}> {t("dish.do-order-button")}</button>
                 </div>
               </form>
             </dialog>
