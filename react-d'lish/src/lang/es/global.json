@@ -84,9 +84,27 @@
         "see-cafeteria" : "Ver Cafetin"
     },
     "dish" : {
-        "define-side-title" : "Define the side dishes for your Lunch",
-        "lunch" : "Lunch",
-        "define-lunch-title" : "You must select at least 1 option for each one."
+        "define-side-title" : "Define los complementos de tu almuerzo,",
+        "lunch" : "Almuerzo",
+        "define-lunch-title" : "Debes seleccionar almenos una opcion de cada uno.",
+        "main-dish-required" : "Platillo Principal | Obligatorio",
+        "side-dish-1-required" : "Complemento 1 | Obligatorio",
+        "side-dish-2-required" : "Complemento 2 | Obligatorio",
+        "side-dish-3-notrequired" : "Acompañante",
+        "drink" : "Bebidas | +$0.25",
+
+        "order-button" : "Ordenar",
+        "payment-method" : "Método de Pago",
+        "select-payment-method" : "Selecciona el tipo de pago a utilizar para continuar con tu compra",
+        "funds-title" : "Fondos",
+        "funds-subtitle" : "Paga con los fondos de tu cuenta",
+        "advice-funds-title" : "Tus fondos actuales son de",
+        "advice-funds-subtitle" : "En caso contrario, recibirás una penalización.",
+        "cash-title" : "Efectivo",
+        "cash-subtitle" : "Paga dirigiendote a la cafeteria",
+        "advice-cash-title" : "Admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido.",
+        "advice-cash-subtitle" : "En caso contrario, recibirás una penalización.",
+        "do-order-button" : "Realizar Pedido"
     },
     "auth" : {
         "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",

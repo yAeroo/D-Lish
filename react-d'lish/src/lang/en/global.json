@@ -85,8 +85,25 @@
     "dish" : {
         "define-side-title" : "Define the side dishes for your Lunch",
         "lunch" : "Lunch",
-        "define-lunch-title" : "You must select at least 1 option for each one."
+        "define-lunch-title" : "You must select at least 1 option for each one.",
+        "main-dish-required" : "Main Dish | Required",
+        "side-dish-1-required" : "Side Dish 1 | Required",
+        "side-dish-2-required" : "Side Dish 2 | Required",
+        "side-dish-3-notrequired" : "Side Dish 3",
+        "drink" : "Drinks | +$0.25",
 
+        "order-button" : "Order",
+        "payment-method" : "Payment Method",
+        "select-payment-method" : "Select the payment type to use to proceed with your purchase.",
+        "funds-title" : "Funds",
+        "funds-subtitle" : "Pay with the funds in your account",
+        "advice-funds-title" : "Your current funds are",
+        "advice-funds-subtitle" : "Otherwise, you will receive a penalty.",
+        "cash-title" : "Cash",
+        "cash-subtitle" : "Pay by going to the cafeteria.",
+        "advice-cash-title" : "You acknowledge the responsibility to go to the cafeteria to claim and pay for your order.",
+        "advice-cash-subtitle" : "Otherwise, you will receive a penalty.",
+        "do-order-button" : "Order"
 
     },
     "desayuno" : {
