@@ -178,6 +178,7 @@
         "deliv-desc" : "Platillos a preparar",
         "deliv-price" : "Precio $",
         "deliv-client": "Cliente",
+        "deliv-paymentstatus": "Estado",
         "deliv-no-menu-1": "No hay pedidos o un menú disponible.",
         "deliv-no-menu-2": "Gestiona pedidos y agrega más productos para tus clientes.",
         "deliv-no-menu-btn": "Agrega productos",

@@ -20,6 +20,7 @@ class OrderDishResource extends JsonResource
             // Campo ID de la tabla ordenes
             'id' => $this->id,
             'fecha' => Carbon::parse($this->created_at)->format('d/m/Y'),
+            'pagado' => $this->pagado,
             'cafeteria' => [
                 'name' => $this->cafeteria->name,
             ],

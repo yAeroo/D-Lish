@@ -192,6 +192,7 @@
         "deliv-desc" : "Dishes to prepare",
         "deliv-price" : "Price $",
         "deliv-client": "Client",
+        "deliv-paymentstatus": "Status",
         "deliv-no-menu-1": "No orders or menu available.",
         "deliv-no-menu-2": "Manage orders and add more products for your customers.",
         "deliv-no-menu-btn": "Add products",

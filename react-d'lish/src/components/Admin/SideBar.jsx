@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+// Imagen icono 
+import Icono from "/src/assets/logo/icon_bw.png";
+
 // Importación de iconos
 import { HiMenu } from "react-icons/hi";
 import { BsGraphUp } from 'react-icons/bs';
@@ -35,7 +38,7 @@ function SideBar() {
           {/* Lista de elementos del sidebar */}
           <ul className="menu p-4 w-[7rem] h-full min-h-[465px] fixed flex flex-col items-center bg-secu text-base-content ">
             {/* Contenido del Sidebar */}
-            <img src="../src/assets/logo/icon_bw.png" alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
+            <img src={Icono} alt="Logo" className='h-11 mx-auto mt-5 mb-12' />
             <li className="mb-7" title='Ventas'>
               <Link to="/admin"><BsGraphUp className='text-white text-2xl ' /></Link></li>
             <li className="mb-7" title="Productos">

@@ -1,7 +1,6 @@
 import React from 'react'
 import NavCafetin from '../components/Nav/NavCafetin'
 
-
 function DeliveryMode() {
   return (
     <>

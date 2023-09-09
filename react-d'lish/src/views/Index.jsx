@@ -85,7 +85,7 @@ export default function Index() {
 
             <div className="grid grid-cols-2 relative gap-4 mx-10 2xl:mx-[30rem] xl:mx-[20rem] lg:mx-[17rem] md:mx-[8rem] xxsm:mx-[1rem]">
               {/* Contenedor de Desayunos */}
-              <Link to={`/desayunos`}>
+              {/* <Link to={`/desayunos`}> */}
                 <div
                   className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${DesayunoBanner})` }}
@@ -95,10 +95,10 @@ export default function Index() {
               {t("index.category-breakfast")}
                   </div>
                 </div>
-              </Link>
+              {/* </Link> */}
 
               {/* Contenedor de Otros */}
-              <Link to={`/otros`}>
+              {/* <Link to={`/otros`}> */}
                 <div
                   className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${OtrosBanner})` }}
@@ -108,10 +108,10 @@ export default function Index() {
               {t("index.category-other")}
                   </div>
                 </div>
-              </Link>
+              {/* </Link> */}
 
               {/* Contenedor de Almuerzos */}
-              <Link to={`/almuerzos`} className="col-span-2">
+              {/* <Link to={`/almuerzos`} className="col-span-2"> */}
                 <div
                   className="bg-cover bg-center h-40 xl:h-52 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
                   style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
@@ -121,7 +121,7 @@ export default function Index() {
               {t("index.category-lunch")}
                   </div>
                 </div>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
         </section>
