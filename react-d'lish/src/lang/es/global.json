@@ -121,7 +121,7 @@
         "available-funds" : "Fondos disponibles",
         "spent-funds" : "Gastos totales",
         "fund-analysis" : "Análisis de fondos",
-        "order-history" : "Historial de fondos",
+        "order-history" : "Historial de pedidos",
 
         "cafeteria" : "Cafetín"
     },
@@ -155,17 +155,24 @@
         "warning-btn" : "Eliminar",
 
         "empty-menu" : "Agrega opciones en tu menú",
+        "Select-option": "Seleccione una opción",
 
         "cafe-conf" : "Configuración de cafetín",
         "cafe-conf-description" : "Modifica la visualización de tu cafetería",
         "cafe-name" : "Nombre de la cafeteria",
-        "main public" : "Público principal",
+        "main-public" : "Público principal",
         "contac-email" : "Correo de contacto",
         "cafe-coverpage-title" : "Foto de portada",
         "cafe-coverpage-desc" : "Actualiza la foto de portada de tu cafeteria",
 
         "deliv-title" : "Pedidos del día",
         "deliv-desc" : "Platillos a preparar",
+        "deliv-price" : "Precio $",
+        "deliv-client": "Cliente",
+        "deliv-no-menu-1": "No hay pedidos o un menú disponible.",
+        "deliv-no-menu-2": "Gestiona pedidos y agrega más productos para tus clientes.",
+        "deliv-no-menu-btn": "Agrega productos",
+
 
         "loading" : "Cargando..."
 
@@ -174,6 +181,11 @@
     "lang" : { "es" : "Español", "en" : "Inglés" },
     "status" : {
         "complete" : "Completado"
+    },
+    "error" : {
+        "ups" : "Ups, la página no fue encontrada",
+        "doesn't-exist" : "Parece que lo que estás buscando no existe.",
+        "go-back" : "Volver"
     },
     "footer" : {
         "project-desc" : "Proyecto Crea-J 2023",

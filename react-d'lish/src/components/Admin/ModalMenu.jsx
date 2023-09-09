@@ -45,11 +45,17 @@ export default function ModalMenu() {
 
     // Creando States
     const categorias = {
-        'mainDish': 'Almuerzo',
-        'sideDish1': 'Complemento 1',
-        'sideDish2': 'Complemento 2',
-        'accompaniment': 'Acompañamiento',
-        'drink': 'Bebida'
+        'mainDish': t("index.category-lunch"),
+        'sideDish1': t("index.category-complement-1"),
+        'sideDish2': t("index.category-complement-2"),
+        'accompaniment': t("index.category-accompaniment"),
+        'drink': t("index.category-drink")
+
+        // 'mainDish': 'Almuerzo',
+        // 'sideDish1': 'Complemento 1',
+        // 'sideDish2': 'Complemento 2',
+        // 'accompaniment': 'Acompañamiento',
+        // 'drink': 'Bebida'
     }
 
     // Obteniendo la categoria del producto añadido
@@ -175,7 +181,7 @@ export default function ModalMenu() {
                             onChange={setCategory}
                             ref={typeRef}
                         >
-                            <option value="null" disabled>Seleccione una opción</option>
+                            <option value="null" disabled>{t("admin.Select-option")}</option>
 
                             {/* Opciones de categoria */}
                             {Object.keys(categorias).map((key) => (

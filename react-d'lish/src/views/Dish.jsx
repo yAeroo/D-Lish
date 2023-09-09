@@ -129,7 +129,7 @@ export default function Dish() {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-              <div className="bg-black/50 min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px] rounded-lg bg-black/50">
+              <div className="bg-black/50 min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px] rounded-lg ">
                   { cafeteria && cafeteria?.cafe_wallp ?
                     <img className="rounded-lg min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
                   :
@@ -274,8 +274,8 @@ export default function Dish() {
                   <p className={`text-center my-5 
                   ${+(user?.saldo_disp) >= precio ? "text-terc" : "text-[#ff4c2c]"}
                    animate-fade animate-duration-500`}>
-                    {`Tus fondos actuales son de ${formatearDinero(+(user?.saldo_disp))} `}<br />
-                    {+(user?.saldo_disp) >= precio ? "Confirma el pago con tus fondos abajo" : `Fondos insuficientes para pagar ${formatearDinero(precio)}`}
+                    {`${t("dish.current-funds")}  ${formatearDinero(+(user?.saldo_disp))} `}<br />
+                    {+(user?.saldo_disp) >= precio ? t("dish.funds-confirm") : `${t("dish.not-enough-funds")} ${formatearDinero(precio)}`}
                   </p>
                 )}
 

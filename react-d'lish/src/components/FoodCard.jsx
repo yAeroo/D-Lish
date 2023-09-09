@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function FoodCard(props) {
   const { photo, name, cafeteriaName, cafeteriaId, dishId } = props;
+  const { t } = useTranslation();
 
   return (
     <div className="flex items-center justify-center mx-0 md:mx-1 h-[7rem] w-[100%] md:hover:bg-base-100 px-1 rounded-lg md:px-4 py-0 mb-2">
@@ -18,7 +20,7 @@ export default function FoodCard(props) {
             {cafeteriaName}
           </h3>
           <p className="pt-[0.01rem] text-[0.80rem] md:text-md lg:text-[1rem] text-neutral-200">
-            $2.50 | Almuerzo
+            $2.50 | {t("dish.lunch")}
           </p>
         </div>
       </div>

@@ -163,10 +163,10 @@ export default function ProfileAdmin() {
 						{/* Título de la sección */}
 						<div className="flex flex-col justify-center md:justify-normal py-10">
 							<p className='text-success font-title font-semibold text-2xl md:text-3xl transition-all my-5'>
-								Configuración de cafetín
+								{t("admin.cafe-conf")}
 							</p>
 							<p className="text-gray-600 text-base sm:text-xl text-left">
-								Modifica la visualización de tu cafetería
+								{t("admin.cafe-conf-description")}
 							</p>
 						</div>
 					<form onSubmit={handleSubmit} noValidate encType="multipart/form-data">
@@ -179,7 +179,7 @@ export default function ProfileAdmin() {
 							{/* Nombre de la cafeteria */}
 							<div className="form-control w-full inline-block md:text-center">
 								<label className="label">
-									<span className="label-text text-[17px] text-success font-title font-bold ml-4">Nombre de la cafetería</span>
+									<span className="label-text text-[17px] text-success font-title font-bold ml-4">{t("admin.cafe-name")}</span>
 								</label>
 								<input type="text" placeholder={cafeteria?.name} id="cafeteriaName" ref={cafeteriaNameRef}
 									className="input bg-[#eaecef] text-[#2e2e2f] w-full md:max-w-md" onChange={handleInputChange} />
@@ -188,7 +188,7 @@ export default function ProfileAdmin() {
 							{/* Público principal */}
 							<div className="form-control w-full inline-block md:text-center">
 								<label className="label">
-									<span className="label-text text-[17px] text-success font-title font-bold ml-4">Público principal</span>
+									<span className="label-text text-[17px] text-success font-title font-bold ml-4">{t("admin.main-public")}</span>
 								</label>
 								<input type="text" placeholder={cafeteria?.mainPublic} id="mainPublic" ref={mainPublicRef}
 									className="input bg-[#eaecef] text-[#2e2e2f] w-full md:max-w-md" onChange={handleInputChange} />
@@ -198,7 +198,7 @@ export default function ProfileAdmin() {
 							<div className="form-control w-full md:col-span-2 md:items-center">
 								<div className="center">
 								<label className="label">
-									<span className="label-text text-[17px] text-success font-title font-bold ml-4">Correo de contacto</span>
+									<span className="label-text text-[17px] text-success font-title font-bold ml-4">{t("admin.contac-email")}</span>
 								</label>
 								<input type="email" placeholder={cafeteria?.contactEmail} id="contactEmail" ref={contactEmailRef}
 									className="input bg-[#eaecef] text-[#2e2e2f] w-full md:min-w-[28rem] md:max-w-md" onChange={handleInputChange} />
@@ -208,11 +208,11 @@ export default function ProfileAdmin() {
 							{/* Portada de la cafeteria */}
 							<div className="form-control w-full md:col-span-2 items-center">
 								<label className="label">
-									<span className="label-text text-[17px] text-success font-title font-bold ml-4">Foto de portada</span>
+									<span className="label-text text-[17px] text-success font-title font-bold ml-4">{t("admin.cafe-coverpage-title")}</span>
 								</label>
 
 								<div className="font-title text-base text-center">
-									<h3 className="font-black text-gray-600">Actualiza la foto de portada de tu cafeteria</h3>
+									<h3 className="font-black text-gray-600">{t("admin.cafe-coverpage-desc")}</h3>
 								</div>
 
 								{/* Input file */}

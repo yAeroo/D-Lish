@@ -50,9 +50,9 @@ function DeliveryModeAdmin() {
                         }) : (
                               <div className='pb-6 md:min-h-[calc(100vh-469px)] min-h-[calc(100vh-458px)] flex flex-col items-center gap-7 text-gray-700 mt-10 md:mt-24'>
                                     <VscEmptyWindow className='md:text-8xl text-6xl ' />
-                                    <p className='text-lg md:text-2xl text-center'>No hay pedidos o un menú disponible.<br /> Gestiona pedidos y agrega más productos para tus clientes.</p>
+                                    <p className='text-lg md:text-2xl text-center'>{t("admin.deliv-no-menu-1")}<br /> {t("admin.deliv-no-menu-2")}</p>
                                     <Link to="/admin/products" className='btn btn-success' >
-                                          Agrega Productos
+                                          {t("admin.deliv-no-menu-btn")}
                                     </Link>
                               </div>)
                   }

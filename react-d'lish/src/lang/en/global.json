@@ -133,7 +133,7 @@
         "available-funds" : "Available funds",
         "spent-funds" : "Total expenses",
         "fund-analysis" : "Fund analysis",
-        "order-history" : "Fund history",
+        "order-history" : "Order history",
 
         "cafeteria" : "Cafeteria"
     },
@@ -167,23 +167,34 @@
         "warning-btn" : "Delete",
 
         "empty-menu" : "Add options of dishes to your menu",
+        "Select-option": "Select an option",
         
 
 
         "cafe-conf" : "Cafeteria configuration",
         "cafe-conf-description" : "Modify the visual aspect of your cafeteria ",
         "cafe-name" : "Name of the cafeteria",
-        "main public" : "Main target",
+        "main-public" : "Main target",
         "contac-email" : "Contact e-mail",
         "cafe-coverpage-title" : "Cover photo",
         "cafe-coverpage-desc" : "Update your cafeteria's cover photo",
 
         "deliv-title" : "Orders of the day",
         "deliv-desc" : "Dishes to prepare",
+        "deliv-price" : "Price $",
+        "deliv-client": "Client",
+        "deliv-no-menu-1": "No orders or menu available.",
+        "deliv-no-menu-2": "Manage orders and add more products for your customers.",
+        "deliv-no-menu-btn": "Add products",
 
         "loading" : "Loading..."
 
 
+    },
+    "error" : {
+        "ups" : "Oops, page not found",
+        "doesn't-exist" : "It seems that what you are looking for doesn't exist.",
+        "go-back" : "Go back"
     },
     "lang" : { "es" : "Spanish", "en" : "English" },
     "footer" : {
