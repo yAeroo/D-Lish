@@ -14,7 +14,7 @@ export default function LogCard({ orden }) {
     return (
         <>
             <div className="py-3 flex justify-center">
-                <div className="flex-grow flex max-w-md bg-[#101525] shadow-lg rounded-lg overflow-hidden self-center">
+                <div className="flex-grow flex max-w-md bg-[#0e0e0e] shadow-lg rounded-lg overflow-hidden self-center">
                     <div className="w-1/3 bg-cover" style={{ background: `url(../../../assets/products/mainDish/${mainDish.img})`, backgroundPositionX: 'center', backgroundPositionY: 'center', backgroundSize: 'cover' }}>
                     </div>
 

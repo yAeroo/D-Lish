@@ -39,11 +39,12 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'name' => 'El Nombre es obligatorio. ',
-            'email' => 'El Email es obligatorio. ',
-            'password' => 'El Password debe contener mínimo 6 caracteres, un símbolo y un número. ',
-            'email.email' => 'El Email no es válido. ',
-            'email.unique' => 'El Usuario ya esta registrado. ',
+            'name' => 'El nombre es obligatorio. ',
+            'name.regex' => 'El nombre solo puede contener letras. ',
+            'email' => 'El correo es obligatorio. ',
+            'password' => 'La contraseña debe contener mínimo 6 caracteres, un símbolo y un número. ',
+            'email.email' => 'El correo no es válido. ',
+            'email.unique' => 'El usuario ya esta registrado. ',
             'password.confirmed' => 'Las contraseñas no coinciden. '
         ];
     }

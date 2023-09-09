@@ -25,16 +25,6 @@ export default function Preferences(props) {
                         </li>
                     </div>
 
-                    <Link to="/profile/settings">
-                        <li className="li-elem !mb-4">
-                            <MdLockOutline size={"25"} />
-                            <div className="flex justify-between w-full">
-                                <span className="px-2"> {t("actions.change-pw")} </span>
-                                <IoIosArrowForward size={"25"} className="fu-custom animate-fade-right" />
-                            </div>
-                        </li>
-                    </Link>
-
                     <Link to="/profile/logs/">
                         <li className="li-elem">
                             <HiOutlineWallet size={"25"} />

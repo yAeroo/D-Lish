@@ -11,6 +11,7 @@ const OrdersProvider = ({ children }) => {
     const [ordenComplete, setOrdenComplete] = useState(false);
     const [orden, setOrden] = useState({});
     const [ordenes, setOrdenes] = useState([]);
+    const [loadingOrders, setLoadingOrders] = useState(true);
 
     // Saber si el objeto esta nulo o no
     const comprobarOrdenCompleta = (orden) => {
@@ -73,6 +74,7 @@ const OrdersProvider = ({ children }) => {
                     }
                 });
                 setOrdenes(data.data);
+                setLoadingOrders(false);
             }
             catch (error) {
                 console.log(error);
@@ -91,7 +93,8 @@ const OrdersProvider = ({ children }) => {
                 handleRemoverOrden,
                 registrarOrden,
                 obtenerOrdenesUser,
-                ordenes
+                ordenes,
+                loadingOrders
             }}
         >
             {children}

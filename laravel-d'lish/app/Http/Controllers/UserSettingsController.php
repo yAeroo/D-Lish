@@ -28,14 +28,14 @@ class UserSettingsController extends Controller
     
                     return response(['message' => 'Exito'], 200);
                 }else{
-                    return response(['errors' => 'La nueva contraseña debe ser diferente'], 422);
+                    return response(['message' => 'La nueva contraseña debe ser diferente.'], 422);
                 }
 
             }else{
-                return response(['message' => 'Contraseña antigua incorrecta'], 422);
+                return response(['message' => 'Contraseña antigua incorrecta.'], 422);
             }
         }else{
-            return response(['message' => 'Campos incompletos'], 400);
+            return response(['message' => 'Campos incompletos.'], 400);
         }
     }
 }

@@ -5,6 +5,7 @@ import { formatearDinero } from "../../helper/Money";
 import { TbPigMoney } from "react-icons/tb";
 import { LiaCoinsSolid } from "react-icons/lia";
 import { VscEmptyWindow } from "react-icons/vsc"
+import { CgSpinner } from "react-icons/cg";
 
 // Componentes
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -21,7 +22,7 @@ export default function Logs() {
     const { t } = useTranslation();
 
     const { user } = useAuth({ middleware: 'auth' });
-    const { obtenerOrdenesUser, ordenes } = useOrders();
+    const { obtenerOrdenesUser, ordenes, loadingOrders } = useOrders();
     var [user_funds, user_funds_off] = useState(0);
 
     if (user?.saldo_disp != 0) {
@@ -55,7 +56,6 @@ export default function Logs() {
     // Obteniendo ordenes cuando haya un usuario
     useEffect(() => {
         obtenerOrdenesUser(user?.id);
-        console.log(ordenes);
     }, [user]);
 
     return (
@@ -69,7 +69,7 @@ export default function Logs() {
             <ProfileInfo user={user} />
 
             {/* Contenedor principal */}
-            <div id="logs-container" className='min-h-screen mb-7 flex items-center flex-col'>
+            <div id="logs-container" className='min-h-screen mb-7 flex items-center justify-center flex-col'>
                 {/* Contenedor de fondos */}
                 <section id="founds-summ" className='mt-7 rounded-lg w-full sm:w-11/12 h-1/2'>
 
@@ -84,7 +84,7 @@ export default function Logs() {
                     <div className="flex items-center justify-center ">
                         <div className="stats stats-vertical md:stats-horizontal my-5">
 
-                            <div className="stat w-[300px] !bg-[#101525]">
+                            <div className="stat w-[300px] !bg-[#0e0e0e]">
                                 <div className="stat-figure text-primary">
                                     <TbPigMoney size={40} />
                                 </div>
@@ -92,7 +92,7 @@ export default function Logs() {
                                 <div className="stat-value">{user ? formatearDinero(+user.saldo_disp) : ''}</div>
                             </div>
 
-                            <div className="stat w-[300px] !bg-[#101525]">
+                            <div className="stat w-[300px] !bg-[#0e0e0e]">
                                 <div className="stat-figure text-primary ">
                                     <LiaCoinsSolid size={40} />
                                 </div>
@@ -105,7 +105,7 @@ export default function Logs() {
 
                     {/* Chart */}
                     <div className="flex justify-center -mt-12 -mb-12 relative">
-                        <p className='absolute text-white font-title font-semibold text-2xl top-36 w-1/6 text-center'>{t("logs.fund-analysis")}</p>
+                        <p className='absolute text-white font-title font-semibold text-2xl top-36 w-[166.828px] text-center'>{t("logs.fund-analysis")}</p>
                         <div className="chart-cont relative inline-block text-center">
                             <Doughnut data={data} options={options} />
                         </div>
@@ -122,19 +122,24 @@ export default function Logs() {
 
 
                     <div id="logs-cont" className={`grid ${ordenes.length ? "md:grid-cols-2 md:grid-rows-1" : "min-h-[310px]"} gap-x-2 gap-y-4 px-3`}>
-                        {ordenes.length ? (
-                            ordenes.map((orden, id) => (
-                                <LogCard orden={orden} key={id} />
-                            ))
-                        ) : (
-                            <div className="flex flex-col justify-center items-center mt-6 text-white stat rounded-lg !bg-[#101525] w-full text-center">
-                                <VscEmptyWindow className="text-5xl mb-4" />
-                                <h1 className="text-lg">¡Empieza a ordenar en D'lish!</h1>
-                                <p className="text-sm text-gray-400">Aún no hay registro de tus órdenes</p>
-                            </div>
-                        )}
-
+                        {loadingOrders ? 
+                            <div className="flex items-center justify-center col-span-2">
+                                <CgSpinner className="loading-icon mr-2" /> Buscando pedidos anteriores...
+                            </div> : 
+                            ordenes.length ? (
+                                ordenes.map((orden, id) => (
+                                    <LogCard orden={orden} key={id} />
+                                ))
+                            ) : (
+                                <div className="flex flex-col justify-center items-center mt-6 text-white stat rounded-lg !bg-[#0e0e0e] w-full text-center">
+                                    <VscEmptyWindow className="text-5xl mb-4" />
+                                    <h1 className="text-lg">¡Empieza a ordenar en D'lish!</h1>
+                                    <p className="text-sm text-gray-400">Aún no hay registro de tus órdenes</p>
+                                </div>
+                            )
+                        }
                     </div>
+
                 </section>
 
             </div>
