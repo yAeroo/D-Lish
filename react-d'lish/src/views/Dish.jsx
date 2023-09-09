@@ -129,12 +129,12 @@ export default function Dish() {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-              <div className="bg-black/50 min-h-[288px] min-w-[512px] rounded-lg bg-black/50">
+              <div className="bg-black/50 min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px] rounded-lg bg-black/50">
                   { cafeteria && cafeteria?.cafe_wallp ?
-                    <img className="rounded-lg min-h-[288px] min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
+                    <img className="rounded-lg min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
                   :
-                    <div className="flex items-center justify-center min-h-[288px]">
-                      <CgSpinner className="loading-icon mr-2" size={100} />
+                    <div className="flex items-center justify-center min-h-[216px]  md:min-h-[288px]">
+                      <CgSpinner className="loading-icon mr-2" size={50} />
                     </div>
                   }
               </div>

@@ -40,9 +40,9 @@ function Order() {
   return (
     <>
       {/* Cuerpo del trabajo + animación  */}
-      <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] mb-5'>
+      <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] '>
         {/* Estructura del cuadrito */}
-        <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow">
+        <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow my-10">
           {/* lo que centra y maneja la posicion del cuadro  */}
           <div className="col-start-2  place-self-center items-center  md:px-1 ">
             <h2 className='text-center text-3xl font-bold text-white'>¡ORDEN REALIZADA!</h2>
