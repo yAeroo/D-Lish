@@ -1,76 +1,76 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 //NavMobileIndex
 import NavMobileIndex from "../components/Nav/NavMobileIndex";
-//Iconos
-import Icon from "../assets/logo/icon_bw.png";
-import IconWide from "../assets/logo/wide_white.png";
-//Iconos
-import { FaUserCircle } from "react-icons/fa";
-//Imagenes
-import Burrito from "/src/assets/index/burrito.jpg";
-import Pupusas from "/src/assets/index/pupusas.jpg";
-import DesayunoBanner from "/src/assets/Dishes/desayunoBanner.png";
-import OtrosBanner from "/src/assets/Dishes/otrosBanner.png";
-import AlmuerzoBanner from "/src/assets/Dishes/almuerzoBanner.png";
+// Icons
+import { MdFoodBank } from "react-icons/md"
+// import { FaBowlFood } from "react-icons/fa";
 //Componentes
 import FoodCardSearch from "../components/FoodCardSearch";
 import { useAuth } from "../hooks/useAuth";
-import RegresarProfile from "../components/Profile/RegresarProfile";
+import RegresarTo from "../components/Profile/RegresarTo";
+import clienteAxios from "../config/axios";
+import Categorias from "../components/Categorias";
+import CafeteriaCardSearch from "../components/CafeteriaCardSearch";
+import { Link } from "react-router-dom";
 
 export default function Search() {
   const [searchText, setSearchText] = useState("");
   const [showFloatingContainer, setShowFloatingContainer] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [resultPlatillos, setresultPlatillos] = useState([]);
+  const [resultCafeterias, setresultCafeterias] = useState([]);
+  const { user } = useAuth({ middleware: 'auth' });
 
-  const foodData = [
-    {
-      name: "Pupusas",
-      photo: Pupusas,
-      cafetin: "Don Bosco",
-      precio: "1.00",
-      categoria: "Desayunos",
-    },
-    {
-      name: "Burrito de Carne",
-      photo: Burrito,
-      cafetin: "Maria Auxiliadora",
-      precio: "2.50",
-      categoria: "Almuerzos",
-    },
-    // ... más elementos
-  ];
+  // Busqueda
+  useEffect(() => {
+    handleSearchInput();
+    console.log(resultPlatillos);
+  }, [searchText])
 
-  const handleSearchInput = (event) => {
-    const inputText = event.target.value;
-    setSearchText(inputText);
+  const handleSearchInput = async () => {
+    console.log(searchText);
 
-    // Mostrar resultados luego de escribir X cantidad de caracteres
-    setShowFloatingContainer(inputText.length > 0);
+    if (searchText.length != 0) {
+      setShowFloatingContainer(true);
 
-    // Filtrar los resultados en función del texto de búsqueda
-    const filteredResults = foodData.filter((item) =>
-      item.name.toLowerCase().includes(inputText.toLowerCase())
-    );
+      // Petición axios
+      try {
+        const { data } = await clienteAxios.post(`/api/search`, { termino: searchText });
 
-    setSearchResults(filteredResults);
+        // Extracción de datos
+        const { cafeterias, platillos } = data;
+
+        // Asignación de valores a los estados
+        setresultCafeterias(cafeterias);
+        setresultPlatillos(platillos);
+
+      } catch (error) {
+        console.error('Error', error);
+      }
+    }
   };
 
-  const { user } = useAuth({ middleware: 'auth' });
+  // Detectar cuando el usuario deja de escribir
+  useEffect(() => {
+    const typingTimeout = setTimeout(() => {
+      // Ocultar el contenedor flotante cuando el usuario deja de escribir
+      setShowFloatingContainer(false);
+    }, 7500); // Ajusta este valor a la cantidad de tiempo deseada antes de considerar que el usuario ha dejado de escribir
+
+    // Limpia el temporizador anterior cada vez que el usuario escribe nuevamente
+    return () => clearTimeout(typingTimeout);
+  }, [searchText]);
 
   return (
 
     <>
       <NavMobileIndex />
 
-
-
       <section className="flex justify-end animate-fade-left animate-once">
         <h1 className="text-4xl font-bold py-2 pr-[10rem] pl-6 mt-7 text-rigth">
-          ¡Bienvenido Lucas Ríos!
+          ¡Hola {user?.name}!
         </h1>
 
-        <RegresarProfile />
+        <RegresarTo url="/" />
 
       </section>
 
@@ -82,12 +82,14 @@ export default function Search() {
                 <input
                   type="text"
                   placeholder="¿Qué estas buscando el dia de hoy?"
-                  className="input bg-zinc-900 w-[18rem] xl:text-md md:text-[0.9rem] text-sm focus:outline-none"
+                  className="input bg-zinc-900 min-w-[18rem] md:min-w-[32rem] xl:w-[40rem]  xl:text-md md:text-[0.9rem] text-sm focus:outline-none"
                   autoComplete="off"
                   value={searchText}
-                  onChange={handleSearchInput}
+                  onChange={(e) => setSearchText(e.target.value)}
                 />
-                <button className="btn bg-[#4cbb6a] hover:bg-[#4cbb69d5]">
+                <button className="btn bg-[#4cbb6a] hover:bg-[#4cbb69d5]"
+                  onClick={handleSearchInput}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -106,21 +108,51 @@ export default function Search() {
               </div>
               {showFloatingContainer && (
                 /* Contenido del contenedor flotante */
-                <div className="absolute z-50 input bg-zinc-900 xl:w-[40rem] lg:w-[28rem] md:w-[17rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] px-[1rem] py-[1rem] shadow-lg">
+                <div className="absolute py-10 z-50 input bg-zinc-900 xl:w-[40rem] lg:w-[28rem] md:min-w-[32rem] w-[21rem] xl:text-md md:text-[0.9rem] h-auto focus:outline-none mt-[3.5rem] 
+                px-[1rem]shadow-lg">
                   <div className="h-auto">
-                    {searchResults.length === 0 ? (
-                      <h1>No se encontraron resultados.</h1>
+
+                    <div className=" text-2xl font-title text-white font-bold p-2 ">
+                      <h1 className="inline">Cafeterias </h1>
+                      <MdFoodBank className="inline text-3xl mb-2 text-primary" />
+                    </div>
+
+                    {resultCafeterias.length === 0 ? (
+                      <h1 className="text-md text-center">No se encontraron resultados.</h1>
                     ) : (
-                      searchResults.map((result, index) => (
-                        <FoodCardSearch
-                          key={index}
-                          name={result.name}
-                          photo={result.photo}
-                          cafetin={result.cafetin}
-                          precio={result.precio}
-                          categoria={result.categoria}
-                        />
-                      ))
+                      <>
+                        {resultCafeterias.map((result, index) => (
+                          <Link key={index} to={`/cafeteria/${result.id}`}>
+                            <CafeteriaCardSearch
+                              name={result.name}
+                              photo={result.img_wall}
+                            />
+                          </Link>
+                        ))}
+                      </>
+                    )}
+
+                    <hr className="my-8"></hr>
+
+                    <div className=" text-2xl font-title text-white font-bold p-2 ">
+                      <h1 className="inline">Platillos </h1>
+                      {/* <FaBowlFood className="inline text-3xl mb-2 text-primary" /> */}
+                    </div>
+
+                    {resultPlatillos.length === 0 ? (
+                      <h1 className="text-md text-center">No se encontraron resultados.</h1>
+                    ) : (
+                      <>
+                        {resultPlatillos.map((result, index) => (
+                          <FoodCardSearch
+                            key={index}
+                            id={result.id}
+                            caferia={result.cafeteria_id}
+                            name={result.name}
+                            photo={result.img}
+                          />
+                        ))}
+                      </>
                     )}
                   </div>
                 </div>
@@ -128,51 +160,13 @@ export default function Search() {
             </div>
           </nav>
         </section>
-      </div>
+      </div >
 
+      <div className="grid grid-cols-2 relative gap-4 p-4 px-12">
 
-
-      <div className="grid grid-cols-2 relative gap-4 p-4">
-        {/* Contenedor de Desayunos */}
-        <Link to={`/desayunos`}>
-          <div
-            className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-            style={{ backgroundImage: `url(${DesayunoBanner})` }}
-          >
-            <div className="absolute top-0 left-0 p-2 text-white font-bold text-[1.7rem] leading-[2.25rem]">
-              Desayunos
-            </div>
-          </div>
-        </Link>
-
-        {/* Contenedor de Otros */}
-        <Link to={`/otros`}>
-          <div
-            className="bg-cover bg-center h-32 md:h-48 relative rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-            style={{ backgroundImage: `url(${OtrosBanner})` }}
-          >
-            <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-              Otros
-            </div>
-          </div>
-        </Link>
-
-        {/* Contenedor de Almuerzos */}
-        <Link to={`/almuerzos`} className="col-span-2">
-          <div
-            className="bg-cover bg-center h-32 relative col-span-2 rounded-md animate-fade-left animate-once animate-delay-[400ms]"
-            style={{ backgroundImage: `url(${AlmuerzoBanner})` }}
-          >
-            <div className="absolute top-0 left-0 p-2 text-white font-bold text-3xl">
-              Almuerzos
-            </div>
-          </div>
-        </Link>
-
+        <Categorias />
 
       </div>
-
-
     </>
   );
 }

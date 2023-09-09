@@ -11,7 +11,7 @@ import { CgSpinner } from "react-icons/cg";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import LogCard from "../../components/Profile/LogCard.jsx"
-import RegresarProfile from '../../components/Profile/RegresarProfile.jsx';
+import RegresarTo from '../../components/Profile/RegresarTo.jsx';
 // Hooks
 import { useAuth } from "../../hooks/useAuth";
 import useOrders from "../../hooks/useOrders";
@@ -62,7 +62,7 @@ export default function Logs() {
         <>
             {/* Botones de edición y regresar */}
             <div id="pf-bttns" className="relative">
-                <RegresarProfile url="/profile" />
+                <RegresarTo url="/profile" />
             </div>
 
             {/* Información de perfil */}
@@ -122,10 +122,10 @@ export default function Logs() {
 
 
                     <div id="logs-cont" className={`grid ${ordenes.length ? "md:grid-cols-2 md:grid-rows-1" : "min-h-[310px]"} gap-x-2 gap-y-4 px-3`}>
-                        {loadingOrders ? 
+                        {loadingOrders ?
                             <div className="flex items-center justify-center col-span-2">
                                 <CgSpinner className="loading-icon mr-2" /> Buscando pedidos anteriores...
-                            </div> : 
+                            </div> :
                             ordenes.length ? (
                                 ordenes.map((orden, id) => (
                                     <LogCard orden={orden} key={id} />

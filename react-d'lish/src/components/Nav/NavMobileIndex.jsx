@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 export default function NavMobileIndex() {
   return (
     <div className="btm-nav md:hidden text-primary z-10 bg-base-300">
-      <NavLink to="/search" activeclassname="active" className=" items-center gap-1 bg-base-300 hidden">
+      <NavLink to="/search" activeclassname="active" className=" items-center gap-1 bg-base-300">
         <FaSearch className="h-5 w-5 mx-auto" />
         <span className="btm-nav-label text-sm">Busqueda</span>
       </NavLink>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { IoChevronBackSharp } from "react-icons/io5";
 import { useTranslation } from 'react-i18next';
 
-export default function RegresarProfile(props) {
+export default function RegresarTo(props) {
     const { t } = useTranslation();
 
     return (

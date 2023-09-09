@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 // Componentes
 import Preferences from "../../components/Profile/Preferences";
 import ProfileInfo from "../../components/Profile/ProfileInfo";
-import RegresarProfile from "../../components/Profile/RegresarProfile";
+import RegresarTo from "../../components/Profile/RegresarTo";
 //NavMobileIndex
 import NavMobileIndex from "../../components/Nav/NavMobileIndex";
 // Protección de rutas
@@ -25,12 +25,12 @@ export default function Profile() {
 
     return (
         <>
-        <NavMobileIndex />
+            <NavMobileIndex />
 
             {/* Botones de edición y regresar */}
             <div id="pf-bttns" className="relative">
 
-                <RegresarProfile url="/" />
+                <RegresarTo url="/" />
 
                 <div id="edit-bttn" className="fu-custom animate-fade-left absolute top-5 right-[5%] md:right-[3%] lg:right-[10%]">
                     <Link to="/profile/settings" className="flex bg-secondary hover:bg-base-100 transition-all rounded-full p-2 md:px-5 ">
@@ -55,7 +55,7 @@ export default function Profile() {
                         <div className="flex bg-secondary rounded-full p-2 px-14">
                             <span> <BiLogOut size={"25"} color={"white"} /> </span>
                             <span className="mx-2 profile-bttn-text !block">
-                            {t("actions.log-off")}
+                                {t("actions.log-off")}
                             </span>
                         </div>
                     </button>

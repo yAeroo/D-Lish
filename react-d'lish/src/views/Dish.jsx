@@ -2,8 +2,6 @@ import { useTranslation } from "react-i18next";
 // Multimedia
 import "../css/dishSelection.css"
 import "../css/buttons.css"
-import Burrito from "../../src/assets/index/burrito.jpg";
-import Almuerzo from "../../src/assets/homepage/Almuerzos.png"
 
 import OrderComponent from '../components/OrderComponent';
 
@@ -129,22 +127,22 @@ export default function Dish() {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-              <div className="bg-black/50 min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px] rounded-lg ">
-                  { cafeteria && cafeteria?.cafe_wallp ?
-                    <img className="rounded-lg min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
-                  :
-                    <div className="flex items-center justify-center min-h-[216px]  md:min-h-[288px]">
-                      <CgSpinner className="loading-icon mr-2" size={50} />
-                    </div>
-                  }
-              </div>
+            <div className="bg-black/50 min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px] rounded-lg ">
+              {cafeteria && cafeteria?.cafe_wallp ?
+                <img className="rounded-lg min-w-[384px] min-h-[216px] md:min-h-[288px] md:min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
+                :
+                <div className="flex items-center justify-center min-h-[216px]  md:min-h-[288px]">
+                  <CgSpinner className="loading-icon mr-2" size={50} />
+                </div>
+              }
+            </div>
             <h1
               className="titulo"
             >
               Cafetín {cafeteria?.nombre}
               <br className="hidden lg:inline" />
               <span className="text-primary"> {/* Almuerzo*/}
-              {t("dish.lunch")}</span>
+                {t("dish.lunch")}</span>
             </h1>
             <p className="mt-2 sm:mt-4 sm:text-xl text-white-900">
               {/* Define los complementos de tu almuerzo*/}
@@ -157,16 +155,16 @@ export default function Dish() {
               <br />
               <form className='text-white'>
                 <div className=" font-bold mb-1">{/* Platillo Principal | Obligatorio*/}
-              {t("dish.main-dish-required")}</div>
+                  {t("dish.main-dish-required")}</div>
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
-                  {platillo ? 
+                  {platillo ?
                     <OrderComponent
-                    name={platillo?.name}
-                    id={dishId}
-                    principal={true}
-                    photo={`mainDish/${platillo?.img}`} />:""
+                      name={platillo?.name}
+                      id={dishId}
+                      principal={true}
+                      photo={`mainDish/${platillo?.img}`} /> : ""
                   }
                 </div>
 
