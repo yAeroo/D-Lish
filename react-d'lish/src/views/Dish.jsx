@@ -21,6 +21,8 @@ import useCafeterias from "../hooks/useCafeterias";
 import useOrders from '../hooks/useOrders';
 import Notify from '../helper/Notify';
 import { formatearDinero } from "../helper/Money";
+import Spinner from "../components/Spinner";
+import { CgSpinner } from "react-icons/cg";
 
 export default function Dish() {
   const { t } = useTranslation();
@@ -30,7 +32,7 @@ export default function Dish() {
   const [typePay, setTipoPago] = useState(null);
   const { user } = useAuth({ middleware: 'auth' })
   const { cafeteriaId, dishId } = useParams();
-  const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria } = useCafeterias();
+  const { cafeterias, contenidoCafeteria, limpiarCafeteria, obtenerContenidoCafeteria, isLoading, setIsLoading } = useCafeterias();
   const { setOrden, handleRemoverOrden } = useOrders();
 
   // Validar URL
@@ -112,9 +114,13 @@ export default function Dish() {
     }
   }
 
+  console.log(cafeteria);
+
   // Parte del Modal
   const [selectedPayment, setSelectedPayment] = useState(null);
   const showFundsText = selectedPayment === "PaymentFondos";
+
+  if (isLoading) return <Spinner />
 
   return (
     <>
@@ -123,7 +129,15 @@ export default function Dish() {
           className="px-8 py-12 max-w-md mx-auto sm:max-w-xl"
         >
           <div className="xl:max-w-xl">
-            <img className="h-25 rounded-lg" src={Almuerzo} alt="ComidaPIC" />
+              <div className="bg-black/50 min-h-[288px] min-w-[512px] rounded-lg bg-black/50">
+                  { cafeteria && cafeteria?.cafe_wallp ?
+                    <img className="rounded-lg min-h-[288px] min-w-[512px]" src={`../../../assets/cafeterias/${cafeteria?.cafe_wallp}`} alt="ComidaPIC" />
+                  :
+                    <div className="flex items-center justify-center min-h-[288px]">
+                      <CgSpinner className="loading-icon mr-2" size={100} />
+                    </div>
+                  }
+              </div>
             <h1
               className="titulo"
             >
@@ -146,11 +160,13 @@ export default function Dish() {
                 <hr className='bg-white' />
                 <br />
                 <div className="componentsDish">
-                  <OrderComponent
+                  {platillo ? 
+                    <OrderComponent
                     name={platillo?.name}
                     id={dishId}
                     principal={true}
-                    photo={Burrito} />
+                    photo={`mainDish/${platillo?.img}`} />:""
+                  }
                 </div>
 
                 <br />
@@ -163,7 +179,7 @@ export default function Dish() {
                       id={complemento.id}
                       type="side_dish1"
                       name={complemento.name}
-                      photo={Burrito} />
+                      photo={`sideDish1/${complemento?.img}`} />
                   )) : ''}
                 </div>
                 <br />
@@ -177,7 +193,7 @@ export default function Dish() {
                       id={complemento.id}
                       type="side_dish2"
                       name={complemento.name}
-                      photo={Burrito} />
+                      photo={`sideDish2/${complemento?.img}`} />
                   )) : ''}
                 </div>
                 <br />
@@ -191,7 +207,7 @@ export default function Dish() {
                       name={acompanante.name}
                       type="accompaniement"
                       id={acompanante.id}
-                      photo={Burrito} />
+                      photo={`accompaniment/${acompanante?.img}`} />
                   )) : ''}
                 </div>
                 <br />
@@ -206,7 +222,7 @@ export default function Dish() {
                       name={bebida.name}
                       type="drink"
                       id={bebida.id}
-                      photo={Burrito}
+                      photo={`drinks/${bebida?.img}`}
                       add25={handleAgregar25}
                     />
                   )) : ''}

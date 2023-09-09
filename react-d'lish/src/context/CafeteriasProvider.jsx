@@ -10,6 +10,8 @@ const CafeteriasProvider = ({ children }) => {
     const [cafeterias, setCafeterias] = useState([]);
     const [contenidoCafeteria, setContenidoCafeteria] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     // Función asincrona que llama los datos
     const obtenerCafeterias = async () => {
         try {
@@ -26,6 +28,7 @@ const CafeteriasProvider = ({ children }) => {
             const { data } = await clienteAxios(`/api/cafeterias/${cafeteriaId}`);
             const cafeteria = data.data[0];
             setContenidoCafeteria(cafeteria);
+            setIsLoading(false);
         } catch (error) {
             console.log(error);
         }
@@ -48,6 +51,8 @@ const CafeteriasProvider = ({ children }) => {
             contenidoCafeteria,
             limpiarCafeteria,
             obtenerCafeterias,
+            isLoading, 
+            setIsLoading
         }}>
             {children}
         </CafeteriasContext.Provider>

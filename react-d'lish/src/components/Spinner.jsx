@@ -1,6 +1,7 @@
 import React from "react";
 import FaviconGreen from "../../src/assets/logo/icon_green.png";
 import { useTranslation } from "react-i18next";
+import Logo from '../assets/logo/title_green.png'
 
 export default function Spinner() {
 
@@ -15,7 +16,7 @@ export default function Spinner() {
           className="animate-spin justify-center animate-infinite animate-duration-[1150ms] animate-ease-in-out h-24 md:h-32 md:w-32"
         />
         <img
-          src="../../src/assets/logo/title_green.png" // Ruta correcta a tu imagen estática
+          src={Logo} // Ruta correcta a tu imagen estática
           alt="Logo"
           className="mt-0 h-16 md:h-24 justify-center"
         />

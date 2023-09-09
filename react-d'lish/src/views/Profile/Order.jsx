@@ -40,7 +40,7 @@ function Order() {
   return (
     <>
       {/* Cuerpo del trabajo + animación  */}
-      <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] '>
+      <div className='flex items-center justify-center flex-col  min-h-screen w-full animate-fade-down animate-delay-[600ms] mb-5'>
         {/* Estructura del cuadrito */}
         <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow">
           {/* lo que centra y maneja la posicion del cuadro  */}

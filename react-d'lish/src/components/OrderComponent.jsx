@@ -17,7 +17,7 @@ function FoodCardDish(props) {
         <div className="flex items-center justify-center mx-1 h-[7rem] w-[98%] hover:bg-base-100 rounded-lg px-5 py-0 mb-1">
             <div className="flex items-center justify-start space-x-6 mt-0 w-[80%]">
                 <div className="w-20 h-20 rounded overflow-hidden">
-                    <img className="w-full h-full object-cover" src={photo} />
+                    <img className="w-full h-full object-cover" src={`../../../assets/products/${photo}`} />
                 </div>
                 <div className="flex flex-col">
                     <h2 className="text-md font-bold text-neutral-100">
