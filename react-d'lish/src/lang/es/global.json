@@ -99,12 +99,21 @@
         "funds-title" : "Fondos",
         "funds-subtitle" : "Paga con los fondos de tu cuenta",
         "advice-funds-title" : "Tus fondos actuales son de",
-        "advice-funds-subtitle" : "En caso contrario, recibirás una penalización.",
+        "advice-funds-subtitle" : "Confirma el pago con tus fondos abajo",
+        "advice-funds-subtitle-not-enough" : "Fondos insuficientes para pagar",
         "cash-title" : "Efectivo",
         "cash-subtitle" : "Paga dirigiendote a la cafeteria",
         "advice-cash-title" : "Admites la responsabilidad para ir a la cafetería a reclamar y pagar tu pedido.",
         "advice-cash-subtitle" : "En caso contrario, recibirás una penalización.",
         "do-order-button" : "Realizar Pedido"
+    },
+    "order" : {
+        "order-complete" : "¡ORDEN REALIZADA!",
+        "order-summary" : "Resumen del pedido",
+        "order-realized" : "Pedido Realizado en",
+        "product" : "Producto",
+        "to-start" : "Ir al Inicio",
+        "price" : "Precio"
     },
     "auth" : {
         "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",

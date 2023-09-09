@@ -98,13 +98,22 @@
         "funds-title" : "Funds",
         "funds-subtitle" : "Pay with the funds in your account",
         "advice-funds-title" : "Your current funds are",
-        "advice-funds-subtitle" : "Otherwise, you will receive a penalty.",
+        "advice-funds-subtitle" : "Confirm payment with your funds below",
+        "advice-funds-subtitle-not-enough" : "Insufficient funds to pay",
         "cash-title" : "Cash",
         "cash-subtitle" : "Pay by going to the cafeteria.",
         "advice-cash-title" : "You acknowledge the responsibility to go to the cafeteria to claim and pay for your order.",
         "advice-cash-subtitle" : "Otherwise, you will receive a penalty.",
         "do-order-button" : "Order"
 
+    },
+    "order" : {
+        "order-complete" : "ORDER COMPLETED!",
+        "order-summary" : "Summary of the order",
+        "order-realized" : "Order realized in",
+        "product" : "Product",
+        "to-start" : "Go to start",
+        "price" : "Price"
     },
     "desayuno" : {
         "breakfast-title" : "Breakfast",

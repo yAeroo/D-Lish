@@ -18,11 +18,13 @@ import useFechaActual from '../../hooks/useFecha';
 import useOrders from '../../hooks/useOrders';
 // Helper
 import { isEmpty } from '../../helper/Vacio';
+import { useTranslation } from "react-i18next";
 
 function Order() {
   const navigate = useNavigate();
   const { orden } = useOrders();
   const { cafeteria, ...Order } = orden;
+  const { t } = useTranslation();
 
   console.log(orden.length);
   const fechaActual = useFechaActual();
@@ -45,7 +47,7 @@ function Order() {
         <div className="h-screen sm:h-auto grid grid-cols-1 md:grid-cols-3 tracking-wide flex-grow my-10">
           {/* lo que centra y maneja la posicion del cuadro  */}
           <div className="col-start-2  place-self-center items-center  md:px-1 ">
-            <h2 className='text-center text-3xl font-bold text-white'>¡ORDEN REALIZADA!</h2>
+            <h2 className='text-center text-3xl font-bold text-white'>{t("order.order-complete")}</h2>
             {/* Cuerpo del La card */}
             <div id="box" className="box lg:px-4 bg-[#ffffff27] text-white">
               {/* contenido carta */}
@@ -56,11 +58,11 @@ function Order() {
                   {fechaActual}
                 </p>
               </div>
-              <h1 className="text-2xl px-2  pt-[0.5rem] font-title font-extrabold text-center">Resumen del pedido</h1>
+              <h1 className="text-2xl px-2  pt-[0.5rem] font-title font-extrabold text-center">{t("order.order-summary")}</h1>
               <div className="grid grid-cols-1 ">
                 <p className="text-center text-sm pt-2 tracking-normal font-title font-extrabold pb-2">
-                  Pedido Realizado en
-                  <br />Cafeteria "{cafeteria ? cafeteria : ''}"
+                  {t("order.order-realized")}
+                  <br />{t("logs.cafeteria")} "{cafeteria ? cafeteria : ''}"
                 </p>
               </div>
               {/* Listado */}
@@ -71,7 +73,7 @@ function Order() {
                     <tr className='border-dashed border-slate-500 font-title font-extrabold text-white  '>
                       <th></th>
                       <th>N°</th>
-                      <th>Producto</th>
+                      <th>{t("order.product")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -81,7 +83,7 @@ function Order() {
                       if (index !== finalOrden.length - 1) {
                         if (propiedad != cafeteria) return <TableRow key={propiedad} index={index + 1} component={orden[propiedad]} />;
                       }
-                      return <TableRow key={propiedad} index="Precio" component={orden[propiedad]} />;
+                      return <TableRow key={propiedad} index={t("order.price")} component={orden[propiedad]} />;
                     })}
 
                   </tbody>
@@ -89,7 +91,7 @@ function Order() {
               </div>
               <div className="pb-4">
                 <Link to="/" className="btn font-plane buttonActive">
-                  Ir al Inicio
+                  {t("order.to-start")}
                 </Link>
               </div>
             </div>
