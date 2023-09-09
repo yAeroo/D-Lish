@@ -88,7 +88,7 @@ function ProductAdmin() {
                       id={mainDish.id}
                       ProductNum={id}
                       ProductItem={mainDish.name}
-                      ProductIMG={mainDish.img}
+                      ProductImg={`mainDish/${mainDish?.img}`}
                     />
                   ))}
                 </tbody>
@@ -129,7 +129,7 @@ function ProductAdmin() {
                       id={side_dish1.id}
                       ProductNum={id}
                       ProductItem={side_dish1.name}
-                      ProductIMG={side_dish1.img}
+                      ProductImg={`sideDish1/${side_dish1?.img}`}
                       ProductPrice={side_dish1.price}
                     />
                   ))}
@@ -171,7 +171,7 @@ function ProductAdmin() {
                       ProductNum={id}
                       id={side_dish2.id}
                       ProductItem={side_dish2.name}
-                      ProductIMG={side_dish2.img}
+                      ProductImg={`sideDish2/${side_dish2?.img}`}
                       ProductPrice={side_dish2.price}
                     />
                   ))}
@@ -212,7 +212,7 @@ function ProductAdmin() {
                       id={accompaniment.id}
                       ProductNum={id}
                       ProductItem={accompaniment.name}
-                      ProductIMG={accompaniment.img}
+                      ProductImg={`accompaniment/${accompaniment?.img}`}
                       ProductPrice={accompaniment.price}
                     />
                   ))}
@@ -255,7 +255,7 @@ function ProductAdmin() {
                       id={drink.id}
                       ProductNum={id}
                       ProductItem={drink.name}
-                      ProductIMG={drink.img}
+                      ProductImg={`drinks/${drink?.img}`}
                       ProductPrice={drink.price}
                     />
                   ))}

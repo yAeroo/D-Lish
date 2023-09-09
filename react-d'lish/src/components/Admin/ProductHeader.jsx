@@ -8,15 +8,15 @@ function ProductHeader() {
 
   return (
     <tr className="bg-terc flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
-      <th className="p-3 text-left">Id</th>
-      <th className="p-3 text-left">{t("admin.tb-name")}</th>
-      <th className="p-3 text-left h-[242px] sm:h-[49px]">
+      <th className="p-3 text-center">Id</th>
+      <th className="p-3 text-center">{t("admin.tb-name")}</th>
+      <th className="p-3 text-center h-[242px] sm:h-[49px]">
         {t("admin.tb-img")}
       </th>
-      {/* <th className="p-3 text-left" width="110px">
+      {/* <th className="p-3 text-center" width="110px">
         Precio
       </th> */}
-      <th className="p-3 text-left" width="110px">
+      <th className="p-3 text-center" width="110px">
         {t("admin.tb-actions")}
       </th>
     </tr>

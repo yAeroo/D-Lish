@@ -7,7 +7,7 @@ import useOwner from "../../hooks/useOwner";
 import { useEffect, useState } from "react";
 
 function ProductRow(props) {
-    const { ProductNum, ProductItem, id, type, active } = props;
+    const { ProductNum, ProductItem, ProductImg, id, type, active } = props;
     const { hadleClickVisibility, setElement, handleAction, handleClickModal } = useOwner();
     const [visible, setVisible] = useState(active);
 
@@ -34,11 +34,13 @@ function ProductRow(props) {
         <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
             <td className="border-grey-light border hover:bg-gray-100 p-3">{ProductNum + 1}</td>
             <td className="tableRow">{ProductItem}</td>
-            <td className="tableRow h-[234px] sm:h-auto">
-                {/* <img src={props.ProductIMG} className='w-[13rem] h-[13rem]' /> */}
+            <td className="tableRow h-[236px] sm:h-auto ">
+                <section className="flex h-full items-center justify-center self-center text-center">
+                    <img src={`../../assets/products/${ProductImg}`} className='w-[10rem] h-[10rem] rounded-lg' />
+                </section>
             </td>
             {/* <td className="tableRow">{props.ProductPrice}</td> */}
-            <td className="border-grey-light border p-3  hover:font-medium flex sm:justify-center gap-3 ">
+            <td className="tableRow sm:h-[236px] border-grey-light border p-3 hover:font-medium flex items-center justify-center gap-3 ">
                 <AiFillEyeInvisible
                     className={`cursor-pointer text-2xl sm:text-2xl text-gray-400 hover:text-gray-600'
                     ${!visible ? 'text-gray-600' : 'text-gray-400 hover:text-gray-600'}`}
