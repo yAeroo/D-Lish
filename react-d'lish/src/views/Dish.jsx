@@ -274,8 +274,8 @@ export default function Dish() {
                   <p className={`text-center my-5 
                   ${+(user?.saldo_disp) >= precio ? "text-terc" : "text-[#ff4c2c]"}
                    animate-fade animate-duration-500`}>
-                    {`${t("dish.current-funds")}  ${formatearDinero(+(user?.saldo_disp))} `}<br />
-                    {+(user?.saldo_disp) >= precio ? t("dish.funds-confirm") : `${t("dish.not-enough-funds")} ${formatearDinero(precio)}`}
+                    {`${t("dish.advice-funds-title")}  ${formatearDinero(+(user?.saldo_disp))} `}<br />
+                    {+(user?.saldo_disp) >= precio ? t("dish.advice-funds-subtitle") : `${t("dish.advice-funds-subtitle-not-enough")} ${formatearDinero(precio)}`}
                   </p>
                 )}
 
