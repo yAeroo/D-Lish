@@ -107,6 +107,14 @@
         "do-order-button" : "Order"
 
     },
+    "order" : {
+        "order-complete" : "ORDER COMPLETED!",
+        "order-summary" : "Summary of the order",
+        "order-realized" : "Order realized in",
+        "product" : "Product",
+        "to-start" : "Go to start",
+        "price" : "Price"
+    },
     "desayuno" : {
         "breakfast-title" : "Breakfast",
         "popular-title" : "Popular among students"

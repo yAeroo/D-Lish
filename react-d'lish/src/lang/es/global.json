@@ -107,6 +107,14 @@
         "advice-cash-subtitle" : "En caso contrario, recibirás una penalización.",
         "do-order-button" : "Realizar Pedido"
     },
+    "order" : {
+        "order-complete" : "¡ORDEN REALIZADA!",
+        "order-summary" : "Resumen del pedido",
+        "order-realized" : "Pedido Realizado en",
+        "product" : "Producto",
+        "to-start" : "Ir al Inicio",
+        "price" : "Precio"
+    },
     "auth" : {
         "header-title" : "Accede a D'Lish y disfruta de sabores únicos.",
         "login-card-desc"    : "No esperes para reservar, ingresa tus credenciales y comienza a pedir.",
